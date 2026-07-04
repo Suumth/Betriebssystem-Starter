@@ -194,6 +194,8 @@ Subagents sind interne Codex-Ausführungshelfer. Sie sind keine sichtbaren PM-, 
 
 Attempt Budget & Escalation verhindert endlose Fix-, Review- und Retry-Loops. Es ist kein Budgetfile, kein Runner und kein neues Statusmodell.
 
+Run-weite Limits, operator kill actions und stop conditions stehen im separaten `contracts/run-budget-kill-switch.md`. Ticket-lokale Attempt-Felder bleiben die knappe Closeout-Evidence fuer wiederholte Fix-, Review- oder Loop-Arbeit.
+
 Default-Regeln:
 
 - Builder self-fix before PR: max 1.
@@ -492,6 +494,7 @@ Nur erforderlich, wenn `Subagents: REQUIRED`.
 ### Attempt Budget & Escalation
 Nur erforderlich, wenn das Ticket wiederholte Fix-, Review- oder Loop-Arbeit erwartet oder ein Budget erschöpft wurde.
 
+- Run Budget and Kill Switch reference: `contracts/run-budget-kill-switch.md`
 - Attempt budget:
 - Attempts used:
 - Last failed check/review point:

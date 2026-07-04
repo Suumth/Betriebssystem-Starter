@@ -106,7 +106,11 @@ Degraded mode is allowed only when the missing subagent was read-only, the Build
 ## Attempt Budget & Escalation
 
 Only required when the ticket expects repeated fix, review or loop work.
+Use `contracts/run-budget-kill-switch.md` for run-wide limits, stop conditions and operator kill actions.
 
+- Run Budget and Kill Switch reference:
+- Max issues per run:
+- Max fix attempts per PR/item:
 - Attempt budget:
 - Attempts used:
 - Last failed check/review point:
@@ -145,7 +149,7 @@ Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. 
 - Evidence
 - Subagent Evidence Capsule, wenn `Subagents: REQUIRED`
 - Subagent Failure Policy Evidence, wenn Recovery, degraded mode oder `BLOCKED` genutzt wurde
-- Attempt Budget & Escalation, wenn wiederholte Fix-/Review-/Loop-Arbeit erwartet wurde oder ein Budget erschöpft ist
+- Attempt Budget & Escalation inklusive Run Budget and Kill Switch, wenn wiederholte Fix-/Review-/Loop-Arbeit erwartet wurde oder ein Budget erschöpft ist
 - Vault Impact nach `contracts/ticket-contract.md#vault-impact-contract`
 - Closeout
 - Operator Summary
@@ -190,6 +194,7 @@ Am Ende dokumentieren:
   - Replacement Evidence / Builder reconstruction:
   - Remaining risk:
 - Attempt budget, attempts used, last failed check/review point, failure classification and next recommended reviewer, wenn Attempt Budget & Escalation greift
+- Run Budget and Kill Switch evidence, wenn run-weite Limits, stop conditions oder operator kill actions genutzt wurden
 - Remaining risk
 - Follow-up needed
 - Harness failure classification
