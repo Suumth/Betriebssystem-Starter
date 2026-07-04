@@ -11,6 +11,7 @@ The starter does not start background agents. The operator chooses one role, giv
 - `ticket-refinement.md`: turn a rough idea into an agent-ready Issue.
 - `pm-signal.md`: summarize Issues and Pull Requests into a short project signal.
 - `handoff-builder-to-reviewer.md`: prepare the Pull Request body as the handoff artifact.
+- `tester-qa.md`: validate a change and report exact coverage.
 
 ## Common operating rules
 
