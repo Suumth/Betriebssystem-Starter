@@ -48,3 +48,26 @@ jobs:
         uses: actions/checkout@v4
       - name: Run public readiness check
         run: bash scripts/public-readiness-check.sh
+
+  post-setup-scope-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run setup smoke and post-setup scope check
+        run: |
+          cat > setup.local.env <<EOF
+          PROJECT_NAME=CI Scope Check
+          GITHUB_OWNER=ExampleOrg
+          GITHUB_REPO=ci-scope-check
+          PROJECT_REPO_URL=https://github.com/ExampleOrg/ci-scope-check
+          AI_VAULT_PATH=$PWD/ai-vault
+          LOCAL_CHECKOUT_PATH=$PWD
+          AI_OS_METHOD_REPO_URL=https://github.com/Suumth/AI-Betriebssystem
+          IMPORT_LABELS=no
+          CREATE_TICKET_0=no
+          CREATE_VAULT_STRUCTURE=yes
+          EOF
+          bash scripts/setup.sh </dev/null
+          bash scripts/post-setup-check.sh
