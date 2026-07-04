@@ -17,6 +17,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ### Fixed
 
+- `<AI_OS_METHOD_REPO_URL>` placeholder now recognized by setup and post-setup checks.
 - Post-setup placeholder check now runs on macOS Bash 3.2.
 
 ## 0.1.0

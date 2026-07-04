@@ -39,6 +39,12 @@
       "fields": ["AI_VAULT_PATH"],
       "required": true,
       "meaning": "Local AI Vault path"
+    },
+    {
+      "placeholder": "<AI_OS_METHOD_REPO_URL>",
+      "fields": ["AI_OS_METHOD_REPO_URL"],
+      "required": false,
+      "meaning": "URL of the AI-Betriebssystem method source repository, if the project references it as an external method repo"
     }
   ],
   "setupMayUpdate": [
