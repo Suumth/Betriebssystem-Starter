@@ -177,16 +177,6 @@ prompt_yes_no() {
   done
 }
 
-PROJECT_NAME="${PROJECT_NAME:-}"
-GITHUB_OWNER="${GITHUB_OWNER:-}"
-GITHUB_REPO="${GITHUB_REPO:-}"
-PROJECT_REPO_URL="${PROJECT_REPO_URL:-}"
-AI_VAULT_PATH="${AI_VAULT_PATH:-}"
-LOCAL_CHECKOUT_PATH="${LOCAL_CHECKOUT_PATH:-$ROOT}"
-IMPORT_LABELS="${IMPORT_LABELS:-yes}"
-CREATE_TICKET_0="${CREATE_TICKET_0:-yes}"
-CREATE_VAULT_STRUCTURE="${CREATE_VAULT_STRUCTURE:-yes}"
-
 printf '\nProject values\n'
 prompt_value PROJECT_NAME "Project name" "$PROJECT_NAME"
 prompt_value GITHUB_OWNER "GitHub owner or organization" "$GITHUB_OWNER"
@@ -210,7 +200,6 @@ export AI_VAULT_PATH LOCAL_CHECKOUT_PATH IMPORT_LABELS CREATE_TICKET_0 CREATE_VA
 
 python3 - <<'PY'
 import os
-import shlex
 
 keys = [
     "PROJECT_NAME",
@@ -226,7 +215,8 @@ keys = [
 
 with open("setup.local.env", "w", encoding="utf-8") as handle:
     for key in keys:
-        handle.write(f"{key}={shlex.quote(os.environ.get(key, ''))}\n")
+        value = os.environ.get(key, "").replace("\r", " ").replace("\n", " ")
+        handle.write(f"{key}={value}\n")
 PY
 
 printf '\nWrote local setup file: setup.local.env\n'
