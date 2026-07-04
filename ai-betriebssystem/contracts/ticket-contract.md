@@ -382,6 +382,41 @@ Wenn ein Lauf scheitert oder nicht sauber abgeschlossen werden kann, wird der Ha
 
 Diese Klassifikation beantwortet nicht nur, dass etwas scheiterte, sondern warum der Harness verbessert werden muss.
 
+## Harness Learning Candidate
+
+Ein `Harness Learning Candidate` ist der sichere Weg, aus wiederholten
+Harness-Fehlern eine mögliche Regel-, Template-, Skill- oder Doku-Anpassung zu
+machen. Er ist kein automatischer Lernspeicher und keine aktive Policy.
+
+Codex soll einen Learning Candidate vorschlagen oder als Issue/PR-Teil
+dokumentieren, wenn wiederholte Evidence eines dieser Muster zeigt:
+
+- dieselbe Harness Failure Classification wiederholt sich;
+- Verifier oder Evidence fehlen wiederholt;
+- stale context verursacht wiederholt Nacharbeit;
+- ein unclear-spec-Muster wiederholt sich über mehrere Tickets;
+- eine Modell- oder Tool-Grenze braucht eine Methodenregel.
+
+Pflichtfelder:
+
+- Claim / Lesson;
+- Evidence Source;
+- Confidence: 1-5;
+- Scope: repo | method | product | release | review;
+- Applies To;
+- Proposed Target: AGENTS.md | contract | template | skill | docs | Vault update candidate;
+- Proposed Update;
+- Human Gate required: yes;
+- Non-goal: candidate is not active policy until merged.
+
+Der Candidate lebt in GitHub und wird erst nach normalem Issue oder PR, Review
+of Record und Merge operativ. Lokale Logs, Chatnotizen oder Vault-Notizen sind
+nur Quell-Evidence; sie sind keine zweite operative Wahrheit. Vault-Änderungen
+bleiben Vault Impact Candidates, außer das Ticket erlaubt direkte Vault-Edits
+ausdrücklich.
+
+Template: `templates/harness-learning-candidate.md`.
+
 ## Closeout-Format
 
 ```markdown

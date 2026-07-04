@@ -50,6 +50,7 @@
 - `templates/github_issue_task.md` — GitHub-Issue-Task Template mit Agent Contract, Mode, Autonomy, Risk lane, Execution Mode, Attempt Budget & Escalation, Subagent Failure Policy, Vault Impact und Codex Subagent Instruction.
 - `templates/github_issue_task_low_risk.md` — Light Ticket Template für risikoarme EXECUTING-Tickets ohne Subagents und ohne erwartete Loop-Arbeit.
 - `templates/lesson.md` — Lesson-Template mit Pflichtblock Regelanpassung, damit Loop-Erkenntnisse in Contracts, Prompts und Templates zurückfliessen.
+- `templates/harness-learning-candidate.md` — PR-gated Template für wiederholte Harness-Learnings; Candidate ist nicht aktive Policy bis Review of Record und Merge.
 - `templates/codex-overnight-loop-prompt.md` — abends nutzbarer Codex-Prompt für einen operator-armierten Overnight Run.
 - `templates/morning-operator-review.md` — Morgen-Checkliste mit Nightly-Summary-Einstieg, GitHub-Abfragen, Ampellogik und Delegationsregeln.
 - `templates/ticket-0-bootstrap.md` — erstes Bootstrap-Issue zum Nachweis der Agentenfähigkeit eines neuen Projekt-Repos.

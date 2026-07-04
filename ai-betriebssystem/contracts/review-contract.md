@@ -76,6 +76,7 @@ Der Reviewer prüft:
 - Bei `Subagents: REQUIRED`: Sind Subagent-Closeout und Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence sichtbar?
 - Bei degraded mode: Sind `subagent_timeout`, `subagent_no_result` oder `subagent_blocked`, Recovery, Ersatzanalyse und Restrisiko reviewbar dokumentiert?
 - Bei wiederholter Fix-, Review- oder Loop-Arbeit: Dokumentiert der PR Attempt Budget, Attempts used, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache, nächste Aktion und warum ein weiterer Codex-Fix sinnvoll ist oder nicht?
+- Wenn der PR einen Harness Learning Candidate erstellt oder empfiehlt: Enthält er Claim / Lesson, Evidence Source, Confidence: 1-5, Scope, Applies To, Proposed Target, Proposed Update, Human Gate required: yes und den Non-goal, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde?
 - Bei Failure-Mode-Mapping: Sind alle geforderten Symptome enthalten, nur bestehende Harness Failure Classification Werte genutzt und konkrete Standardreaktionen genannt?
 - Gibt es unnötige Änderungen?
 - Gibt es Sicherheits-, Architektur-, Produkt- oder UX-Risiken?
@@ -223,6 +224,7 @@ Kommentarformat:
 - Kein PASS, wenn `Subagents: REQUIRED` gilt und die erforderliche Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence fehlt.
 - Kein PASS, wenn `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode genutzt wurde und Recovery, Ersatzanalyse, Safety-Begründung oder Restrisiko fehlen.
 - Kein PASS bei wiederholter Fix-, Review- oder Loop-Arbeit ohne Attempt-Budget-Evidence, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache und nächste Aktion.
+- Kein PASS für einen Harness Learning Candidate, wenn Source Evidence, Confidence: 1-5, Scope, Proposed Target, Human Gate oder der Hinweis fehlt, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde.
 - Kein PASS bei Failure-Mode-Mapping, wenn ein geforderter Failure Mode fehlt, neue Classification-/Label-/State-Werte eingeführt werden, eine Standardreaktion fehlt oder die Mapping-Sprache eine verpflichtende Workflow-State-Machine statt diagnostischer Guidance erzeugt.
 - Kein Review ohne Ticketbezug.
 - Keine vagen Fix-Hinweise.

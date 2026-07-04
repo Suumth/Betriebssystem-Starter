@@ -8,6 +8,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ### Added
 
+- Harness Learning Candidate contract and template for PR-gated method improvements.
 - Local Direct-Main Mode documentation with issue closeout evidence, known-failing gate, review-waiver and local toolchain compatibility rules.
 - Root CI workflow for shell checks, Python tests and public readiness.
 - Read-only PR Contract workflow for pull request body and label-rule validation.
