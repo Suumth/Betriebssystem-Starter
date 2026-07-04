@@ -13,6 +13,11 @@ This repository is a starter template, so contributions must keep the package ge
 5. Let the PR Contract Check and CI run.
 6. Wait for a Review of Record before merge.
 
+Use the root GitHub templates when opening work against this starter:
+
+- `.github/ISSUE_TEMPLATE/task.md`
+- `.github/pull_request_template.md`
+
 ## Required gates
 
 Every Pull Request should satisfy:
