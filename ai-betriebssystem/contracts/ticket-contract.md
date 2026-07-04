@@ -216,6 +216,35 @@ Escalation bedeutet Evidence und Empfehlung, nicht automatische Claude-Code-Nutz
 
 Low-risk documentation work must not be burdened with mandatory heavy loop fields unless the ticket itself repeated work, fix cycles or escalation risk expects.
 
+## Stagnation Escalation
+
+Stagnation means a fix, review or validation loop is no longer learning from evidence. It is not solved by another blind Codex retry.
+
+Stagnation is triggered when any of these appear:
+
+- the same or materially similar `needs-fix` returns after a retry;
+- validation or evidence is missing repeatedly;
+- the same Harness Failure Classification repeats;
+- a fix attempt fails and the suspected root cause is still unclear.
+
+When Stagnation appears, Codex must fill Attempt Budget & Escalation evidence before any further fix:
+
+- Attempts used:
+- Last failed check/review point:
+- Harness Failure Classification:
+- Suspected root cause:
+- Why another Codex fix is or is not justified:
+- Next action: continue | needs-fix | blocked | human decision | review ticket | learning candidate
+
+Required response:
+
+- small mechanical gap: one more targeted fix is allowed if the evidence names the gap and verifier;
+- unclear or repeated issue: create or suggest a review ticket;
+- method or rule failure: create or suggest a Harness Learning Candidate;
+- external, product, protected-path or safety decision: use `needs-human` or `blocked`.
+
+Stagnation preserves GitHub as the operational source of truth. Review tickets, blocked decisions and Harness Learning Candidates must be documented in GitHub evidence. Human Gate stays required for protected decisions and for activating any method/rule change.
+
 ## Subagent Failure Policy
 
 If `Subagents: REQUIRED`, Codex must not wait indefinitely.

@@ -30,8 +30,8 @@
 
 ## Contracts
 
-- `contracts/ticket-contract.md` — Reife-Regel, Ticket-Tiers (Light/Full), Agent Contract mit Mode/Autonomy/Risk lane, Execution Mode, Attempt Budget & Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Evidence, Closeout, Vault Impact und Harness-Failure-Klassifikation.
-- `contracts/review-contract.md` — Review-Prüfung, Review Isolation, Ampeln, Vault-Impact-, Attempt-Budget-, Failure-Mode-, Subagent-Evidence-Capsule- und degraded-mode-Checks sowie Kommentarformate.
+- `contracts/ticket-contract.md` — Reife-Regel, Ticket-Tiers (Light/Full), Agent Contract mit Mode/Autonomy/Risk lane, Execution Mode, Attempt Budget & Escalation, Stagnation Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Evidence, Closeout, Vault Impact und Harness-Failure-Klassifikation.
+- `contracts/review-contract.md` — Review-Prüfung, Review Isolation, Ampeln, Vault-Impact-, Attempt-Budget-, Stagnation-, Failure-Mode-, Subagent-Evidence-Capsule- und degraded-mode-Checks sowie Kommentarformate.
 - `contracts/run-budget-kill-switch.md` — Run Budget and Kill Switch Guardrail mit max issues per run, max fix attempts, stop conditions, operator kill actions und ohne neue Labels.
 - `contracts/teilprojekt-contract.md` — PM-Lagebild-Konvention: Teilprojekte als GitHub Milestones, Produktversprechen in `PROJECT.md`, read-only Ampel-/Zustandsableitung ohne zweite Wahrheit.
 - `contracts/labels.md` — operative Workflow-Labels, Review-of-Record-Signal und Auto-Merge-Signal.

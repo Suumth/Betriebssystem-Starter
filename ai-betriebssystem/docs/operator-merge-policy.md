@@ -222,6 +222,8 @@ Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgeführt, 
 
 Wenn kein nächstes Ticket existiert, dokumentiert Codex den Idle-/Complete-Zustand. Wenn ein Stop-Grund wie fehlgeschlagener Merge, fehlgeschlagener Pull, dirty Working Tree, fehlende Berechtigung, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-Entscheidung oder unklare Evidence vorliegt, stoppt Codex mit Entscheidungsvorlage.
 
+Wenn ein wiederholter Fix-/Review-/Validation-Loop Stagnation zeigt, gilt `contracts/ticket-contract.md#stagnation-escalation`: keine blinden Retry-Loops. Codex dokumentiert Harness Failure Classification, letzte gescheiterte Evidence und die naechste Aktion als targeted fix, review ticket, Harness Learning Candidate, `needs-human` oder `blocked`.
+
 ## Batch Green Path Execution
 
 Wenn der Nutzer ausdrücklich einen Ticket-Batch beauftragt, darf Codex nach jedem grünen PR mit dem nächsten beauftragten, reifen Ticket fortsetzen. Die Batch-Größe kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl.
