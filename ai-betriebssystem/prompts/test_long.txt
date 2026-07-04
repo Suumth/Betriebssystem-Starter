@@ -1,0 +1,9 @@
+# Test
+
+This is a role card.
+
+- Read PROJECT.md first.
+- Read AGENTS.md second.
+- Read the issue third.
+- Collect proof.
+- Stop on unclear scope.
