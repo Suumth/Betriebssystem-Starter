@@ -1,35 +1,66 @@
-# AI-Betriebssystem Starter
+# AI Operating System Starter
+
+A GitHub-centered starter kit for AI-assisted project work.
+
+Use it when you want AI agents to work on real tickets, produce reviewable pull requests, and stay under human control.
+
+The operating model is simple:
+
+- GitHub is the operational source of truth.
+- Issues define the work.
+- Pull requests deliver evidence.
+- Reviews create decision signals.
+- Humans keep the final gate.
+- The AI Vault is project memory and strategy, not the task system.
+
+This starter is for teams and solo builders using AI agents without losing control of scope, review, evidence or decisions.
+
+## 2-Minute Start
+
+1. Click [Use this template](https://github.com/Suumth/Betriebssystem-Starter/generate).
+2. Create a new repository for your project.
+3. Clone your new repository locally.
+4. Run the setup script:
+
+```bash
+bash scripts/setup.sh
+```
+
+After setup you have:
+
+- `PROJECT.md` as the router for AI tools
+- `AGENTS.md` with agent rules and boundaries
+- GitHub labels and templates
+- an AI Vault starter area
+- a Ticket 0 pattern for the first agent loop
+
+Continue with [`START_HERE.md`](START_HERE.md).
+
+## What Happens After Setup
+
+1. Review `setup.local.env`.
+2. Open `START_HERE.md`.
+3. Open the AI Vault in Obsidian or any Markdown editor.
+4. Create Ticket 0.
+5. Let an AI agent work from `PROJECT.md`, `AGENTS.md` and the ticket.
+6. Deliver the result as a pull request with evidence.
+7. Keep merge, release and protected decisions behind the Human Gate.
+
+## What This Repo Is Not
+
+- not an autonomous runner
+- not a replacement for GitHub Issues or pull requests
+- not a replacement for human product decisions
+- not a place for private strategies, customer data or credentials
+- not a finished dashboard or SaaS product
+
+## Deutsche Kurzfassung
 
 Ein GitHub-zentrierter Starter für KI-gestützte Projektarbeit.
 
 Für Teams und Solo-Builder, die mit KI-Agenten arbeiten wollen, ohne die Kontrolle über Tickets, Pull Requests, Evidence und menschliche Entscheidungen zu verlieren.
 
 Du nutzt dieses Repo als Template, führst einmal `scripts/setup.sh` aus und startest danach Ticket 0 in deinem eigenen Projekt.
-
-## 2-Minuten-Start
-
-1. Klicke [Use this template](https://github.com/Suumth/Betriebssystem-Starter/generate).
-2. Erzeuge daraus ein neues Repo für dein Projekt.
-3. Klone dein neues Repo lokal.
-4. Führe im Repo aus:
-
-```bash
-bash scripts/setup.sh
-```
-
-Danach hast du:
-
-- `PROJECT.md` als Router für KI-Tools
-- `AGENTS.md` mit Arbeitsregeln
-- GitHub-Labels und Templates
-- einen AI-Vault-Startbereich
-- ein erstes Ticket-0-Muster
-
-Weiter geht es mit [`START_HERE.md`](START_HERE.md).
-
-## Was ist das?
-
-Der Starter ist eine öffentliche Erstinstallation für ein AI-Betriebssystem mit AI Vault. Er verbindet GitHub, klare Agentenregeln, Review-Evidence und strategisches Projektgedächtnis.
 
 Die operative Logik bleibt einfach:
 
@@ -48,29 +79,7 @@ Die operative Logik bleibt einfach:
 - Für Einzelpersonen, die Projekte mit klaren Tickets, Reviews und Evidence führen wollen.
 - Für Organisationen, die AI-Tooling nutzen wollen, ohne operative Wahrheit aus GitHub herauszuziehen.
 
-## Was nach dem Setup passiert
-
-1. Du prüfst `setup.local.env`.
-2. Du liest `START_HERE.md`.
-3. Du öffnest den AI Vault in Obsidian oder einem Markdown-Editor.
-4. Du startest Ticket 0.
-5. Ein Agent arbeitet auf Basis von `PROJECT.md`, `AGENTS.md` und dem Ticket.
-6. Ein Pull Request liefert Evidence.
-7. Der Mensch entscheidet über Review, Merge und nächste Schritte.
-
-## Was dieses Repo nicht ist
-
-- kein autonomer Runner
-- kein Ersatz für GitHub Issues oder Pull Requests
-- kein Ersatz für menschliche Produktentscheidungen
-- kein Speicher für private Strategien oder echte Kundendaten
-- kein fertiges Dashboard oder SaaS-Produkt
-
-## English Summary
-
-This starter repository provides a neutral first installation of an AI operating system for project work.
-
-It follows a simple operating principle: GitHub is the operational source of truth. Issues define the work, pull requests deliver evidence, reviews create a clear decision signal, and the human operator keeps the final gate.
+## Package Contents
 
 The package includes:
 
