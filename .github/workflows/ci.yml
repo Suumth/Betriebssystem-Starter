@@ -34,9 +34,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run PM unit tests
+      - name: Run PM tests
         working-directory: ai-betriebssystem/pm
         run: python -m unittest discover -s . -p 'test_*.py' -v
+      - name: Run contract tests
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v
 
   public-readiness:
     runs-on: ubuntu-latest
