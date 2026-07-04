@@ -4,7 +4,7 @@
 
 AI-Betriebssystem 2.0 reduziert Copy-Paste zwischen ChatGPT, Codex, Claude Code und Projekt-Repos. Der operative Kontext liegt in GitHub: Issues, PRs, Kommentare, Labels, AGENTS.md und Repo-Dateien.
 
-Es ist zugleich Agent Substrate: Root Agent Index, gemeinsame Begriffe, Agent Modes, Skill-Muster und Loading Map fuer repo-lokale Detaildokumente.
+Es ist zugleich Agent Substrate: Root Agent Index, gemeinsame Begriffe, Agent Modes, Skill-Muster und Loading Map für repo-lokale Detaildokumente.
 
 ## Nicht-Ziele im MVP
 
@@ -35,7 +35,7 @@ Codex bleibt der sichtbare Builder-Lauf. Interne Subagents sind ein expliziter E
 |---|---|---|
 | `EXECUTING` | Entscheidung, Scope, Verifier und Evidence sind klar | Agent darf bauen |
 | `GRILLING` | Entscheidung, Begriff oder Scope ist unklar | Agent klaert zuerst; keine Umsetzung |
-| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert und schneidet umsetzbare Teilboxen; Subagent-Findings muessen im PR-Closeout verdichtet werden |
+| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert und schneidet umsetzbare Teilboxen; Subagent-Findings müssen im PR-Closeout verdichtet werden |
 
 Codex may be instructed to use internal Subagents as an explicit Execution Mode, for example when an issue says `Subagents: REQUIRED`.
 
@@ -57,21 +57,21 @@ Degraded mode is safe only when the missing subagent was read-only, the Builder 
 
 Die kanonische Projektanweisung liegt versioniert im Projekt-Repo, bevorzugt als `PROJECT.md`. Alternativ ist `docs/project-instructions.md` erlaubt, wenn der Pfad im Startpaket und in Tool-Anweisungen eindeutig genannt ist.
 
-Cloud-KIs wie ChatGPT, Claude oder Gemini haben keinen lokalen Dateizugriff. Ihre Tool-Projektanweisungen duerfen deshalb keine lokalen Pfade referenzieren und muessen auf die GitHub-URL der repo-basierten Projektanweisung zeigen.
+Cloud-KIs wie ChatGPT, Claude oder Gemini haben keinen lokalen Dateizugriff. Ihre Tool-Projektanweisungen dürfen deshalb keine lokalen Pfade referenzieren und müssen auf die GitHub-URL der repo-basierten Projektanweisung zeigen.
 
-Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschliesslich Fallbacks fuer lokale Agenten wie Codex.
+Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschließlich Fallbacks für lokale Agenten wie Codex.
 
 ChatGPT-, Claude-, Codex-, Gemini- und andere KI-Projektanweisungen sind nur Bootstrap-Pointer auf diese repo-basierte Projektanweisung. Kein KI-Tool bekommt eigene Sonderwahrheit.
 
-Die repo-basierte Projektanweisung enthaelt den Drei-Quellen-Router:
+Die repo-basierte Projektanweisung enthält den Drei-Quellen-Router:
 
 1. AI-Betriebssystem = Methode, Ticket-Schnitt, Green Path, Review und Evidence.
 2. Projekt-Repo = operative Wahrheit, Issues, PRs, `AGENTS.md`, Code, Labels, Status und Evidence.
-3. AI Vault = Strategie, Zielbild, Produktgedaechtnis, Entscheidungen und Nicht-Ziele.
+3. AI Vault = Strategie, Zielbild, Produktgedächtnis, Entscheidungen und Nicht-Ziele.
 
 Projektwahrheit wird nicht in Tool-Projektanweisungen dupliziert. Strategische Wahrheit wird nicht in zufaellige Issue-Kommentare verschoben.
 
-Der AI Vault bleibt die kanonische Quelle fuer Strategie und Produktgedaechtnis. Inhalte, die Cloud-KIs benoetigen, muessen als GitHub-Dateien, ueber GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt werden. Die Spiegelung ist ein Online-Einstieg, keine neue strategische Wahrheit.
+Der AI Vault bleibt die kanonische Quelle für Strategie und Produktgedächtnis. Inhalte, die Cloud-KIs benoetigen, müssen als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt werden. Die Spiegelung ist ein Online-Einstieg, keine neue strategische Wahrheit.
 
 ## Standard-Loop
 
@@ -93,13 +93,13 @@ Codex bekommt eine kontextfreie Anweisung pro Repo. Die Reihenfolge ist strikt:
 
 Codex liest das Ticket, arbeitet auf bestehendem oder neuem Branch, erstellt/aktualisiert einen PR, validiert und hängt Evidence an. Wenn das Ticket `Subagents: REQUIRED` sagt, agiert Codex als Builder-Orchestrator: interne Subagents starten, auf Ergebnisse warten, Findings verdichten und die Umsetzung im Haupt-Builder-Lauf verantworten.
 
-`Subagents: REQUIRED` bedeutet nicht endlos warten. Wenn ein required Subagent haengt oder kein brauchbares Ergebnis liefert, versucht Codex einmal Recovery. Danach geht es nur degraded mit Evidence weiter, wenn die Safety-Kriterien erfüllt sind; sonst stoppt Codex mit `BLOCKED`.
+`Subagents: REQUIRED` bedeutet nicht endlos warten. Wenn ein required Subagent hängt oder kein brauchbares Ergebnis liefert, versucht Codex einmal Recovery. Danach geht es nur degraded mit Evidence weiter, wenn die Safety-Kriterien erfüllt sind; sonst stoppt Codex mit `BLOCKED`.
 
 ## Danach: Review
 
-Der Review of Record prueft offene PRs gegen ihre verlinkten Issues. Das Ergebnis ist genau eine Ampel:
+Der Review of Record prüft offene PRs gegen ihre verlinkten Issues. Das Ergebnis ist genau eine Ampel:
 
-- Gruen = `review:pass` + `auto-merge:ok`, wenn alle Gruen-Kriterien gelten
+- Grün = `review:pass` + `auto-merge:ok`, wenn alle Grün-Kriterien gelten
 - Gelb = `needs-human`, Auto-Merge verboten, Operator-Entscheidung noetig
 - Rot = `needs-fix` oder `blocked`, kein Merge
 
@@ -109,18 +109,18 @@ Ein Review darf in einem separaten Chat, Thread oder App-Review-Kontext laufen, 
 
 GitHub remains the Review of Record: linked Issue, PR diff, PR body / Closeout, validation and Evidence, review comment or review submission and labels.
 
-Der Review of Record prueft vor PASS auch `Vault Impact` nach
+Der Review of Record prüft vor PASS auch `Vault Impact` nach
 `contracts/ticket-contract.md#vault-impact-contract`. Vault Update Candidates
-bleiben Human Gate; Agenten veraendern den AI Vault nicht direkt, ausser das
-Issue erlaubt es ausdruecklich.
+bleiben Human Gate; Agenten verändern den AI Vault nicht direkt, ausser das
+Issue erlaubt es ausdRücklich.
 
-Bei Tickets mit `Subagents: REQUIRED` prueft der Review of Record zusaetzlich, ob die Subagents im PR-Closeout genannt sind, was sie gefunden haben, welche Findings die Umsetzung beeinflusst haben und ob relevante Findings umgesetzt, out of scope oder blockiert begruendet wurden.
+Bei Tickets mit `Subagents: REQUIRED` prüft der Review of Record zusaetzlich, ob die Subagents im PR-Closeout genannt sind, was sie gefunden haben, welche Findings die Umsetzung beeinflusst haben und ob relevante Findings umgesetzt, out of scope oder blockiert begründet wurden.
 
-Wenn die Subagent Failure Policy greift, prueft der Review of Record zusaetzlich, ob `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode mit Recovery, Ersatzanalyse, Safety-Begruendung und Restrisiko im PR Body oder klar verlinkter PR-Evidence dokumentiert sind.
+Wenn die Subagent Failure Policy greift, prüft der Review of Record zusaetzlich, ob `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode mit Recovery, Ersatzanalyse, Safety-Begründung und Restrisiko im PR Body oder klar verlinkter PR-Evidence dokumentiert sind.
 
-## Nach gruenem Merge
+## Nach grünem Merge
 
-Ein Green Path endet nicht beim Merge. Nach erfolgreichem gruenem Merge fuehrt Codex ohne Rueckfrage `git checkout main`, `git pull --ff-only origin main` und `git status` aus. Ist `main` sauber, nimmt Codex den naechsten Queue-Eintrag nach Standardreihenfolge auf: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
+Ein Green Path endet nicht beim Merge. Nach erfolgreichem grünem Merge fuehrt Codex ohne Rueckfrage `git checkout main`, `git pull --ff-only origin main` und `git status` aus. Ist `main` sauber, nimmt Codex den nächsten Queue-Eintrag nach Standardreihenfolge auf: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 
 Stop statt Fortsetzung gilt bei fehlgeschlagenem Merge, fehlgeschlagenem Checkout/Pull, dirty Working Tree, fehlenden Berechtigungen, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-/Waiver-Entscheidung, unklarem Scope oder fehlender Evidence.
 
@@ -128,9 +128,9 @@ Details stehen in `docs/green-path-completion.md`.
 
 ## Batch Green Path Execution
 
-Batch Green Path Execution gilt nur bei ausdruecklichem Nutzerauftrag fuer mehrere reife Tickets. Die Batch-Groesse ergibt sich aus diesem Auftrag, nicht aus einer festen Zahl.
+Batch Green Path Execution gilt nur bei ausdRücklichem Nutzerauftrag für mehrere reife Tickets. Die Batch-Groesse ergibt sich aus diesem Auftrag, nicht aus einer festen Zahl.
 
-Nach jedem gruenen PR prueft Codex den PR Review of Record, merged gemaess Green-Path-Regel, checkt `main` aus, zieht `origin/main` fast-forward, prueft den clean status und uebernimmt erst dann das naechste beauftragte ready Ticket.
+Nach jedem grünen PR prüft Codex den PR Review of Record, merged gemaess Green-Path-Regel, checkt `main` aus, zieht `origin/main` fast-forward, prüft den clean status und übernimmt erst dann das nächste beauftragte ready Ticket.
 
 Codex stoppt den Batch bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder wenn kein weiteres beauftragtes Ticket uebrig ist.
 

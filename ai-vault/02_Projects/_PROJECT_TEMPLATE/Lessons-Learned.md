@@ -5,6 +5,6 @@
 - Kontext:
 - Was hat funktioniert:
 - Was hat nicht funktioniert:
-- Regel fuer das naechste Mal:
+- Regel für das nächste Mal:
 - Quelle:
 

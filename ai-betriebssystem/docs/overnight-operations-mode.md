@@ -3,7 +3,7 @@
 ## Executive Summary
 
 Overnight Operations Mode ist eine operator-armierte Batch Green Path Execution.
-Der Operator startet abends einen ausdruecklichen Lauf. Codex bearbeitet nachts
+Der Operator startet abends einen ausdRücklichen Lauf. Codex bearbeitet nachts
 nur reife, freigegebene Issues, erstellt PRs mit Evidence und stoppt bei
 unklaren Entscheidungen. Nachts wird nicht gemerged. Morgens entscheidet der
 Operator anhand der Nightly Summary, der PR Bodies und der GitHub-Ampel.
@@ -14,7 +14,7 @@ Abend-Prompt ist der Trigger, das Morning Merge Gate bleibt menschlich.
 
 ## Die 10 harten Gesetze des Overnight Mode
 
-1. Ein Overnight Run startet nur durch einen ausdruecklichen Abend-Prompt des
+1. Ein Overnight Run startet nur durch einen ausdRücklichen Abend-Prompt des
    Operators.
 2. Bearbeitet werden nur offene Issues mit `agent:ready` und
    `overnight:approved`.
@@ -39,7 +39,7 @@ Der MVP besteht nur aus:
 - Auswahl offener Issues mit `agent:ready` und `overnight:approved`.
 - Bearbeitung in begrenzten Worktrees und Branches.
 - PR-Erstellung mit Validation Evidence und Closeout.
-- Nightly Summary fuer den Operator.
+- Nightly Summary für den Operator.
 - Morning Review durch den Operator.
 
 Nicht Teil des MVP sind Cron, Scheduler, Runner, Dashboard, GitHub Action,
@@ -52,20 +52,20 @@ Auto-Merge, eigene Bot-Zyklen, neue State-Dateien oder eine zweite Wahrheit.
 | Ticket-Auswahl | Offene `agent:ready` + `overnight:approved` Issues aus dem Abend-Prompt | Eingeschraenkte Issue-Nummern aus dem Prompt | Beliebige Queue-Erweiterung |
 | Code/Doku-Aenderung | Kleine Docs, Templates, Tests, klar begrenzte Repo-Dateien | Standard-Risiko-Code mit starker lokaler Validation | Protected-/Release-Code nachts schreiben |
 | Validation | Im Ticket genannte lokale Checks | Plausible Ersatzchecks mit dokumentiertem Gap | Erfolg ohne Evidence behaupten |
-| Labels | `agent:ready` entfernen, `agent:running` setzen, `overnight:approved` nach PR/Skip/Blockade entfernen | `blocked` nur mit Entscheidungsvorlage | Eigene PRs mit `review:pass` oder `auto-merge:ok` gruenschalten |
+| Labels | `agent:ready` entfernen, `agent:running` setzen, `overnight:approved` nach PR/Skip/Blockade entfernen | `blocked` nur mit Entscheidungsvorlage | Eigene PRs mit `review:pass` oder `auto-merge:ok` grünschalten |
 | PRs | Draft/ready PR mit Evidence und `Closes #...` | PR mit offenem Restrisiko und Review Recommendation | Nacht-Merge oder Selbstreview als Review of Record |
-| Entscheidungen | Scope-Treue, mechanische Repo-Hygiene, Stop bei roten Kriterien | Gelb-Faelle fuer Morning Review vorbereiten | Produkt-, Safety-, Legal-, Privacy-, Release- oder Waiver-Entscheidungen treffen |
+| Entscheidungen | Scope-Treue, mechanische Repo-Hygiene, Stop bei roten Kriterien | Gelb-Faelle für Morning Review vorbereiten | Produkt-, Safety-, Legal-, Privacy-, Release- oder Waiver-Entscheidungen treffen |
 
-## Ticket-Reifegrad fuer `overnight:approved`
+## Ticket-Reifegrad für `overnight:approved`
 
-`overnight:approved` darf nur ein bereits reifes `agent:ready` Issue fuer einen
+`overnight:approved` darf nur ein bereits reifes `agent:ready` Issue für einen
 konkreten Overnight Run vormerken. Es ersetzt `agent:ready` nicht.
 
 Ein Ticket ist overnight-reif, wenn alle Punkte gelten:
 
 - Ziel, Scope, Nicht-Ziele und Akzeptanzkriterien sind konkret.
-- Required Verification ist nachts lokal oder ueber GitHub plausibel laufbar.
-- Der Lauf ist entscheidungsfrei oder enthaelt klare Stop-Regeln.
+- Required Verification ist nachts lokal oder über GitHub plausibel laufbar.
+- Der Lauf ist entscheidungsfrei oder enthält klare Stop-Regeln.
 - Risk lane ist `low` oder `standard`.
 - Keine Protected- oder Release-Codearbeit ist erforderlich.
 - Erwarteter Diff bleibt im Limit: ca. 400 Zeilen und max. 15 Dateien.
@@ -74,7 +74,7 @@ Ein Ticket ist overnight-reif, wenn alle Punkte gelten:
 - Execution Mode ist gesetzt; Subagents sind entweder `NOT_REQUIRED` oder
   konkret beschrieben.
 
-Der Operator oder eine ausdrueckliche Operator-Anweisung setzt
+Der Operator oder eine ausdRückliche Operator-Anweisung setzt
 `overnight:approved`. Codex entfernt es nach PR-Erstellung, Skip oder Blockade.
 
 ## Worktree-Modell
@@ -94,12 +94,12 @@ Regeln:
 - Ein bestehender Issue-Branch wird wiederverwendet, wenn das Issue bereits
   `agent:running` ist oder der PR eindeutig fortgesetzt werden muss.
 - Keine zwei Agenten arbeiten gleichzeitig am selben Issue, Branch oder PR.
-- Unrelated dirty state wird nicht uebernommen, gestaged oder bereinigt.
+- Unrelated dirty state wird nicht übernommen, gestaged oder bereinigt.
 
 ## Heartbeat-Format und Pflichtzeitpunkte
 
-Heartbeats sind GitHub-Kommentare am Issue oder PR. Sie muessen kurz,
-maschinenlesbar und fuer den Operator scanbar sein.
+Heartbeats sind GitHub-Kommentare am Issue oder PR. Sie müssen kurz,
+maschinenlesbar und für den Operator scanbar sein.
 
 Copy-paste-Format:
 
@@ -149,7 +149,7 @@ oder PR. Wenn praktikabel, verlinkt die Summary die betroffenen Issues und PRs.
    - nein: skippen, nicht improvisieren.
 4. Ist der Scope nachts entscheidungsfrei?
    - ja: umsetzen.
-   - nein: blockieren oder fuer Morning Review markieren.
+   - nein: blockieren oder für Morning Review markieren.
 5. Ist Validation ausfuehrbar?
    - ja: laufen lassen und Evidence in PR Body.
    - nein: stoppen, fehlenden Verifier konkret benennen.
@@ -162,7 +162,7 @@ Codex stoppt oder skippt, wenn eines gilt:
 - mehr als 4 Tickets im Run noetig waeren.
 - mehr als 2 Worktrees parallel noetig waeren.
 - mehr als 1 Fixloop je PR noetig waere.
-- der erwartete Diff ca. 400 Zeilen oder 15 Dateien ueberschreitet.
+- der erwartete Diff ca. 400 Zeilen oder 15 Dateien überschreitet.
 - bereits 6 offene Agent-PRs im Repo existieren.
 - Protected-/Release-Code geschrieben werden muesste.
 - Required Verification fehlt oder nachts nicht lauffaehig ist.
@@ -178,21 +178,21 @@ Anti-Spam:
   45 Minuten aktiver Arbeit.
 - Kein Issue mehrfach kommentieren, wenn derselbe Stop-Grund unveraendert ist.
 - Keine neuen Follow-up-Issues nachts, ausser der Abend-Prompt erlaubt es
-  ausdruecklich.
+  ausdRücklich.
 - Keine Label-Explosion. `overnight:approved` ist das einzige
   Overnight-Auswahllabel.
 
-## Subagent-Regeln fuer Overnight
+## Subagent-Regeln für Overnight
 
 Subagents sind interne Codex-Ausfuehrungshelfer, keine neue operative Rolle.
 
 - `Subagents: NOT_REQUIRED`: keine Subagents starten.
 - `Subagents: REQUIRED`: nur die im Issue beschriebenen Subagents starten.
-- Bevorzugt read-only Subagents fuer Exploration, Validation und Risiko.
+- Bevorzugt read-only Subagents für Exploration, Validation und Risiko.
 - Ein haengender oder unbrauchbarer Subagent bekommt maximal einen Recovery-
   Versuch.
 - Degraded mode ist nur erlaubt, wenn die fehlende Analyse read-only war, sicher
-  rekonstruierbar ist und keine kritische Risiko- oder Verifier-Pruefung fehlt.
+  rekonstruierbar ist und keine kritische Risiko- oder Verifier-Prüfung fehlt.
 - Subagent-Ergebnisse, Recovery, degraded-mode-Entscheidung und Restrisiko
   stehen im PR Body.
 
@@ -204,7 +204,7 @@ Green Path Execution:
 - Der Operator beauftragt abends einen Batch.
 - Codex arbeitet bounded, evidence-first und PR-basiert.
 - Der Green Path endet nachts beim PR und der Nightly Summary, nicht beim Merge.
-- Morgens prueft der Operator die Ampel und entscheidet ueber Merge, Review,
+- Morgens prüft der Operator die Ampel und entscheidet über Merge, Review,
   Fix oder Blockade.
 
 Loop Readiness bleibt `L2 Assisted`, weil:
@@ -214,7 +214,7 @@ Loop Readiness bleibt `L2 Assisted`, weil:
 - PRs Review of Record und Morning Merge Gate brauchen.
 - kein Cron, Scheduler, Bot-Zyklus, Auto-Merge oder hidden state existiert.
 
-## Was ausdruecklich nicht gebaut wird
+## Was ausdRücklich nicht gebaut wird
 
 - Kein Dashboard.
 - Kein Runner.
@@ -223,7 +223,7 @@ Loop Readiness bleibt `L2 Assisted`, weil:
 - Kein Auto-Merge.
 - Kein eigener Run-State wie `NIGHT.md`, `STATE.md` oder `LOOP.md`.
 - Keine operative Wahrheit ausserhalb von GitHub.
-- Keine Labels fuer `stale`, `abandoned`, `night`, `heartbeat`, `batch`,
+- Keine Labels für `stale`, `abandoned`, `night`, `heartbeat`, `batch`,
   `worktree` oder `run:*`.
 - Keine automatische Ticket-Erzeugung nachts.
 - Keine Protected-/Release-Code-PRs bei Nacht.

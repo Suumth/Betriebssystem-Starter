@@ -177,9 +177,9 @@ explicit issue permission.
 
 When `Subagents: REQUIRED`, no PASS if required subagent findings or Subagent Failure Policy evidence are missing from the PR body or clearly linked PR evidence.
 
-PASS can be Gruen or Gelb:
+PASS can be Grün or Gelb:
 
-- Gruen: `review:pass` and `auto-merge:ok`; no `needs-human`, `needs-fix` or `blocked`.
+- Grün: `review:pass` and `auto-merge:ok`; no `needs-human`, `needs-fix` or `blocked`.
 - Gelb: `review:pass` and `needs-human`; Auto-Merge is forbidden until the Operator decides.
 - Rot: `needs-fix` or `blocked`; no merge.
 

@@ -4,7 +4,7 @@
 
 Beschreibe den dauerhaften Nutzen in 3-5 Saetzen.
 
-## Fuer wen?
+## Für wen?
 
 - Primaere Nutzer:
 - Sekundaere Nutzer:

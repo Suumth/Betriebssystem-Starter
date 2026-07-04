@@ -1,6 +1,6 @@
 # AI-Betriebssystem START HERE
 
-Dies ist der Methodenbereich des Starters. Er bleibt vollstaendig und neutral.
+Dies ist der Methodenbereich des Starters. Er bleibt vollständig und neutral.
 
 ## Lies zuerst
 
@@ -18,7 +18,7 @@ Dies ist der Methodenbereich des Starters. Er bleibt vollstaendig und neutral.
 - Builder setzt ein Issue um.
 - Reviewer liefert den getrennten Review of Record.
 - PM Signal verdichtet operative Signale.
-- Operator entscheidet ueber Merge, Human Gate, Fix-Schleife und Vault-Rueckfluss.
+- Operator entscheidet über Merge, Human Gate, Fix-Schleife und Vault-Rueckfluss.
 
 ## Platzhalter
 

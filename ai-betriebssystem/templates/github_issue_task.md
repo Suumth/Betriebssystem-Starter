@@ -133,11 +133,11 @@ Welche Nachweise müssen in PR oder Issue?
 - Fehlerklassifikation, falls blockiert
 - Wenn `Subagents: REQUIRED`: gestartete Subagents, Befunde und umsetzungsrelevante Entscheidungen
 - Wenn Subagent Failure Policy greift: `subagent_timeout`, `subagent_no_result` oder `subagent_blocked`, Recovery, degraded-mode-Entscheidung, Ersatzanalyse und Restrisiko
-- Wenn Attempt Budget & Escalation greift: verwendete Versuche, letzter fehlgeschlagener Check/Review-Punkt, Failure Classification, vermutete Ursache und empfohlene naechste Pruef- oder Entscheidungsinstanz
+- Wenn Attempt Budget & Escalation greift: verwendete Versuche, letzter fehlgeschlagener Check/Review-Punkt, Failure Classification, vermutete Ursache und empfohlene nächste Prüf- oder Entscheidungsinstanz
 
 ## Closeout Requirements
 
-Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. Review of Record muss dort primaer finden koennen:
+Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. Review of Record muss dort primaer finden können:
 
 - Summary
 - Changed Files
@@ -152,9 +152,9 @@ Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. 
 - Review Recommendation
 - Harness Failure Classification
 
-Fallback/Ergaenzung: Ein PR-Kommentar ist nur erlaubt, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusaetzliche Evidence/Notes ergaenzt werden muessen. Wenn ein PR-Kommentar wichtige Closeout-Information enthaelt, muss der PR Body kurz darauf verweisen.
+Fallback/Ergaenzung: Ein PR-Kommentar ist nur erlaubt, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusaetzliche Evidence/Notes ergänzt werden müssen. Wenn ein PR-Kommentar wichtige Closeout-Information enthält, muss der PR Body kurz darauf verweisen.
 
-Wenn dieses Ticket besondere Closeout-Pflichten hat, muessen sie hier explizit stehen. Globale Contracts, Skills oder `AGENTS.md` liefern Struktur und Erinnerung, ersetzen aber keine task lokalen Spezialanforderungen.
+Wenn dieses Ticket besondere Closeout-Pflichten hat, müssen sie hier explizit stehen. Globale Contracts, Skills oder `AGENTS.md` liefern Struktur und Erinnerung, ersetzen aber keine task lokalen Spezialanforderungen.
 
 Builder-Regeln:
 

@@ -14,4 +14,4 @@ Diese Sicht verdichtet bis zu neun Teilprojekte aus GitHub-Artefakten. Sie ist k
 | 8 |  |  |  |  |  |  |  |
 | 9 |  |  |  |  |  |  |  |
 
-Alle Eintraege muessen auf GitHub Issues, PRs, Commits, Closeouts, `docs/pm/*.md` oder `docs/adr/*.md` zurueckfuehrbar sein.
+Alle Eintraege müssen auf GitHub Issues, PRs, Commits, Closeouts, `docs/pm/*.md` oder `docs/adr/*.md` zurückfuehrbar sein.

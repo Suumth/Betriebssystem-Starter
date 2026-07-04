@@ -4,7 +4,7 @@
 
 Der Mensch ist kein Code-Reviewer.
 
-Der Mensch ist Freigabe-Operator. Code-Pruefung bedeutet in diesem Betriebssystem: Der Mensch beauftragt ChatGPT, Codex, @codex review oder bei Bedarf Claude Code mit der Pruefung. Mehr technische Codebeurteilung wird vom Menschen nicht erwartet.
+Der Mensch ist Freigabe-Operator. Code-Prüfung bedeutet in diesem Betriebssystem: Der Mensch beauftragt ChatGPT, Codex, @codex review oder bei Bedarf Claude Code mit der Prüfung. Mehr technische Codebeurteilung wird vom Menschen nicht erwartet.
 
 ## Warum
 
@@ -27,7 +27,7 @@ Sicherheit entsteht stattdessen durch den Harness:
 | --- | --- |
 | Codex Builder | Umsetzung, Tests, Evidence, PR |
 | Codex Review / @codex review | Standard-Codepruefung und Review of Record |
-| ChatGPT Pro | Meta-Review, Ticket-Schnitt, Entscheidungsvorlage, optional PR-Pruefung |
+| ChatGPT Pro | Meta-Review, Ticket-Schnitt, Entscheidungsvorlage, optional PR-Prüfung |
 | Claude Code | Premium-/Eskalationsreview oder Umsetzung nach menschlicher Freigabe |
 | Mensch | Freigabe-Operator, Risikowahl, Merge-Policy-Entscheidung |
 
@@ -43,7 +43,7 @@ Sondern:
 
 ## Ampellogik
 
-### Gruen: Auto-Merge erlaubt
+### Grün: Auto-Merge erlaubt
 
 Auto-Merge ist erlaubt, wenn der PR folgende Bedingungen erfuellt:
 
@@ -78,8 +78,8 @@ Die Entscheidung lautet dann nicht: Code lesen.
 
 Sondern:
 
-- Codex nochmal pruefen lassen
-- ChatGPT Pro PR pruefen lassen
+- Codex nochmal prüfen lassen
+- ChatGPT Pro PR prüfen lassen
 - Claude Code Review freigeben
 - abends Batch-Review laufen lassen
 - Risiko akzeptieren
@@ -87,7 +87,7 @@ Sondern:
 
 ### Gelb/Rot Review-Empfehlung
 
-Bei Gelb und Rot muss der Harness eine konkrete Review-Empfehlung liefern. Der Operator soll nicht selbst herausfinden muessen, wen er beauftragt.
+Bei Gelb und Rot muss der Harness eine konkrete Review-Empfehlung liefern. Der Operator soll nicht selbst herausfinden müssen, wen er beauftragt.
 
 Pflichtfelder:
 
@@ -132,7 +132,7 @@ Reviewticket nicht anlegen bei:
 
 - klarer `needs-fix` Kommentar reicht
 - kleiner Doku-/Evidence-Mangel
-- mechanischer Nachweis fehlt und kann im selben PR ergaenzt werden
+- mechanischer Nachweis fehlt und kann im selben PR ergänzt werden
 
 Reviewticket-Titel:
 
@@ -180,9 +180,9 @@ Auch bei Rot gilt: Der Harness liefert eine Review- oder Fix-Empfehlung inklusiv
 
 ## Protected Areas
 
-Protected Areas duerfen von Codex bearbeitet werden, wenn das Ticket sauber geschnitten ist.
+Protected Areas dürfen von Codex bearbeitet werden, wenn das Ticket sauber geschnitten ist.
 
-Sie duerfen aber nicht blind gemerged werden.
+Sie dürfen aber nicht blind gemerged werden.
 
 Protected Areas brauchen staerkere Evidence, einen expliziten Review of Record oder eine Operator-Entscheidung.
 
@@ -199,17 +199,17 @@ Beispiele:
 
 ## Tagesbranch-Logik
 
-Codex darf tagsueber auf Branches arbeiten. Branches sind Arbeitsraeume, nicht Freigaben.
+Codex darf tagsüber auf Branches arbeiten. Branches sind Arbeitsraeume, nicht Freigaben.
 
 Abends oder nach Batch-Ende werden PRs nach Ampel sortiert:
 
-- Gruen: Auto-Merge oder mechanischer Merge
+- Grün: Auto-Merge oder mechanischer Merge
 - Gelb: Operator-Entscheidung mit Review-Empfehlung
 - Rot: Fix oder blocked mit Review-/Fix-Empfehlung
 
 ## Green Path Completion
 
-Ein gruener Merge ist erst abgeschlossen, wenn Codex danach die lokale Hygiene ausgefuehrt hat:
+Ein grüner Merge ist erst abgeschlossen, wenn Codex danach die lokale Hygiene ausgefuehrt hat:
 
 ```text
 gh pr merge <PR> --squash --delete-branch
@@ -218,23 +218,23 @@ git pull --ff-only origin main
 git status
 ```
 
-Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgefuehrt, nicht bestaetigt. Wenn `main` sauber ist, sucht Codex in der Standardreihenfolge nach dem naechsten bearbeitbaren Ticket: `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
+Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgefuehrt, nicht bestaetigt. Wenn `main` sauber ist, sucht Codex in der Standardreihenfolge nach dem nächsten bearbeitbaren Ticket: `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 
-Wenn kein naechstes Ticket existiert, dokumentiert Codex den Idle-/Complete-Zustand. Wenn ein Stop-Grund wie fehlgeschlagener Merge, fehlgeschlagener Pull, dirty Working Tree, fehlende Berechtigung, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-Entscheidung oder unklare Evidence vorliegt, stoppt Codex mit Entscheidungsvorlage.
+Wenn kein nächstes Ticket existiert, dokumentiert Codex den Idle-/Complete-Zustand. Wenn ein Stop-Grund wie fehlgeschlagener Merge, fehlgeschlagener Pull, dirty Working Tree, fehlende Berechtigung, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-Entscheidung oder unklare Evidence vorliegt, stoppt Codex mit Entscheidungsvorlage.
 
 ## Batch Green Path Execution
 
-Wenn der Nutzer ausdruecklich einen Ticket-Batch beauftragt, darf Codex nach jedem gruenen PR mit dem naechsten beauftragten, reifen Ticket fortsetzen. Die Batch-Groesse kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl.
+Wenn der Nutzer ausdRücklich einen Ticket-Batch beauftragt, darf Codex nach jedem grünen PR mit dem nächsten beauftragten, reifen Ticket fortsetzen. Die Batch-Groesse kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl.
 
 Vor jeder Fortsetzung muss der vorherige Green Path abgeschlossen sein:
 
 ```text
-PR Review of Record pruefen
+PR Review of Record prüfen
 Merge gemaess Green-Path-Regel durchfuehren
 git checkout main
 git pull --ff-only origin main
 git status
-naechstes beauftragtes ready Ticket uebernehmen
+nächstes beauftragtes ready Ticket übernehmen
 ```
 
 Stop gilt bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder keinem weiteren beauftragten Ticket.
@@ -243,7 +243,7 @@ Details: `docs/green-path-completion.md`.
 
 ## PR-Closeout Pflichtfelder
 
-Jeder PR soll fuer den Operator lesbar sein:
+Jeder PR soll für den Operator lesbar sein:
 
 ```markdown
 ### Vault Impact
@@ -285,4 +285,4 @@ Du bist nicht der Code-Reviewer.
 
 Du bist der Freigabe-Operator.
 
-Der Harness muss dir die Ampel und die naechste Review-Beauftragung liefern.
+Der Harness muss dir die Ampel und die nächste Review-Beauftragung liefern.

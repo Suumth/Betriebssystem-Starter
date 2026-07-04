@@ -43,7 +43,7 @@ agent may directly mutate the AI Vault without explicit issue permission.
 
 Choose one result:
 
-- PASS/Gruen: set or recommend `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`.
+- PASS/Grün: set or recommend `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`.
 - PASS/Gelb: set or recommend `review:pass` + `needs-human`; remove `auto-merge:ok`; include Review Recommendation.
 - NEEDS-FIX/Rot: set or recommend `needs-fix`; remove `review:pass`, `auto-merge:ok` and `needs-human`; give concrete fix instructions.
 - BLOCKED/Rot: set or recommend `blocked`; remove `needs-human`, `needs-fix`, `review:pass` and `auto-merge:ok`; write a decision request.

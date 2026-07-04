@@ -2,9 +2,9 @@
 
 Diese Vorlage wird im jeweiligen Projekt-Repo als kanonische Projektanweisung abgelegt, bevorzugt als `PROJECT.md`. Alternativ ist `docs/project-instructions.md` erlaubt, wenn das Projekt diesen Pfad explizit im Startpaket und in Tool-Bootstrap-Anweisungen nennt.
 
-Die Datei muss ueber GitHub erreichbar sein. Cloud-KIs wie ChatGPT, Claude oder Gemini bekommen eine GitHub-URL zu dieser Datei, keinen lokalen Pfad.
+Die Datei muss über GitHub erreichbar sein. Cloud-KIs wie ChatGPT, Claude oder Gemini bekommen eine GitHub-URL zu dieser Datei, keinen lokalen Pfad.
 
-Tool-spezifische Projektanweisungen fuer ChatGPT, Claude, Codex oder spaetere KI-Tools duerfen nur auf diese Datei zeigen. Kein KI-Tool bekommt eigene Sonderwahrheit.
+Tool-spezifische Projektanweisungen für ChatGPT, Claude, Codex oder spätere KI-Tools dürfen nur auf diese Datei zeigen. Kein KI-Tool bekommt eigene Sonderwahrheit.
 
 ## Project Identity
 
@@ -20,11 +20,11 @@ Tool-spezifische Projektanweisungen fuer ChatGPT, Claude, Codex oder spaetere KI
 
 ## Online-first Source Policy
 
-- Tool-spezifische Projektanweisungen fuer ChatGPT, Claude, Gemini und andere Cloud-KIs duerfen keine lokalen Pfade referenzieren.
-- Sie muessen auf die GitHub-URL dieser repo-basierten Projektanweisung verweisen.
-- Diese repo-basierte Projektanweisung muss daher ueber GitHub erreichbar sein, z. B. als `PROJECT.md` oder `docs/project-instructions.md`.
-- Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschliesslich Fallbacks fuer lokale Agenten wie Codex.
-- Jede KI erhaelt dieselbe minimale Bootstrap-Anweisung: zuerst diese Projektanweisung ueber GitHub lesen, danach ausschliesslich nach den hier definierten Quellen arbeiten.
+- Tool-spezifische Projektanweisungen für ChatGPT, Claude, Gemini und andere Cloud-KIs dürfen keine lokalen Pfade referenzieren.
+- Sie müssen auf die GitHub-URL dieser repo-basierten Projektanweisung verweisen.
+- Diese repo-basierte Projektanweisung muss daher über GitHub erreichbar sein, z. B. als `PROJECT.md` oder `docs/project-instructions.md`.
+- Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschließlich Fallbacks für lokale Agenten wie Codex.
+- Jede KI erhaelt dieselbe minimale Bootstrap-Anweisung: zuerst diese Projektanweisung über GitHub lesen, danach ausschließlich nach den hier definierten Quellen arbeiten.
 
 ## Drei-Quellen-Router
 
@@ -35,20 +35,20 @@ Tool-spezifische Projektanweisungen fuer ChatGPT, Claude, Codex oder spaetere KI
    - Rolle: operative Wahrheit.
    - Hier klaeren: Issues, PRs, Kommentare, Labels, AGENTS.md, Code, Repo-Dateien, Build-/Test-Evidence und aktueller Status.
 3. AI Vault
-   - Rolle: Strategie und Produktgedaechtnis.
+   - Rolle: Strategie und Produktgedächtnis.
    - Hier klaeren: Strategie, Zielbild, Produktentscheidungen, Nicht-Ziele, langfristige Risiken, Roadmap und Produktbrief.
 
 ## AI Vault Access for Cloud KIs
 
-Der AI Vault bleibt die kanonische Wahrheit fuer Strategie, Zielbild und Produktgedaechtnis. Cloud-KIs koennen lokale Vault-Pfade aber nicht lesen.
+Der AI Vault bleibt die kanonische Wahrheit für Strategie, Zielbild und Produktgedächtnis. Cloud-KIs können lokale Vault-Pfade aber nicht lesen.
 
-AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benoetigen, muessen deshalb online erreichbar gemacht werden:
+AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benoetigen, müssen deshalb online erreichbar gemacht werden:
 
 - als GitHub-Dateien,
-- ueber GitHub referenziert,
+- über GitHub referenziert,
 - oder in geeigneter Form ins Projekt-Repo gespiegelt.
 
-Die Spiegelung ist ein Online-Einstieg fuer KI-Tools, nicht die neue strategische Wahrheit. Wenn Spiegelung und AI Vault abweichen, muss der Unterschied als Aktualisierungsbedarf markiert werden.
+Die Spiegelung ist ein Online-Einstieg für KI-Tools, nicht die neue strategische Wahrheit. Wenn Spiegelung und AI Vault abweichen, muss der Unterschied als Aktualisierungsbedarf markiert werden.
 
 ## Key Sources
 
@@ -69,18 +69,18 @@ Die Spiegelung ist ein Online-Einstieg fuer KI-Tools, nicht die neue strategisch
 
 ## Working Rules
 
-- Vor Ticket-Erstellung relevante Quellen pruefen: Methode im AI-Betriebssystem, operative Lage im Projekt-Repo, strategischen Kontext im AI Vault.
+- Vor Ticket-Erstellung relevante Quellen prüfen: Methode im AI-Betriebssystem, operative Lage im Projekt-Repo, strategischen Kontext im AI Vault.
 - Tickets nach dem AI-Betriebssystem Ticket Contract und den Regeln aus `AGENTS.md` im Projekt-Repo schneiden.
 - Ein Ticket bekommt nur `agent:ready`, wenn Ziel, Boundary, Nicht-Ziele, Akzeptanzkriterien, Validierung, Evidence, Closeout und Stop condition klar sind.
 - Bei Unsicherheit grillen, nicht bauen: erst Begriffe, Scope, Produktentscheidung oder fehlende Evidence klaeren.
 - Keine neue Projektwahrheit im KI-Tool erfinden. Unklare Punkte als Fragen, Issue-Vorschlaege oder Decision-/Vault-Update-Vorschlaege ausgeben.
 - Keine erledigte Arbeit behaupten ohne Repo-Evidence: Issue, PR, Commit, Review, Closeout oder versionierte Datei.
-- Nach erfolgreichem gruenem Merge endet der Green Path erst nach lokaler Hygiene: `git checkout main`, `git pull --ff-only origin main`, `git status`, danach naechstes bearbeitbares Ticket oder dokumentierter Stop.
+- Nach erfolgreichem grünem Merge endet der Green Path erst nach lokaler Hygiene: `git checkout main`, `git pull --ff-only origin main`, `git status`, danach nächstes bearbeitbares Ticket oder dokumentierter Stop.
 
 ## No-Duplication Rule
 
 - Tool-spezifische Projektanweisungen sind nur Bootstrap-Pointer auf diese Datei.
-- Tool-spezifische Projektanweisungen fuer Cloud-KIs zeigen auf die GitHub-URL dieser Datei, nicht auf lokale Pfade.
+- Tool-spezifische Projektanweisungen für Cloud-KIs zeigen auf die GitHub-URL dieser Datei, nicht auf lokale Pfade.
 - Diese Datei verweist auf Projektwahrheit, statt lange Strategie oder Roadmaps zu kopieren.
 - Strategische Wahrheit gehoert in den AI Vault, nicht in Tool-Anweisungen und nicht in zufaellige Issue-Kommentare.
 - Operative Wahrheit gehoert ins Projekt-Repo, nicht in ChatGPT-, Claude-, Codex- oder andere Tool-Anweisungen.

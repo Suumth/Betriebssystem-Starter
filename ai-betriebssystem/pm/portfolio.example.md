@@ -2,11 +2,11 @@
 
 Generated: YYYY-MM-DDTHH:MM:SSZ
 
-## Uebersicht
+## Übersicht
 
 | Projekt | Status | Naechstes Signal | Offene Human Gates |
 | --- | --- | --- | --- |
-| Example Project | Gruen: Review of Record sichtbar | Ticket 0 abgeschlossen | 0 |
+| Example Project | Grün: Review of Record sichtbar | Ticket 0 abgeschlossen | 0 |
 
 ## Projekt: example-org/example-repo
 

@@ -1,6 +1,6 @@
 # Teilprojekt Contract
 
-Der Teilprojekt Contract definiert das PM-Lagebild fuer Projekt-Repos. Er
+Der Teilprojekt Contract definiert das PM-Lagebild für Projekt-Repos. Er
 macht Teilprojekte und Produktversprechen sichtbar, ohne eine zweite operative
 Wahrheit neben GitHub zu schaffen.
 
@@ -25,7 +25,7 @@ Produktwirksame reife Tickets brauchen einen Milestone, wenn sie als
 Ergebnis ein Nutzer-, Produkt-, Release-, Beta-, Surface-, Architektur- oder
 Qualitaetsversprechen beruehrt.
 
-Tickets ohne Milestone sind erlaubt, wenn sie ausdruecklich nicht
+Tickets ohne Milestone sind erlaubt, wenn sie ausdRücklich nicht
 teilprojektbezogen sind:
 
 - repo-hygiene;
@@ -43,7 +43,7 @@ Risiko- oder Agentensignale gemaess Label Contract.
 Produktversprechen werden in `PROJECT.md` gefuehrt. Tickets beweisen
 Umsetzungsschritte, aber nicht automatisch Produktversprechen.
 
-Das Register enthaelt je Produktversprechen:
+Das Register enthält je Produktversprechen:
 
 - Teilprojekt / Milestone;
 - Produktversprechen;
@@ -70,21 +70,21 @@ Anti-Bloat-Leitplanken:
 Wenn ein Projekt mehr braucht, ist das ein Signal, das Lagebild zu schneiden
 oder Teilprojekte zusammenzufassen, nicht mehr Statusmechanik einzufuehren.
 
-## Zustandslogik fuer Teilprojekte
+## Zustandslogik für Teilprojekte
 
 Das Lagebild nutzt nur diese Zustaende:
 
 | Zustand | Bedeutung |
 | --- | --- |
 | `erledigt` | Milestone ist geschlossen oder alle produktwirksamen Issues sind geschlossen und haben Review-/PR-Evidence. |
-| `in Review` | Es gibt offene oder kuerzlich gelieferte Arbeit mit PR-/Review-Bezug, aber noch keine gruene Entscheidung. |
+| `in Review` | Es gibt offene oder kuerzlich gelieferte Arbeit mit PR-/Review-Bezug, aber noch keine grüne Entscheidung. |
 | `blockiert` | Mindestens ein relevantes Issue/PR ist `blocked` oder ein erforderlicher Human-/Operator-Entscheid fehlt. |
 | `offen` | Es gibt offene produktwirksame Arbeit ohne rotes oder gelbes Gate. |
 | `Risiko offen` | Es gibt offene Risiken, fehlende Evidence oder produktwirksame Unsicherheit ohne harten Blocker. |
-| `unklar` | GitHub Milestone, Issue-Zuordnung, Evidence oder PROJECT-Register reichen nicht fuer eine belastbare Ableitung. |
+| `unklar` | GitHub Milestone, Issue-Zuordnung, Evidence oder PROJECT-Register reichen nicht für eine belastbare Ableitung. |
 
 Zustaende werden aus GitHub und `PROJECT.md` abgeleitet. Sie werden nicht in
-separate Dateien zurueckgeschrieben.
+separate Dateien zurückgeschrieben.
 
 ## Ampel-Logik
 
@@ -95,12 +95,12 @@ abgeleitet.
 | --- | --- |
 | Rot | `blockiert`, offene `blocked`-Items oder phasenkritische offene Versprechen in Beta-/Release-Phase. |
 | Gelb | `in Review`, `Risiko offen`, `unklar`, `needs-human` oder `needs-fix`. |
-| Gruen | `erledigt` oder offenes Teilprojekt ohne Gates und mit belegbarer Bewegung. |
+| Grün | `erledigt` oder offenes Teilprojekt ohne Gates und mit belegbarer Bewegung. |
 
-Die Projekt-Ampel ist ein Worst-of ueber phasenkritische Teilprojekte. Das
+Die Projekt-Ampel ist ein Worst-of über phasenkritische Teilprojekte. Das
 Portfolio bekommt keine Gesamtampel.
 
-Jede Ampel braucht eine klickbare Begruendung, zum Beispiel Milestone, Issue,
+Jede Ampel braucht eine klickbare Begründung, zum Beispiel Milestone, Issue,
 PR, Review, Closeout oder PROJECT-Evidence-Link.
 
 ## Verbotene Signale
@@ -115,7 +115,7 @@ Das Lagebild darf nicht verwenden:
 - Trendpfeile aus Ticketzaehlungen.
 
 Fortschritt wird als Zustand und rohe Zaehlstaende gezeigt, zum Beispiel
-erledigte/offene/blockierte Issues. Diese Zaehlstaende sind Belege fuer
+erledigte/offene/blockierte Issues. Diese Zaehlstaende sind Belege für
 Arbeitslage, keine Produktversprechen.
 
 ## Regenerierbarkeit

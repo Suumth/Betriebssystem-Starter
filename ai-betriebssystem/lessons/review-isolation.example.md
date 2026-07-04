@@ -2,11 +2,11 @@
 
 ## Kontext
 
-Builder und Reviewer duerfen im selben Arbeitsfluss vorkommen, aber nicht dieselbe Rolle fuer dieselbe Lieferung vermischen.
+Builder und Reviewer dürfen im selben Arbeitsfluss vorkommen, aber nicht dieselbe Rolle für dieselbe Lieferung vermischen.
 
 ## Beobachtung
 
-Ein Review of Record ist nur belastbar, wenn er Scope, Evidence, Risiko, Label-Semantik und Human Gate unabhaengig prueft.
+Ein Review of Record ist nur belastbar, wenn er Scope, Evidence, Risiko, Label-Semantik und Human Gate unabhaengig prüft.
 
 ## Regel
 

@@ -18,13 +18,13 @@ Overnight-Freigabelabel und zwei Merge-/Review-Signale.
 | Label | Wer setzt | Bedeutung |
 |---|---|---|
 | `review:pass` | Review of Record | Der verlinkte PR wurde gegen das Issue geprüft und mit PASS bewertet |
-| `auto-merge:ok` | Review of Record / Operator | Der PR ist ein Gruen-Fall und darf mechanisch gemerged werden, wenn alle Gruen-Kriterien weiterhin gelten |
+| `auto-merge:ok` | Review of Record / Operator | Der PR ist ein Grün-Fall und darf mechanisch gemerged werden, wenn alle Grün-Kriterien weiterhin gelten |
 
 ## Overnight-Freigabelabel
 
 | Label | Wer setzt | Wer entfernt | Bedeutung | Nicht-Bedeutung |
 |---|---|---|---|---|
-| `overnight:approved` | Operator oder ausdrueckliche Operator-Anweisung | Codex nach PR-Erstellung, Skip oder Blockade | Bereits reifes `agent:ready` Ticket darf im naechsten operator-armierten Overnight Run ausgewaehlt werden | Startet keinen Lauf allein, ersetzt kein Statuslabel und erlaubt keinen Nacht-Merge |
+| `overnight:approved` | Operator oder ausdRückliche Operator-Anweisung | Codex nach PR-Erstellung, Skip oder Blockade | Bereits reifes `agent:ready` Ticket darf im nächsten operator-armierten Overnight Run ausgewaehlt werden | Startet keinen Lauf allein, ersetzt kein Statuslabel und erlaubt keinen Nacht-Merge |
 
 ## Bedeutung der Labels
 
@@ -62,7 +62,7 @@ Typische Gründe:
 - Review-Uneinigkeit
 - bewusstes Risiko trotz sonst guter Validierung
 
-`needs-human` ist kein Freigabe-Synonym. Ein gruener PR braucht stattdessen `review:pass`, `auto-merge:ok` und darf kein `needs-human` tragen.
+`needs-human` ist kein Freigabe-Synonym. Ein grüner PR braucht stattdessen `review:pass`, `auto-merge:ok` und darf kein `needs-human` tragen.
 
 ### blocked
 
@@ -70,18 +70,18 @@ Der Agent kann nicht sinnvoll fortsetzen. Der Kommentar muss eine konkrete Entsc
 
 ### overnight:approved
 
-`overnight:approved` ist das einzige zusaetzliche Auswahllabel fuer Overnight
-Operations Mode. Es darf nur zusammen mit `agent:ready` fuer Overnight-Auswahl
+`overnight:approved` ist das einzige zusaetzliche Auswahllabel für Overnight
+Operations Mode. Es darf nur zusammen mit `agent:ready` für Overnight-Auswahl
 verwendet werden.
 
 Semantik:
 
-- Wird vom Operator oder auf ausdrueckliche Operator-Anweisung gesetzt.
+- Wird vom Operator oder auf ausdRückliche Operator-Anweisung gesetzt.
 - Bedeutet: Dieses bereits reife Ticket darf in einem konkreten, abends
   armierten Overnight Run bearbeitet werden.
 - Bedeutet nicht: automatische Ausfuehrung ohne Abend-Prompt.
-- Bedeutet nicht: Status, Review, Gruen-Freigabe oder Merge-Erlaubnis.
-- Ist kein Ersatz fuer `agent:ready`, `agent:running`, `blocked`,
+- Bedeutet nicht: Status, Review, Grün-Freigabe oder Merge-Erlaubnis.
+- Ist kein Ersatz für `agent:ready`, `agent:running`, `blocked`,
   `needs-fix` oder `needs-human`.
 - Wird nach PR-Erstellung, Skip oder Blockade entfernt.
 
@@ -95,11 +95,11 @@ Ein Label allein startet keinen Lauf. Der Abend-Prompt armiert den Run.
 - Ziel, Scope, Nicht-Ziele, Akzeptanzkriterien, Validierung und Evidence wurden bewertet.
 - Ergebnis ist PASS.
 
-`review:pass` alleine erlaubt noch keinen Auto-Merge. Auto-Merge braucht zusätzlich `auto-merge:ok` und alle Gruen-Kriterien aus der Operator Merge Policy.
+`review:pass` alleine erlaubt noch keinen Auto-Merge. Auto-Merge braucht zusätzlich `auto-merge:ok` und alle Grün-Kriterien aus der Operator Merge Policy.
 
 ### auto-merge:ok
 
-`auto-merge:ok` ist das explizite Gruen-Signal. Es darf nur gesetzt werden, wenn:
+`auto-merge:ok` ist das explizite Grün-Signal. Es darf nur gesetzt werden, wenn:
 
 - Issue verlinkt ist
 - Scope eingehalten wurde
@@ -147,12 +147,12 @@ Bei Limit-/Rechte-Abbruch:
 
 Review-Ergebnis:
 
-- PASS/Gruen -> `review:pass` und `auto-merge:ok` setzen, `needs-fix`, `blocked` und `needs-human` entfernen
+- PASS/Grün -> `review:pass` und `auto-merge:ok` setzen, `needs-fix`, `blocked` und `needs-human` entfernen
 - PASS/Gelb -> `review:pass` und `needs-human` setzen, `auto-merge:ok` entfernen, Review Recommendation schreiben
 - NEEDS-FIX/Rot -> `needs-fix` setzen, `needs-human`, `review:pass` und `auto-merge:ok` entfernen, Fix-Empfehlung schreiben
 - BLOCKED/Rot -> `blocked` setzen, `needs-human`, `needs-fix`, `auto-merge:ok` und `review:pass` entfernen, Entscheidungsvorlage schreiben
 
-`blocked` ist staerker als `needs-human`. Beide Labels sollen nicht parallel als Standardzustand stehen, ausser ein Contract begruendet den Sonderfall ausdruecklich.
+`blocked` ist staerker als `needs-human`. Beide Labels sollen nicht parallel als Standardzustand stehen, ausser ein Contract begründet den Sonderfall ausdRücklich.
 
 ## Optionale Lane-Tags
 

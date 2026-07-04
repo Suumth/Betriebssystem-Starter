@@ -56,7 +56,7 @@ Sortierung:
   `codex/issue-<nummer>-<kurztitel>`.
 - Wenn ein passender Issue-PR existiert, setze denselben Branch fort.
 - Erstelle keinen Parallel-PR zum selben Issue.
-- Unrelated dirty state nicht uebernehmen, nicht loeschen und nicht stagen.
+- Unrelated dirty state nicht übernehmen, nicht loeschen und nicht stagen.
 
 ## Execution Mode
 
@@ -89,13 +89,13 @@ Zusaetzlich zu diesen Pflichtzeitpunkten: Bei aktiver Arbeit spaetestens alle
 
 ## Umsetzung
 
-Fuer jedes ausgewaehlte Issue:
+Für jedes ausgewaehlte Issue:
 
 1. Issue, Kommentare, Labels und bestehende PRs lesen.
 2. `agent:ready` entfernen und `agent:running` setzen.
 3. Worktree/Branch vorbereiten oder bestehenden Issue-Branch fortsetzen.
 4. Kleinste sichere Aenderung umsetzen.
-5. Required Verification aus dem Issue ausfuehren.
+5. Required Verification aus dem Issue ausführen.
 6. PR erstellen oder aktualisieren.
 7. PR Body als Primary Closeout Source aktualisieren.
 8. `Closes #<issue-number>` in den PR Body aufnehmen.
@@ -118,7 +118,7 @@ Fuer jedes ausgewaehlte Issue:
 
 Nachts gilt: KEIN MERGE.
 
-Auch bei erfolgreicher Validation, sauberem PR und scheinbar gruenem Scope
+Auch bei erfolgreicher Validation, sauberem PR und scheinbar grünem Scope
 endet der Nachtlauf beim PR und der Nightly Summary. Merges sind
 Operator-Handlungen im Morning Review.
 
@@ -126,7 +126,7 @@ Operator-Handlungen im Morning Review.
 
 Stoppe oder skippe, wenn:
 
-- ein hartes Limit ueberschritten wuerde.
+- ein hartes Limit überschritten wuerde.
 - Scope, Verification, Evidence oder Toolzugang fehlt.
 - Protected-/Release-Code geschrieben werden muesste.
 - eine menschliche Produkt-, Safety-, Legal-, Privacy-, Release- oder

@@ -1,6 +1,6 @@
 # Operator Runbook
 
-Eine Seite fuer den Solo-Operator. Alles andere ist Referenz.
+Eine Seite für den Solo-Operator. Alles andere ist Referenz.
 
 Der Operator hat pro Tag drei Beruehrungspunkte mit dem System: abends planen, morgens starten, danach Ampeln entscheiden. Dieses Runbook beschreibt nur diese Beruehrungspunkte. Es fuehrt keinen Runner, kein Dashboard und keine neue Wahrheit ein.
 
@@ -12,16 +12,16 @@ Der Operator hat pro Tag drei Beruehrungspunkte mit dem System: abends planen, m
    - Verification (konkreter Befehl oder Ablauf)
    - Evidence-Bedingung
    - Stop-Bedingung
-2. Ticket-Tier waehlen:
+2. Ticket-Tier wählen:
    - **Low Risk** (`templates/github_issue_task_low_risk.md`): Risk lane low, keine Subagents, keine wiederholte Loop-Arbeit, eine Oberflaeche.
    - **Full** (`templates/github_issue_task.md`): alles andere, insbesondere protected/release, `Subagents: REQUIRED` oder erwartete Fix-Zyklen.
-3. Erst wenn das Ticket sich selbst pruefen kann: `agent:ready` setzen.
+3. Erst wenn das Ticket sich selbst prüfen kann: `agent:ready` setzen.
 
 Faustregel: Wenn du beim Schreiben des Verification-Blocks zoegern musst, ist das Ticket nicht reif.
 
 ## Morgen: Builder starten (2 Minuten)
 
-1. Ein fokussiertes Repo waehlen. Nur eines pro Lauf.
+1. Ein fokussiertes Repo wählen. Nur eines pro Lauf.
 2. Builder-Prompt aus `prompts/builder-codex.md` in die Codex-App einfuegen, `OWNER/REPO` ersetzen.
 3. Nicht zusaetzlich Kontext einfuegen. Wenn Codex nach Kontext fragt, war das Ticket nicht reif — abends nachschaerfen, nicht im Chat nachliefern.
 
@@ -29,7 +29,7 @@ Codex arbeitet in der Reihenfolge: `needs-fix` → `agent:running` → genau ein
 
 ## Danach: Review anstossen
 
-1. Offene PRs pruefen: `gh pr list --repo OWNER/REPO`
+1. Offene PRs prüfen: `gh pr list --repo OWNER/REPO`
 2. Review of Record starten: `@codex review` am PR oder Reviewer-Prompt aus `prompts/reviewer-claude.md` (nur bei Eskalation, siehe `docs/model-resource-policy.md`).
 3. Der Review endet mit genau einer Ampel.
 
@@ -37,12 +37,12 @@ Codex arbeitet in der Reihenfolge: `needs-fix` → `agent:running` → genau ein
 
 | Ampel | Labels | Operator-Aktion |
 |---|---|---|
-| Gruen | `review:pass` + `auto-merge:ok` | Mergen: `gh pr merge <PR> --squash --delete-branch`. Danach macht Codex die Green-Path-Hygiene selbst. |
+| Grün | `review:pass` + `auto-merge:ok` | Mergen: `gh pr merge <PR> --squash --delete-branch`. Danach macht Codex die Green-Path-Hygiene selbst. |
 | Gelb | `review:pass` + `needs-human` | Entscheidungsvorlage im Review lesen, entscheiden, dann mergen oder Fix-Ticket priorisieren. |
-| Rot | `needs-fix` | Nichts tun. Codex fixt im selben PR beim naechsten Lauf. Nach 2 erfolglosen Fix-Zyklen: Attempt-Budget-Evidence lesen und entscheiden. |
-| Rot | `blocked` | Entscheidungsvorlage lesen, Option waehlen, im Issue/PR antworten. |
+| Rot | `needs-fix` | Nichts tun. Codex fixt im selben PR beim nächsten Lauf. Nach 2 erfolglosen Fix-Zyklen: Attempt-Budget-Evidence lesen und entscheiden. |
+| Rot | `blocked` | Entscheidungsvorlage lesen, Option wählen, im Issue/PR antworten. |
 
-Merken: `needs-human` ist nie eine Freigabe. `auto-merge:ok` nur bei vollstaendig gruenen Kriterien (siehe `contracts/labels.md`).
+Merken: `needs-human` ist nie eine Freigabe. `auto-merge:ok` nur bei vollständig grünen Kriterien (siehe `contracts/labels.md`).
 
 ## Befehls-Spickzettel
 
@@ -55,15 +55,15 @@ gh pr list --repo OWNER/REPO --label needs-human
 # Haengt ein Lauf? agent:running ohne Branch/PR = stale Label
 gh issue list --repo OWNER/REPO --label agent:running
 
-# Gruener Merge
+# Grüner Merge
 gh pr merge <PR> --squash --delete-branch
 ```
 
 ## Woche: Hygiene (einmal, 15 Minuten)
 
-1. PM Signal Lauf mit `templates/pm-signal-prompt.md` fuer den Leiterblick.
-2. Stale Labels pruefen: `agent:running` ohne aktiven Branch/PR zuruecksetzen.
-3. Wenn ein Lauf schlecht war: Harness Failure Classification pruefen und bei wiederkehrendem Muster eine Lesson nach `templates/lesson.md` schreiben. Jede Lesson endet mit einer expliziten Regelanpassungs-Entscheidung.
+1. PM Signal Lauf mit `templates/pm-signal-prompt.md` für den Leiterblick.
+2. Stale Labels prüfen: `agent:running` ohne aktiven Branch/PR zurücksetzen.
+3. Wenn ein Lauf schlecht war: Harness Failure Classification prüfen und bei wiederkehrendem Muster eine Lesson nach `templates/lesson.md` schreiben. Jede Lesson endet mit einer expliziten Regelanpassungs-Entscheidung.
 
 ## Was der Operator nie tut
 

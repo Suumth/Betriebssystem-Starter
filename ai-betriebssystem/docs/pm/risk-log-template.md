@@ -4,4 +4,4 @@
 |---|---|---|---|---|---|---|---|---|
 |  |  |  | low \| medium \| high | low \| medium \| high | open \| watching \| mitigated \| accepted |  |  |  |
 
-Risiken muessen aus GitHub oder bewusst freigegebenen Repo-Dokumenten ableitbar sein. Wenn ein Risiko operativ relevant wird, soll es als Issue, Risk Log-Eintrag oder ADR sichtbar sein.
+Risiken müssen aus GitHub oder bewusst freigegebenen Repo-Dokumenten ableitbar sein. Wenn ein Risiko operativ relevant wird, soll es als Issue, Risk Log-Eintrag oder ADR sichtbar sein.

@@ -2,7 +2,7 @@
 
 ## Entfernen
 
-- Private Quellkopien aus dem veroeffentlichbaren Starterbereich.
+- Private Quellkopien aus dem veröffentlichbaren Starterbereich.
 - `.DS_Store`, `__MACOSX`, `.code-review-graph`, lokale Graph-Datenbanken.
 - Obsidian Workspace State.
 - Echte Projektordner und echte Vault-Inhalte.
@@ -25,7 +25,7 @@
 
 ## Bewusst behalten
 
-- Vollstaendige Contracts.
+- Vollständige Contracts.
 - Review of Record Semantik.
 - Green Path Completion.
 - PM Signal Loop und PM Lagebild Generator.
@@ -35,8 +35,8 @@
 - Human Gate.
 - Public Readiness Check.
 
-## Offene Pruefung
+## Offene Prüfung
 
-- Root `.git` kann noch existieren. Nicht als Inhalt des Starterpakets uebernehmen; fuer ein finales neues Repo frisch initialisieren.
-- Falls neue Beispiele hinzugefuegt werden, danach immer `bash scripts/public-readiness-check.sh` ausfuehren.
+- Root `.git` kann noch existieren. Nicht als Inhalt des Starterpakets übernehmen; für ein finales neues Repo frisch initialisieren.
+- Falls neue Beispiele hinzugefuegt werden, danach immer `bash scripts/public-readiness-check.sh` ausführen.
 

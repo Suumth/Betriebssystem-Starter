@@ -10,12 +10,12 @@ Dieses Pack zeigt, wie ein Methodenrepo selbst betrieben wird.
 
 ## Ziel
 
-Das Methodenrepo bewahrt Contracts, Templates, Prompts, Skills, PM Signal Loop, Migration Runbooks und Public Readiness Checks. Es enthaelt keine privaten Projektspuren.
+Das Methodenrepo bewahrt Contracts, Templates, Prompts, Skills, PM Signal Loop, Migration Runbooks und Public Readiness Checks. Es enthält keine privaten Projektspuren.
 
 ## Validation
 
-- Contracts bleiben vollstaendig.
+- Contracts bleiben vollständig.
 - Pflichtlabels bleiben erhalten.
 - Demo-Projekt und Demo-Vault bleiben neutral.
-- Public Readiness Check laeuft gruen.
+- Public Readiness Check laeuft grün.
 

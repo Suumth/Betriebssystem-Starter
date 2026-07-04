@@ -1,6 +1,6 @@
 # GitHub Issue Task Template (Light)
 
-Fuer kleine, risikoarme Tickets. Der Ticket Contract gilt weiter, aber ohne schwere Loop-Felder.
+Für kleine, risikoarme Tickets. Der Ticket Contract gilt weiter, aber ohne schwere Loop-Felder.
 
 Nur verwenden, wenn ALLE Kriterien gelten:
 

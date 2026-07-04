@@ -2,7 +2,7 @@
 
 ## Zielzustand
 
-Was soll in der naechsten stabilen Ausbaustufe wahr sein?
+Was soll in der nächsten stabilen Ausbaustufe wahr sein?
 
 ## Operative Wahrheit
 

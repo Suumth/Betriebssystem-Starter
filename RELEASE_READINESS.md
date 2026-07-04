@@ -4,7 +4,7 @@ Status: ready
 
 ## Zielbild
 
-Vollstaendige neutrale AI-Betriebssystem-Starterinstallation.
+Vollständige neutrale AI-Betriebssystem-Starterinstallation.
 
 ## Enthaltene Funktionen
 
@@ -31,7 +31,7 @@ Vollstaendige neutrale AI-Betriebssystem-Starterinstallation.
 
 ## Entfernte private Inhalte
 
-- Private Projektordner aus dem veroeffentlichbaren Starterbereich.
+- Private Projektordner aus dem veröffentlichbaren Starterbereich.
 - Echte Vault-Projektinhalte, Roadmaps, Entscheidungen, Risiken, Lessons und Research-Notizen.
 - Echte PM-Historie und Issue-/PR-Listen.
 - Lokale Graph-Datenbanken, Finder-Artefakte und Obsidian Workspace State.
@@ -53,11 +53,11 @@ Vollstaendige neutrale AI-Betriebssystem-Starterinstallation.
 - Echte Roadmaps oder Projektverlaeufe.
 - Echte GitHub-Owner, Issues, PRs oder Accountdaten.
 - Secrets, Zugangsdaten oder lokale Workspace-State-Dateien.
-- Eine uebernommene Unterordner-Git-Historie in `ai-betriebssystem/`, `ai-vault/`, `examples/`, `docs/`, `public-readiness/` oder `scripts/`.
+- Eine übernommene Unterordner-Git-Historie in `ai-betriebssystem/`, `ai-vault/`, `examples/`, `docs/`, `public-readiness/` oder `scripts/`.
 
 ## Validierung
 
-Auszufuehren vor Weitergabe:
+Auszuführen vor Weitergabe:
 
 ```bash
 bash scripts/public-readiness-check.sh
@@ -66,12 +66,12 @@ grep -RInE '<private-patterns>' . --exclude-dir=.git --exclude-dir=node_modules 
 grep -RInE '<credential-patterns>' . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian
 ```
 
-Der Public Readiness Check prueft private Treffer, credential-aehnliche Treffer, lokale Pfade, Pflichtdateien, Pflichtlabels, Vault Starter, Demo-Projekt, Demo-Vault, lokale Artefakte und verschachtelte Git-Historie im Release-Bereich.
+Der Public Readiness Check prüft private Treffer, credential-aehnliche Treffer, lokale Pfade, Pflichtdateien, Pflichtlabels, Vault Starter, Demo-Projekt, Demo-Vault, lokale Artefakte und verschachtelte Git-Historie im Release-Bereich.
 
 ## Risiken
 
-- Empfehlung: fuer ein neues privates GitHub-Repo einen frischen Ordner oder frischen Git-Init verwenden und nur die neutralen Starterdateien importieren.
-- Die privaten Quellkopien wurden aus dem veroeffentlichbaren Starterbereich entfernt und lokal neben dem Starterordner archiviert.
+- Empfehlung: für ein neues privates GitHub-Repo einen frischen Ordner oder frischen Git-Init verwenden und nur die neutralen Starterdateien importieren.
+- Die privaten Quellkopien wurden aus dem veröffentlichbaren Starterbereich entfernt und lokal neben dem Starterordner archiviert.
 
 ## Empfehlung
 
@@ -80,4 +80,4 @@ Ready for new private GitHub repo: yes.
 
 ## Clean Export Note
 
-Dieser Clean Export enthaelt keine `.git`-Historie, keine `.code-review-graph`, keine `.DS_Store` und kein `__MACOSX`.
+Dieser Clean Export enthält keine `.git`-Historie, keine `.code-review-graph`, keine `.DS_Store` und kein `__MACOSX`.

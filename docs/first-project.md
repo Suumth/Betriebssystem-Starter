@@ -2,7 +2,7 @@
 
 ## Projekt anlegen
 
-1. Erstelle oder waehle ein Projekt-Repo.
+1. Erstelle oder wähle ein Projekt-Repo.
 2. Kopiere `examples/demo-project/PROJECT.md` nach `PROJECT.md`.
 3. Kopiere `examples/demo-project/AGENTS.md` nach `AGENTS.md`.
 4. Kopiere `examples/demo-project/docs/project-brief.md` nach `docs/project-brief.md`.
@@ -13,12 +13,12 @@
 
 ## PROJECT.md
 
-`PROJECT.md` beantwortet fuer AI-Tools:
+`PROJECT.md` beantwortet für AI-Tools:
 
 - Welches Repo ist operativ verbindlich?
 - Wo liegt der AI Vault?
 - Welche Methode gilt?
-- Welche Bereiche sind geschuetzt?
+- Welche Bereiche sind geschützt?
 - Welche Checks beweisen Lieferung?
 - Wann muss der Mensch entscheiden?
 

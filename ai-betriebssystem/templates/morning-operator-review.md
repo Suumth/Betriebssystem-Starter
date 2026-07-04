@@ -6,7 +6,7 @@ abweichenden PRs.
 
 ## Vorbereitung
 
-Setze das Repo fuer die Abfragen:
+Setze das Repo für die Abfragen:
 
 ```bash
 REPO="<owner>/<repo>"
@@ -22,9 +22,9 @@ Review-Kommentare und PR Bodies.
 1. Nightly Summary scannen.
 2. Blockierte oder menschliche Entscheidungen zuerst klaeren.
 3. Nacht-PRs nach Ampel sortieren.
-4. `needs-fix` an Codex zurueckgeben.
+4. `needs-fix` an Codex zurückgeben.
 5. Stale/abandoned Kandidaten entscheiden.
-6. Nur Gruen-Kandidaten mergen oder fuer Review of Record freigeben.
+6. Nur Grün-Kandidaten mergen oder für Review of Record freigeben.
 
 30-Minuten-Regel: Wenn nach 30 Minuten mehr als ein roter oder unklarer Fall
 offen ist, stoppe die Review und erstelle gezielte Follow-up-Auftraege. Kein
@@ -57,7 +57,7 @@ gh issue list --repo "$REPO" --state open --search "label:agent:running updated:
 
 Stale-Auswertung: Ein Issue mit `agent:running` ist ein stale-Kandidat, wenn
 der letzte Overnight Heartbeat aelter als 2h ist oder Branch-/PR-Aktivitaet
-nicht zum letzten Heartbeat passt. Dann zuerst Resume-Kontext pruefen, nicht
+nicht zum letzten Heartbeat passt. Dann zuerst Resume-Kontext prüfen, nicht
 blind mergen oder neu starten.
 
 Alte offene Agent-PRs / abandoned Kandidaten:
@@ -80,12 +80,12 @@ Format `YYYY-MM-DD`.
 
 ## Ampellogik
 
-Gruen / merge-ready candidate:
+Grün / merge-ready candidate:
 
 - PR verlinkt genau ein erwartetes Issue oder einen klaren Issue-Batch.
-- PR Body enthaelt Summary, Changed Files, Validation, Evidence, Operator
+- PR Body enthält Summary, Changed Files, Validation, Evidence, Operator
   Summary, Review Recommendation und Harness Failure Classification.
-- Validation ist bestanden oder sauber als nicht erforderlich begruendet.
+- Validation ist bestanden oder sauber als nicht erforderlich begründet.
 - Review of Record ist PASS.
 - `review:pass` und `auto-merge:ok` sind gesetzt, keine roten/gelben Labels.
 - `Human decision required: no`.
@@ -95,7 +95,7 @@ Gelb / needs-fix oder Review noetig:
 - Validation ist teilweise, Evidence ist unklar oder Review fehlt.
 - Risk lane ist `standard` mit Grundsatznaehe oder `protected`.
 - `needs-fix` ist gesetzt oder der PR Body empfiehlt weiteren Review.
-- Aktion: direkt an Codex zurueckgeben oder Review durch Codex/Fable/Claude
+- Aktion: direkt an Codex zurückgeben oder Review durch Codex/Fable/Claude
   beauftragen.
 
 Rot / blocked oder fehlende Evidence:
@@ -122,11 +122,11 @@ Abandoned Kandidat:
 
 ## Delegationsregeln
 
-Direkt zurueck an Codex:
+Direkt zurück an Codex:
 
 - fehlender kleiner Nachweis.
 - kleiner `needs-fix` Punkt.
-- PR Body unvollstaendig.
+- PR Body unvollständig.
 - mechanischer Konflikt nach neuerem `main`.
 
 Review durch Codex/Fable/Claude:
@@ -134,7 +134,7 @@ Review durch Codex/Fable/Claude:
 - Evidence ist vorhanden, aber die Bewertung braucht eine zweite Sicht.
 - Grundsatzdoku, Contract oder Template-Regel wurde geaendert.
 - Risiko ist `standard` mit groesserer Reichweite.
-- Protected Area wurde tagsueber vorbereitet und braucht Review of Record.
+- Protected Area wurde tagsüber vorbereitet und braucht Review of Record.
 
 Operator-Entscheidung:
 
@@ -146,6 +146,6 @@ Operator-Entscheidung:
 ## Merge-Regel
 
 Nachts keine Merges. Morgens entscheidet der Operator. Der Operator kann
-mechanisch mergen, wenn die Gruen-Kriterien der Operator Merge Policy erfuellt
+mechanisch mergen, wenn die Grün-Kriterien der Operator Merge Policy erfuellt
 sind. Bei Gelb oder Rot wird nicht gemerged, sondern delegiert, gefixt oder
 blockiert.

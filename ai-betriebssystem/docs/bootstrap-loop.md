@@ -3,7 +3,7 @@
 Der Bootstrap Loop beschreibt, wie aus einer neuen Projektidee ein
 arbeitsfaehiges, KI-kompatibles Projekt-Setup im AI-Betriebssystem 2.0 wird.
 Er steht vor dem Delivery Loop: Erst wenn ein Projekt bootstrap-fertig ist,
-koennen Issues, PRs, Reviews und Green Path Completion verlaesslich laufen.
+können Issues, PRs, Reviews und Green Path Completion verlaesslich laufen.
 
 ## 1. Nordstern
 
@@ -22,7 +22,7 @@ PROJECT.md im Repo-Root
 ```
 
 Der Loop ist PROJECT.md-first, nicht Codex-first. Tool-spezifische
-Projektanweisungen duerfen nur duenne Bootstrap-Pointer sein. Sie zeigen auf
+Projektanweisungen dürfen nur dünne Bootstrap-Pointer sein. Sie zeigen auf
 die GitHub-URL von `PROJECT.md` und erzeugen keine eigene Projektwahrheit.
 
 ## 2. Zielarchitektur
@@ -32,36 +32,36 @@ Ein bootstrap-fertiges Projekt hat drei Quellen mit klar getrennten Rollen:
 | Quelle | Rolle | Operative Wahrheit? |
 |---|---|---|
 | Projekt-Repo | Arbeit, Issues, PRs, Labels, Evidence, `PROJECT.md`, `AGENTS.md`, Code und Repo-Dateien | Ja |
-| AI-Betriebssystem 2.0 | Methode, Contracts, Prompts, Templates, Review- und Green-Path-Regeln | Ja, fuer Methode |
-| AI Vault | Strategie, Zielbild, Produktgedaechtnis, Entscheidungen, Nicht-Ziele und langfristige Risiken | Nein |
+| AI-Betriebssystem 2.0 | Methode, Contracts, Prompts, Templates, Review- und Green-Path-Regeln | Ja, für Methode |
+| AI Vault | Strategie, Zielbild, Produktgedächtnis, Entscheidungen, Nicht-Ziele und langfristige Risiken | Nein |
 
 Das Projekt-Repo bleibt der Ort, an dem Agenten im Betrieb handeln. Der AI
 Vault bleibt die strategische Quelle, wird aber von `PROJECT.md` nur referenziert
-und bei Bedarf ueber GitHub- oder Repo-Dateien online erreichbar gemacht.
+und bei Bedarf über GitHub- oder Repo-Dateien online erreichbar gemacht.
 
 ## 3. Rollen der Root-Dateien
 
 ### PROJECT.md
 
 `PROJECT.md` ist die kanonische Root-Datei jedes Projekt-Repos. Sie ist der
-erste Lesepunkt fuer alle KI-Tools und muss ueber GitHub erreichbar sein.
+erste Lesepunkt für alle KI-Tools und muss über GitHub erreichbar sein.
 
 Mindestinhalt:
 
 - Projektidentitaet und Repo-URL
 - GitHub-URL zu `PROJECT.md`
-- lokale Fallback-Pfade nur fuer lokale Agenten
+- lokale Fallback-Pfade nur für lokale Agenten
 - Link auf das AI-Betriebssystem als Methodenquelle
 - Link auf `AGENTS.md`
 - AI-Vault-Referenzen als Source Map, nicht als Vollkopie
-- aktuelle Arbeitsregeln fuer Tickets, PRs, Review und Green Path
-- klare No-Duplication-Regel fuer Tool-Anweisungen
+- aktuelle Arbeitsregeln für Tickets, PRs, Review und Green Path
+- klare No-Duplication-Regel für Tool-Anweisungen
 
 ### AGENTS.md
 
-`AGENTS.md` enthaelt repo-spezifische Arbeitsregeln fuer Agenten:
+`AGENTS.md` enthält repo-spezifische Arbeitsregeln für Agenten:
 
-- erlaubte und geschuetzte Pfade
+- erlaubte und geschützte Pfade
 - Build-, Test- und Validierungsbefehle
 - Repo-spezifische Risiken
 - branch-, commit- und PR-Regeln
@@ -78,16 +78,16 @@ KI-Projektanweisung.
 
 ### AI Vault
 
-Der AI Vault ist Strategie- und Produktgedaechtnis. `PROJECT.md` verweist auf
+Der AI Vault ist Strategie- und Produktgedächtnis. `PROJECT.md` verweist auf
 die relevanten Vault-Dateien oder online gespiegelten Einstiegspunkte, dupliziert
-sie aber nicht vollstaendig. Wenn ein Cloud-Tool Vault-Kontext braucht, muss
-dieser ueber GitHub erreichbar sein oder kontrolliert ins Projekt-Repo gespiegelt
+sie aber nicht vollständig. Wenn ein Cloud-Tool Vault-Kontext braucht, muss
+dieser über GitHub erreichbar sein oder kontrolliert ins Projekt-Repo gespiegelt
 werden.
 
 ## 4. Definition: Projekt ist bootstrap-fertig
 
 Ein Projekt ist bootstrap-fertig, wenn mindestens diese Artefakte vorhanden und
-ueber GitHub auffindbar sind:
+über GitHub auffindbar sind:
 
 - `PROJECT.md` im Repo-Root
 - `AGENTS.md` im Repo-Root
@@ -115,10 +115,10 @@ mindestens auf diese Inhaltsarten zeigen:
 - Nicht-Ziele
 - Entscheidungen oder ADRs
 - Risiken
-- Roadmap oder naechste Meilensteine
+- Roadmap oder nächste Meilensteine
 - relevante Research-/Design-Quellen
 
-Wenn lokale Vault-Pfade verwendet werden, sind sie nur Fallbacks fuer lokale
+Wenn lokale Vault-Pfade verwendet werden, sind sie nur Fallbacks für lokale
 Agenten. Cloud-KIs bekommen GitHub-URLs, gespiegelte Repo-Dateien oder eine
 andere online erreichbare Quelle.
 
@@ -129,18 +129,18 @@ andere online erreichbare Quelle.
 3. AI-Vault-Projektbereich bestimmen.
 4. `PROJECT.md` aus `templates/PROJECT.md` erstellen.
 5. `AGENTS.md` aus dem Agenten-Template erstellen.
-6. `README.md` auf Menschennutzen und `PROJECT.md`-Verweis pruefen.
+6. `README.md` auf Menschennutzen und `PROJECT.md`-Verweis prüfen.
 7. Issue-/PR-Templates installieren oder anpassen.
 8. Operative Labels aus `templates/labels.yml` anlegen.
 9. Ticket 0 aus `templates/ticket-0-bootstrap.md` erstellen.
 10. Erstes kleines Smoke-Test- oder Docs-Ticket schneiden.
 11. Agentenlauf beweisen: Branch, PR, Validation Evidence, Review of Record.
-12. Nach gruenem Merge `main` synchronisieren und Green Path Completion
+12. Nach grünem Merge `main` synchronisieren und Green Path Completion
     dokumentieren.
 
 ## 7. Erwartete GitHub-Labels
 
-Pflichtlabels fuer den MVP:
+Pflichtlabels für den MVP:
 
 - `agent:ready`
 - `agent:running`
@@ -150,7 +150,7 @@ Pflichtlabels fuer den MVP:
 - `review:pass`
 - `auto-merge:ok`
 
-Optionale Risikohinweise duerfen ergaenzen, aber keine zweite Statuslogik
+Optionale Risikohinweise dürfen ergaenzen, aber keine zweite Statuslogik
 erzeugen:
 
 - `risk:low`
@@ -184,12 +184,12 @@ Der PR-Body muss mindestens enthalten:
 
 ## 9. Ticket-0-Konvention
 
-Ticket 0 ist kein Produktfeature. Es ist der Bootstrap-Beweis fuer ein neues
+Ticket 0 ist kein Produktfeature. Es ist der Bootstrap-Beweis für ein neues
 Projekt-Repo.
 
 Zweck:
 
-- pruefen, ob `PROJECT.md`, `AGENTS.md`, Templates, Labels und Source Map
+- prüfen, ob `PROJECT.md`, `AGENTS.md`, Templates, Labels und Source Map
   zusammen funktionieren
 - ein erstes kleines, risikoarmes Ticket erzeugen
 - beweisen, dass ein Agent ohne Zusatzbriefing starten kann
@@ -197,7 +197,7 @@ Zweck:
 Mindestinhalt von Ticket 0:
 
 - Agent Contract: `Mode: EXECUTING`, passende Autonomy und Risk lane
-- Ziel: Bootstrap-Setup pruefen oder vervollstaendigen
+- Ziel: Bootstrap-Setup prüfen oder vervollständigen
 - Boundary: nur Bootstrap-/Repo-Regeldateien
 - Nicht-Ziele: keine Produktfeatures, keine breite Architekturarbeit
 - Verification: `git diff --check` plus vorhandene Repo-Checks
@@ -208,7 +208,7 @@ Mindestinhalt von Ticket 0:
 Ticket 0 darf nach erfolgreichem Bootstrap geschlossen werden. Danach entstehen
 normale Delivery-Tickets.
 
-## 10. Migrationsbezug fuer bestehende Projekte
+## 10. Migrationsbezug für bestehende Projekte
 
 Bestehende Projekte werden nicht auf einmal umgebaut. Migration bedeutet:
 
@@ -222,9 +222,9 @@ Bestehende Projekte werden nicht auf einmal umgebaut. Migration bedeutet:
 
 Bei Konflikten gilt:
 
-- Projekt-Repo gewinnt fuer aktuellen operativen Zustand.
-- AI Vault gewinnt fuer Strategie und Produktgedaechtnis.
-- AI-Betriebssystem gewinnt fuer Methode und Loop-Vertraege.
+- Projekt-Repo gewinnt für aktuellen operativen Zustand.
+- AI Vault gewinnt für Strategie und Produktgedächtnis.
+- AI-Betriebssystem gewinnt für Methode und Loop-Vertraege.
 - Abweichungen werden als Issue, Decision oder Vault-Update sichtbar gemacht.
 
 ## 11. Bewusst nicht Teil des Bootstrap-Loops
@@ -232,7 +232,7 @@ Bei Konflikten gilt:
 - kein eigener Runner als Startvoraussetzung
 - keine Dashboard-Pflicht
 - keine vollautomatische Repo-Registry
-- keine lokale Pfadpflicht fuer Cloud-KIs
+- keine lokale Pfadpflicht für Cloud-KIs
 - keine duplizierte Strategie in Tool-Projektanweisungen
 - keine Migration aller Projekte in einem Schritt
 

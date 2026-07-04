@@ -6,7 +6,7 @@ Nach erfolgreicher PR-Erstellung, Validierung und Evidence ist die Builder-Arbei
 
 Der Builder endet nicht nur mit Code oder Doku. Er aktualisiert den PR Body als Primary Closeout Source, so dass Review of Record oder Merge-Freigabe ohne Rueckfrage moeglich sind.
 
-PR-Kommentare duerfen Evidence oder Notes ergaenzen, ersetzen aber nicht die Standardquelle. Wenn ein PR-Kommentar wichtige Closeout-Information enthaelt, muss der PR Body darauf verweisen.
+PR-Kommentare dürfen Evidence oder Notes ergaenzen, ersetzen aber nicht die Standardquelle. Wenn ein PR-Kommentar wichtige Closeout-Information enthält, muss der PR Body darauf verweisen.
 
 Die Review-/Merge-Signale `review:pass`, `auto-merge:ok` und `needs-human` gehören nicht zum reinen Builder-Handoff. `needs-human` bedeutet Gelb und blockiert Auto-Merge.
 
@@ -34,4 +34,4 @@ Builder-Handoff bedeutet:
   - ob `Claude Code Review Suggested` gilt
   - welche Harness Failure Classification gilt
 - PR-Kommentare ergaenzen nur; relevante Kommentar-Evidence ist im PR Body verlinkt oder kurz benannt.
-- Reviewer entscheidet Gruen, Gelb oder Rot.
+- Reviewer entscheidet Grün, Gelb oder Rot.

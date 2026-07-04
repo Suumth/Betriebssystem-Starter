@@ -5,7 +5,7 @@
 | Bereich | Status | Starter-Entscheidung |
 | --- | --- | --- |
 | Core Methode | behalten | In `ai-betriebssystem/docs/` und `contracts/` erhalten. |
-| Ticket Contract | behalten | `contracts/ticket-contract.md` bleibt vollstaendig. |
+| Ticket Contract | behalten | `contracts/ticket-contract.md` bleibt vollständig. |
 | Review Contract | behalten | `contracts/review-contract.md` bleibt getrennt vom Builder. |
 | Label Contract | behalten | Pflichtlabels bleiben operativ. |
 | Green Path | behalten | `docs/green-path-completion.md` bleibt Kernregel. |
@@ -24,14 +24,14 @@
 | Lessons-Struktur | als Beispiel ersetzen | Private Lessons wurden durch neutrale Lessons ersetzt. |
 | AI Vault Starter | behalten | `ai-vault/` ist leere Erstinstallation. |
 | Demo Project | behalten | `examples/demo-project/` zeigt vollen Loop. |
-| Demo Vault | behalten | `examples/demo-vault/` zeigt Projektgedaechtnis. |
+| Demo Vault | behalten | `examples/demo-vault/` zeigt Projektgedächtnis. |
 | Public Readiness | behalten | Checklisten und Script vorhanden. |
 
 ## AI Vault Strukturmuster
 
 | Bereich | Status | Starter-Entscheidung |
 | --- | --- | --- |
-| Inbox | behalten | Leer, fuer unsortierte Signale. |
+| Inbox | behalten | Leer, für unsortierte Signale. |
 | Projects | neutralisieren | Nur `_PROJECT_TEMPLATE` und Demo-Vault enthalten. |
 | Decisions | neutralisieren | Leerer Bereich plus Template. |
 | Risks | neutralisieren | Leerer Bereich plus Template. |

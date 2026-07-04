@@ -1,9 +1,9 @@
 # PM Signal Prompt
 
 ```text
-Erstelle einen PM Signal Lauf fuer OWNER/REPO.
+Erstelle einen PM Signal Lauf für OWNER/REPO.
 
-Nutze ausschliesslich GitHub und Repo-Kontext:
+Nutze ausschließlich GitHub und Repo-Kontext:
 Issues, PRs, Labels, Commits, AGENTS.md, docs/pm/*.md, docs/adr/*.md.
 
 Lies nicht den AI Vault als operative Wahrheit.
@@ -21,7 +21,7 @@ Arbeite nach Trigger -> Action -> Proof -> Memory -> Stop.
 
 Output:
 1. Overall Status: Green | Yellow | Red
-2. Teilprojekt-Tabelle mit Status, Fortschritt, Blocker, Risiko, naechster Entscheidung
+2. Teilprojekt-Tabelle mit Status, Fortschritt, Blocker, Risiko, nächster Entscheidung
 3. Delivered Since Last Signal
 4. Open Risks
 5. Critical Missing Pieces
@@ -34,6 +34,6 @@ Regeln:
 - Unklare Punkte als Fragen oder suggested issues ausgeben.
 - Keine erledigte Arbeit behaupten ohne Issue, PR, Commit oder Closeout.
 - Keine neuen Regeln automatisch setzen; Contract-/Template-Updates nur vorschlagen.
-- Neue Arbeit als GitHub Issue vorschlagen oder, wenn ausdruecklich erlaubt, anlegen.
+- Neue Arbeit als GitHub Issue vorschlagen oder, wenn ausdRücklich erlaubt, anlegen.
 - Harte Entscheidungen als Decision Log oder ADR vorschlagen.
 ```

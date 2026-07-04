@@ -2,9 +2,9 @@
 
 ## Definition
 
-Der PM Signal Loop verdichtet Projektstand aus GitHub-Artefakten zu einem steuerbaren Signal fuer den Operator.
+Der PM Signal Loop verdichtet Projektstand aus GitHub-Artefakten zu einem steuerbaren Signal für den Operator.
 
-PM Signal bedeutet: ein belastbarer, quellengebundener Blick auf Fortschritt, Blocker, Risiken, Entscheidungen und naechste Schritte. Es ist kein Ersatz fuer Delivery, Review oder Product Decisions.
+PM Signal bedeutet: ein belastbarer, quellengebundener Blick auf Fortschritt, Blocker, Risiken, Entscheidungen und nächste Schritte. Es ist kein Ersatz für Delivery, Review oder Product Decisions.
 
 ## Ziel
 
@@ -80,14 +80,14 @@ Ein PM-Signal sollte enthalten:
 
 - Keine zweite Projektwahrheit erzeugen.
 - Keine erledigte Arbeit ohne Issue, PR, Commit oder Closeout behaupten.
-- Neue Arbeit als Issue vorschlagen oder anlegen, wenn das ausdruecklich erlaubt ist.
+- Neue Arbeit als Issue vorschlagen oder anlegen, wenn das ausdRücklich erlaubt ist.
 - Harte Entscheidungen als Decision Log oder ADR sichtbar machen.
 - Risiken im Risk Log oder als Issue sichtbar machen.
 - PM Signal darf verdichten, aber nicht still neue Roadmap-Realitaet schaffen.
 
 ## Frequenz
 
-PM-Signal-Laeufe passen:
+PM-Signal-Läufe passen:
 
 - on demand
 - vor groesseren Planungsbloecken

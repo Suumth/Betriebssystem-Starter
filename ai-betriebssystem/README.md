@@ -14,7 +14,7 @@ Zusatzregel:
 
 > Jeder Agentenlauf muss entweder ein Produktartefakt verbessern, ein Systemartefakt verbessern oder ein belastbares PM-Signal erzeugen. Sonst war es nur Aktivität.
 
-Fuer den Tagesbetrieb reicht eine Seite: `docs/operator-runbook.md`. Kanonische Begriffe stehen in `docs/glossary.md`.
+Für den Tagesbetrieb reicht eine Seite: `docs/operator-runbook.md`. Kanonische Begriffe stehen in `docs/glossary.md`.
 
 Neue fokussierte Einstiege:
 
@@ -34,9 +34,9 @@ Neue fokussierte Einstiege:
 
 ## KI-einheitlicher Einstieg
 
-Jedes Projekt bekommt eine repo-basierte Projektanweisung, bevorzugt `PROJECT.md`. Diese Datei ist der kanonische Einstieg fuer ChatGPT, Claude, Gemini, Codex und spaetere KI-Tools.
+Jedes Projekt bekommt eine repo-basierte Projektanweisung, bevorzugt `PROJECT.md`. Diese Datei ist der kanonische Einstieg für ChatGPT, Claude, Gemini, Codex und spätere KI-Tools.
 
-Cloud-KIs haben keinen lokalen Dateizugriff. Deshalb gilt online-first: Tool-spezifische Projektanweisungen duerfen keine lokalen Pfade referenzieren und muessen auf die GitHub-URL der kanonischen Projektanweisung zeigen.
+Cloud-KIs haben keinen lokalen Dateizugriff. Deshalb gilt online-first: Tool-spezifische Projektanweisungen dürfen keine lokalen Pfade referenzieren und müssen auf die GitHub-URL der kanonischen Projektanweisung zeigen.
 
 Tool-spezifische Projektanweisungen sind nur Bootstrap-Pointer:
 
@@ -44,15 +44,15 @@ Tool-spezifische Projektanweisungen sind nur Bootstrap-Pointer:
 Lies zuerst die repo-basierte Projektanweisung:
 <GitHub URL to PROJECT.md or docs/project-instructions.md>
 
-Arbeite danach ausschliesslich nach dieser Anweisung und den dort verlinkten Quellen.
+Arbeite danach ausschließlich nach dieser Anweisung und den dort verlinkten Quellen.
 Dupliziere keine Projektwahrheit in diese Tool-Anweisung.
 ```
 
-Kein KI-Tool bekommt eigene Sonderwahrheit. Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschliesslich Fallbacks fuer lokale Agenten wie Codex.
+Kein KI-Tool bekommt eigene Sonderwahrheit. Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschließlich Fallbacks für lokale Agenten wie Codex.
 
-Die repo-basierte Projektanweisung enthaelt den Router auf AI-Betriebssystem als Methodenquelle, Projekt-Repo als operative Wahrheit und AI Vault als Strategie-/Produktgedaechtnisquelle.
+Die repo-basierte Projektanweisung enthält den Router auf AI-Betriebssystem als Methodenquelle, Projekt-Repo als operative Wahrheit und AI Vault als Strategie-/Produktgedächtnisquelle.
 
-Der AI Vault bleibt die kanonische Wahrheit fuer Strategie, Zielbild und Produktgedaechtnis. Inhalte, die Cloud-KIs benoetigen, muessen aber online erreichbar sein: als GitHub-Dateien, ueber GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt.
+Der AI Vault bleibt die kanonische Wahrheit für Strategie, Zielbild und Produktgedächtnis. Inhalte, die Cloud-KIs benoetigen, müssen aber online erreichbar sein: als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt.
 
 ## MVP-Minimalmodell
 
@@ -63,7 +63,7 @@ Der MVP ist absichtlich klein. Er muss zuerst in einem Pilot-Repo nachweisen, da
 - ein Pilot-Repo
 - fünf operative Labels
 - `AGENTS.md` im Pilot-Repo
-- ueber GitHub erreichbares `PROJECT.md` oder eine explizit benannte repo-basierte Projektanweisung im Pilot-Repo
+- über GitHub erreichbares `PROJECT.md` oder eine explizit benannte repo-basierte Projektanweisung im Pilot-Repo
 - ein Task-/Issue-Template mit Ticket Contract
 - minimale Tool-Projektanweisungen als Bootstrap-Pointer auf die repo-basierte Projektanweisung
 - ein versionierter Project Brief im Projekt-Repo
@@ -74,7 +74,7 @@ Der MVP ist absichtlich klein. Er muss zuerst in einem Pilot-Repo nachweisen, da
 - PR Body als Primary Closeout Source
 - Review of Record mit Ampelentscheidung
 - Human Merge Gate
-- Green Path Completion nach gruenem Merge
+- Green Path Completion nach grünem Merge
 
 ### Optional im MVP
 
@@ -116,8 +116,8 @@ Trigger -> Action -> Proof -> Memory -> Stop
 | Memory | Was bleibt dauerhaft nutzbar? | PR Body, Closeout, Decision Log, Risk Log, Lessons, Template-Anpassung |
 | Stop | Warum ist der Lauf fertig oder blockiert? | merged, needs-fix, blocked, needs-human, follow-up issue |
 
-Fuer wiederholte, koordinierende oder multi-surface Laeufe gilt vor dem Start
-die optionale Preflight-Rubrik in `docs/loop-readiness.md`. Sie ergaenzt die
+Für wiederholte, koordinierende oder multi-surface Läufe gilt vor dem Start
+die optionale Preflight-Rubrik in `docs/loop-readiness.md`. Sie ergänzt die
 GitHub-zentrierte Arbeitsweise, fuehrt aber keinen Runner, kein Dashboard und
 keine zweite operative Wahrheit ein.
 
@@ -138,9 +138,9 @@ Der Review setzt oder empfiehlt Grün (`review:pass` + `auto-merge:ok`), Gelb (`
 Mensch:
 liest Ampel, entscheidet, merged oder priorisiert Fix.
 
-Nach gruenem Merge:
+Nach grünem Merge:
 Codex fuehrt ohne Rueckfrage lokale Hygiene aus: `git checkout main`, `git pull --ff-only origin main`, `git status`.
-Wenn `main` sauber ist, sucht Codex den naechsten Queue-Eintrag: needs-fix, agent:running oder genau ein neues agent:ready.
+Wenn `main` sauber ist, sucht Codex den nächsten Queue-Eintrag: needs-fix, agent:running oder genau ein neues agent:ready.
 
 Memory:
 Commit, PR Body, Closeout, Lessons nur bei Bedarf, Contract-/Template-Anpassung.
@@ -167,10 +167,10 @@ Regel:
 1. Dieses Methoden-Repo stabil halten.
 2. Ein Pilot-Repo auswählen.
 3. Dort fünf Labels, `AGENTS.md`, repo-basierte Projektanweisung, Task Template, Project Brief und optional `docs/pm/` ergänzen.
-4. ChatGPT-, Claude-, Codex- oder andere Tool-Projektanweisungen nur als duenne Bootstrap-Pointer auf die repo-basierte Projektanweisung einrichten.
+4. ChatGPT-, Claude-, Codex- oder andere Tool-Projektanweisungen nur als dünne Bootstrap-Pointer auf die repo-basierte Projektanweisung einrichten.
 5. Ein kleines reifes Smoke-Test-Ticket erstellen.
 6. Codex/Claude-Loop einmal echt beweisen.
-7. Green Path Completion beweisen: Merge, lokales `main` synchronisieren, Status sauber, naechstes Ticket oder dokumentierter Stop.
+7. Green Path Completion beweisen: Merge, lokales `main` synchronisieren, Status sauber, nächstes Ticket oder dokumentierter Stop.
 8. Danach PM Signal Lauf für den Leiterblick ausführen.
 9. Danach weitere Repos nacheinander migrieren.
 

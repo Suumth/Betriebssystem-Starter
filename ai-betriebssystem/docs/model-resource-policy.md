@@ -17,7 +17,7 @@ Attempt budgets begrenzen wiederholte Fix- und Review-Schleifen. Sie sind keine 
 | ChatGPT Pro | Ticket-Schnitt, Harness-Design, Priorisierung, Entscheidungsvorlagen | Planungsressource |
 | Claude Opus | Sparring, Architektur, Ticket-Reife, Risikoanalyse | Planungs-/Denkressource |
 | Codex | Builder, Standard-Umsetzung, Standard-Fix, Evidence, PR | Hauptarbeitsressource |
-| Codex Subagents | interne read-only Pruefung im Codex-Lauf | Standard-Qualitaetsschicht, sofern verfuegbar |
+| Codex Subagents | interne read-only Prüfung im Codex-Lauf | Standard-Qualitaetsschicht, sofern verfuegbar |
 | @codex review | GitHub Review of Record | Standard-Review-Spur |
 | Claude Code | externer Review oder Umsetzung bei Risiko/Komplexitaet | knappe Premium-Ressource, nur nach menschlicher Freigabe |
 | Mensch | Merge, Claude-Code-Freigabe, Produkt-/Risikoentscheidung | Human Gate |
@@ -41,7 +41,7 @@ Ohne menschliche Freigabe bleibt der Standardpfad Codex.
 ```text
 ChatGPT Pro / Claude Opus formulieren agent:ready Ticket
 → Codex baut
-→ Codex Subagent Board prueft intern, falls verfuegbar
+→ Codex Subagent Board prüft intern, falls verfuegbar
 → Codex fixt vor PR maximal einmal selbst
 → automatisierte `needs-fix`-Zyklen auf demselben PR laufen maximal zweimal, ausser der Operator verlaengert explizit
 → @codex review schreibt Review of Record in GitHub
@@ -80,7 +80,7 @@ Claude Code Production/Implementation kann vorgeschlagen werden bei:
 - komplexem UI-/UX-Flow
 - groesserer Architektur-/Domain-Modellierung
 - schwer reproduzierbarem Bug
-- breitem Refactor ueber mehrere Module
+- breitem Refactor über mehrere Module
 - Aufgabe, bei der Codex mehrfach am Harness scheitert
 
 Aber:
@@ -125,13 +125,13 @@ Standard-Review:
 Externer Review:
 
 - Claude Code nur nach menschlicher Entscheidung
-- keine Standardpflicht fuer kleine oder mittlere Tickets
+- keine Standardpflicht für kleine oder mittlere Tickets
 
 ## Ressourcenprinzip
 
-High-value Claude-Code-Limits werden fuer Situationen reserviert, in denen echte externe Modell-/Tooltrennung Wert schafft.
+High-value Claude-Code-Limits werden für Situationen reserviert, in denen echte externe Modell-/Tooltrennung Wert schafft.
 
-Nicht fuer:
+Nicht für:
 
 - reine Dokumentation
 - kleine Harness-Tickets
@@ -139,7 +139,7 @@ Nicht fuer:
 - einfache Build-/Evidence-PRs
 - klare Bugfixes mit guter Validation
 
-Dafuer:
+Dafür:
 
 - Risiko
 - Architektur

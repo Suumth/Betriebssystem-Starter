@@ -6,7 +6,7 @@ Dieses neutrale Demo-Projekt zeigt, wie Projekt-Repo, AI Vault und AI-Betriebssy
 - `AGENTS.md` beschreibt operative Rollen und Grenzen.
 - GitHub Issues sind Arbeit.
 - PRs sind Lieferung.
-- Review of Record entscheidet ueber PASS.
+- Review of Record entscheidet über PASS.
 - Human Gate bleibt beim Menschen.
 - Vault-Rueckfluss haelt Entscheidungen, Risiken und Lessons dauerhaft nutzbar.
 

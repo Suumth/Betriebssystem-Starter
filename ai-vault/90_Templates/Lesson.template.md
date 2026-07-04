@@ -4,7 +4,7 @@
 
 ## Beobachtung
 
-## Entscheidung fuer naechste Loops
+## Entscheidung für nächste Loops
 
 ## Quelle
 

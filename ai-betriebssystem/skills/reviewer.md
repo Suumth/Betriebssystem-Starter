@@ -18,7 +18,7 @@ Purpose: review one pull request against its linked GitHub issue and make the ne
 
 Choose one result:
 
-- PASS/Gruen -> `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`
+- PASS/Grün -> `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`
 - PASS/Gelb -> `review:pass` + `needs-human`; remove `auto-merge:ok`; include Review Recommendation
 - NEEDS-FIX/Rot -> set `needs-fix`; remove `needs-human`, `blocked`, `review:pass` and `auto-merge:ok`
 - BLOCKED/Rot -> set `blocked`; remove `needs-human`, `needs-fix`, `review:pass` and `auto-merge:ok`

@@ -5,9 +5,9 @@
 1. Mensch waehlt ein Issue aus.
 2. Builder liest `PROJECT.md`, `AGENTS.md`, Ticket Contract und task lokalen Scope.
 3. Builder arbeitet lokal, sammelt Evidence und erstellt einen PR oder PR-Entwurf.
-4. Reviewer prueft getrennt als Review of Record.
-5. Mensch entscheidet ueber Human Gate, Merge oder Fix-Schleife.
-6. Nach Merge wird Wissen in Vault und Projekt-Dokumente zurueckgespiegelt.
+4. Reviewer prüft getrennt als Review of Record.
+5. Mensch entscheidet über Human Gate, Merge oder Fix-Schleife.
+6. Nach Merge wird Wissen in Vault und Projekt-Dokumente zurückgespiegelt.
 
 ## Green Path
 

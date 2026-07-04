@@ -9,7 +9,7 @@ Der Produktwert liegt nicht darin, dass Codex oder Claude Code irgendwie Code sc
 - Kontext
 - Grenze
 - Werkzeug
-- Pruefpfad
+- Prüfpfad
 - Evidence
 - Closeout
 - Human Gate
@@ -24,8 +24,8 @@ Agent Substrate ist der gemeinsame Unterbau, der Agenten in unterschiedlichen Re
 
 | Baustein | Bedeutung |
 | --- | --- |
-| Root Agent Index | `AGENTS.md` als duenne Startdatei, die auf weitere Dokumente verweist |
-| Gemeinsame Begriffe | einheitliche Bedeutungen fuer Ticket, Boundary, Evidence, Review of Record, Human Gate und Auto-Merge-Ampel |
+| Root Agent Index | `AGENTS.md` als dünne Startdatei, die auf weitere Dokumente verweist |
+| Gemeinsame Begriffe | einheitliche Bedeutungen für Ticket, Boundary, Evidence, Review of Record, Human Gate und Auto-Merge-Ampel |
 | Agent Modes | `EXECUTING`, `GRILLING` und `COORDINATING` als Arbeitsmodus vor dem Start |
 | Skill-Muster | wiederkehrende Arbeitsweisen wie `plan-then-implement`, `grill-with-docs`, `simplify-pass`, `cross-system-audit` |
 | Loading Map | `read when ...`-Hinweise, die nur relevante Detaildocs laden |
@@ -53,15 +53,15 @@ Closeout is part of the harness.
 
 Der Harness ist nicht nur Ausfuehrung und Verification. Ohne verwertbaren Closeout kann der Operator keine Ampelentscheidung treffen.
 
-Observability braucht eine stabile Closeout-Quelle. Fuer PR-basierte Arbeit ist der PR Body die primaere Operator-/Reviewer-Oberflaeche; PR-Kommentare koennen ergaenzen oder als technischer Fallback dienen, muessen dann aber im PR Body referenziert werden.
+Observability braucht eine stabile Closeout-Quelle. Für PR-basierte Arbeit ist der PR Body die primaere Operator-/Reviewer-Oberflaeche; PR-Kommentare können ergaenzen oder als technischer Fallback dienen, müssen dann aber im PR Body referenziert werden.
 
-Closeout Requirements gehoeren deshalb in den Agent Contract oder den konkreten Codex-Prompt. `AGENTS.md`, Contracts und Skills koennen erinnern und strukturieren, ersetzen aber keine expliziten task lokalen Closeout-Pflichten.
+Closeout Requirements gehoeren deshalb in den Agent Contract oder den konkreten Codex-Prompt. `AGENTS.md`, Contracts und Skills können erinnern und strukturieren, ersetzen aber keine expliziten task lokalen Closeout-Pflichten.
 
 ## PM Signal
 
 PM Signal ist ein verdichteter Projektstand aus GitHub Issues, PRs, Labels, Commits und Decisions. Es ist Teil der Control Plane: Es hilft dem Operator, Fortschritt, Blocker, Risiken und Entscheidungen zu sehen.
 
-PM Signal ersetzt kein Dashboard und keine zweite Wahrheit. Es liest GitHub-Artefakte und bewusst freigegebene Repo-Dokumente wie `docs/pm/*.md`, `docs/adr/*.md`, Risk Logs oder Decision Logs. Der AI Vault bleibt Denk- und Entwurfsort; fuer operative PM-Steuerung zaehlen GitHub und Repo-Artefakte.
+PM Signal ersetzt kein Dashboard und keine zweite Wahrheit. Es liest GitHub-Artefakte und bewusst freigegebene Repo-Dokumente wie `docs/pm/*.md`, `docs/adr/*.md`, Risk Logs oder Decision Logs. Der AI Vault bleibt Denk- und Entwurfsort; für operative PM-Steuerung zaehlen GitHub und Repo-Artefakte.
 
 Leitregel:
 
@@ -121,7 +121,7 @@ Der Agent Mode entscheidet, ob gebaut werden darf.
 
 ## Docs as Loading Map
 
-`AGENTS.md` soll ein Root Agent Index sein, keine Wissensdatenbank. Es enthaelt kurze Regeln und verweist per `read when ...` auf Details.
+`AGENTS.md` soll ein Root Agent Index sein, keine Wissensdatenbank. Es enthält kurze Regeln und verweist per `read when ...` auf Details.
 
 Optionale repo-lokale Detaildocs:
 
@@ -130,22 +130,22 @@ Optionale repo-lokale Detaildocs:
 - `docs/agents/protected-areas.md` — read when Protected Areas oder Risk lanes betroffen sind
 - `docs/adr/*.md` — read when eine Architekturentscheidung beruehrt wird
 
-Diese Dateien sind Empfehlungen fuer groessere Repos, kein Pflicht-Overhead fuer jedes Projekt.
+Diese Dateien sind Empfehlungen für groessere Repos, kein Pflicht-Overhead für jedes Projekt.
 
 ## Skill-Muster
 
 Skill-Muster beschreiben Arbeitsweisen, nicht neue Standardagenten:
 
 - `plan-then-implement`: erst Ziel, Boundary und Verifier festziehen, dann bauen
-- `grill-with-docs`: im `GRILLING`-Mode unklare Begriffe oder Entscheidungen gegen Repo-Dokumente pruefen
+- `grill-with-docs`: im `GRILLING`-Mode unklare Begriffe oder Entscheidungen gegen Repo-Dokumente prüfen
 - `simplify-pass`: vor groesserer Umsetzung Scope reduzieren und unnötige Komplexitaet entfernen
-- `cross-system-audit`: bei systemuebergreifenden Aenderungen betroffene Contracts, Templates, Prompts und Docs gegeneinander pruefen
+- `cross-system-audit`: bei systemübergreifenden Aenderungen betroffene Contracts, Templates, Prompts und Docs gegeneinander prüfen
 
 ## Agent Loop
 
-Der Standardloop besteht aus fuenf Rollenmomenten. Diese muessen nicht zwingend fuenf separate Agents sein; sie koennen innerhalb eines Codex- oder Claude-Laufs als Denk- und Arbeitsphasen gelten.
+Der Standardloop besteht aus fuenf Rollenmomenten. Diese müssen nicht zwingend fuenf separate Agents sein; sie können innerhalb eines Codex- oder Claude-Laufs als Denk- und Arbeitsphasen gelten.
 
-Fuer wiederholte oder koordinierende Laeufe beschreibt `docs/loop-readiness.md`
+Für wiederholte oder koordinierende Läufe beschreibt `docs/loop-readiness.md`
 eine optionale Preflight-Rubrik. Sie klaert Purpose, Trigger, Action, Proof,
 Memory, Stop und Cost/Attempts, ohne Runner-, Dashboard-, State-File- oder
 Label-Pflichten einzufuehren.
@@ -169,7 +169,7 @@ Vor jeder Aenderung:
 
 ### 3. Verifier
 
-- Geforderte Checks ausfuehren.
+- Geforderte Checks ausführen.
 - Keine Erfolgsbehauptung ohne Evidence.
 - Fehler klassifizieren statt schoenreden.
 
@@ -236,11 +236,11 @@ mandatory process for simple tickets.
 
 Besser als:
 
-> GitHub-zentriertes AI-Betriebssystem, das Codex/Claude ueber Tickets arbeiten laesst.
+> GitHub-zentriertes AI-Betriebssystem, das Codex/Claude über Tickets arbeiten laesst.
 
 Ist:
 
-> Ein GitHub-zentrierter Agent Work Harness, der Codex und Claude Code mit klaren Aufgaben, Grenzen, Pruefpfaden und Closeouts in wiederholbare Engineering-Loops bringt.
+> Ein GitHub-zentrierter Agent Work Harness, der Codex und Claude Code mit klaren Aufgaben, Grenzen, Prüfpfaden und Closeouts in wiederholbare Engineering-Loops bringt.
 
 ## Konsequenz
 
@@ -252,4 +252,4 @@ Sondern:
 
 > Hat jeder Agentenlauf Context, Boundary, Verifier, Evidence und Closeout?
 
-Automatisierung kommt spaeter. Der Harness kommt zuerst.
+Automatisierung kommt später. Der Harness kommt zuerst.

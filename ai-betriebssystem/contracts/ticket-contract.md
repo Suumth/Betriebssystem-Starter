@@ -26,7 +26,7 @@ Wenn ein Ticket morgens nicht selbst beweisen kann, dass es fertig ist, ist es z
 
 ## Ticket-Tiers
 
-Der Contract kennt zwei Umfangsklassen. Beide erfuellen die Maturity Rule; sie unterscheiden sich nur darin, welche Bloecke ausgeschrieben werden muessen.
+Der Contract kennt zwei Umfangsklassen. Beide erfuellen die Maturity Rule; sie unterscheiden sich nur darin, welche Bloecke ausgeschrieben werden müssen.
 
 | Tier | Wann | Template |
 |---|---|---|
@@ -246,7 +246,7 @@ The PR closeout must document:
 |---|---|---|
 | `EXECUTING` | Entscheidung ist getroffen; Ziel, Scope, Verifier und Evidence sind klar | Agent darf bauen |
 | `GRILLING` | Entscheidung, Begriff, Scope oder Ziel ist unklar | Agent darf nicht bauen; erst klaeren oder Entscheidungsvorlage schreiben |
-| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert, schneidet und prueft; Umsetzung erst in klarer EXECUTING-Box |
+| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert, schneidet und prüft; Umsetzung erst in klarer EXECUTING-Box |
 
 `Autonomy` beschreibt, wie eigenstaendig der Agent innerhalb der Boundary handeln darf. `Risk lane` bestimmt Review-Schaerfe und Evidence-Tiefe. `Execution Mode` ist davon getrennt: Auch ein `EXECUTING`-Ticket kann `Subagents: REQUIRED` setzen, wenn die Umsetzung vorab interne Codex-Teilpruefungen braucht.
 
@@ -278,17 +278,17 @@ Agentenfähig:
 
 > Dieses Ticket hat Context, Boundary, Verification und Closeout so klar definiert, dass Codex ohne zusätzliche menschliche Rückfrage beginnen kann.
 
-`needs-human` bedeutet immer: Auto-Merge ist verboten und eine Operator-Entscheidung ist nötig. Es ist kein Synonym fuer eine positive Review- oder Merge-Freigabe.
+`needs-human` bedeutet immer: Auto-Merge ist verboten und eine Operator-Entscheidung ist nötig. Es ist kein Synonym für eine positive Review- oder Merge-Freigabe.
 
-`auto-merge:ok` bedeutet nur dann Gruen, wenn ein Review of Record PASS vorliegt, keine gelben oder roten Labels gesetzt sind und die Operator Summary `Human decision required: no` ausweist.
+`auto-merge:ok` bedeutet nur dann Grün, wenn ein Review of Record PASS vorliegt, keine gelben oder roten Labels gesetzt sind und die Operator Summary `Human decision required: no` ausweist.
 
 ## Teilprojekt- / Milestone-Regel
 
 Produktwirksame `agent:ready`-Tickets brauchen einen GitHub Milestone. Der
 Milestone modelliert das Teilprojekt im Projekt-Repo.
 
-Ein Ticket ohne Milestone ist nur reif, wenn es ausdruecklich als nicht
-teilprojektbezogen begruendet ist:
+Ein Ticket ohne Milestone ist nur reif, wenn es ausdRücklich als nicht
+teilprojektbezogen begründet ist:
 
 - `meta`;
 - `repo-hygiene`;
@@ -324,7 +324,7 @@ Wenn `Subagents: REQUIRED`, muss die Evidence zusätzlich nennen, welche Subagen
 
 Wenn ein erforderlicher Subagent `subagent_timeout`, `subagent_no_result` oder `subagent_blocked` hat, muss die Evidence die Recovery, die degraded-mode-Entscheidung oder den `BLOCKED`-Stop, die Ersatzanalyse und das Restrisiko dokumentieren.
 
-Wenn Attempt Budget & Escalation greift, muss die Evidence die verwendeten Versuche, den letzten fehlgeschlagenen Check oder Review-Punkt, die Failure Classification, die vermutete Ursache und die empfohlene naechste Pruef- oder Entscheidungsinstanz nennen.
+Wenn Attempt Budget & Escalation greift, muss die Evidence die verwendeten Versuche, den letzten fehlgeschlagenen Check oder Review-Punkt, die Failure Classification, die vermutete Ursache und die empfohlene nächste Prüf- oder Entscheidungsinstanz nennen.
 
 ## Closeout-Regel
 
@@ -332,17 +332,17 @@ Closeout is task local.
 
 Was im Closeout zwingend passieren soll, muss im Ticket oder im konkreten Codex-Prompt stehen. Globale Contracts liefern Standardstruktur, aber keine impliziten Spezialpflichten.
 
-Standard-Closeout-Ziel fuer PR-basierte Arbeit ist der PR Body. PR-Kommentare sind Ergaenzung oder Fallback, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder zusaetzliche Evidence/Notes noetig sind.
+Standard-Closeout-Ziel für PR-basierte Arbeit ist der PR Body. PR-Kommentare sind Ergaenzung oder Fallback, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder zusaetzliche Evidence/Notes noetig sind.
 
 Ein Review darf NEEDS-FIX setzen, wenn relevante Closeout-Pflichten nur verstreut in Kommentaren stehen und nicht im PR Body auffindbar oder verlinkt sind.
 
-Keine Spezialanforderung darf nur unausgesprochen aus `AGENTS.md`, Skills oder allgemeinen Methoden-Dokumenten erwartet werden. Wenn ein Review spaeter eine Closeout-Luecke findet, ist das ein Signal, die Ticket- oder Prompt-Anforderung expliziter zu machen.
+Keine Spezialanforderung darf nur unausgesprochen aus `AGENTS.md`, Skills oder allgemeinen Methoden-Dokumenten erwartet werden. Wenn ein Review später eine Closeout-Luecke findet, ist das ein Signal, die Ticket- oder Prompt-Anforderung expliziter zu machen.
 
 Wenn `Subagents: REQUIRED`, muss der PR-Closeout die Subagent Summary als Primary Closeout Source enthalten: welche Subagents liefen, was sie fanden und welche Findings die Umsetzung beeinflusst haben.
 
 Wenn die Subagent Failure Policy greift, muss der PR-Closeout auch Failure marker, Recovery, degraded-mode-Entscheidung, Ersatzanalyse und Restrisiko enthalten.
 
-Wenn Attempt Budget & Escalation greift, muss der PR-Closeout die Attempt-Budget-Evidence als Primary Closeout Source enthalten. Ein weiterer Codex-Fix ohne diese Einordnung ist nicht gruener Green Path, sondern ein unklassifizierter Retry.
+Wenn Attempt Budget & Escalation greift, muss der PR-Closeout die Attempt-Budget-Evidence als Primary Closeout Source enthalten. Ein weiterer Codex-Fix ohne diese Einordnung ist nicht grüner Green Path, sondern ein unklassifizierter Retry.
 
 ## Vault Impact Contract
 
@@ -360,11 +360,11 @@ Jeder PR-Closeout muss eine `Vault Impact`-Sektion enthalten. Diese Sektion ist 
 
 Regeln:
 
-- `Vault update required: NO` gilt fuer rein lokale Implementierungs-, Test-, Format-, Refactor- oder Hygiene-Aenderungen ohne strategische, produktbezogene, architektonische oder methodische Aussage.
+- `Vault update required: NO` gilt für rein lokale Implementierungs-, Test-, Format-, Refactor- oder Hygiene-Aenderungen ohne strategische, produktbezogene, architektonische oder methodische Aussage.
 - `Vault update required: YES` gilt, wenn ein PR Strategie, Produktwahrheit, Architektur-Richtung, Nicht-Ziele, Risiken, Roadmap, UX-/Brand-Regeln, Lessons Learned oder AI-Betriebssystem-Methode veraendert oder klaert.
 - Bei `YES` erstellt der PR-Closeout einen Vault Update Candidate: Area, Grund, vorgeschlagene Ziel-Datei, exakter Markdown-Vorschlag und Source Evidence mit Issue-/PR-/Review-/Commit-Link.
-- Agenten duerfen den AI Vault nicht direkt veraendern, ausser das Issue erlaubt es ausdruecklich. Ohne diese ausdrueckliche Erlaubnis bleibt der Candidate Human Gate.
-- GitHub bleibt operative Wahrheit fuer Arbeit, Status, Evidence und Review. Der AI Vault bleibt strategisches und produktbezogenes Gedaechtnis; er ist kein operatives Taskboard.
+- Agenten dürfen den AI Vault nicht direkt verändern, ausser das Issue erlaubt es ausdRücklich. Ohne diese ausdRückliche Erlaubnis bleibt der Candidate Human Gate.
+- GitHub bleibt operative Wahrheit für Arbeit, Status, Evidence und Review. Der AI Vault bleibt strategisches und produktbezogenes Gedächtnis; er ist kein operatives Taskboard.
 - Wenn die passende Vault-Datei unbekannt ist, bleibt `Suggested target file` konkret soweit moeglich und markiert die Unsicherheit im `Reason`; der Candidate darf nicht erfunden oder als bereits eingetragen behauptet werden.
 
 ## Harness Failure Classification
