@@ -2,6 +2,22 @@
 
 Dies ist eine neutrale Starter-Installation für ein AI-Betriebssystem mit AI Vault. Sie enthält Ticket Contract, Review Contract, Label Contract, Green Path Completion, PM Signal Loop, Overnight Operations, Attempt Budget, Subagent Failure Policy, PROJECT.md-first Bootstrap, AGENTS.md Templates, Tool-Bootstrap-Pointer, Builder- und Reviewer-Prompts, Migration Runbooks, Demo-Projekt, Demo-Vault und Public Readiness Checks.
 
+## English Summary
+
+This starter repository provides a neutral first installation of an AI operating system for project work.
+
+It follows a simple operating principle: GitHub is the operational source of truth. Issues define the work, pull requests deliver evidence, reviews create a clear decision signal, and the human operator keeps the final gate.
+
+The package includes:
+
+- an AI operating system method folder with contracts, templates, prompts, skills, PM loops and migration notes
+- an AI Vault starter structure for strategy, decisions, risks, lessons and project memory
+- a demo project with `PROJECT.md`, `AGENTS.md`, labels, ticket example and PR template
+- a demo vault showing how project context can be structured outside the operative repo
+- public readiness checks to keep the starter package clean before sharing
+
+The goal is not to replace GitHub, Jira, Obsidian or AI tools. The goal is to connect them with a small, explicit operating model so AI agents can work on real tickets, produce reviewable results and remain under human control.
+
 ## Grundlogik
 
 - GitHub ist die operative Wahrheit.
