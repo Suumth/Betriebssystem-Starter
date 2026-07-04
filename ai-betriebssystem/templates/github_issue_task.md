@@ -143,7 +143,7 @@ Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. 
 - Changed Files
 - Validation
 - Evidence
-- Subagent Summary, wenn `Subagents: REQUIRED`
+- Subagent Evidence Capsule, wenn `Subagents: REQUIRED`
 - Subagent Failure Policy Evidence, wenn Recovery, degraded mode oder `BLOCKED` genutzt wurde
 - Attempt Budget & Escalation, wenn wiederholte Fix-/Review-/Loop-Arbeit erwartet wurde oder ein Budget erschöpft ist
 - Vault Impact nach `contracts/ticket-contract.md#vault-impact-contract`
@@ -176,10 +176,19 @@ Am Ende dokumentieren:
   - Suggested target file:
   - Proposed Markdown update:
   - Source evidence:
-- Which subagents were used, wenn `Subagents: REQUIRED`
-- What each subagent found, wenn `Subagents: REQUIRED`
-- Whether any subagent failed, timed out or required degraded mode, wenn `Subagents: REQUIRED`
-- Which findings changed implementation, wenn `Subagents: REQUIRED`
+- Subagent Evidence Capsule, wenn `Subagents: REQUIRED`:
+  - Which subagents ran:
+  - Explorer findings:
+  - Test/Validation findings:
+  - Risk findings:
+  - Findings used by Builder:
+  - Findings out of scope or blocked:
+  - Failure marker: none | subagent_timeout | subagent_no_result | subagent_blocked
+  - Recovery attempted:
+  - Degraded mode used: yes | no
+  - Why degraded continuation was safe:
+  - Replacement Evidence / Builder reconstruction:
+  - Remaining risk:
 - Attempt budget, attempts used, last failed check/review point, failure classification and next recommended reviewer, wenn Attempt Budget & Escalation greift
 - Remaining risk
 - Follow-up needed

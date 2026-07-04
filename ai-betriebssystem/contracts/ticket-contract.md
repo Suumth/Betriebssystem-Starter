@@ -122,15 +122,19 @@ Only required when the ticket expects repeated fix, review or loop work.
   - Suggested target file:
   - Proposed Markdown update:
   - Source evidence:
-- Subagent Summary, wenn `Subagents: REQUIRED`:
+- Subagent Evidence Capsule, wenn `Subagents: REQUIRED`:
   - Which subagents ran:
-  - What each subagent found:
-  - Which findings changed implementation:
+  - Explorer findings:
+  - Test/Validation findings:
+  - Risk findings:
+  - Findings used by Builder:
+  - Findings out of scope or blocked:
   - Failure marker: none | subagent_timeout | subagent_no_result | subagent_blocked
   - Recovery attempted:
   - Degraded mode used: yes/no
   - Why degraded continuation was safe:
   - Replacement Evidence / Builder reconstruction:
+  - Remaining risk:
 - Remaining risk:
 - Follow-up needed:
 - Harness failure classification: none | missing_context | stale_context | missing_tool | missing_verifier | weak_guardrail | unclear_spec | model_limitation
@@ -240,6 +244,33 @@ The PR closeout must document:
 
 `subagent_timeout`, `subagent_no_result` and `subagent_blocked` are Subagent Result markers, not replacements for Harness Failure Classification.
 
+## Subagent Evidence Capsule
+
+If `Subagents: REQUIRED`, the PR closeout must contain a fixed `Subagent Evidence Capsule` as reviewable GitHub evidence.
+
+The capsule is mandatory because Review of Record must be able to evaluate subagent use without reading local chats or hidden context. Subagents remain advisory and read-only unless the ticket explicitly allows more; they do not mutate the repo, Vault or GitHub state independently.
+
+Required fields:
+
+- Which subagents ran:
+- Explorer findings:
+- Test/Validation findings:
+- Risk findings:
+- Findings used by Builder:
+- Findings out of scope or blocked:
+- Failure marker: none | subagent_timeout | subagent_no_result | subagent_blocked
+- Recovery attempted:
+- Degraded mode used: yes | no
+- Why degraded continuation was safe:
+- Replacement Evidence / Builder reconstruction:
+- Remaining risk:
+
+Explorer findings cover context discovery, scope boundaries and relevant source-of-truth files.
+Test/Validation findings cover checks run or proposed, verifier gaps and any validation limits.
+Risk findings cover safety, data, release, product, Vault, protected-path or contract risks.
+
+If a required subagent returns `subagent_timeout`, `subagent_no_result` or `subagent_blocked`, the capsule must show the recovery attempt, replacement evidence, degraded-mode justification and remaining risk. If that evidence is missing or unsafe, Codex must stop with `BLOCKED` instead of treating degraded mode as green.
+
 ## Agent Modes
 
 | Mode | Bedeutung | Bauregel |
@@ -320,9 +351,9 @@ Beispiele:
 - sauber dokumentierte Blockade mit Ursache
 - Rohoutput bei Xcode-, Simulator-, Browser- oder Build-Validierung
 
-Wenn `Subagents: REQUIRED`, muss die Evidence zusätzlich nennen, welche Subagents gestartet wurden, was sie gefunden haben und welche Findings die Umsetzung beeinflusst haben.
+Wenn `Subagents: REQUIRED`, muss die Evidence zusätzlich eine `Subagent Evidence Capsule` enthalten, die Explorer findings, Test/Validation findings, Risk findings, Findings used by Builder und Findings out of scope or blocked getrennt nennt.
 
-Wenn ein erforderlicher Subagent `subagent_timeout`, `subagent_no_result` oder `subagent_blocked` hat, muss die Evidence die Recovery, die degraded-mode-Entscheidung oder den `BLOCKED`-Stop, die Ersatzanalyse und das Restrisiko dokumentieren.
+Wenn ein erforderlicher Subagent `subagent_timeout`, `subagent_no_result` oder `subagent_blocked` hat, muss die Capsule die Recovery, die degraded-mode-Entscheidung oder den `BLOCKED`-Stop, die Ersatzanalyse und das Restrisiko dokumentieren.
 
 Wenn Attempt Budget & Escalation greift, muss die Evidence die verwendeten Versuche, den letzten fehlgeschlagenen Check oder Review-Punkt, die Failure Classification, die vermutete Ursache und die empfohlene nächste Prüf- oder Entscheidungsinstanz nennen.
 
@@ -338,9 +369,9 @@ Ein Review darf NEEDS-FIX setzen, wenn relevante Closeout-Pflichten nur verstreu
 
 Keine Spezialanforderung darf nur unausgesprochen aus `AGENTS.md`, Skills oder allgemeinen Methoden-Dokumenten erwartet werden. Wenn ein Review später eine Closeout-Lücke findet, ist das ein Signal, die Ticket- oder Prompt-Anforderung expliziter zu machen.
 
-Wenn `Subagents: REQUIRED`, muss der PR-Closeout die Subagent Summary als Primary Closeout Source enthalten: welche Subagents liefen, was sie fanden und welche Findings die Umsetzung beeinflusst haben.
+Wenn `Subagents: REQUIRED`, muss der PR-Closeout die `Subagent Evidence Capsule` als Primary Closeout Source enthalten: welche Subagents liefen, welche Explorer-, Test/Validation- und Risk-Befunde entstanden, welche Findings die Umsetzung beeinflusst haben und welche Findings out of scope oder blocked waren.
 
-Wenn die Subagent Failure Policy greift, muss der PR-Closeout auch Failure marker, Recovery, degraded-mode-Entscheidung, Ersatzanalyse und Restrisiko enthalten.
+Wenn die Subagent Failure Policy greift, muss die Capsule auch Failure marker, Recovery, degraded-mode-Entscheidung, Ersatzanalyse und Restrisiko enthalten.
 
 Wenn Attempt Budget & Escalation greift, muss der PR-Closeout die Attempt-Budget-Evidence als Primary Closeout Source enthalten. Ein weiterer Codex-Fix ohne diese Einordnung ist nicht grüner Green Path, sondern ein unklassifizierter Retry.
 
@@ -442,17 +473,21 @@ Status: done | partial | blocked
 - Proposed Markdown update:
 - Source evidence:
 
-### Subagent Summary
+### Subagent Evidence Capsule
 Nur erforderlich, wenn `Subagents: REQUIRED`.
 
 - Which subagents ran:
-- What each subagent found:
-- Which findings changed implementation:
+- Explorer findings:
+- Test/Validation findings:
+- Risk findings:
+- Findings used by Builder:
+- Findings out of scope or blocked:
 - Failure marker: none | subagent_timeout | subagent_no_result | subagent_blocked
 - Recovery attempted:
 - Degraded mode used: yes | no
 - Why degraded continuation was safe:
 - Replacement Evidence / Builder reconstruction:
+- Remaining risk:
 
 ### Attempt Budget & Escalation
 Nur erforderlich, wenn das Ticket wiederholte Fix-, Review- oder Loop-Arbeit erwartet oder ein Budget erschöpft wurde.

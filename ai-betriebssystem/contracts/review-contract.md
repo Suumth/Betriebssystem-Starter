@@ -38,12 +38,13 @@ The Review of Record remains GitHub:
 
 If the linked issue says `Subagents: REQUIRED`, Review of Record must additionally check:
 
-- Were the required subagents named in the closeout?
-- Did the Builder summarize what each subagent found?
-- Did the Builder state which findings affected implementation?
+- Is a `Subagent Evidence Capsule` present in the PR body or clearly linked PR evidence?
+- Were the required subagents named in the capsule?
+- Does the capsule separately document Explorer findings, Test/Validation findings and Risk findings?
+- Does the capsule state which findings affected implementation?
 - Were relevant findings either implemented, marked out of scope or blocked with reason?
 
-No PASS if required subagent evidence is missing from the PR body or clearly linked PR evidence.
+No PASS if the required `Subagent Evidence Capsule` is missing or incomplete in the PR body or clearly linked PR evidence.
 
 If a PR documents `subagent_timeout`, `subagent_no_result`, `subagent_blocked` or degraded mode, Review of Record must also check:
 
@@ -73,7 +74,7 @@ Der Reviewer prüft:
 - Wurde die im Ticket geforderte Validierung ausgeführt?
 - Ist die Evidence ausreichend?
 - Ist `Vault Impact` im PR Body sichtbar und nach `contracts/ticket-contract.md#vault-impact-contract` ausgefüllt?
-- Bei `Subagents: REQUIRED`: Sind Subagent-Closeout und Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence sichtbar?
+- Bei `Subagents: REQUIRED`: Ist die `Subagent Evidence Capsule` mit Explorer findings, Test/Validation findings, Risk findings, Findings used by Builder und Findings out of scope or blocked im PR Body oder klar verlinkter PR-Evidence sichtbar?
 - Bei degraded mode: Sind `subagent_timeout`, `subagent_no_result` oder `subagent_blocked`, Recovery, Ersatzanalyse und Restrisiko reviewbar dokumentiert?
 - Bei wiederholter Fix-, Review- oder Loop-Arbeit: Dokumentiert der PR Attempt Budget, Attempts used, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache, nächste Aktion und warum ein weiterer Codex-Fix sinnvoll ist oder nicht?
 - Wenn der PR einen Harness Learning Candidate erstellt oder empfiehlt: Enthält er Claim / Lesson, Evidence Source, Confidence: 1-5, Scope, Applies To, Proposed Target, Proposed Update, Human Gate required: yes und den Non-goal, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde?
@@ -221,7 +222,7 @@ Kommentarformat:
 - Kein PASS ohne `Vault Impact` im PR Body oder klar verlinkter PR-Evidence.
 - Kein PASS, wenn `Vault update required: YES` gesetzt ist und Area, Reason, Suggested target file, Proposed Markdown update oder Source evidence fehlen.
 - Kein PASS, wenn der PR direkte AI-Vault-Änderungen durch Agenten behauptet oder impliziert, ohne dass das Issue diese Vault-Änderung ausdrücklich erlaubt.
-- Kein PASS, wenn `Subagents: REQUIRED` gilt und die erforderliche Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence fehlt.
+- Kein PASS, wenn `Subagents: REQUIRED` gilt und die erforderliche `Subagent Evidence Capsule` im PR Body oder klar verlinkter PR-Evidence fehlt oder unvollständig ist.
 - Kein PASS, wenn `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode genutzt wurde und Recovery, Ersatzanalyse, Safety-Begründung oder Restrisiko fehlen.
 - Kein PASS bei wiederholter Fix-, Review- oder Loop-Arbeit ohne Attempt-Budget-Evidence, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache und nächste Aktion.
 - Kein PASS für einen Harness Learning Candidate, wenn Source Evidence, Confidence: 1-5, Scope, Proposed Target, Human Gate oder der Hinweis fehlt, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde.
