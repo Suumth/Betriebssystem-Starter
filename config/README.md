@@ -5,7 +5,7 @@ Diese Konfiguration beschreibt die Werte, die ein frisch aus dem Template erzeug
 ## Dateien
 
 - `starter.config.example` ist die neutrale Beispiel-Konfiguration.
-- `placeholders.json` ist der maschinenlesbare Contract fuer Setup und Readiness Checks.
+- `placeholders.json` ist der maschinenlesbare Contract für Setup und Readiness Checks.
 - `setup.local.env` ist die lokale Arbeitskopie und wird nicht committed.
 
 ## Personalisierbare Werte
@@ -19,4 +19,4 @@ Diese Konfiguration beschreibt die Werte, die ein frisch aus dem Template erzeug
 
 ## Setup-Grenzen
 
-Setup darf lokale Projektdateien und Vault-Projektbereiche vorbereiten. Setup darf Methoden-, Contract-, Template- und Dokumentationsdateien nicht ungefragt ueberschreiben.
+Setup darf lokale Projektdateien und Vault-Projektbereiche vorbereiten. Setup darf Methoden-, Contract-, Template- und Dokumentationsdateien nicht ungefragt überschreiben.
