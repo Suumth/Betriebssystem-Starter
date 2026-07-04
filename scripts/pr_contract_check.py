@@ -1,1 +1,1 @@
-print('hello')
+print('auto-merge:ok')
