@@ -30,6 +30,8 @@ This starter is for teams and solo builders using AI agents without losing contr
 bash scripts/setup.sh
 ```
 
+Then run one safe AI-assisted loop with [`FIRST_LOOP.md`](FIRST_LOOP.md).
+
 After setup you have:
 
 - `PROJECT.md` as the router for AI tools
@@ -38,7 +40,7 @@ After setup you have:
 - an AI Vault starter area
 - a Ticket 0 pattern for the first agent loop
 
-Continue with [`START_HERE.md`](START_HERE.md).
+Use [`START_HERE.md`](START_HERE.md) after the first loop for the deeper method.
 
 ## How the Workflow Works
 
@@ -136,13 +138,14 @@ The goal is not to replace GitHub, Jira, Obsidian or AI tools. The goal is to co
 
 ## Nach dem Setup
 
-1. Lies `START_HERE.md`.
-2. Öffne `ai-vault/` in Obsidian oder einem Markdown-Editor.
-3. Füll bei Bedarf `setup.local.env`; die Vorlage liegt in `config/starter.config.example`.
-4. Nutze `examples/demo-project/` als Vorlage für dein erstes echtes Projekt.
-5. Lege Ticket 0 im Projekt-Repo an.
-6. Nutze die Label-Semantik aus `ai-betriebssystem/contracts/labels.md` und `ai-betriebssystem/templates/labels.yml`.
-7. Führe vor jeder Weitergabe `bash scripts/public-readiness-check.sh` aus.
+1. Starte mit `FIRST_LOOP.md`.
+2. Füll bei Bedarf `setup.local.env`; die Vorlage liegt in `config/starter.config.example`.
+3. Lege Ticket 0 im Projekt-Repo an, falls setup es nicht erstellt hat.
+4. Stoppe vor Merge am Human Gate.
+5. Lies danach `START_HERE.md` fuer den tieferen Methoden-Kontext.
+6. Öffne `ai-vault/` in Obsidian oder einem Markdown-Editor, wenn du nach dem ersten PR Projektgedächtnis pflegen willst.
+7. Nutze die Label-Semantik aus `ai-betriebssystem/contracts/labels.md` und `ai-betriebssystem/templates/labels.yml`.
+8. Führe vor jeder Weitergabe `bash scripts/public-readiness-check.sh` aus.
 
 ## Wichtige Grenze
 

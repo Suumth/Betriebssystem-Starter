@@ -18,7 +18,8 @@ Am Ende hast du ein Projekt-Repo mit `PROJECT.md`, `AGENTS.md`, Labels, Ticket 0
 3. Initialisiere Git frisch, wenn du den Starter veröffentlichen oder weiterentwickeln willst.
 4. Öffne `ai-vault/` in Obsidian.
 5. Lege dein erstes Projekt anhand von `docs/first-project.md` an.
-6. Führe nach dem Setup optional `bash scripts/post-setup-check.sh` aus, um nicht aufgelöste Platzhalter außerhalb der Template-Bereiche zu finden.
+6. Öffne `FIRST_LOOP.md` und starte Ticket 0 mit dem Builder-Prompt aus der Setup-Ausgabe.
+7. Führe nach dem Setup optional `bash scripts/post-setup-check.sh` aus, um nicht aufgelöste Platzhalter außerhalb der Template-Bereiche zu finden.
 
 ## Optional: Branch Protection
 
