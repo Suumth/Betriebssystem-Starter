@@ -90,9 +90,9 @@ Repository settings checked on 2026-07-04:
 Recommended first release:
 
 - Tag: `v0.1.0`
-- Release title: `AI-Betriebssystem Starter v0.1.0`
+- Release title: `AI Operating System Starter v0.1.0`
 - Release type: GitHub draft release first, publish only after Review of Record and Human Gate.
-- Release notes should mention: template usage, `bash scripts/setup.sh`, Ticket 0, GitHub as operative truth, AI Vault as project memory, and public readiness validation.
+- Release notes should mention: template usage, `bash scripts/setup.sh`, Ticket 0, GitHub as the operational source of truth, the AI Vault as project memory and strategy, Human Gate, Review of Record and public readiness validation.
 
 Operator checklist before publishing:
 
@@ -101,7 +101,7 @@ Operator checklist before publishing:
 - [ ] `git diff --check` has no output.
 - [ ] No private paths, product names, account data or sensitive values are present.
 - [ ] GitHub template flag, description and topics still match the list above.
-- [ ] Draft release notes were reviewed by a human.
+- [ ] Draft release notes use an English-first public positioning and were reviewed by a human.
 
 ## Clean Export Note
 

@@ -2,12 +2,12 @@
 
 ## First Public Release
 
-- [ ] GitHub Template repository ist aktiviert.
-- [ ] Description ist gesetzt: `A GitHub-centered starter kit for AI-assisted project work with tickets, PR evidence, human gates, agent prompts, and an AI Vault.`
-- [ ] Topics sind gesetzt: `ai-agents`, `ai-operating-system`, `github-workflow`, `obsidian`, `project-management`, `agentic-workflows`, `codex`, `claude-code`, `ai-vault`.
-- [ ] Erste Release wird als Draft vorbereitet, zum Beispiel `v0.1.0`.
-- [ ] Release wird erst nach Review of Record und Human Gate veröffentlicht.
-- [ ] Release Notes nennen Template-Nutzung, Setup, Ticket 0, GitHub als operative Wahrheit und AI Vault als Projektgedächtnis.
+- [ ] GitHub Template repository is enabled.
+- [ ] Description is set: `A GitHub-centered starter kit for AI-assisted project work with tickets, PR evidence, human gates, agent prompts, and an AI Vault.`
+- [ ] Topics are set: `ai-agents`, `ai-operating-system`, `github-workflow`, `obsidian`, `project-management`, `agentic-workflows`, `codex`, `claude-code`, `ai-vault`.
+- [ ] First release is prepared as a draft, for example `v0.1.0`.
+- [ ] Release is published only after Review of Record and Human Gate.
+- [ ] Release notes explain template usage, setup, Ticket 0, GitHub as the operational source of truth, the AI Vault as project memory and Human Gate.
 
 ## Public Readiness
 
