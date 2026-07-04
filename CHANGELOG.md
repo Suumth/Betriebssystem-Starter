@@ -6,8 +6,20 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ## Unreleased
 
+No changes yet.
+
+## 0.1.0 - 2026-07-04
+
+Release title: `AI Operating System Starter v0.1.0`
+
 ### Added
 
+- Initial public AI Operating System Starter package.
+- GitHub-centered operating model.
+- AI operating system method folder with contracts, templates, prompts, skills and PM loop notes.
+- AI Vault starter structure.
+- Demo project and demo vault examples.
+- Public readiness check for release hygiene.
 - Root GitHub Issue and Pull Request templates aligned with the PR Contract Check and Human Gate fields.
 - Post-v0.1 setup hardening for Ticket 0 duplicate detection, Vault path handling and public readiness syntax checks.
 - First Loop onboarding path with `FIRST_LOOP.md`, simpler Ticket 0, setup Builder prompt and English-first START_HERE follow-up.
@@ -33,14 +45,3 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 - CI setup smoke now uses a public-neutral AI OS method repository URL.
 - `<AI_OS_METHOD_REPO_URL>` placeholder now recognized by setup and post-setup checks.
 - Post-setup placeholder check now runs on macOS Bash 3.2.
-
-## 0.1.0
-
-### Added
-
-- Initial public AI Operating System Starter package.
-- GitHub-centered operating model.
-- AI operating system method folder with contracts, templates, prompts, skills and PM loop notes.
-- AI Vault starter structure.
-- Demo project and demo vault examples.
-- Public readiness check for release hygiene.

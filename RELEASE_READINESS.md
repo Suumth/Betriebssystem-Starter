@@ -8,14 +8,21 @@ Vollständige neutrale AI-Betriebssystem-Starterinstallation.
 
 ## Enthaltene Funktionen
 
+- First Loop Einstieg
+- Ticket 0 Bootstrap-Pfad
 - Ticket Contract
 - Review Contract
 - Label Contract
 - PROJECT.md-first
 - AGENTS.md
+- Root Issue Template
+- Root Pull Request Template
+- PR Contract Check
+- Setup und Post-Setup Checks
 - Codex Builder Prompt
 - Reviewer Prompt
 - Green Path
+- Human Gate vor Merge, Release und geschützten Entscheidungen
 - PM Signal Loop
 - PM Lagebild
 - Overnight Operations
@@ -60,13 +67,20 @@ Vollständige neutrale AI-Betriebssystem-Starterinstallation.
 Auszuführen vor Weitergabe:
 
 ```bash
+git diff --check
 bash scripts/public-readiness-check.sh
+bash scripts/post-setup-check.sh
 find . -name ".DS_Store" -o -name "__MACOSX" -o -name ".code-review-graph" -o -name ".git"
 grep -RInE '<private-patterns>' . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian
 grep -RInE '<credential-patterns>' . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian
 ```
 
 Der Public Readiness Check prüft private Treffer, credential-ähnliche Treffer, lokale Pfade, Pflichtdateien, Pflichtlabels, Vault Starter, Demo-Projekt, Demo-Vault, lokale Artefakte und verschachtelte Git-Historie im Release-Bereich.
+
+Der Post-Setup Check prüft operative, durch Setup erzeugte Dateien auf
+unaufgelöste Starter-Platzhalter. Der PR Contract Check prüft PR-Bodies auf
+Validation Evidence, Review of Record, Human Gate, Vault Impact, Operator
+Summary und Review Recommendation.
 
 ## Risiken
 
@@ -92,13 +106,16 @@ Recommended first release:
 - Tag: `v0.1.0`
 - Release title: `AI Operating System Starter v0.1.0`
 - Release type: GitHub draft release first, publish only after Review of Record and Human Gate.
-- Release notes should mention: template usage, `bash scripts/setup.sh`, Ticket 0, GitHub as the operational source of truth, the AI Vault as project memory and strategy, Human Gate, Review of Record and public readiness validation.
+- Release notes should mention: template usage, `bash scripts/setup.sh`, setup/post-setup checks, Ticket 0, First Loop, PR Contract Check, GitHub as the operational source of truth, the AI Vault as project memory and strategy, Human Gate, Review of Record and public readiness validation.
+- Final release commit: the `v0.1.0` tag must be recreated in #64 after #60, #61, #62 and #63 are merged.
 
 Operator checklist before publishing:
 
 - [ ] Review of Record for the release PR is PASS.
 - [ ] `bash scripts/public-readiness-check.sh` passes on the release commit.
+- [ ] `bash scripts/post-setup-check.sh` passes on the release commit.
 - [ ] `git diff --check` has no output.
+- [ ] The release commit includes First Loop, Ticket 0 setup, Human Gate wording, PR Contract Check, root templates and setup/post-setup placeholder handling.
 - [ ] No private paths, product names, account data or sensitive values are present.
 - [ ] GitHub template flag, description and topics still match the list above.
 - [ ] Draft release notes use an English-first public positioning and were reviewed by a human.

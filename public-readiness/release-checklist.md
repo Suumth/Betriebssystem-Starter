@@ -6,12 +6,16 @@
 - [ ] Description is set: `A GitHub-centered starter kit for AI-assisted project work with tickets, PR evidence, human gates, agent prompts, and an AI Vault.`
 - [ ] Topics are set: `ai-agents`, `ai-operating-system`, `github-workflow`, `obsidian`, `project-management`, `agentic-workflows`, `codex`, `claude-code`, `ai-vault`.
 - [ ] First release is prepared as a draft, for example `v0.1.0`.
+- [ ] Release title is `AI Operating System Starter v0.1.0`.
 - [ ] Release is published only after Review of Record and Human Gate.
-- [ ] Release notes explain template usage, setup, Ticket 0, GitHub as the operational source of truth, the AI Vault as project memory and Human Gate.
+- [ ] Release notes explain template usage, setup/post-setup checks, Ticket 0, First Loop, PR Contract Check, GitHub as the operational source of truth, the AI Vault as project memory, Review of Record and Human Gate.
+- [ ] `v0.1.0` is retagged only after #60, #61, #62 and #63 are merged.
 
 ## Public Readiness
 
 - [ ] `bash scripts/public-readiness-check.sh` läuft grün.
+- [ ] `bash scripts/post-setup-check.sh` läuft grün.
+- [ ] `git diff --check` hat keine Ausgabe.
 - [ ] Keine privaten Muster im veröffentlichbaren Bereich.
 - [ ] Keine Secret-Muster im veröffentlichbaren Bereich.
 - [ ] Keine `.DS_Store`, `__MACOSX` oder `.code-review-graph`.
