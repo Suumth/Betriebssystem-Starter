@@ -17,7 +17,7 @@ Dieses Paket richtet ein AI-Betriebssystem wie eine saubere Erstinstallation ein
 7. Erstelle Ticket 0 mit `examples/demo-project/docs/ticket-0-example.md` als Vorlage.
 8. Bearbeite Ticket 0 mit Builder-Prompt und Review of Record getrennt.
 9. Liefere per PR. Die PR-Beschreibung muss Validation Evidence, Risiken, Human Gate und Review-Empfehlung enthalten.
-10. Nach Merge fliessen echte Erkenntnisse in Vault-Dateien wie `Entscheidungen.md`, `Risiken.md` und `Lessons-Learned.md` zurück.
+10. Nach Merge fließen echte Erkenntnisse in Vault-Dateien wie `Entscheidungen.md`, `Risiken.md` und `Lessons-Learned.md` zurück.
 
 ## Was Codex macht
 
@@ -32,4 +32,3 @@ Codex kann Tickets ausführen, Dateien ändern, lokale Checks laufen lassen, Evi
 - Subagent Failure Policy: `ai-betriebssystem/contracts/ticket-contract.md`
 - Operator Merge Policy: `ai-betriebssystem/docs/operator-merge-policy.md`
 - Model Resource Policy: `ai-betriebssystem/docs/model-resource-policy.md`
-
