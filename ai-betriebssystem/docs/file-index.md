@@ -10,7 +10,7 @@
 - `docs/glossary.md` — kanonische Begriffsdefinitionen; bei Widerspruch zwischen Dokumenten gilt das Glossar.
 - `docs/operating-model.md` — Rollen, Quellenhierarchie, Agent Modes, Subagent Failure Policy, Review Isolation, Vault-Impact-Gate, Standard-Loop und Human Gates.
 - `docs/harness-model.md` — Agent Work Harness, Agent Substrate, Agent Contract, Agent Modes, Loading Map, Skill-Muster, Harness-Failure-Klassifikation und diagnostische Loop-Failure-Mapping-Tabelle.
-- `docs/loop-readiness.md` — optionale Preflight-Rubrik für koordinierende oder wiederholte Agent-Loops, inklusive Attempt Budget und optionaler `loop-audit`-Diagnosenotiz ohne neue Gates.
+- `docs/loop-readiness.md` — GitHub-native Loop Readiness Checklist für koordinierende oder wiederholte Agent-Loops, inklusive report-only/assisted/PR-producing Einordnung, Attempt Budget und optionaler `loop-audit`-Diagnosenotiz ohne neue Gates.
 - `docs/model-resource-policy.md` — Codex als Hauptarbeitskraft, Attempt-Budget-Disziplin und Claude Code nur nach Vorschlag und menschlicher Freigabe.
 - `docs/operator-merge-policy.md` — Operator-Rolle, Merge-Ampel, Review-Beauftragung, Vault-Impact-Human-Gate, Batch Green Path Execution und Local Direct-Main Mode mit Waiver-Regeln.
 - `docs/green-path-completion.md` — Pflichtablauf nach grünem Merge: lokales `main` synchronisieren, Status prüfen, nächstes Ticket, Batch Green Path Execution oder Stop.

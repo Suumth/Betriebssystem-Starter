@@ -8,6 +8,9 @@ bodies. Loop Readiness only helps the operator decide whether a repeated agent
 loop is clear enough to run without drifting into context burn, stale context or
 unreviewable work.
 
+GitHub is the operational source of truth for loop execution. The Vault is not
+read during execution and is not an operational taskboard.
+
 ## When to Use It
 
 Use Loop Readiness before work that repeats, coordinates or spans more than one
@@ -32,13 +35,17 @@ It is not required for:
 | Area | Question | Minimum evidence |
 | --- | --- | --- |
 | Purpose / Scope | Why should this loop run, and what is explicitly out of scope? | Issue goal, boundary and stop condition |
+| Watched Scope | Which repo, branches, PRs and tickets may the loop inspect or change? | Explicit repo/branch/PR/ticket scope |
 | Trigger | What starts the loop? | Issue, PR review, label, PM Signal request or operator instruction |
+| Cadence | Is this manual, operator-prompted, evening-prompted or batch work? | Trigger/cadence stated without requiring a runner |
 | Action | What may the agent change or inspect? | Allowed files, forbidden files and expected artifact |
 | Maker / Checker | Who builds and who checks? | Builder role, Review of Record and any required Subagents |
 | Proof | What proves success? | Required command, review evidence, smoke result or manual check |
 | Memory | Where does durable evidence live? | PR body, issue, repo doc, decision note or risk note |
 | Stop | What ends or blocks the loop? | Merged PR, explicit stop, `BLOCKED`, `needs-human` or follow-up issue |
 | Cost / Attempts | How far may the loop retry? | Attempt budget, fix-cycle cap or escalation rule |
+| Safety | What protected or release risk blocks action? | Human handoff trigger, protected-path rule or denylist reference if available |
+| Observability | How can a reviewer reconstruct the run? | Closeout, evidence, labels, PR body and linked comments |
 
 If one row cannot be answered, the loop is not ready. Convert the gap into a
 clearer issue, review request, PM Signal prompt or human decision instead of
@@ -50,16 +57,25 @@ Loop Readiness only permits MVP-safe operation:
 
 - `L0 Draft`: the loop idea exists, but purpose, proof or stop rules are still
   incomplete. Do not execute as a repeated loop.
-- `L1 Report`: the loop may inspect and summarize. It can propose issues, PR
-  evidence or decision notes, but it does not change product artifacts without a
-  normal ticket.
-- `L2 Assisted`: the loop may make bounded repo changes through normal
-  GitHub Issues, PRs, validation and Review of Record. Human gates still apply.
+- `L1 Report-only`: the loop may inspect and summarize. It can propose issues,
+  PR evidence or decision notes, but it does not change product artifacts
+  without a normal ticket.
+- `L2 Assisted`: the loop may make bounded repo changes through normal GitHub
+  Issues, PRs, validation and Review of Record. Human gates still apply.
+- `L2 PR-producing action`: only allowed when the ticket is mature, validation
+  is defined, Evidence Gate is satisfied, Review of Record is available and the
+  Operator Merge Policy still controls merge.
+- `L3 Release/protected blocked`: release or protected-surface work stops at
+  evidence, review recommendation and Human Gate unless the ticket explicitly
+  authorizes the protected action.
 - `L3 Unattended`: not allowed in the MVP.
 
 `L2 Assisted` is the maximum level for this repository. Anything that needs
 unattended scheduling, auto-fix, auto-merge, broad repo mutation or hidden state
 is outside the MVP.
+
+A loop is not ready for autonomous PR-producing work if validation or Review of
+Record is missing.
 
 ### Overnight Runs stay L2 Assisted
 
@@ -105,6 +121,9 @@ Loop Readiness must not introduce:
 Attempt budgets apply only to repeated fix, review or loop work. They do not
 count normal implementation steps, the first validation run, closeout edits,
 post-merge hygiene or Green Path next-ticket selection.
+
+For run-wide limits, stop conditions and operator kill actions, use
+`contracts/run-budget-kill-switch.md`.
 
 Default caps:
 
