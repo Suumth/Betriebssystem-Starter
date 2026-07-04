@@ -115,6 +115,30 @@ for file in "${required_files[@]}"; do
   fi
 done
 
+while IFS= read -r -d '' script_file; do
+  if bash -n "$script_file"; then
+    pass "shell syntax valid: $script_file"
+  else
+    fail "shell syntax invalid: $script_file"
+  fi
+done < <(find scripts -type f -name "*.sh" -print0)
+
+for json_file in config/*.json; do
+  if python3 -m json.tool "$json_file" >/dev/null; then
+    pass "json valid: $json_file"
+  else
+    fail "json invalid: $json_file"
+  fi
+done
+
+if command -v git >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if git ls-files --error-unmatch setup.local.env >/dev/null 2>&1; then
+    fail "local setup file is tracked: setup.local.env"
+  else
+    pass "local setup file is not tracked"
+  fi
+fi
+
 required_labels=(
   "agent:ready"
   "agent:running"

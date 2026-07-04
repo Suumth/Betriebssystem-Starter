@@ -63,6 +63,18 @@ strip_optional_quotes() {
   printf '%s' "$value"
 }
 
+expand_user_path() {
+  local value="$1"
+
+  if [ "$value" = "~" ]; then
+    printf '%s' "$HOME"
+  elif [ "${value:0:2}" = "~/" ]; then
+    printf '%s/%s' "$HOME" "${value:2}"
+  else
+    printf '%s' "$value"
+  fi
+}
+
 load_local_config() {
   local config_file="$1"
   local line key value
@@ -197,6 +209,8 @@ prompt_yes_no IMPORT_LABELS "Import GitHub labels" "$IMPORT_LABELS"
 prompt_yes_no CREATE_TICKET_0 "Create Ticket 0" "$CREATE_TICKET_0"
 prompt_yes_no CREATE_VAULT_STRUCTURE "Create Vault project structure" "$CREATE_VAULT_STRUCTURE"
 
+AI_VAULT_PATH="$(expand_user_path "$AI_VAULT_PATH")"
+
 export PROJECT_NAME GITHUB_OWNER GITHUB_REPO PROJECT_REPO_URL
 export AI_VAULT_PATH LOCAL_CHECKOUT_PATH AI_OS_METHOD_REPO_URL IMPORT_LABELS CREATE_TICKET_0 CREATE_VAULT_STRUCTURE
 
@@ -316,18 +330,24 @@ create_vault_structure() {
   local project_slug
   project_slug="$(vault_project_slug)"
   local target_dir="${AI_VAULT_PATH}/02_Projects/${project_slug}"
+  local created_count=0
+  local kept_count=0
   mkdir -p "$target_dir"
 
   for source_path in ai-vault/02_Projects/_PROJECT_TEMPLATE/*.md; do
     local target_path="${target_dir}/$(basename "$source_path")"
     if [ -e "$target_path" ]; then
       printf 'Keeping existing Vault file: %s\n' "$target_path"
+      kept_count=$((kept_count + 1))
       continue
     fi
     cp "$source_path" "$target_path"
     replace_placeholders "$target_path"
     printf 'Created Vault file: %s\n' "$target_path"
+    created_count=$((created_count + 1))
   done
+
+  printf 'Vault bootstrap summary: created %s file(s), kept %s existing file(s) in %s\n' "$created_count" "$kept_count" "$target_dir"
 }
 
 repo_slug=""
@@ -382,8 +402,15 @@ PY
 }
 
 create_ticket_0() {
-  local title="Ticket 0: AI readiness bootstrap"
+  local title="Ticket 0: Prove the First Loop"
   local body_file="examples/demo-project/docs/ticket-0-example.md"
+  local existing_issue=""
+
+  existing_issue="$(gh issue list --repo "$repo_slug" --state all --limit 100 --json number,title --jq '.[] | select(.title | test("(?i)^ticket 0")) | .number' 2>/dev/null | head -n 1 || true)"
+  if [ -n "$existing_issue" ]; then
+    printf 'Skipping Ticket 0: existing Ticket 0 issue #%s found.\n' "$existing_issue"
+    return 0
+  fi
 
   printf '\nCreating Ticket 0 in %s\n' "$repo_slug"
   if gh issue create --repo "$repo_slug" --title "$title" --body-file "$body_file" >/dev/null 2>&1; then
