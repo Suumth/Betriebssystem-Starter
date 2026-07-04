@@ -61,8 +61,15 @@ for dir in "${excluded_dirs[@]}"; do
 done
 find_args+=( -type f -print )
 
-mapfile -t files < <(find "${find_args[@]}" | sort)
-mapfile -t placeholders < <(read_placeholders)
+files=()
+while IFS= read -r file; do
+  files+=( "$file" )
+done < <(find "${find_args[@]}" | sort)
+
+placeholders=()
+while IFS= read -r placeholder; do
+  placeholders+=( "$placeholder" )
+done < <(read_placeholders)
 
 for placeholder in "${placeholders[@]}"; do
   [ -z "$placeholder" ] && continue

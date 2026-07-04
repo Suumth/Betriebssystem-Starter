@@ -15,6 +15,10 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 - Public prompt pack with Builder, Reviewer, Ticket Refinement, PM Signal, Handoff and QA role cards.
 - Public project hygiene documents and README loop diagram.
 
+### Fixed
+
+- Post-setup placeholder check now runs on macOS Bash 3.2.
+
 ## 0.1.0
 
 ### Added
