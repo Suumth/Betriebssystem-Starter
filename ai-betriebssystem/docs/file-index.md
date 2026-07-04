@@ -33,6 +33,7 @@
 - `contracts/ticket-contract.md` — Reife-Regel, Ticket-Tiers (Light/Full), Agent Contract mit Mode/Autonomy/Risk lane, Execution Mode, Attempt Budget & Escalation, Stagnation Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Evidence, Closeout, Vault Impact und Harness-Failure-Klassifikation.
 - `contracts/review-contract.md` — Review-Prüfung, Review Isolation, Ampeln, Vault-Impact-, Attempt-Budget-, Stagnation-, Failure-Mode-, Subagent-Evidence-Capsule- und degraded-mode-Checks sowie Kommentarformate.
 - `contracts/run-budget-kill-switch.md` — Run Budget and Kill Switch Guardrail mit max issues per run, max fix attempts, stop conditions, operator kill actions und ohne neue Labels.
+- `contracts/skill-contract.md` — Skill Registry Contract für Markdown-only Skills, Pflicht-Metadaten, PR + Review of Record + Merge und Human Gate.
 - `contracts/teilprojekt-contract.md` — PM-Lagebild-Konvention: Teilprojekte als GitHub Milestones, Produktversprechen in `PROJECT.md`, read-only Ampel-/Zustandsableitung ohne zweite Wahrheit.
 - `contracts/labels.md` — operative Workflow-Labels, Review-of-Record-Signal und Auto-Merge-Signal.
 
@@ -66,6 +67,7 @@
 
 ## Skills
 
+- `skills/README.md` — Skill Registry Überblick mit Kandidaten wie Review of Record, Vault Impact, PM Signal und Xcode Simulator Evidence.
 - `skills/xcode-27.md` — repo-facing Routingnotiz für lokale Xcode 27 Skill-Referenzen; nur Apple-platform-Arbeit, Cloud-KI über GitHub-Note, lokaler Pfad nur Codex/local-agent fallback.
 - `skills/ticket-worker.md` — kurzer Skill für Builder-Arbeit mit Agent Modes, Execution Mode, Subagent Failure Policy und Skill-Mustern.
 - `skills/reviewer.md` — kurzer Skill für Review-Arbeit mit Vault-Impact-Gate und Grün/Gelb/Rot-Semantik.

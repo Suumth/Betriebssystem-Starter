@@ -9,6 +9,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 ### Added
 
 - Stagnation Escalation rule for repeated fix, review and validation loops.
+- Skill Registry contract for PR-gated Markdown-only method skills.
 - Run Budget and Kill Switch contract for bounded agent loops.
 - Subagent Evidence Capsule contract for reviewable `Subagents: REQUIRED` closeouts.
 - Harness Learning Candidate contract and template for PR-gated method improvements.
