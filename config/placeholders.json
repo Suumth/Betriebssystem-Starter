@@ -11,6 +11,12 @@
   ],
   "placeholders": [
     {
+      "placeholder": "<PROJECT_NAME>",
+      "fields": ["PROJECT_NAME"],
+      "required": true,
+      "meaning": "Visible project name"
+    },
+    {
       "placeholder": "<OWNER>/<REPO>",
       "fields": ["GITHUB_OWNER", "GITHUB_REPO"],
       "required": true,
