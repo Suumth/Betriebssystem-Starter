@@ -8,6 +8,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ### Added
 
+- Run Budget and Kill Switch contract for bounded agent loops.
 - Subagent Evidence Capsule contract for reviewable `Subagents: REQUIRED` closeouts.
 - Harness Learning Candidate contract and template for PR-gated method improvements.
 - Local Direct-Main Mode documentation with issue closeout evidence, known-failing gate, review-waiver and local toolchain compatibility rules.

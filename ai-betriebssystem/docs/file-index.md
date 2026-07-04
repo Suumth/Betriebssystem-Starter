@@ -32,6 +32,7 @@
 
 - `contracts/ticket-contract.md` — Reife-Regel, Ticket-Tiers (Light/Full), Agent Contract mit Mode/Autonomy/Risk lane, Execution Mode, Attempt Budget & Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Evidence, Closeout, Vault Impact und Harness-Failure-Klassifikation.
 - `contracts/review-contract.md` — Review-Prüfung, Review Isolation, Ampeln, Vault-Impact-, Attempt-Budget-, Failure-Mode-, Subagent-Evidence-Capsule- und degraded-mode-Checks sowie Kommentarformate.
+- `contracts/run-budget-kill-switch.md` — Run Budget and Kill Switch Guardrail mit max issues per run, max fix attempts, stop conditions, operator kill actions und ohne neue Labels.
 - `contracts/teilprojekt-contract.md` — PM-Lagebild-Konvention: Teilprojekte als GitHub Milestones, Produktversprechen in `PROJECT.md`, read-only Ampel-/Zustandsableitung ohne zweite Wahrheit.
 - `contracts/labels.md` — operative Workflow-Labels, Review-of-Record-Signal und Auto-Merge-Signal.
 
@@ -47,7 +48,7 @@
 - `templates/AGENTS.md` — Root-Agent-Index-Vorlage für Projekt-Repos mit Loading Map, Agent Modes, Execution Mode Rules, Subagent Failure Policy, Vault Impact und Critic/Builder/Verifier/Recorder-Loop.
 - `templates/PROJECT.md` — direkt kopierbare Root-Vorlage für die kanonische Projektanweisung inklusive Teilprojekt-/Produktversprechen-Register.
 - `templates/project-operating-rules.md` — ausführliche Projekt-Regelvorlage mit Agent Substrate, Execution Mode Rules, Subagent Failure Policy, Vault Impact und Skill-Mustern.
-- `templates/github_issue_task.md` — GitHub-Issue-Task Template mit Agent Contract, Mode, Autonomy, Risk lane, Execution Mode, Attempt Budget & Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Vault Impact und Codex Subagent Instruction.
+- `templates/github_issue_task.md` — GitHub-Issue-Task Template mit Agent Contract, Mode, Autonomy, Risk lane, Execution Mode, Attempt Budget & Escalation, Run Budget and Kill Switch, Subagent Failure Policy, Subagent Evidence Capsule, Vault Impact und Codex Subagent Instruction.
 - `templates/github_issue_task_low_risk.md` — Light Ticket Template für risikoarme EXECUTING-Tickets ohne Subagents und ohne erwartete Loop-Arbeit.
 - `templates/lesson.md` — Lesson-Template mit Pflichtblock Regelanpassung, damit Loop-Erkenntnisse in Contracts, Prompts und Templates zurückfliessen.
 - `templates/harness-learning-candidate.md` — PR-gated Template für wiederholte Harness-Learnings; Candidate ist nicht aktive Policy bis Review of Record und Merge.
