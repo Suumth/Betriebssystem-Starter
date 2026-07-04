@@ -10,6 +10,8 @@ printf 'Repo: %s\n\n' "$(basename "$ROOT")"
 required_paths=(
   "README.md"
   "START_HERE.md"
+  "config/starter.config.example"
+  "config/placeholders.json"
   "ai-betriebssystem"
   "ai-vault"
   "examples/demo-project"
@@ -22,6 +24,13 @@ for path in "${required_paths[@]}"; do
     exit 1
   fi
 done
+
+if [ ! -f "setup.local.env" ]; then
+  cp config/starter.config.example setup.local.env
+  printf 'Created local setup file: setup.local.env\n\n'
+else
+  printf 'Using existing local setup file: setup.local.env\n\n'
+fi
 
 bash scripts/public-readiness-check.sh
 

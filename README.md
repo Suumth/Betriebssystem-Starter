@@ -57,6 +57,7 @@ The goal is not to replace GitHub, Jira, Obsidian or AI tools. The goal is to co
 - `START_HERE.md` ist der vertiefende Einstieg nach dem Quickstart.
 - `ai-betriebssystem/` enthält Methode, Contracts, Templates, Prompts, Skills, PM-Loop, Migration und neutrale Beispiele.
 - `ai-vault/` ist eine leere, sinnvolle Vault-Erstinstallation für Obsidian oder einen Markdown-Editor.
+- `config/` dokumentiert die personalisierbaren Werte und den Placeholder-Contract.
 - `examples/demo-project/` zeigt ein neutrales Projekt-Repo mit `PROJECT.md`, `AGENTS.md`, Labels, Ticket 0 und PR-Template.
 - `examples/demo-vault/` zeigt, wie ein Vault-Projektbereich zum Demo-Projekt aussieht.
 - `docs/first-installation.md` und `docs/first-project.md` erklären die Installation und das erste Projekt im Detail.
@@ -67,10 +68,11 @@ The goal is not to replace GitHub, Jira, Obsidian or AI tools. The goal is to co
 
 1. Lies `START_HERE.md`.
 2. Öffne `ai-vault/` in Obsidian oder einem Markdown-Editor.
-3. Nutze `examples/demo-project/` als Vorlage für dein erstes echtes Projekt.
-4. Lege Ticket 0 im Projekt-Repo an.
-5. Nutze die Label-Semantik aus `ai-betriebssystem/contracts/labels.md` und `ai-betriebssystem/templates/labels.yml`.
-6. Führe vor jeder Weitergabe `bash scripts/public-readiness-check.sh` aus.
+3. Füll bei Bedarf `setup.local.env`; die Vorlage liegt in `config/starter.config.example`.
+4. Nutze `examples/demo-project/` als Vorlage für dein erstes echtes Projekt.
+5. Lege Ticket 0 im Projekt-Repo an.
+6. Nutze die Label-Semantik aus `ai-betriebssystem/contracts/labels.md` und `ai-betriebssystem/templates/labels.yml`.
+7. Führe vor jeder Weitergabe `bash scripts/public-readiness-check.sh` aus.
 
 ## Wichtige Grenze
 
