@@ -37,12 +37,12 @@ Codex arbeitet in der Reihenfolge: `needs-fix` → `agent:running` → genau ein
 
 | Ampel | Labels | Operator-Aktion |
 |---|---|---|
-| Grün | `review:pass` + `auto-merge:ok` | Mergen: `gh pr merge <PR> --squash --delete-branch`. Danach macht Codex die Green-Path-Hygiene selbst. |
+| Grün | `review:pass` + Operator-Freigabe + `auto-merge:ok` | Mergen: `gh pr merge <PR> --squash --delete-branch`. Danach macht Codex die Green-Path-Hygiene selbst. |
 | Gelb | `review:pass` + `needs-human` | Entscheidungsvorlage im Review lesen, entscheiden, dann mergen oder Fix-Ticket priorisieren. |
 | Rot | `needs-fix` | Nichts tun. Codex fixt im selben PR beim nächsten Lauf. Nach 2 erfolglosen Fix-Zyklen: Attempt-Budget-Evidence lesen und entscheiden. |
 | Rot | `blocked` | Entscheidungsvorlage lesen, Option wählen, im Issue/PR antworten. |
 
-Merken: `needs-human` ist nie eine Freigabe. `auto-merge:ok` nur bei vollständig grünen Kriterien (siehe `contracts/labels.md`).
+Merken: `needs-human` ist nie eine Freigabe. `auto-merge:ok` nur bei vollständig grünen Kriterien und separater Operator-/Human-Gate-Freigabe (siehe `contracts/labels.md`).
 
 ## Befehls-Spickzettel
 
@@ -56,6 +56,7 @@ gh pr list --repo OWNER/REPO --label needs-human
 gh issue list --repo OWNER/REPO --label agent:running
 
 # Grüner Merge
+# Nur nach Review PASS und separater Operator-/Human-Gate-Freigabe.
 gh pr merge <PR> --squash --delete-branch
 ```
 

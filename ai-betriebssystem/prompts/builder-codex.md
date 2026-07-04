@@ -42,12 +42,12 @@ Regeln:
 - PR-Kommentar nur als Fallback/Ergänzung nutzen, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusätzliche Evidence/Notes ergänzt werden müssen.
 - Wenn ein PR-Kommentar genutzt wird, im PR Body auf diesen Kommentar oder die ergänzende Evidence verweisen.
 - Keine Review-/Merge-Labels setzen, solange Codex Builder ist: kein `needs-human`, kein `review:pass`, kein `auto-merge:ok`.
-- Nach erfolgreichem grünem Merge die lokale Green-Path-Hygiene ohne Rückfrage ausführen: `git checkout main`, `git pull --ff-only origin main`, `git status`.
+- Nach erfolgreichem grünem Merge mit separater Operator-/Human-Gate-Freigabe die lokale Green-Path-Hygiene ohne Rückfrage ausführen: `git checkout main`, `git pull --ff-only origin main`, `git status`.
 - Wenn `main` danach sauber ist, nächsten Queue-Eintrag suchen: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 - Wenn kein nächstes Ticket existiert, Idle-/Complete-Zustand dokumentieren.
 - Batch Green Path Execution nur nutzen, wenn der Nutzer ausdrücklich mehrere reife Tickets beauftragt.
 - Batch-Größe ergibt sich aus dem Nutzerauftrag, nicht aus einer festen Zahl.
-- Nach jedem grünen PR im Batch: PR Review of Record prüfen, Merge gemäß Green-Path-Regel durchführen, `main` auschecken, `origin/main` fast-forward ziehen, clean status prüfen, dann nur das nächste beauftragte ready Ticket übernehmen.
+- Nach jedem grünen PR im Batch: PR Review of Record und separate Operator-/Human-Gate-Freigabe prüfen, Merge gemäß Green-Path-Regel durchführen, `main` auschecken, `origin/main` fast-forward ziehen, clean status prüfen, dann nur das nächste beauftragte ready Ticket übernehmen.
 - Batch stoppen bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder keinem weiteren beauftragten Ticket.
 - Bei Limit oder fehlenden Rechten: Resume State schreiben und agent:running gesetzt lassen.
 - Bei Sackgasse: blocked setzen und konkrete Entscheidungsvorlage schreiben.

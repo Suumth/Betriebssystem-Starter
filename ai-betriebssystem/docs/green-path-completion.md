@@ -14,11 +14,12 @@ In einem solchen Ticket-Batch schliesst Codex nach jedem grünen PR zuerst den G
 
 ```text
 1. PR Review of Record prüfen.
-2. Merge gemäß Green-Path-Regel durchführen.
-3. git checkout main
-4. git pull --ff-only origin main
-5. git status
-6. Nur bei sauberem main: nächstes beauftragtes, reifes Ticket übernehmen.
+2. Separate Operator-/Human-Gate-Freigabe prüfen.
+3. Merge gemäß Green-Path-Regel durchführen.
+4. git checkout main
+5. git pull --ff-only origin main
+6. git status
+7. Nur bei sauberem main: nächstes beauftragtes, reifes Ticket übernehmen.
 ```
 
 Batch Green Path Execution erlaubt keine blinde Bearbeitung beliebiger Queue-Einträge. Fortsetzung ist nur erlaubt, wenn das nächste Ticket Teil des ausdrücklichen Nutzerauftrags ist und weiterhin reif ist.
@@ -27,7 +28,8 @@ Batch Green Path Execution erlaubt keine blinde Bearbeitung beliebiger Queue-Ein
 
 Codex darf im Batch nur fortsetzen, wenn alle Kriterien gelten:
 
-- PR Review of Record ist grün oder die vom Nutzer beauftragte Merge-Freigabe liegt ausdrücklich vor.
+- PR Review of Record ist grün.
+- die vom Nutzer beauftragte Merge-Freigabe liegt als separate Operator-/Human-Gate-Aktion ausdrücklich vor.
 - erforderliche Checks und Validierung sind erfolgreich oder als nicht erforderlich dokumentiert.
 - keine Labels oder Signale blockieren den Merge: kein `needs-human`, `needs-fix` oder `blocked`.
 - keine Protected Area, Release-Entscheidung, Waiver-Entscheidung oder ungeklärte Evidence blockiert.
@@ -36,7 +38,9 @@ Codex darf im Batch nur fortsetzen, wenn alle Kriterien gelten:
 
 ## Pflichtablauf nach grünem Merge
 
-Wenn ein PR nach Review of Record und Merge-Freigabe erfolgreich gemerged wird, führt Codex die sicheren Green-Path-Schritte ohne Rückfrage aus:
+Wenn ein PR nach Review of Record und separater Operator-/Human-Gate-Freigabe
+erfolgreich gemerged wird, führt Codex die sicheren Green-Path-Schritte ohne
+weitere Rückfrage aus:
 
 ```text
 1. gh pr merge <PR> --squash --delete-branch

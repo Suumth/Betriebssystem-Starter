@@ -155,7 +155,7 @@ Codex is the default builder and main work resource. Claude Code is only a recom
 
 Codex acts as Builder-Orchestrator when the issue requires subagents: it starts the requested internal execution helpers, waits for their results, applies the Subagent Failure Policy when needed, consolidates findings and keeps the implementation in the main Builder thread.
 
-Do not set `needs-human`, `review:pass` or `auto-merge:ok` yourself while acting only as Builder. Those signals belong to Review of Record or Operator decisions.
+Do not set `needs-human`, `review:pass` or `auto-merge:ok` yourself while acting only as Builder. `review:pass` belongs to Review of Record; `auto-merge:ok` requires separate Operator/Human Gate acceptance.
 
 Every PR closeout must include `Vault Impact`. Use `Vault update required: YES`
 when the PR affects strategy, product truth, architecture direction,
@@ -179,7 +179,7 @@ When `Subagents: REQUIRED`, no PASS if required subagent findings or Subagent Fa
 
 PASS can be Grün or Gelb:
 
-- Grün: `review:pass` and `auto-merge:ok`; no `needs-human`, `needs-fix` or `blocked`.
+- Grün: `review:pass` and merge recommendation; `auto-merge:ok` only after separate Operator/Human Gate acceptance; no `needs-human`, `needs-fix` or `blocked`.
 - Gelb: `review:pass` and `needs-human`; Auto-Merge is forbidden until the Operator decides.
 - Rot: `needs-fix` or `blocked`; no merge.
 

@@ -18,10 +18,10 @@ Ein Green Path braucht:
 - saubere Labels
 - eindeutige Validation Evidence
 - Review of Record PASS
-- `auto-merge:ok` nur nach PASS
+- separate Human-Gate-Freigabe durch den Operator
+- `auto-merge:ok` nur nach PASS und Operator-Freigabe
 - keine offenen Human Gates
 
 ## Kein Green Path
 
 Bei `needs-human`, `blocked`, `risk:protected`, `risk:release`, fehlender Evidence, Secret-/Pfad-Treffern oder unklarem Review darf der Loop nicht automatisch fertiggemeldet werden.
-

@@ -8,7 +8,7 @@ Der Builder endet nicht nur mit Code oder Doku. Er aktualisiert den PR Body als 
 
 PR-Kommentare dürfen Evidence oder Notes ergänzen, ersetzen aber nicht die Standardquelle. Wenn ein PR-Kommentar wichtige Closeout-Information enthält, muss der PR Body darauf verweisen.
 
-Die Review-/Merge-Signale `review:pass`, `auto-merge:ok` und `needs-human` gehören nicht zum reinen Builder-Handoff. `needs-human` bedeutet Gelb und blockiert Auto-Merge.
+Die Review-/Merge-Signale `review:pass`, `auto-merge:ok` und `needs-human` gehören nicht zum reinen Builder-Handoff. `needs-human` bedeutet Gelb und blockiert Auto-Merge; `auto-merge:ok` braucht eine separate Operator-/Human-Gate-Freigabe nach PASS.
 
 ## Warum
 

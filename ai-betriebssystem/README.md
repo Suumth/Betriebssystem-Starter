@@ -133,7 +133,7 @@ Codex baut, validiert, erstellt/aktualisiert PR und hängt Evidence in den PR Bo
 
 Danach:
 Review of Record prüft offene PRs gegen ihre Issues.
-Der Review setzt oder empfiehlt Grün (`review:pass` + `auto-merge:ok`), Gelb (`needs-human`) oder Rot (`needs-fix` / `blocked`).
+Der Review setzt oder empfiehlt `review:pass`, Gelb (`needs-human`) oder Rot (`needs-fix` / `blocked`). `auto-merge:ok` bleibt eine separate Operator-/Human-Gate-Aktion nach PASS.
 
 Mensch:
 liest Ampel, entscheidet, merged oder priorisiert Fix.
