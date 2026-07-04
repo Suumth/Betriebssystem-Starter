@@ -342,7 +342,10 @@ Agentenfähig:
 
 `needs-human` bedeutet immer: Auto-Merge ist verboten und eine Operator-Entscheidung ist nötig. Es ist kein Synonym für eine positive Review- oder Merge-Freigabe.
 
-`auto-merge:ok` bedeutet nur dann Grün, wenn ein Review of Record PASS vorliegt, keine gelben oder roten Labels gesetzt sind und die Operator Summary `Human decision required: no` ausweist.
+`auto-merge:ok` bedeutet nur dann Grün, wenn ein Review of Record PASS vorliegt,
+die separate Operator-/Human-Gate-Freigabe dokumentiert ist, keine gelben oder
+roten Labels gesetzt sind und die Operator Summary `Human decision required: no`
+ausweist.
 
 ## Teilprojekt- / Milestone-Regel
 

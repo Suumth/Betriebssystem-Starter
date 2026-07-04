@@ -41,9 +41,10 @@ PR body or clearly linked PR evidence lacks `Vault Impact`, if `Vault update
 required: YES` lacks a concrete Vault Update Candidate, or if the PR implies an
 agent may directly mutate the AI Vault without explicit issue permission.
 
-Choose one result:
+Choose one result. Review may recommend merge labels, but final merge
+authorization remains a separate Operator/Human Gate action.
 
-- PASS/Grün: set or recommend `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`.
+- PASS/Grün: set or recommend `review:pass`; recommend `auto-merge:ok` only as an Operator action after PASS; remove `needs-human`, `needs-fix` and `blocked`.
 - PASS/Gelb: set or recommend `review:pass` + `needs-human`; remove `auto-merge:ok`; include Review Recommendation.
 - NEEDS-FIX/Rot: set or recommend `needs-fix`; remove `review:pass`, `auto-merge:ok` and `needs-human`; give concrete fix instructions.
 - BLOCKED/Rot: set or recommend `blocked`; remove `needs-human`, `needs-fix`, `review:pass` and `auto-merge:ok`; write a decision request.

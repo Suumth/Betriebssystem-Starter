@@ -26,7 +26,7 @@
   description: Review of Record passed the PR against the linked issue.
 - name: auto-merge:ok
   color: 0e8a16
-  description: Green merge signal when validation, evidence and review are complete.
+  description: Operator-owned green merge signal after validation, evidence, review and Human Gate.
 - name: risk:low
   color: c2e0c6
   description: Low-risk docs, template or narrow proof work.

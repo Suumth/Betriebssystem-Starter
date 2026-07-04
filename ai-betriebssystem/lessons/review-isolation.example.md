@@ -10,5 +10,4 @@ Ein Review of Record ist nur belastbar, wenn er Scope, Evidence, Risiko, Label-S
 
 ## Regel
 
-`review:pass` darf erst nach einem echten Review of Record gesetzt werden. `auto-merge:ok` setzt zusätzlich voraus, dass keine `needs-fix`, `needs-human` oder `blocked` Signale offen sind.
-
+`review:pass` darf erst nach einem echten Review of Record gesetzt werden. `auto-merge:ok` setzt zusätzlich eine separate Operator-/Human-Gate-Freigabe voraus und darf nicht gesetzt bleiben, wenn `needs-fix`, `needs-human` oder `blocked` offen sind.

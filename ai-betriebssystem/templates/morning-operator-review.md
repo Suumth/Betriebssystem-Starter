@@ -87,6 +87,7 @@ Grün / merge-ready candidate:
   Summary, Review Recommendation und Harness Failure Classification.
 - Validation ist bestanden oder sauber als nicht erforderlich begründet.
 - Review of Record ist PASS.
+- Separate Operator-/Human-Gate-Freigabe ist dokumentiert.
 - `review:pass` und `auto-merge:ok` sind gesetzt, keine roten/gelben Labels.
 - `Human decision required: no`.
 

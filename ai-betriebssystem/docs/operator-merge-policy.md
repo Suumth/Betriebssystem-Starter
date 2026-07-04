@@ -39,13 +39,15 @@ Nicht:
 
 Sondern:
 
-> Harness liefert Ampel. Mensch entscheidet nur bei Gelb/Rot oder bei bewusstem Risiko.
+> Harness liefert Ampel. Der Mensch bleibt finaler Freigabe-Operator; bei Grün
+> ist diese Freigabe eine knappe separate Operator-Aktion statt technischer
+> Codeprüfung.
 
 ## Ampellogik
 
-### Grün: Auto-Merge erlaubt
+### Grün: mechanischer Merge nach Human Gate erlaubt
 
-Auto-Merge ist erlaubt, wenn der PR folgende Bedingungen erfüllt:
+Mechanischer Merge ist erlaubt, wenn der PR folgende Bedingungen erfüllt:
 
 - Issue ist verlinkt
 - Scope eingehalten
@@ -56,9 +58,14 @@ Auto-Merge ist erlaubt, wenn der PR folgende Bedingungen erfüllt:
 - kein `needs-fix`
 - kein `blocked`
 - kein `needs-human`
-- `auto-merge:ok` gesetzt
+- separate Operator-/Human-Gate-Freigabe ist in GitHub dokumentiert
+- `auto-merge:ok` ist durch Operator-Aktion gesetzt oder ausdrücklich beauftragt
 - `Human decision required: no`
 - `Claude Code Review Suggested: no` oder durch Mensch abgelehnt
+
+Der Review of Record darf `auto-merge:ok` empfehlen, aber nicht als finale
+Merge-Autorisierung setzen. `auto-merge:ok` ist kein AI-Review-Ergebnis,
+sondern die dokumentierte Operator-Freigabe nach PASS.
 
 ### Gelb: Operator-Entscheidung
 
@@ -209,13 +216,15 @@ Codex darf tagsüber auf Branches arbeiten. Branches sind Arbeitsräume, nicht F
 
 Abends oder nach Batch-Ende werden PRs nach Ampel sortiert:
 
-- Grün: Auto-Merge oder mechanischer Merge
+- Grün: Operator-Freigabe und danach mechanischer Merge
 - Gelb: Operator-Entscheidung mit Review-Empfehlung
 - Rot: Fix oder blocked mit Review-/Fix-Empfehlung
 
 ## Green Path Completion
 
-Ein grüner Merge ist erst abgeschlossen, wenn Codex danach die lokale Hygiene ausgeführt hat:
+Ein grüner Merge darf erst nach separater Operator-/Human-Gate-Freigabe
+ausgeführt werden. Er ist erst abgeschlossen, wenn Codex danach die lokale
+Hygiene ausgeführt hat:
 
 ```text
 gh pr merge <PR> --squash --delete-branch
@@ -224,7 +233,10 @@ git pull --ff-only origin main
 git status
 ```
 
-Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgeführt, nicht bestätigt. Wenn `main` sauber ist, sucht Codex in der Standardreihenfolge nach dem nächsten bearbeitbaren Ticket: `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
+Diese sicheren Green-Path-Schritte werden nach erfolgreichem, freigegebenem
+Merge ausgeführt, nicht erneut bestätigt. Wenn `main` sauber ist, sucht Codex
+in der Standardreihenfolge nach dem nächsten bearbeitbaren Ticket: `needs-fix`,
+dann `agent:running`, dann genau ein neues `agent:ready`.
 
 Wenn kein nächstes Ticket existiert, dokumentiert Codex den Idle-/Complete-Zustand. Wenn ein Stop-Grund wie fehlgeschlagener Merge, fehlgeschlagener Pull, dirty Working Tree, fehlende Berechtigung, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-Entscheidung oder unklare Evidence vorliegt, stoppt Codex mit Entscheidungsvorlage.
 
@@ -238,6 +250,7 @@ Vor jeder Fortsetzung muss der vorherige Green Path abgeschlossen sein:
 
 ```text
 PR Review of Record prüfen
+separate Operator-/Human-Gate-Freigabe prüfen
 Merge gemäß Green-Path-Regel durchführen
 git checkout main
 git pull --ff-only origin main

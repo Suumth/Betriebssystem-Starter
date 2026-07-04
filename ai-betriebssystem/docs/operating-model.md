@@ -12,7 +12,7 @@ Es ist zugleich Agent Substrate: Root Agent Index, gemeinsame Begriffe, Agent Mo
 - kein lokaler Orchestrator
 - kein Dashboard
 - kein Multi-Repo-Scanner
-- kein blindes Auto-Merge ohne Review of Record, Evidence und `auto-merge:ok`
+- kein Auto-Merge ohne Review of Record, Evidence, separate Operator-/Human-Gate-Freigabe und `auto-merge:ok`
 - keine sichtbaren Subagent-PM-Rollen und kein Subagenten-Organigramm
 - keine zweite operative Wahrheit im AI Vault
 - keine automatische Self-Improvement-Maschinerie
@@ -99,7 +99,7 @@ Codex liest das Ticket, arbeitet auf bestehendem oder neuem Branch, erstellt/akt
 
 Der Review of Record prüft offene PRs gegen ihre verlinkten Issues. Das Ergebnis ist genau eine Ampel:
 
-- Grün = `review:pass` + `auto-merge:ok`, wenn alle Grün-Kriterien gelten
+- Grün = `review:pass` + Empfehlung für `auto-merge:ok`; Merge erst nach separater Operator-/Human-Gate-Freigabe
 - Gelb = `needs-human`, Auto-Merge verboten, Operator-Entscheidung nötig
 - Rot = `needs-fix` oder `blocked`, kein Merge
 
@@ -130,7 +130,10 @@ Details stehen in `docs/green-path-completion.md`.
 
 Batch Green Path Execution gilt nur bei ausdrücklichem Nutzerauftrag für mehrere reife Tickets. Die Batch-Größe ergibt sich aus diesem Auftrag, nicht aus einer festen Zahl.
 
-Nach jedem grünen PR prüft Codex den PR Review of Record, merged gemäß Green-Path-Regel, checkt `main` aus, zieht `origin/main` fast-forward, prüft den clean status und übernimmt erst dann das nächste beauftragte ready Ticket.
+Nach jedem grünen PR prüft Codex den PR Review of Record und die separate
+Operator-/Human-Gate-Freigabe, merged dann gemäß Green-Path-Regel, checkt
+`main` aus, zieht `origin/main` fast-forward, prüft den clean status und
+übernimmt erst dann das nächste beauftragte ready Ticket.
 
 Codex stoppt den Batch bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder wenn kein weiteres beauftragtes Ticket übrig ist.
 

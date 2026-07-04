@@ -6,9 +6,13 @@ Der Reviewer prüft nicht allgemein, sondern immer PR gegen verlinktes Issue.
 
 Reviewer sollen PRs so prüfen, dass der Operator eine entscheidungsfähige Ampel sieht:
 
-- Grün: `review:pass` + `auto-merge:ok`; mechanischer Merge erlaubt, wenn alle Grün-Kriterien weiterhin gelten
+- Grün: `review:pass` + Empfehlung für `auto-merge:ok`; mechanischer Merge erst nach separater Operator-/Human-Gate-Freigabe erlaubt
 - Gelb: `needs-human`; Auto-Merge verboten, Operator-Entscheidung nötig
 - Rot: `needs-fix` oder `blocked`; kein Merge, konkrete Fix- oder Entscheidungsempfehlung nötig
+
+`auto-merge:ok` ist dabei kein AI-Review-Ergebnis. Der Reviewer darf es für
+einen Grün-Fall empfehlen; gesetzt oder als Merge-Freigabe wirksam wird es erst
+durch eine separate Operator-/Human-Gate-Aktion.
 
 ## Review-Quellen
 
@@ -98,7 +102,7 @@ Aktion:
 - `review:pass` setzen oder im Review eindeutig als Review of Record PASS dokumentieren
 - `needs-fix` entfernen, falls vorhanden
 - `blocked` entfernen, falls vorhanden
-- Wenn alle Grün-Kriterien erfüllt sind: `needs-human` entfernen und `auto-merge:ok` setzen
+- Wenn alle Grün-Kriterien erfüllt sind: `needs-human` entfernen und `auto-merge:ok` als Operator-Aktion empfehlen
 - Wenn eine Operator-Entscheidung nötig ist: `needs-human` setzen und `auto-merge:ok` entfernen
 - kurze Merge-Entscheidungsvorlage schreiben
 
@@ -237,7 +241,7 @@ Kommentarformat:
 - Kein neues Ziel erfinden.
 - Keine Architekturentscheidung implizit treffen, wenn das Ticket sie nicht enthält.
 - `needs-human` nie als Auto-Merge-Freigabe verwenden.
-- `auto-merge:ok` nie setzen, wenn `needs-human`, `needs-fix` oder `blocked` gesetzt ist.
+- `auto-merge:ok` nie als Reviewer setzen; nur empfehlen. Wenn es schon gesetzt ist, nie stehen lassen, wenn `needs-human`, `needs-fix` oder `blocked` gesetzt ist.
 - Claude Code nur als Premium-/Eskalationsressource empfehlen, nicht als Standardpflicht.
 
 ## Review-Schärfe

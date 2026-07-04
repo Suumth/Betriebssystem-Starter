@@ -27,6 +27,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ### Fixed
 
+- Human Gate and auto-merge wording now makes final merge authorization a separate Operator action after Review of Record PASS.
 - CI setup smoke now uses a public-neutral AI OS method repository URL.
 - `<AI_OS_METHOD_REPO_URL>` placeholder now recognized by setup and post-setup checks.
 - Post-setup placeholder check now runs on macOS Bash 3.2.

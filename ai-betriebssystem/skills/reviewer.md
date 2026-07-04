@@ -18,7 +18,7 @@ Purpose: review one pull request against its linked GitHub issue and make the ne
 
 Choose one result:
 
-- PASS/Grün -> `review:pass` + `auto-merge:ok`; remove `needs-human`, `needs-fix` and `blocked`
+- PASS/Grün -> `review:pass`; recommend `auto-merge:ok` only as a separate Operator/Human Gate action; remove `needs-human`, `needs-fix` and `blocked`
 - PASS/Gelb -> `review:pass` + `needs-human`; remove `auto-merge:ok`; include Review Recommendation
 - NEEDS-FIX/Rot -> set `needs-fix`; remove `needs-human`, `blocked`, `review:pass` and `auto-merge:ok`
 - BLOCKED/Rot -> set `blocked`; remove `needs-human`, `needs-fix`, `review:pass` and `auto-merge:ok`
@@ -37,3 +37,4 @@ the issue explicitly allows it.
 The Reviewer does not merge, release or redefine the ticket.
 
 `needs-human` blocks Auto-Merge. It is not approval.
+`auto-merge:ok` is final only when the Operator/Human Gate sets or explicitly authorizes it after PASS.

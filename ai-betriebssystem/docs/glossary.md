@@ -44,10 +44,10 @@ Andere Dokumente dürfen Begriffe für Prompt-Tauglichkeit wiederholen, aber nic
 | Begriff | Definition |
 |---|---|
 | Review of Record | Die maßgebliche Prüfung eines PR gegen sein verlinktes Issue, dokumentiert in GitHub: Review-Kommentar/-Submission plus Labels. UI-Isolation (separater Chat/Thread) ändert daran nichts. |
-| Ampel | Das eine Review-Ergebnis: Grün (`review:pass` + `auto-merge:ok`), Gelb (`review:pass` + `needs-human`), Rot (`needs-fix` oder `blocked`). |
+| Ampel | Das eine Review-Ergebnis: Grün (`review:pass` + Merge-Empfehlung), Gelb (`review:pass` + `needs-human`), Rot (`needs-fix` oder `blocked`). |
 | Human Gate | Entscheidung, die beim Menschen bleibt: Merge, Produkt-/Architektur-/Risikoentscheidung, Veröffentlichung, Änderung an Betriebsregeln, Claude-Code-Freigabe. |
-| Auto-Merge | Mechanischer Merge eines Grün-Falls. Nur erlaubt mit `review:pass`, `auto-merge:ok`, ohne gelbe/rote Labels und mit `Human decision required: no`. |
-| Green Path | Der störungsfreie Weg eines Tickets: Build → Evidence → Review PASS → Merge. |
+| Auto-Merge | Mechanischer Merge eines Grün-Falls. Nur erlaubt mit `review:pass`, separater Human-Gate-Freigabe, `auto-merge:ok`, ohne gelbe/rote Labels und mit `Human decision required: no`. |
+| Green Path | Der störungsfreie Weg eines Tickets: Build → Evidence → Review PASS → Human Gate → Merge. |
 | Green Path Completion | Pflichtabschluss nach grünem Merge: `git checkout main`, `git pull --ff-only origin main`, `git status`, dann nächster Queue-Eintrag oder dokumentierter Stop. |
 | Batch Green Path Execution | Mehrere reife Tickets in einem Lauf, nur bei ausdrücklichem Nutzerauftrag. Nach jedem grünen PR erst vollständige Green Path Completion. |
 | Resume State | Kommentar bei Abbruch durch Limit/Rechte: erledigt, offen, nächster Schritt, Blockade. `agent:running` bleibt gesetzt. |

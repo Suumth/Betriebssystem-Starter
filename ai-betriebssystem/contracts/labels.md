@@ -18,7 +18,7 @@ Overnight-Freigabelabel und zwei Merge-/Review-Signale.
 | Label | Wer setzt | Bedeutung |
 |---|---|---|
 | `review:pass` | Review of Record | Der verlinkte PR wurde gegen das Issue geprüft und mit PASS bewertet |
-| `auto-merge:ok` | Review of Record / Operator | Der PR ist ein Grün-Fall und darf mechanisch gemerged werden, wenn alle Grün-Kriterien weiterhin gelten |
+| `auto-merge:ok` | Operator / Human Gate | Der Operator hat nach PASS eine separate Merge-Freigabe dokumentiert; der PR darf mechanisch gemerged werden, wenn alle Grün-Kriterien weiterhin gelten |
 
 ## Overnight-Freigabelabel
 
@@ -62,7 +62,7 @@ Typische Gründe:
 - Review-Uneinigkeit
 - bewusstes Risiko trotz sonst guter Validierung
 
-`needs-human` ist kein Freigabe-Synonym. Ein grüner PR braucht stattdessen `review:pass`, `auto-merge:ok` und darf kein `needs-human` tragen.
+`needs-human` ist kein Freigabe-Synonym. Ein grüner PR braucht stattdessen `review:pass`, eine separate Operator-Freigabe, `auto-merge:ok` und darf kein `needs-human` tragen.
 
 ### blocked
 
@@ -95,17 +95,18 @@ Ein Label allein startet keinen Lauf. Der Abend-Prompt armiert den Run.
 - Ziel, Scope, Nicht-Ziele, Akzeptanzkriterien, Validierung und Evidence wurden bewertet.
 - Ergebnis ist PASS.
 
-`review:pass` alleine erlaubt noch keinen Auto-Merge. Auto-Merge braucht zusätzlich `auto-merge:ok` und alle Grün-Kriterien aus der Operator Merge Policy.
+`review:pass` alleine erlaubt noch keinen Auto-Merge. Auto-Merge braucht zusätzlich eine separate Operator-Freigabe, `auto-merge:ok` und alle Grün-Kriterien aus der Operator Merge Policy.
 
 ### auto-merge:ok
 
-`auto-merge:ok` ist das explizite Grün-Signal. Es darf nur gesetzt werden, wenn:
+`auto-merge:ok` ist das explizite Operator-Grün-Signal nach Human Gate. Es darf nur gesetzt werden, wenn:
 
 - Issue verlinkt ist
 - Scope eingehalten wurde
 - Validation bestanden wurde
 - Evidence vorhanden ist
 - `review:pass` gesetzt ist oder der Review of Record eindeutig PASS sagt
+- der Operator die Merge-Freigabe separat dokumentiert hat
 - kein `needs-fix`
 - kein `blocked`
 - kein `needs-human`
@@ -147,10 +148,14 @@ Bei Limit-/Rechte-Abbruch:
 
 Review-Ergebnis:
 
-- PASS/Grün -> `review:pass` und `auto-merge:ok` setzen, `needs-fix`, `blocked` und `needs-human` entfernen
+- PASS/Grün -> `review:pass` setzen, `auto-merge:ok` nur empfehlen, `needs-fix`, `blocked` und `needs-human` entfernen
 - PASS/Gelb -> `review:pass` und `needs-human` setzen, `auto-merge:ok` entfernen, Review Recommendation schreiben
 - NEEDS-FIX/Rot -> `needs-fix` setzen, `needs-human`, `review:pass` und `auto-merge:ok` entfernen, Fix-Empfehlung schreiben
 - BLOCKED/Rot -> `blocked` setzen, `needs-human`, `needs-fix`, `auto-merge:ok` und `review:pass` entfernen, Entscheidungsvorlage schreiben
+
+Review of Record darf PASS und eine Merge-Empfehlung dokumentieren. Er ersetzt
+nie die separate Operator-/Human-Gate-Aktion für `auto-merge:ok` oder den
+finalen Merge.
 
 `blocked` ist stärker als `needs-human`. Beide Labels sollen nicht parallel als Standardzustand stehen, außer ein Contract begründet den Sonderfall ausdrücklich.
 

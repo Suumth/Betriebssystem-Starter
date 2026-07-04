@@ -118,7 +118,7 @@ Issue- und PR-Konfiguration:
 - Apple-platform Tasks nennen `Xcode 27` unter Skills nur, wenn SwiftUI, Xcode, iOS/macOS Builds, Simulator/Device, StoreKit, Live Activity, Widget, Watch oder Apple-platform QA betroffen sind.
 - PRs enthalten `Closes #<issue>`, Summary, Changed Files, Validation Evidence und bewusst vertagte Punkte.
 - `needs-human` ist kein Grün-Signal.
-- Auto-Merge braucht Review of Record PASS, `review:pass`, `auto-merge:ok`, keine roten/gelben Labels und `Human decision required: no`.
+- Auto-Merge braucht Review of Record PASS, `review:pass`, separate Operator-/Human-Gate-Freigabe, `auto-merge:ok`, keine roten/gelben Labels und `Human decision required: no`.
 
 ## 6. Ticket-0-Erzeugung
 

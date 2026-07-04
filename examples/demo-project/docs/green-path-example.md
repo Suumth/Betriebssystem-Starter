@@ -8,10 +8,10 @@
 - Checks pass.
 - Review of Record is PASS.
 - `review:pass` is present.
-- `auto-merge:ok` is present only after PASS.
+- Operator has separately accepted the Human Gate after PASS.
+- `auto-merge:ok` is present only after PASS and separate Operator acceptance.
 - No `needs-human`, `needs-fix` or `blocked`.
 
 ## Closeout
 
 After merge, update Vault decisions, risks or lessons only if the work created stable knowledge.
-
