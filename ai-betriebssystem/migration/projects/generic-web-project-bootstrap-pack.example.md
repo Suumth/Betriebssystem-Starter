@@ -28,5 +28,5 @@ Install and prove the PROJECT.md-first bootstrap layer for Example Web Project w
 - Required labels exist.
 - PROJECT.md routes repo, Vault and method.
 - AGENTS.md defines Builder, Reviewer, PM Signal and Operator.
-- PR template captures Validation Evidence, Human Gate, Vault Backflow and Review Recommendation.
+- PR template captures Validation Evidence, Human Gate, Vault Impact and Review Recommendation.
 

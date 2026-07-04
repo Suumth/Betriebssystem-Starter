@@ -26,4 +26,4 @@ Install and prove the PROJECT.md-first bootstrap layer for Demo Project without 
 - Review of Record is PASS.
 - `auto-merge:ok` is applied only after PASS.
 - Human Gate is clear.
-- Vault backflow is recorded.
+- Vault Impact is recorded.

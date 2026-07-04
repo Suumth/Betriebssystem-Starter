@@ -23,7 +23,7 @@
 
 - Owns final merge decision.
 - Applies Human Gate.
-- Confirms Vault backflow after meaningful work.
+- Confirms Vault Impact after meaningful work.
 
 ## Required Labels
 

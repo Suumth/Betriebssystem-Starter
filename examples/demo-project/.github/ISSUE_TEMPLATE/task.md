@@ -38,5 +38,5 @@ Out of scope:
 
 - Operator summary:
 - Review recommendation:
-- Vault backflow needed: yes/no
+- Vault update required: YES | NO
 
