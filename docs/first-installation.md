@@ -19,6 +19,10 @@ Am Ende hast du ein Projekt-Repo mit `PROJECT.md`, `AGENTS.md`, Labels, Ticket 0
 4. Öffne `ai-vault/` in Obsidian.
 5. Lege dein erstes Projekt anhand von `docs/first-project.md` an.
 
+## Optional: Branch Protection
+
+Nach dem ersten erfolgreichen CI- und PR-Contract-Lauf kannst du Branch Protection bewusst als Operator-Entscheidung aktivieren. Der Helfer ist dokumentiert in `ai-betriebssystem/docs/branch-protection-helper.md`.
+
 ## Reinitialisierung
 
 Wenn in diesem Ordner bereits `.git` existiert, übernimm diese Historie nicht ungeprüft in ein neues Repo. Erstelle für ein finales Starter-Repo einen frischen Git-Stand und importiere nur die neutralen Dateien.
