@@ -4,12 +4,12 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 
 ## 1. Bestehende Regeln scannen
 
-- [ ] `AGENTS.md`, `CLAUDE.md`, `GEMINI.md` oder aehnliche Agent-Dateien finden
+- [ ] `AGENTS.md`, `CLAUDE.md`, `GEMINI.md` oder ähnliche Agent-Dateien finden
 - [ ] README und `docs/` auf Build-/Test-/Preview-Regeln prüfen
 - [ ] vorhandene Issue Templates prüfen
 - [ ] vorhandene Labels prüfen
 - [ ] Protected Areas aus Code, Docs, Releases oder Produktkontext notieren
-- [ ] widerspruechliche Regeln markieren, nicht still überschreiben
+- [ ] widersprüchliche Regeln markieren, nicht still überschreiben
 
 ## 2. Projektbeschreibung erstellen
 
@@ -19,18 +19,18 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 - [ ] GitHub-URL der kanonischen repo-basierten Projektanweisung eintragen
 - [ ] lokale Pfade nur als Codex-Fallback markieren
 - [ ] AI-Betriebssystem, Projekt-Repo und AI Vault im Source Map eintragen
-- [ ] AI Vault Schluesseldateien referenzieren: Strategie, Zielbild, Entscheidungen, Nicht-Ziele, Risiken, Roadmap und Produktbrief
-- [ ] Online-Einstieg für AI-Vault-Inhalte festlegen, die Cloud-KIs benoetigen
+- [ ] AI Vault Schlüsseldateien referenzieren: Strategie, Zielbild, Entscheidungen, Nicht-Ziele, Risiken, Roadmap und Produktbrief
+- [ ] Online-Einstieg für AI-Vault-Inhalte festlegen, die Cloud-KIs benötigen
 - [ ] Zielbild knapp aus bestehenden Repo-Dateien ableiten
 - [ ] Nicht-Ziele explizit machen
 - [ ] Protected Areas und Review-Gates benennen
-- [ ] Validierungsarten mit realen lokalen/GitHub-Checks fuellen
+- [ ] Validierungsarten mit realen lokalen/GitHub-Checks füllen
 - [ ] offene Risiken als Risiken markieren, nicht als erledigte Fakten
 
 ## 3. Repo-basierte Projektanweisung anlegen
 
 - [ ] bestehende lange ChatGPT-/Claude-/Codex-Projektanweisungen sammeln
-- [ ] dauerhaft gueltige Arbeitsregeln in `PROJECT.md` oder `docs/project-instructions.md` überfuehren
+- [ ] dauerhaft gültige Arbeitsregeln in `PROJECT.md` oder `docs/project-instructions.md` überführen
 - [ ] sicherstellen, dass diese Datei über GitHub erreichbar ist
 - [ ] Tool-spezifische Details, alte Logs und veraltete Produktwahrheit verwerfen statt mitzuschleppen
 - [ ] Online-first Source Policy aus `templates/project-instructions.md` übernehmen
@@ -38,7 +38,7 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
   - [ ] AI-Betriebssystem = Methode, Ticket-Schnitt, Green Path, Review, Evidence
   - [ ] Projekt-Repo = operative Wahrheit, Issues, PRs, AGENTS.md, Code und Status
   - [ ] AI Vault = Strategie, Zielbild, Produktgedächtnis, Entscheidungen und Nicht-Ziele
-- [ ] AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benoetigen, als GitHub-Dateien, GitHub-Referenzen oder geeignete Projekt-Repo-Spiegelung erreichbar machen
+- [ ] AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benötigen, als GitHub-Dateien, GitHub-Referenzen oder geeignete Projekt-Repo-Spiegelung erreichbar machen
 - [ ] AI-Vault-Produktbrief als Quelle verlinken, nicht in die Tool-Anweisung kopieren
 - [ ] Project Brief, `AGENTS.md`, relevante Docs und AI-Vault-Fundorte verlinken
 - [ ] No-Duplication-Regel eintragen: Kein KI-Tool bekommt eigene Sonderwahrheit
@@ -58,14 +58,14 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 - [ ] offene Issues gegen Ticket Contract prüfen
 - [ ] unreife Tickets nicht mit `agent:ready` labeln
 - [ ] zu grosse Tickets in kleinere EXECUTING- oder GRILLING-Boxen schneiden
-- [ ] stale oder doppelte Issues kommentieren/schliessen, falls menschlich freigegeben
+- [ ] stale oder doppelte Issues kommentieren/schließen, falls menschlich freigegeben
 - [ ] bestehende PRs auf `needs-fix`, `blocked` oder Review-Bedarf prüfen
 
 ## 6. Ticket Null definieren
 
-- [ ] kleinster risikoarmer Scope gewaehlt
-- [ ] kein Produktentscheid noetig
-- [ ] Verifier real ausfuehrbar
+- [ ] kleinster risikoarmer Scope gewählt
+- [ ] kein Produktentscheid nötig
+- [ ] Verifier real ausführbar
 - [ ] Evidence eindeutig
 - [ ] Nicht-Ziele hart gesetzt
 - [ ] Closeout Requirements im Ticket enthalten
@@ -76,10 +76,10 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 - [ ] Codex kann genau ein Ticket starten
 - [ ] Branch/PR-Name oder bestehender PR ist eindeutig
 - [ ] PR kann `Closes #...` enthalten
-- [ ] Validierung laeuft oder fehlendes Tool wird als `missing_tool` klassifiziert
+- [ ] Validierung läuft oder fehlendes Tool wird als `missing_tool` klassifiziert
 - [ ] PR Body kann Primary Closeout Source sein
 - [ ] Review of Record kann Grün/Gelb/Rot gegen Issue entscheiden
-- [ ] Nach grünem Merge sind `git checkout main`, `git pull --ff-only origin main` und `git status` als sichere Schritte ohne Rueckfrage akzeptiert
+- [ ] Nach grünem Merge sind `git checkout main`, `git pull --ff-only origin main` und `git status` als sichere Schritte ohne Rückfrage akzeptiert
 - [ ] Bei sauberem `main` kann Codex den nächsten Queue-Eintrag suchen: `needs-fix`, `agent:running`, genau ein neues `agent:ready`
 - [ ] Wenn kein nächstes Ticket existiert, wird Idle-/Complete-Zustand dokumentiert
 
@@ -87,7 +87,7 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 
 - [ ] UI-Produkt? ja/nein
 - [ ] Falls ja: erwartete Screens, Preview oder Simulator-/Browser-Evidence definieren
-- [ ] Falls nein: keine Design-Evidence-Pflicht einfuehren
+- [ ] Falls nein: keine Design-Evidence-Pflicht einführen
 - [ ] Marketing- oder Claim-Prüfungen als eigene Protected Area markieren, falls relevant
 
 ## 9. Stop-Regeln
@@ -95,15 +95,15 @@ Diese Checkliste migriert bestehende Projekt-Repos in ein dünnes ChatGPT-Projek
 Stoppe die Migration und schreibe eine Entscheidungsvorlage, wenn:
 
 - das Projekt-Repo nicht eindeutig ist
-- es widerspruechliche Agent-Regeln gibt
+- es widersprüchliche Agent-Regeln gibt
 - kein realistischer Verifier existiert
 - Protected Areas nicht identifizierbar sind
 - Tool-Projektanweisungen als Wissensspeicher gebraucht werden sollen
 - keine kanonische repo-basierte Projektanweisung angelegt werden kann
 - die repo-basierte Projektanweisung nicht über GitHub erreichbar gemacht werden kann
-- benoetigte AI-Vault-Inhalte für Cloud-KIs keinen online erreichbaren Einstieg haben
+- benötigte AI-Vault-Inhalte für Cloud-KIs keinen online erreichbaren Einstieg haben
 - Produktwahrheit nur im Vault oder in ChatGPT liegt und nicht versioniert ist
-- Green-Path-Hygiene wegen Merge-/Sync-Fehler, dirty Working Tree oder fehlender Berechtigung nicht sicher ausgefuehrt werden kann
+- Green-Path-Hygiene wegen Merge-/Sync-Fehler, dirty Working Tree oder fehlender Berechtigung nicht sicher ausgeführt werden kann
 
 ## Done
 
@@ -114,6 +114,6 @@ Die Migration ist abgeschlossen, wenn:
 - Tool-Projektanweisungen nur Bootstrap-Pointer enthalten
 - Projektbeschreibung versioniert im Repo liegt
 - Issues/Labels mit dem Ticket Contract vereinbar sind
-- Ticket Null bereit ist oder ein GRILLING-Ticket die fehlenden Entscheidungen klaert
-- Green Path Completion nach Merge dokumentiert und lokal ausfuehrbar ist
-- keine Runtime-, App-, Runner-, Dashboard- oder GitHub-Action-Dateien eingefuehrt wurden
+- Ticket Null bereit ist oder ein GRILLING-Ticket die fehlenden Entscheidungen klärt
+- Green Path Completion nach Merge dokumentiert und lokal ausführbar ist
+- keine Runtime-, App-, Runner-, Dashboard- oder GitHub-Action-Dateien eingeführt wurden

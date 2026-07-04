@@ -12,20 +12,20 @@ Nach dieser Checkliste hat ein neues Repo genug Substrate, damit jedes KI-Tool d
 - [ ] Default-Branch bekannt
 - [ ] lokaler Checkout vorhanden
 - [ ] Build-/Test-/Preview-Weg bekannt oder bewusst als offen markiert
-- [ ] README beschreibt nur den noetigen Einstieg
+- [ ] README beschreibt nur den nötigen Einstieg
 
 ## 2. Repo-basierte Projektanweisung
 
-- [ ] Kanonischer Pfad gewaehlt: `PROJECT.md` oder explizit `docs/project-instructions.md`
+- [ ] Kanonischer Pfad gewählt: `PROJECT.md` oder explizit `docs/project-instructions.md`
 - [ ] `PROJECT.md` aus `templates/PROJECT.md` angelegt
 - [ ] kanonische Projektanweisung über GitHub erreichbar
 - [ ] GitHub-URL der kanonischen Projektanweisung eingetragen
-- [ ] lokaler Pfad nur als Codex-Fallback eingetragen, falls noetig
+- [ ] lokaler Pfad nur als Codex-Fallback eingetragen, falls nötig
 - [ ] AI-Betriebssystem-Repo GitHub-URL als Methodenquelle eingetragen
 - [ ] Projekt-Repo GitHub-URL als operative Quelle eingetragen
 - [ ] AI Vault Projektordner als kanonische Strategie- und Produktgedächtnisquelle eingetragen
 - [ ] AI Vault Online-Einstieg für Cloud-KIs eingetragen
-- [ ] AI Vault Schluesseldateien verlinkt:
+- [ ] AI Vault Schlüsseldateien verlinkt:
   - [ ] Strategie:
   - [ ] Zielbild:
   - [ ] Entscheidungen:
@@ -51,7 +51,7 @@ Nach dieser Checkliste hat ein neues Repo genug Substrate, damit jedes KI-Tool d
 
 - [ ] `AGENTS.md` im Projekt-Repo aus `templates/AGENTS.md` übernommen
 - [ ] repo-spezifische Build-, Test- und Preview-Befehle ergänzt
-- [ ] Loading Map nur auf tatsaechlich vorhandene Repo-Dateien verlinkt
+- [ ] Loading Map nur auf tatsächlich vorhandene Repo-Dateien verlinkt
 - [ ] Bei iOS/macOS/Apple-platform-Repos: bedingte Loading-Map-Regel für Xcode 27 Skills ergänzt
 - [ ] Protected Areas entweder benannt oder als "keine bekannt" markiert
 
@@ -82,15 +82,15 @@ Nach dieser Checkliste hat ein neues Repo genug Substrate, damit jedes KI-Tool d
 - [ ] Produktname und Repo URL eingetragen
 - [ ] kanonische repo-basierte Projektanweisung verlinkt
 - [ ] GitHub-URL der kanonischen repo-basierten Projektanweisung verlinkt
-- [ ] AI Vault Projektordner und Schluesseldateien referenziert, nicht kopiert
-- [ ] AI Vault Schluesseldateien enthalten Strategie, Zielbild, Entscheidungen, Nicht-Ziele, Risiken, Roadmap und Produktbrief
+- [ ] AI Vault Projektordner und Schlüsseldateien referenziert, nicht kopiert
+- [ ] AI Vault Schlüsseldateien enthalten Strategie, Zielbild, Entscheidungen, Nicht-Ziele, Risiken, Roadmap und Produktbrief
 - [ ] AI Vault Dateien aus `templates/ai-vault/` angelegt oder auf bestehende gleichwertige Dateien gemappt
-- [ ] Online-Einstieg für AI-Vault-Inhalte verlinkt, die Cloud-KIs benoetigen
+- [ ] Online-Einstieg für AI-Vault-Inhalte verlinkt, die Cloud-KIs benötigen
 - [ ] Zielbild und Zielnutzer knapp beschrieben
 - [ ] Nicht-Ziele benannt
 - [ ] Protected Areas benannt
 - [ ] Validierungsarten konkretisiert
-- [ ] Design-/Qualitaetsbar konkretisiert
+- [ ] Design-/Qualitätsbar konkretisiert
 - [ ] Startzustand und offene Risiken eingetragen
 
 ## 7. Tool-Projektanweisungen
@@ -101,12 +101,12 @@ Nach dieser Checkliste hat ein neues Repo genug Substrate, damit jedes KI-Tool d
 - [ ] Claude-/Codex-/andere KI-Projektanweisungen nutzen denselben minimalen Pointer, falls vorhanden
 - [ ] keine lokalen Pfade wie `<LOCAL_CHECKOUT_PATH>` in Cloud-KI-Projektanweisungen verwendet
 - [ ] keine langen Produktdetails in Tool-Projektanweisungen kopiert
-- [ ] keine tool-spezifische Sonderwahrheit eingefuehrt
+- [ ] keine tool-spezifische Sonderwahrheit eingeführt
 - [ ] alle Tool-Anweisungen sagen: zuerst repo-basierte Projektanweisung über GitHub lesen und danach nach ihr arbeiten
 
 ## 8. Ticket Null
 
-Ticket Null ist der erste kleine Beweis, dass das Repo agentenfaehig ist.
+Ticket Null ist der erste kleine Beweis, dass das Repo agentenfähig ist.
 
 - [ ] Ticket Null aus `templates/ticket-0-bootstrap.md` erstellt
 - [ ] Scope risikoarm
@@ -114,13 +114,13 @@ Ticket Null ist der erste kleine Beweis, dass das Repo agentenfaehig ist.
 - [ ] Risk lane: `low`
 - [ ] klarer Verifier
 - [ ] klare Evidence
-- [ ] keine Produktentscheidung noetig
+- [ ] keine Produktentscheidung nötig
 - [ ] `agent:ready` erst nach vollständigem Ticket Contract gesetzt
 
 Gute Ticket-Null-Beispiele:
 
 - Docs-only Scope-Check
-- Build-/Test-Smoke ohne Feature-Aenderung
+- Build-/Test-Smoke ohne Feature-Änderung
 - Screenshot-/Preview-Smoke für UI-Produkte
 - AGENTS.md- und Issue-Template-Installation mit Markdown-Prüfung
 
@@ -138,13 +138,13 @@ Nicht für reine Backend-, Docs- oder Methoden-Repos erzwingen.
 ## 10. Lokale Codex-Projektkonfiguration
 
 - [ ] lokaler Repo-Pfad in Codex korrekt
-- [ ] relevante Build-/Testtools lokal verfuegbar oder als fehlend dokumentiert
+- [ ] relevante Build-/Testtools lokal verfügbar oder als fehlend dokumentiert
 - [ ] keine Vault-Dateien als operative Kontextquelle eingebunden
 - [ ] keine geheimen Tokens in Repo-Dateien oder Projektanweisungen
 
 ## 11. Green Path Completion
 
-- [ ] Nach erfolgreichem grünem Merge fuehrt Codex lokale Hygiene ohne Rueckfrage aus
+- [ ] Nach erfolgreichem grünem Merge führt Codex lokale Hygiene ohne Rückfrage aus
 - [ ] `git checkout main`
 - [ ] `git pull --ff-only origin main`
 - [ ] `git status`
@@ -154,10 +154,10 @@ Nicht für reine Backend-, Docs- oder Methoden-Repos erzwingen.
 
 ## 12. Batch Green Path Execution
 
-- [ ] Batch Green Path Execution nur bei ausdRücklichem Nutzerauftrag verwenden
-- [ ] Batch-Groesse kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl
+- [ ] Batch Green Path Execution nur bei ausdrücklichem Nutzerauftrag verwenden
+- [ ] Batch-Größe kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl
 - [ ] nach jedem grünen PR den PR Review of Record prüfen
-- [ ] Merge gemaess Green-Path-Regel durchfuehren
+- [ ] Merge gemäß Green-Path-Regel durchführen
 - [ ] `git checkout main`
 - [ ] `git pull --ff-only origin main`
 - [ ] `git status`
@@ -173,7 +173,7 @@ Das Startpaket ist fertig, wenn:
 - Tool-Projektanweisungen nur Bootstrap-Pointer sind
 - Projektwahrheit im Repo/GitHub liegt
 - strategische Wahrheit und Produktgedächtnis im AI Vault verankert sind
-- Ticket Null ohne Rueckfrage von Codex bearbeitet werden kann
+- Ticket Null ohne Rückfrage von Codex bearbeitet werden kann
 - der erste PR seine Evidence im PR Body oder eindeutig verlinkt dokumentieren kann
 - nach grünem Merge lokales `main` sauber synchronisiert wird, bevor der nächste Queue-Eintrag startet
-- ein ausdRücklicher Ticket-Batch nach jedem Green Path synchronisiert und nur mit beauftragten ready Tickets fortgesetzt wird
+- ein ausdrücklicher Ticket-Batch nach jedem Green Path synchronisiert und nur mit beauftragten ready Tickets fortgesetzt wird

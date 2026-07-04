@@ -2,7 +2,7 @@
 
 ## Zweck
 
-Der Repo Context Pack ist ein lokaler technischer Lesekontext für Agents. Er buendelt Repo-Dateien in ein agentenlesbares Artefakt, damit ein Agent schneller navigieren und relevante Dateien finden kann.
+Der Repo Context Pack ist ein lokaler technischer Lesekontext für Agents. Er bündelt Repo-Dateien in ein agentenlesbares Artefakt, damit ein Agent schneller navigieren und relevante Dateien finden kann.
 
 Repomix ist dafür der empfohlene API-freie Baustein.
 
@@ -11,7 +11,7 @@ Repomix ist dafür der empfohlene API-freie Baustein.
 OpenWiki wurde geprüft und für dieses Methoden-Repo verworfen, weil non-interactive Runs einen `OPENROUTER_API_KEY` voraussetzen. Das widerspricht der Zielarchitektur:
 
 - App-first
-- keine zusaetzliche metered API-Abhaengigkeit
+- keine zusätzliche metered API-Abhängigkeit
 - keine neuen Provider-Credentials
 - GitHub als operative Wahrheit
 - keine zweite operative Dokumentationsschicht
@@ -59,4 +59,4 @@ repomix-output.*
 
 ## Sicherheitsgrenze
 
-Der Repo Context Pack darf keine Secrets, `.env`-Dateien, Logs, Build-Ausgaben oder bereits generierte Context Packs enthalten. Wenn ein Repo zusaetzliche sensible Pfade hat, müssen sie in `.repomixignore` ergänzt werden, bevor Repomix ausgefuehrt wird.
+Der Repo Context Pack darf keine Secrets, `.env`-Dateien, Logs, Build-Ausgaben oder bereits generierte Context Packs enthalten. Wenn ein Repo zusätzliche sensible Pfade hat, müssen sie in `.repomixignore` ergänzt werden, bevor Repomix ausgeführt wird.

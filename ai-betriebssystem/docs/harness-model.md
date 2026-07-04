@@ -16,7 +16,7 @@ Der Produktwert liegt nicht darin, dass Codex oder Claude Code irgendwie Code sc
 
 Kurz:
 
-> Nicht Magie automatisieren. Arbeit agentenfaehig machen.
+> Nicht Magie automatisieren. Arbeit agentenfähig machen.
 
 ## Agent Substrate
 
@@ -30,11 +30,11 @@ Agent Substrate ist der gemeinsame Unterbau, der Agenten in unterschiedlichen Re
 | Skill-Muster | wiederkehrende Arbeitsweisen wie `plan-then-implement`, `grill-with-docs`, `simplify-pass`, `cross-system-audit` |
 | Loading Map | `read when ...`-Hinweise, die nur relevante Detaildocs laden |
 
-Das Substrate ist kein Agenten-Zoo und keine automatische Self-Improvement-Maschinerie. Es macht vorhandene Agenten lauffaehig, ohne neue Runner- oder Dashboard-Pflichten einzufuehren.
+Das Substrate ist kein Agenten-Zoo und keine automatische Self-Improvement-Maschinerie. Es macht vorhandene Agenten lauffähig, ohne neue Runner- oder Dashboard-Pflichten einzuführen.
 
 ## Definition
 
-Ein Agent Work Harness ist die operative Umgebung, die Agentenarbeit wiederholbar und pruefbar macht.
+Ein Agent Work Harness ist die operative Umgebung, die Agentenarbeit wiederholbar und prüfbar macht.
 
 | Baustein | Bedeutung |
 | --- | --- |
@@ -51,21 +51,21 @@ Ein Agent Work Harness ist die operative Umgebung, die Agentenarbeit wiederholba
 
 Closeout is part of the harness.
 
-Der Harness ist nicht nur Ausfuehrung und Verification. Ohne verwertbaren Closeout kann der Operator keine Ampelentscheidung treffen.
+Der Harness ist nicht nur Ausführung und Verification. Ohne verwertbaren Closeout kann der Operator keine Ampelentscheidung treffen.
 
-Observability braucht eine stabile Closeout-Quelle. Für PR-basierte Arbeit ist der PR Body die primaere Operator-/Reviewer-Oberflaeche; PR-Kommentare können ergaenzen oder als technischer Fallback dienen, müssen dann aber im PR Body referenziert werden.
+Observability braucht eine stabile Closeout-Quelle. Für PR-basierte Arbeit ist der PR Body die primäre Operator-/Reviewer-Oberfläche; PR-Kommentare können ergänzen oder als technischer Fallback dienen, müssen dann aber im PR Body referenziert werden.
 
-Closeout Requirements gehoeren deshalb in den Agent Contract oder den konkreten Codex-Prompt. `AGENTS.md`, Contracts und Skills können erinnern und strukturieren, ersetzen aber keine expliziten task lokalen Closeout-Pflichten.
+Closeout Requirements gehören deshalb in den Agent Contract oder den konkreten Codex-Prompt. `AGENTS.md`, Contracts und Skills können erinnern und strukturieren, ersetzen aber keine expliziten task lokalen Closeout-Pflichten.
 
 ## PM Signal
 
 PM Signal ist ein verdichteter Projektstand aus GitHub Issues, PRs, Labels, Commits und Decisions. Es ist Teil der Control Plane: Es hilft dem Operator, Fortschritt, Blocker, Risiken und Entscheidungen zu sehen.
 
-PM Signal ersetzt kein Dashboard und keine zweite Wahrheit. Es liest GitHub-Artefakte und bewusst freigegebene Repo-Dokumente wie `docs/pm/*.md`, `docs/adr/*.md`, Risk Logs oder Decision Logs. Der AI Vault bleibt Denk- und Entwurfsort; für operative PM-Steuerung zaehlen GitHub und Repo-Artefakte.
+PM Signal ersetzt kein Dashboard und keine zweite Wahrheit. Es liest GitHub-Artefakte und bewusst freigegebene Repo-Dokumente wie `docs/pm/*.md`, `docs/adr/*.md`, Risk Logs oder Decision Logs. Der AI Vault bleibt Denk- und Entwurfsort; für operative PM-Steuerung zählen GitHub und Repo-Artefakte.
 
 Leitregel:
 
-> Jeder Agentenlauf muss entweder ein Produktartefakt verbessern, ein Systemartefakt verbessern oder ein belastbares PM-Signal erzeugen. Sonst war es nur Aktivitaet.
+> Jeder Agentenlauf muss entweder ein Produktartefakt verbessern, ein Systemartefakt verbessern oder ein belastbares PM-Signal erzeugen. Sonst war es nur Aktivität.
 
 ## Agent Contract
 
@@ -114,10 +114,10 @@ Der Agent Mode entscheidet, ob gebaut werden darf.
 | Mode | Bedeutung | Erlaubte Aktion |
 | --- | --- | --- |
 | `EXECUTING` | Entscheidung ist getroffen, Scope und Verifier sind klar | Agent darf bauen, validieren und PR/Evidence liefern |
-| `GRILLING` | Entscheidung, Begriff, Scope oder Ziel ist unklar | Agent darf nicht bauen; erst klaeren, schneiden oder Entscheidungsvorlage schreiben |
-| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefungen oder mehrere Quellen | Agent koordiniert Analyse, Teilpruefungen und einen umsetzbaren Plan; Umsetzung nur nach klarer EXECUTING-Box |
+| `GRILLING` | Entscheidung, Begriff, Scope oder Ziel ist unklar | Agent darf nicht bauen; erst klären, schneiden oder Entscheidungsvorlage schreiben |
+| `COORDINATING` | größere Arbeit braucht Synthese, Subagent-/Teilprüfungen oder mehrere Quellen | Agent koordiniert Analyse, Teilprüfungen und einen umsetzbaren Plan; Umsetzung nur nach klarer EXECUTING-Box |
 
-`Autonomy` beschreibt die erlaubte Eigenstaendigkeit innerhalb des Modes. `Risk lane` beschreibt die Review- und Evidence-Schaerfe.
+`Autonomy` beschreibt die erlaubte Eigenständigkeit innerhalb des Modes. `Risk lane` beschreibt die Review- und Evidence-Schärfe.
 
 ## Docs as Loading Map
 
@@ -128,9 +128,9 @@ Optionale repo-lokale Detaildocs:
 - `docs/agents/glossary.md` — read when Begriffe, Labels oder Modes unklar sind
 - `docs/agents/verification.md` — read when Validation, Evidence oder Artefakte zu bestimmen sind
 - `docs/agents/protected-areas.md` — read when Protected Areas oder Risk lanes betroffen sind
-- `docs/adr/*.md` — read when eine Architekturentscheidung beruehrt wird
+- `docs/adr/*.md` — read when eine Architekturentscheidung berührt wird
 
-Diese Dateien sind Empfehlungen für groessere Repos, kein Pflicht-Overhead für jedes Projekt.
+Diese Dateien sind Empfehlungen für größere Repos, kein Pflicht-Overhead für jedes Projekt.
 
 ## Skill-Muster
 
@@ -138,21 +138,21 @@ Skill-Muster beschreiben Arbeitsweisen, nicht neue Standardagenten:
 
 - `plan-then-implement`: erst Ziel, Boundary und Verifier festziehen, dann bauen
 - `grill-with-docs`: im `GRILLING`-Mode unklare Begriffe oder Entscheidungen gegen Repo-Dokumente prüfen
-- `simplify-pass`: vor groesserer Umsetzung Scope reduzieren und unnötige Komplexitaet entfernen
-- `cross-system-audit`: bei systemübergreifenden Aenderungen betroffene Contracts, Templates, Prompts und Docs gegeneinander prüfen
+- `simplify-pass`: vor größerer Umsetzung Scope reduzieren und unnötige Komplexität entfernen
+- `cross-system-audit`: bei systemübergreifenden Änderungen betroffene Contracts, Templates, Prompts und Docs gegeneinander prüfen
 
 ## Agent Loop
 
-Der Standardloop besteht aus fuenf Rollenmomenten. Diese müssen nicht zwingend fuenf separate Agents sein; sie können innerhalb eines Codex- oder Claude-Laufs als Denk- und Arbeitsphasen gelten.
+Der Standardloop besteht aus fünf Rollenmomenten. Diese müssen nicht zwingend fünf separate Agents sein; sie können innerhalb eines Codex- oder Claude-Laufs als Denk- und Arbeitsphasen gelten.
 
 Für wiederholte oder koordinierende Läufe beschreibt `docs/loop-readiness.md`
-eine optionale Preflight-Rubrik. Sie klaert Purpose, Trigger, Action, Proof,
+eine optionale Preflight-Rubrik. Sie klärt Purpose, Trigger, Action, Proof,
 Memory, Stop und Cost/Attempts, ohne Runner-, Dashboard-, State-File- oder
-Label-Pflichten einzufuehren.
+Label-Pflichten einzuführen.
 
 ### 1. Critic
 
-Vor jeder Aenderung:
+Vor jeder Änderung:
 
 - Task challengen.
 - Fehlenden Kontext erkennen.
@@ -162,7 +162,7 @@ Vor jeder Aenderung:
 
 ### 2. Builder
 
-- Kleinste sichere Aenderung machen.
+- Kleinste sichere Änderung machen.
 - Innerhalb der Boundary bleiben.
 - Keine opportunistischen Refactors.
 - Keine Produktentscheidungen erfinden.
@@ -171,26 +171,26 @@ Vor jeder Aenderung:
 
 - Geforderte Checks ausführen.
 - Keine Erfolgsbehauptung ohne Evidence.
-- Fehler klassifizieren statt schoenreden.
+- Fehler klassifizieren statt schönreden.
 
 ### 4. Recorder
 
 - Closeout posten.
-- Geaenderte Dateien nennen.
+- Geänderte Dateien nennen.
 - Checks und Roh-Evidence dokumentieren.
 - Risiken und offene Punkte benennen.
 
 ### 5. Fix Loop
 
-Wenn Verification oder Review fehlschlaegt:
+Wenn Verification oder Review fehlschlägt:
 
 - Failure klassifizieren.
 - Wenn eindeutig und im Scope: im selben PR fixen.
-- Wenn unklar, ausserhalb Scope oder Entscheidung noetig: `blocked` / Human Gate.
+- Wenn unklar, außerhalb Scope oder Entscheidung nötig: `blocked` / Human Gate.
 
 ## Harness Failure Classification
 
-Schlechte Agentenlaeufe werden nicht zuerst als Modellfehler betrachtet. Sie werden als Harness-Signal klassifiziert.
+Schlechte Agentenläufe werden nicht zuerst als Modellfehler betrachtet. Sie werden als Harness-Signal klassifiziert.
 
 Erlaubte Werte:
 
@@ -211,7 +211,7 @@ Beispiele:
 | Agent rät Produktverhalten | `missing_context` |
 | Build kann nicht laufen | `missing_tool` |
 | Ticket hat keine Validation | `missing_verifier` |
-| Agent aendert zu viele Dateien | `weak_guardrail` |
+| Agent ändert zu viele Dateien | `weak_guardrail` |
 | Kontext widerspricht sich | `stale_context` |
 | Modell scheitert trotz gutem Harness | `model_limitation` |
 
@@ -236,7 +236,7 @@ mandatory process for simple tickets.
 
 Besser als:
 
-> GitHub-zentriertes AI-Betriebssystem, das Codex/Claude über Tickets arbeiten laesst.
+> GitHub-zentriertes AI-Betriebssystem, das Codex/Claude über Tickets arbeiten lässt.
 
 Ist:
 

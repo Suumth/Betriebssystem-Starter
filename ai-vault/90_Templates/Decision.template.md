@@ -6,5 +6,5 @@
 | Entscheidung |  |
 | Quelle | GitHub Issue, PR, Review oder freigegebene Notiz |
 | Auswirkung |  |
-| Ruecknahmebedingung |  |
+| Rücknahmebedingung |  |
 

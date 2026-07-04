@@ -38,5 +38,5 @@
 ## Offene Prüfung
 
 - Root `.git` kann noch existieren. Nicht als Inhalt des Starterpakets übernehmen; für ein finales neues Repo frisch initialisieren.
-- Falls neue Beispiele hinzugefuegt werden, danach immer `bash scripts/public-readiness-check.sh` ausführen.
+- Falls neue Beispiele hinzugefügt werden, danach immer `bash scripts/public-readiness-check.sh` ausführen.
 

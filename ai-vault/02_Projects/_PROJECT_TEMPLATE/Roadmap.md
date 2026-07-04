@@ -4,7 +4,7 @@
 
 Roadmaps im Vault sind Orientierung. Operative Arbeit wird als GitHub Issue geplant.
 
-## Naechste Themen
+## Nächste Themen
 
 | Thema | Warum | Operative Quelle |
 | --- | --- | --- |

@@ -4,7 +4,7 @@ Dieses Runbook macht aus einer Produktidee ein bootstrap-fertiges
 AI-Betriebssystem-2.0-Projekt. Es setzt die Bootstrap-Konvention aus
 `docs/bootstrap-loop.md` und das Template-Set aus `templates/` praktisch um.
 
-Der Ablauf ist tool-unabhaengig: ChatGPT, Claude, Codex, Gemini und spätere
+Der Ablauf ist tool-unabhängig: ChatGPT, Claude, Codex, Gemini und spätere
 KI-Tools starten alle über dieselbe `PROJECT.md` im Repo-Root.
 
 ## 1. Voraussetzungen
@@ -122,7 +122,7 @@ Issue- und PR-Konfiguration:
 
 ## 6. Ticket-0-Erzeugung
 
-Ticket 0 beweist nur die Agentenfaehigkeit des Repos. Es ist kein Featureticket.
+Ticket 0 beweist nur die Agentenfähigkeit des Repos. Es ist kein Featureticket.
 
 Empfohlene Ticket-0-Form:
 
@@ -135,7 +135,7 @@ Verifier: git diff --check plus repo-specific check if present.
 Non-goals: no product feature, no broad architecture rewrite, no credential or Vault copy.
 ```
 
-Ticket 0 ist reif, wenn ein Agent ohne weitere Rueckfrage starten kann und der
+Ticket 0 ist reif, wenn ein Agent ohne weitere Rückfrage starten kann und der
 PR-Body danach beweist:
 
 - welche Bootstrap-Dateien angelegt oder geprüft wurden
@@ -151,7 +151,7 @@ Mindestvalidierung für den Bootstrap-PR:
 git diff --check
 ```
 
-Zusaetzlich ausführen, falls vorhanden:
+Zusätzlich ausführen, falls vorhanden:
 
 - Markdownlint oder andere Markdown-Checks
 - YAML-Parse für Label-Dateien
@@ -159,7 +159,7 @@ Zusaetzlich ausführen, falls vorhanden:
 - Preview-/Screenshot-Smoke für UI-Projekte
 
 Wenn ein Check nicht existiert, dokumentiere das im PR-Body. Wenn ein Check
-existiert, aber wegen Tooling oder Zugriff nicht laeuft, klassifiziere den
+existiert, aber wegen Tooling oder Zugriff nicht läuft, klassifiziere den
 Harness Failure als `missing_tool`, `missing_verifier` oder `stale_context`.
 
 ## 8. Closeout-Erwartung
@@ -182,7 +182,7 @@ Ein Bootstrap gilt als erfolgreich, wenn:
 - jedes KI-Tool denselben Einstiegspunkt bekommt
 - `PROJECT.md` auf AI-Vault-Quellen verweist, ohne sie vollständig zu duplizieren
 - `AGENTS.md`, Project Brief, Issue-/PR-Templates und Labels vorhanden oder bewusst gemappt sind
-- Ticket 0 ohne weitere Rueckfrage bearbeitet werden kann
+- Ticket 0 ohne weitere Rückfrage bearbeitet werden kann
 - Validation Evidence im PR-Body steht
 - nach grünem Merge `main` synchronisiert und sauber ist
 
@@ -200,7 +200,7 @@ Das Ergebnis muss PROJECT.md-first sein: Jede KI liest später zuerst
 PROJECT.md im Repo-Root und danach nur die dort verlinkten Quellen.
 
 Produktidee:
-<kurze Produktidee einfuegen>
+<kurze Produktidee einfügen>
 
 Projektangaben:
 - Projektname:
@@ -208,7 +208,7 @@ Projektangaben:
 - Projekttyp:
 - Default-Branch:
 - lokaler Checkout-Pfad für lokale Agenten, falls bekannt:
-- AI-Vault-Projektordner oder gewuenschter Ordner:
+- AI-Vault-Projektordner oder gewünschter Ordner:
 - AI-Vault-Online-Einstieg für Cloud-KIs, falls vorhanden:
 - bekannte Nicht-Ziele:
 - bekannte Protected Areas:
@@ -238,12 +238,12 @@ Arbeitsregeln:
 4. Tool-spezifische Projektanweisungen dürfen nur auf die GitHub-URL von PROJECT.md zeigen.
 5. Kopiere keine lange Vault-Strategie in Tool-Anweisungen. PROJECT.md referenziert Vault-Quellen nur.
 6. Erstelle Ticket 0 aus templates/ticket-0-bootstrap.md.
-7. Setze agent:ready erst, wenn Ticket 0 ohne Rueckfrage bearbeitbar ist.
-8. Fuehre mindestens git diff --check aus und alle vorhandenen Repo-/Markdown-Checks.
+7. Setze agent:ready erst, wenn Ticket 0 ohne Rückfrage bearbeitbar ist.
+8. Führe mindestens git diff --check aus und alle vorhandenen Repo-/Markdown-Checks.
 9. Dokumentiere Annahmen, fehlende Quellen und bewusst vertagte Punkte im PR-Body.
 
 Lieferformat:
-- angelegte/geaenderte Dateien
+- angelegte/geänderte Dateien
 - GitHub-Konfiguration und Labels
 - Ticket-0-Text
 - Validation Evidence

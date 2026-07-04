@@ -45,7 +45,7 @@ Der AI Vault bleibt Denk- und Entwurfsort. Er ist keine operative PM-Wahrheit.
 
 ## PM-Lagebild
 
-Das PM-Lagebild ist eine read-only Ergaenzung zur Projektleiter-Sicht. Es wird
+Das PM-Lagebild ist eine read-only Ergänzung zur Projektleiter-Sicht. Es wird
 aus GitHub und dem Produktversprechen-Register in `PROJECT.md` abgeleitet.
 
 Regeln:
@@ -54,8 +54,8 @@ Regeln:
 - Das Lagebild setzt keine Stati, Labels, Milestones oder Produktversprechen.
 - Es ersetzt nicht GitHub, Issues, PRs, Review of Record oder Human Gate.
 - Teilprojekte werden als GitHub Milestones modelliert.
-- Produktversprechen werden im `PROJECT.md` gefuehrt und nur per Human-/
-  Operator-Entscheidung mit Evidence-Link bestaetigt.
+- Produktversprechen werden im `PROJECT.md` geführt und nur per Human-/
+  Operator-Entscheidung mit Evidence-Link bestätigt.
 - Details stehen in `contracts/teilprojekt-contract.md`.
 
 ## Standardoutput

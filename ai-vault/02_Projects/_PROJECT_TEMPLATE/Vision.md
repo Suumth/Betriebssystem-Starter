@@ -2,11 +2,11 @@
 
 ## Warum existiert dieses Projekt?
 
-Beschreibe den dauerhaften Nutzen in 3-5 Saetzen.
+Beschreibe den dauerhaften Nutzen in 3-5 Sätzen.
 
 ## Für wen?
 
-- Primaere Nutzer:
-- Sekundaere Nutzer:
+- Primäre Nutzer:
+- Sekundäre Nutzer:
 - Nicht-Zielgruppen:
 

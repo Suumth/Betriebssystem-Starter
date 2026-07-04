@@ -2,7 +2,7 @@
 
 ## Fragestellung
 
-Welche offene Frage soll diese Notiz klaeren?
+Welche offene Frage soll diese Notiz klären?
 
 ## Quellen
 

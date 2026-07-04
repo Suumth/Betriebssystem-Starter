@@ -38,7 +38,7 @@
 ## Prompts
 
 - `prompts/builder-codex.md` — morgendlicher Builder-Prompt für Codex mit Agent Mode, Execution Mode Rules, Attempt Budget, Subagent Failure Policy, Batch Green Path Execution, Vault Impact und Closeout-Pflichtfeldern.
-- `prompts/builder-claude-code.md` — Escalation-Builder-Prompt für Claude Code, nur nach dokumentierter menschlicher Freigabe gemaess Model Resource Policy.
+- `prompts/builder-claude-code.md` — Escalation-Builder-Prompt für Claude Code, nur nach dokumentierter menschlicher Freigabe gemäß Model Resource Policy.
 - `prompts/builder-review-handoff.md` — Regel, dass Review-/Merge-Signale erst nach dem Builder-Handoff kommen.
 - `prompts/reviewer-claude.md` — kompakter Reviewer-Prompt mit Review Isolation, Vault-Impact-, Attempt-Budget-, Failure-Mode-, Subagent-Evidence-/degraded-mode-Checks und Grün/Gelb/Rot-Semantik; Details stehen im Review Contract.
 
@@ -52,7 +52,7 @@
 - `templates/lesson.md` — Lesson-Template mit Pflichtblock Regelanpassung, damit Loop-Erkenntnisse in Contracts, Prompts und Templates zurückfliessen.
 - `templates/codex-overnight-loop-prompt.md` — abends nutzbarer Codex-Prompt für einen operator-armierten Overnight Run.
 - `templates/morning-operator-review.md` — Morgen-Checkliste mit Nightly-Summary-Einstieg, GitHub-Abfragen, Ampellogik und Delegationsregeln.
-- `templates/ticket-0-bootstrap.md` — erstes Bootstrap-Issue zum Nachweis der Agentenfaehigkeit eines neuen Projekt-Repos.
+- `templates/ticket-0-bootstrap.md` — erstes Bootstrap-Issue zum Nachweis der Agentenfähigkeit eines neuen Projekt-Repos.
 - `templates/pull-request-template.md` — PR-Body-Template mit Validation Evidence, Vault Impact, Operator Summary und Review Recommendation.
 - `templates/labels.yml` — direkt nutzbares Label-Set für GitHub oder Label-Sync.
 - `templates/pm-signal-prompt.md` — wiederverwendbarer Prompt für PM-Signal-Läufe.

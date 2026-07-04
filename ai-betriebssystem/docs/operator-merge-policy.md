@@ -26,7 +26,7 @@ Sicherheit entsteht stattdessen durch den Harness:
 | Rolle | Aufgabe |
 | --- | --- |
 | Codex Builder | Umsetzung, Tests, Evidence, PR |
-| Codex Review / @codex review | Standard-Codepruefung und Review of Record |
+| Codex Review / @codex review | Standard-Codeprüfung und Review of Record |
 | ChatGPT Pro | Meta-Review, Ticket-Schnitt, Entscheidungsvorlage, optional PR-Prüfung |
 | Claude Code | Premium-/Eskalationsreview oder Umsetzung nach menschlicher Freigabe |
 | Mensch | Freigabe-Operator, Risikowahl, Merge-Policy-Entscheidung |
@@ -45,7 +45,7 @@ Sondern:
 
 ### Grün: Auto-Merge erlaubt
 
-Auto-Merge ist erlaubt, wenn der PR folgende Bedingungen erfuellt:
+Auto-Merge ist erlaubt, wenn der PR folgende Bedingungen erfüllt:
 
 - Issue ist verlinkt
 - Scope eingehalten
@@ -70,7 +70,7 @@ Mensch entscheidet, wenn:
 - risk:protected betroffen ist
 - Review uneinig ist
 - Validation teilweise ist
-- Produktentscheidung moeglich ist
+- Produktentscheidung möglich ist
 
 Solange `needs-human` gesetzt ist, ist Auto-Merge verboten. `needs-human` ist ein Gelb-Signal, kein Merge- oder Freigabe-Synonym.
 
@@ -109,10 +109,10 @@ Empfehlungslogik:
 | unklare Evidence, kleiner Scope | `@codex review`, medium |
 | unklare Evidence, produktnah | `ChatGPT Pro`, high oder `@codex review`, high |
 | Bug-/Logikrisiko | `Codex`, high oder `@codex review`, high |
-| Protected Area ohne Release-Naehe | `@codex review`, high; Claude Code nur vorschlagen |
+| Protected Area ohne Release-Nähe | `@codex review`, high; Claude Code nur vorschlagen |
 | Safety / Legal / Privacy / StoreKit / Signing / Release | `Claude Code Suggested: yes`, highest available; Human decision required |
 | Modell-/Tool-Grenze von Codex erreicht | `Claude Code Suggested: yes`, high/highest available |
-| reine Operator-Frage ohne Codepruefung | `Human decision only` |
+| reine Operator-Frage ohne Codeprüfung | `Human decision only` |
 
 ### Reviewticket-Regel
 
@@ -184,7 +184,7 @@ Protected Areas dürfen von Codex bearbeitet werden, wenn das Ticket sauber gesc
 
 Sie dürfen aber nicht blind gemerged werden.
 
-Protected Areas brauchen staerkere Evidence, einen expliziten Review of Record oder eine Operator-Entscheidung.
+Protected Areas brauchen stärkere Evidence, einen expliziten Review of Record oder eine Operator-Entscheidung.
 
 Beispiele:
 
@@ -199,7 +199,7 @@ Beispiele:
 
 ## Tagesbranch-Logik
 
-Codex darf tagsüber auf Branches arbeiten. Branches sind Arbeitsraeume, nicht Freigaben.
+Codex darf tagsüber auf Branches arbeiten. Branches sind Arbeitsräume, nicht Freigaben.
 
 Abends oder nach Batch-Ende werden PRs nach Ampel sortiert:
 
@@ -209,7 +209,7 @@ Abends oder nach Batch-Ende werden PRs nach Ampel sortiert:
 
 ## Green Path Completion
 
-Ein grüner Merge ist erst abgeschlossen, wenn Codex danach die lokale Hygiene ausgefuehrt hat:
+Ein grüner Merge ist erst abgeschlossen, wenn Codex danach die lokale Hygiene ausgeführt hat:
 
 ```text
 gh pr merge <PR> --squash --delete-branch
@@ -218,19 +218,19 @@ git pull --ff-only origin main
 git status
 ```
 
-Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgefuehrt, nicht bestaetigt. Wenn `main` sauber ist, sucht Codex in der Standardreihenfolge nach dem nächsten bearbeitbaren Ticket: `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
+Diese sicheren Green-Path-Schritte werden nach erfolgreichem Merge ausgeführt, nicht bestätigt. Wenn `main` sauber ist, sucht Codex in der Standardreihenfolge nach dem nächsten bearbeitbaren Ticket: `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 
 Wenn kein nächstes Ticket existiert, dokumentiert Codex den Idle-/Complete-Zustand. Wenn ein Stop-Grund wie fehlgeschlagener Merge, fehlgeschlagener Pull, dirty Working Tree, fehlende Berechtigung, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-Entscheidung oder unklare Evidence vorliegt, stoppt Codex mit Entscheidungsvorlage.
 
 ## Batch Green Path Execution
 
-Wenn der Nutzer ausdRücklich einen Ticket-Batch beauftragt, darf Codex nach jedem grünen PR mit dem nächsten beauftragten, reifen Ticket fortsetzen. Die Batch-Groesse kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl.
+Wenn der Nutzer ausdrücklich einen Ticket-Batch beauftragt, darf Codex nach jedem grünen PR mit dem nächsten beauftragten, reifen Ticket fortsetzen. Die Batch-Größe kommt aus dem Nutzerauftrag, nicht aus einer festen Zahl.
 
 Vor jeder Fortsetzung muss der vorherige Green Path abgeschlossen sein:
 
 ```text
 PR Review of Record prüfen
-Merge gemaess Green-Path-Regel durchfuehren
+Merge gemäß Green-Path-Regel durchführen
 git checkout main
 git pull --ff-only origin main
 git status

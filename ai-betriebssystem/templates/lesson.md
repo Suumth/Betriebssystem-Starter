@@ -1,6 +1,6 @@
 # Lesson Template
 
-Eine Lesson dokumentiert einen realen Loop und entscheidet, ob der Harness angepasst wird. Eine Lesson ohne Regelanpassungs-Entscheidung ist unvollständig — "keine Anpassung noetig" ist eine gueltige Entscheidung, aber sie muss ausgesprochen werden.
+Eine Lesson dokumentiert einen realen Loop und entscheidet, ob der Harness angepasst wird. Eine Lesson ohne Regelanpassungs-Entscheidung ist unvollständig — "keine Anpassung nötig" ist eine gültige Entscheidung, aber sie muss ausgesprochen werden.
 
 Ablage: `lessons/<nummer>-<repo>-<kurztitel>.md`
 
@@ -41,22 +41,22 @@ Beobachtete Klassifikationen in diesem Loop (aus dem Closeout, nicht neu erfunde
 
 ## Wichtigstes Learning
 
-Ein Satz, der auch ohne den Rest der Lesson verstaendlich ist.
+Ein Satz, der auch ohne den Rest der Lesson verständlich ist.
 
 ## Regelanpassung
 
 Pflichtblock. Genau eine der beiden Varianten:
 
-**Variante A — Anpassung noetig:**
+**Variante A — Anpassung nötig:**
 
 - Betroffenes Artefakt: `contracts/...` | `prompts/...` | `templates/...` | `docs/...` | `skills/...`
 - Was muss sich ändern:
 - Umsetzung: Issue erstellt (`OWNER/REPO#N`) | direkt als PR umgesetzt (`OWNER/REPO#N`)
 
-**Variante B — Keine Anpassung noetig:**
+**Variante B — Keine Anpassung nötig:**
 
 - Warum der bestehende Harness dieses Muster bereits abdeckt:
 
-## Naechste Anwendung
+## Nächste Anwendung
 
 Wo wird dieses Learning als nächstes bewusst angewendet oder überprüft?

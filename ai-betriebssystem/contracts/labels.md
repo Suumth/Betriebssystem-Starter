@@ -24,7 +24,7 @@ Overnight-Freigabelabel und zwei Merge-/Review-Signale.
 
 | Label | Wer setzt | Wer entfernt | Bedeutung | Nicht-Bedeutung |
 |---|---|---|---|---|
-| `overnight:approved` | Operator oder ausdRückliche Operator-Anweisung | Codex nach PR-Erstellung, Skip oder Blockade | Bereits reifes `agent:ready` Ticket darf im nächsten operator-armierten Overnight Run ausgewaehlt werden | Startet keinen Lauf allein, ersetzt kein Statuslabel und erlaubt keinen Nacht-Merge |
+| `overnight:approved` | Operator oder ausdrückliche Operator-Anweisung | Codex nach PR-Erstellung, Skip oder Blockade | Bereits reifes `agent:ready` Ticket darf im nächsten operator-armierten Overnight Run ausgewählt werden | Startet keinen Lauf allein, ersetzt kein Statuslabel und erlaubt keinen Nacht-Merge |
 
 ## Bedeutung der Labels
 
@@ -70,16 +70,16 @@ Der Agent kann nicht sinnvoll fortsetzen. Der Kommentar muss eine konkrete Entsc
 
 ### overnight:approved
 
-`overnight:approved` ist das einzige zusaetzliche Auswahllabel für Overnight
+`overnight:approved` ist das einzige zusätzliche Auswahllabel für Overnight
 Operations Mode. Es darf nur zusammen mit `agent:ready` für Overnight-Auswahl
 verwendet werden.
 
 Semantik:
 
-- Wird vom Operator oder auf ausdRückliche Operator-Anweisung gesetzt.
+- Wird vom Operator oder auf ausdrückliche Operator-Anweisung gesetzt.
 - Bedeutet: Dieses bereits reife Ticket darf in einem konkreten, abends
   armierten Overnight Run bearbeitet werden.
-- Bedeutet nicht: automatische Ausfuehrung ohne Abend-Prompt.
+- Bedeutet nicht: automatische Ausführung ohne Abend-Prompt.
 - Bedeutet nicht: Status, Review, Grün-Freigabe oder Merge-Erlaubnis.
 - Ist kein Ersatz für `agent:ready`, `agent:running`, `blocked`,
   `needs-fix` oder `needs-human`.
@@ -152,7 +152,7 @@ Review-Ergebnis:
 - NEEDS-FIX/Rot -> `needs-fix` setzen, `needs-human`, `review:pass` und `auto-merge:ok` entfernen, Fix-Empfehlung schreiben
 - BLOCKED/Rot -> `blocked` setzen, `needs-human`, `needs-fix`, `auto-merge:ok` und `review:pass` entfernen, Entscheidungsvorlage schreiben
 
-`blocked` ist staerker als `needs-human`. Beide Labels sollen nicht parallel als Standardzustand stehen, ausser ein Contract begründet den Sonderfall ausdRücklich.
+`blocked` ist stärker als `needs-human`. Beide Labels sollen nicht parallel als Standardzustand stehen, außer ein Contract begründet den Sonderfall ausdrücklich.
 
 ## Optionale Lane-Tags
 

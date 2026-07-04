@@ -37,7 +37,7 @@
 | Risks | neutralisieren | Leerer Bereich plus Template. |
 | Lessons | neutralisieren | Leerer Bereich plus Template. |
 | Research | neutralisieren | Leerer Bereich plus Template. |
-| Templates | behalten | Wiederverwendbare Projekt- und Rueckflussvorlagen. |
+| Templates | behalten | Wiederverwendbare Projekt- und Rückflussvorlagen. |
 
 ## Private Inhalte
 

@@ -52,7 +52,7 @@ Kein KI-Tool bekommt eigene Sonderwahrheit. Lokale Pfade wie `<LOCAL_CHECKOUT_PA
 
 Die repo-basierte Projektanweisung enthält den Router auf AI-Betriebssystem als Methodenquelle, Projekt-Repo als operative Wahrheit und AI Vault als Strategie-/Produktgedächtnisquelle.
 
-Der AI Vault bleibt die kanonische Wahrheit für Strategie, Zielbild und Produktgedächtnis. Inhalte, die Cloud-KIs benoetigen, müssen aber online erreichbar sein: als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt.
+Der AI Vault bleibt die kanonische Wahrheit für Strategie, Zielbild und Produktgedächtnis. Inhalte, die Cloud-KIs benötigen, müssen aber online erreichbar sein: als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt.
 
 ## MVP-Minimalmodell
 
@@ -118,7 +118,7 @@ Trigger -> Action -> Proof -> Memory -> Stop
 
 Für wiederholte, koordinierende oder multi-surface Läufe gilt vor dem Start
 die optionale Preflight-Rubrik in `docs/loop-readiness.md`. Sie ergänzt die
-GitHub-zentrierte Arbeitsweise, fuehrt aber keinen Runner, kein Dashboard und
+GitHub-zentrierte Arbeitsweise, führt aber keinen Runner, kein Dashboard und
 keine zweite operative Wahrheit ein.
 
 ## Standard-Loop: Delivery Loop
@@ -139,7 +139,7 @@ Mensch:
 liest Ampel, entscheidet, merged oder priorisiert Fix.
 
 Nach grünem Merge:
-Codex fuehrt ohne Rueckfrage lokale Hygiene aus: `git checkout main`, `git pull --ff-only origin main`, `git status`.
+Codex führt ohne Rückfrage lokale Hygiene aus: `git checkout main`, `git pull --ff-only origin main`, `git status`.
 Wenn `main` sauber ist, sucht Codex den nächsten Queue-Eintrag: needs-fix, agent:running oder genau ein neues agent:ready.
 
 Memory:
@@ -180,7 +180,7 @@ Regel:
 docs/        Operating Model, Harness Model, Operator Runbook, Glossar, Policies
 contracts/   Ticket-, Review- und Label-Verträge
 prompts/     Pflicht-Prompts für Codex, Claude Code und PM Signal
-templates/   AGENTS.md, GitHub-Issue-Templates (Full/Light), Lesson- und PM-Status-Templates
+templates/   AGENTS.md, GitHub-Issue-Templates, Low-Risk-Task-Templates, Lesson- und PM-Status-Templates
 skills/      kurze Rollen- und Skill-Routingnotizen
 pm/          PM Signal Loop, Projektstatus, Risk Log, Decision Log
 lessons/     dokumentierte Loop-Erkenntnisse mit Regelanpassungs-Entscheidung

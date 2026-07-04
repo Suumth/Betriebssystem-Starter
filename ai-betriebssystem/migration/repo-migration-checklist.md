@@ -73,7 +73,7 @@ Optional:
 - [ ] Lessons nur bei Bedarf als PR in Methoden-Repo übernehmen
 - [ ] keine operative Ticketliste im Vault pflegen
 - [ ] keine Runner-/Dashboard-Logik ergänzen
-- [ ] keine Xcode 27 Skill-Pflicht für Nicht-Apple-Tickets einfuehren
+- [ ] keine Xcode 27 Skill-Pflicht für Nicht-Apple-Tickets einführen
 
 ## Pilot-Empfehlung
 

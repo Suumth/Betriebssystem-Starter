@@ -50,7 +50,7 @@ Vollständige neutrale AI-Betriebssystem-Starterinstallation.
 
 - Echte private Projekte.
 - Echte private Produktnamen.
-- Echte Roadmaps oder Projektverlaeufe.
+- Echte Roadmaps oder Projektverläufe.
 - Echte GitHub-Owner, Issues, PRs oder Accountdaten.
 - Secrets, Zugangsdaten oder lokale Workspace-State-Dateien.
 - Eine übernommene Unterordner-Git-Historie in `ai-betriebssystem/`, `ai-vault/`, `examples/`, `docs/`, `public-readiness/` oder `scripts/`.
@@ -66,7 +66,7 @@ grep -RInE '<private-patterns>' . --exclude-dir=.git --exclude-dir=node_modules 
 grep -RInE '<credential-patterns>' . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian
 ```
 
-Der Public Readiness Check prüft private Treffer, credential-aehnliche Treffer, lokale Pfade, Pflichtdateien, Pflichtlabels, Vault Starter, Demo-Projekt, Demo-Vault, lokale Artefakte und verschachtelte Git-Historie im Release-Bereich.
+Der Public Readiness Check prüft private Treffer, credential-ähnliche Treffer, lokale Pfade, Pflichtdateien, Pflichtlabels, Vault Starter, Demo-Projekt, Demo-Vault, lokale Artefakte und verschachtelte Git-Historie im Release-Bereich.
 
 ## Risiken
 
