@@ -1,0 +1,12 @@
+.git/
+node_modules/
+dist/
+build/
+coverage/
+.ai-os/runs/
+.ai-os/context/
+repomix-output.*
+*.log
+.env
+.env.*
+.DS_Store

@@ -1,0 +1,41 @@
+# AI-Betriebssystem 2.0 label set
+#
+# Use this file as `.github/labels.yml` when a project uses label sync tooling,
+# or create the labels manually in GitHub with the same names.
+
+- name: agent:ready
+  color: ededed
+  description: Ticket is mature enough for an agent to start without another prompt.
+- name: overnight:approved
+  color: 5319e7
+  description: Mature agent:ready ticket may be selected by an operator-armed overnight run.
+- name: agent:running
+  color: ededed
+  description: Agent work has started or must continue on an existing branch or PR.
+- name: needs-fix
+  color: d73a4a
+  description: Review of Record requires concrete follow-up before merge.
+- name: needs-human
+  color: fbca04
+  description: Operator decision required; auto-merge is forbidden.
+- name: blocked
+  color: b60205
+  description: Work cannot proceed without an external decision, access or verifier.
+- name: review:pass
+  color: 0e8a16
+  description: Review of Record passed the PR against the linked issue.
+- name: auto-merge:ok
+  color: 0e8a16
+  description: Green merge signal when validation, evidence and review are complete.
+- name: risk:low
+  color: c2e0c6
+  description: Low-risk docs, template or narrow proof work.
+- name: risk:standard
+  color: d4c5f9
+  description: Standard implementation risk.
+- name: risk:protected
+  color: fbca04
+  description: Protected area requiring stronger evidence or review.
+- name: risk:release
+  color: b60205
+  description: Release, legal, safety, signing, billing or other high-risk gate.

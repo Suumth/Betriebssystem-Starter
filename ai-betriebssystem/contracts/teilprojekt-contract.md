@@ -1,0 +1,140 @@
+# Teilprojekt Contract
+
+Der Teilprojekt Contract definiert das PM-Lagebild fuer Projekt-Repos. Er
+macht Teilprojekte und Produktversprechen sichtbar, ohne eine zweite operative
+Wahrheit neben GitHub zu schaffen.
+
+## Grundsatz
+
+GitHub bleibt operative Wahrheit. Das Lagebild ist eine read-only Ableitung aus:
+
+- GitHub Milestones;
+- GitHub Issues, PRs, Labels, Reviews und Closeouts;
+- dem Produktversprechen-Register in `PROJECT.md`.
+
+Das Lagebild darf verdichten, verlinken und Ampeln ableiten. Es setzt keine
+Stati, schreibt keine Labels, bestaetigt keine Produktversprechen und ersetzt
+keine Human-/Operator-Entscheidung.
+
+## Teilprojekt-Modell
+
+Ein Teilprojekt ist ein GitHub Milestone im jeweiligen Projekt-Repo.
+
+Produktwirksame reife Tickets brauchen einen Milestone, wenn sie als
+`agent:ready` in Umsetzung gehen. Produktwirksam ist ein Ticket, wenn sein
+Ergebnis ein Nutzer-, Produkt-, Release-, Beta-, Surface-, Architektur- oder
+Qualitaetsversprechen beruehrt.
+
+Tickets ohne Milestone sind erlaubt, wenn sie ausdruecklich nicht
+teilprojektbezogen sind:
+
+- repo-hygiene;
+- meta;
+- reine Dokumentation ohne Produktversprechen;
+- Tooling ohne Teilprojektbezug;
+- Methoden- oder Templatepflege ohne Produktartefakt.
+
+Keine neuen `track:*`-, `status:*`- oder vergleichbaren Label-Parallelwelten.
+Milestones modellieren Teilprojekte. Labels bleiben Workflow-, Review-,
+Risiko- oder Agentensignale gemaess Label Contract.
+
+## Versprechen-Register
+
+Produktversprechen werden in `PROJECT.md` gefuehrt. Tickets beweisen
+Umsetzungsschritte, aber nicht automatisch Produktversprechen.
+
+Das Register enthaelt je Produktversprechen:
+
+- Teilprojekt / Milestone;
+- Produktversprechen;
+- Status: `offen` oder `bestätigt`;
+- Evidence-Link;
+- phasenkritisch: `ja` oder `nein`.
+
+Statuswerte sind absichtlich knapp:
+
+- `offen`: noch nicht durch Operator-/Human-Entscheidung bestaetigt.
+- `bestätigt`: durch Operator-/Human-Entscheidung per PR mit Evidence-Link
+  bestaetigt.
+
+Eine Statusaenderung von `offen` zu `bestätigt` darf nur durch
+Operator-/Human-Entscheidung erfolgen. Sie braucht einen PR und einen
+Evidence-Link auf die pruefbare Grundlage, etwa Issue, PR, Review, Closeout,
+Test-/Build-Evidence, Screenshot oder Entscheidung.
+
+Anti-Bloat-Leitplanken:
+
+- maximal 7 Teilprojekte je Projekt;
+- maximal 4 Produktversprechen je Teilprojekt.
+
+Wenn ein Projekt mehr braucht, ist das ein Signal, das Lagebild zu schneiden
+oder Teilprojekte zusammenzufassen, nicht mehr Statusmechanik einzufuehren.
+
+## Zustandslogik fuer Teilprojekte
+
+Das Lagebild nutzt nur diese Zustaende:
+
+| Zustand | Bedeutung |
+| --- | --- |
+| `erledigt` | Milestone ist geschlossen oder alle produktwirksamen Issues sind geschlossen und haben Review-/PR-Evidence. |
+| `in Review` | Es gibt offene oder kuerzlich gelieferte Arbeit mit PR-/Review-Bezug, aber noch keine gruene Entscheidung. |
+| `blockiert` | Mindestens ein relevantes Issue/PR ist `blocked` oder ein erforderlicher Human-/Operator-Entscheid fehlt. |
+| `offen` | Es gibt offene produktwirksame Arbeit ohne rotes oder gelbes Gate. |
+| `Risiko offen` | Es gibt offene Risiken, fehlende Evidence oder produktwirksame Unsicherheit ohne harten Blocker. |
+| `unklar` | GitHub Milestone, Issue-Zuordnung, Evidence oder PROJECT-Register reichen nicht fuer eine belastbare Ableitung. |
+
+Zustaende werden aus GitHub und `PROJECT.md` abgeleitet. Sie werden nicht in
+separate Dateien zurueckgeschrieben.
+
+## Ampel-Logik
+
+Teilprojekt-Ampeln werden aus Zustand, Labels und offenen Human Gates
+abgeleitet.
+
+| Ampel | Regel |
+| --- | --- |
+| Rot | `blockiert`, offene `blocked`-Items oder phasenkritische offene Versprechen in Beta-/Release-Phase. |
+| Gelb | `in Review`, `Risiko offen`, `unklar`, `needs-human` oder `needs-fix`. |
+| Gruen | `erledigt` oder offenes Teilprojekt ohne Gates und mit belegbarer Bewegung. |
+
+Die Projekt-Ampel ist ein Worst-of ueber phasenkritische Teilprojekte. Das
+Portfolio bekommt keine Gesamtampel.
+
+Jede Ampel braucht eine klickbare Begruendung, zum Beispiel Milestone, Issue,
+PR, Review, Closeout oder PROJECT-Evidence-Link.
+
+## Verbotene Signale
+
+Das Lagebild darf nicht verwenden:
+
+- Prozentzahlen;
+- Scores;
+- Velocity;
+- Burndowns;
+- Forecasts;
+- Trendpfeile aus Ticketzaehlungen.
+
+Fortschritt wird als Zustand und rohe Zaehlstaende gezeigt, zum Beispiel
+erledigte/offene/blockierte Issues. Diese Zaehlstaende sind Belege fuer
+Arbeitslage, keine Produktversprechen.
+
+## Regenerierbarkeit
+
+Das Lagebild ist Ableitung, keine eigene Aussage.
+
+Generierte Lagebild-Dateien sind nicht manuell zu pflegen. Wenn ein Lagebild
+nicht geloescht und aus GitHub plus `PROJECT.md` neu erzeugt werden kann,
+verletzt es diesen Contract.
+
+Ein Generator darf lesen und schreiben:
+
+- lesen: GitHub und `PROJECT.md`;
+- schreiben: die generierte Markdown-Ableitung im Methoden-Repo.
+
+Er darf nicht:
+
+- GitHub-Issues, PRs, Labels, Milestones oder Produktversprechen mutieren;
+- lokale Arbeitskopien als Wahrheit verwenden;
+- AI Vault, Chat-Verlaeufe oder Tool-Projektanweisungen als operative Quelle
+  verwenden;
+- eigene Statusdateien als Wahrheit pflegen.

@@ -1,0 +1,27 @@
+# PM Portfolio Lagebild Example
+
+Generated: YYYY-MM-DDTHH:MM:SSZ
+
+## Uebersicht
+
+| Projekt | Status | Naechstes Signal | Offene Human Gates |
+| --- | --- | --- | --- |
+| Example Project | Gruen: Review of Record sichtbar | Ticket 0 abgeschlossen | 0 |
+
+## Projekt: example-org/example-repo
+
+- Repo: `<PROJECT_REPO_URL>`
+- Methode: `<AI_OS_METHOD_REPO_URL>`
+- Vault: `<AI_VAULT_PATH>`
+
+### Aktuelle Signale
+
+- Ticket 0 wurde mit Validation Evidence abgeschlossen.
+- Review of Record ist PASS.
+- Kein `needs-human`, `needs-fix` oder `blocked`.
+
+### Vorschlaege
+
+- Naechstes kleines Feature-Issue vorbereiten.
+- Vault Lessons nach dem ersten echten Produkt-PR aktualisieren.
+

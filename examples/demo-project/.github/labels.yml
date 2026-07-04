@@ -1,0 +1,37 @@
+- name: agent:ready
+  color: "0e8a16"
+  description: Ready for an agent to pick up.
+- name: agent:running
+  color: "1d76db"
+  description: Agent work is currently in progress.
+- name: needs-fix
+  color: "d93f0b"
+  description: Review or validation found required fixes.
+- name: needs-human
+  color: "fbca04"
+  description: Human decision is required; this is not approval.
+- name: blocked
+  color: "b60205"
+  description: Work cannot proceed without an external decision or state change.
+- name: review:pass
+  color: "0e8a16"
+  description: Review of Record passed.
+- name: auto-merge:ok
+  color: "5319e7"
+  description: Auto-merge allowed only after Review of Record PASS.
+- name: overnight:approved
+  color: "0052cc"
+  description: Approved for bounded overnight execution.
+- name: risk:low
+  color: "c2e0c6"
+  description: Low-risk task.
+- name: risk:standard
+  color: "bfdadc"
+  description: Standard-risk task.
+- name: risk:protected
+  color: "fef2c0"
+  description: Protected area; Human Gate required.
+- name: risk:release
+  color: "d4c5f9"
+  description: Release-impacting work; Human Gate required.
+

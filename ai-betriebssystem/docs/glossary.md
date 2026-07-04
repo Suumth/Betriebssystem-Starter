@@ -1,0 +1,74 @@
+# Glossar
+
+Kanonische Begriffsdefinitionen des AI-Betriebssystems 2.0.
+
+Andere Dokumente duerfen Begriffe fuer Prompt-Tauglichkeit wiederholen, aber nicht abweichend definieren. Bei Widerspruch gilt dieses Glossar. Ein `cross-system-audit` prueft Contracts, Prompts, Templates und Docs gegen diese Definitionen.
+
+## Arbeit und Struktur
+
+| Begriff | Definition |
+|---|---|
+| Ticket | Ein GitHub Issue, das seinen Erfolg selbst pruefbar macht: Ziel, Boundary, Verification, Evidence, Closeout, Stop-Bedingung. |
+| Agent Contract | Der Pflichtblock eines `agent:ready`-Tickets: Mode, Autonomy, Risk lane, Goal, Context, Boundary, Verification, Closeout, Stop condition. |
+| Boundary | Die explizite Grenze eines Laufs: erlaubte Aenderungen, Do-not-touch, Freigabepflicht fuer externe Aktionen. Ausserhalb der Boundary wird nicht improvisiert, sondern gestoppt. |
+| Verification | Der konkrete Befehl, Ablauf oder Proof, der Erfolg maschinell oder manuell pruefbar macht. |
+| Evidence | Ueberpruefbarer Nachweis der Verification: Rohoutput, Testergebnis, Screenshot, dokumentierte Blockade. Evidence darf nie groesser interpretiert werden, als sie ist (Non-Proof Boundary). |
+| Closeout | Der Abschlussbericht eines Laufs. Fuer PR-basierte Arbeit ist der PR Body die Primary Closeout Source; PR-Kommentare sind Ergaenzung oder Fallback und muessen im PR Body referenziert werden. |
+| Operator Summary | Kompakter Entscheidungsblock im Closeout: was sich aenderte, Validation, Evidence, Risk lane, Auto-merge-Kandidat, Human decision required. |
+| Review Recommendation | Empfehlungsblock im Closeout oder Review: empfohlener naechster Reviewer und Begruendung. Eine Empfehlung, kein automatischer Verbrauch. |
+| Lesson | Dokumentierte Erkenntnis aus einem realen Loop nach `templates/lesson.md`. Eine Lesson ist erst vollstaendig, wenn eine Regelanpassungs-Entscheidung getroffen wurde (auch "keine noetig" ist eine Entscheidung). |
+
+## Modi und Lanes
+
+| Begriff | Definition |
+|---|---|
+| Agent Mode | Arbeitsmodus vor dem Start: `EXECUTING` (bauen erlaubt), `GRILLING` (erst klaeren, nicht bauen), `COORDINATING` (Synthese/Teilpruefung koordinieren, Umsetzung erst in klarer EXECUTING-Box). |
+| Autonomy | Erlaubte Eigenstaendigkeit innerhalb des Mode: `prototype`, `standard`, `production`. |
+| Risk lane | Review- und Evidence-Schaerfe: `low`, `standard`, `protected`, `release`. |
+| Execution Mode | Ob ein Ticket interne Codex-Subagents verlangt: `Subagents: NOT_REQUIRED` oder `Subagents: REQUIRED`. Eine reine Erlaubnis erfuellt REQUIRED nicht. |
+| Ticket-Tier | Umfangsklasse eines Tickets: Light (Risk lane low, keine Subagents, keine Loop-Arbeit, eine Oberflaeche) oder Full (alles andere). Siehe `contracts/ticket-contract.md`. |
+
+## Subagents und Budgets
+
+| Begriff | Definition |
+|---|---|
+| Subagent | Interner Ausfuehrungshelfer des Builders. Keine PM-Rolle, kein Label-Setzer, keine zweite Wahrheit. |
+| Subagent Failure Policy | Bei haengendem oder unbrauchbarem required Subagent: genau eine gezielte Recovery, dann degraded mode mit Evidence oder `BLOCKED`. |
+| Degraded mode | Fortsetzung ohne ein required Subagent-Ergebnis. Nur sicher, wenn der Subagent read-only war, der Builder die Analyse rekonstruieren kann, kein kritischer nicht-rekonstruierbarer Risiko-Check fehlt und Ersatzanalyse als Evidence dokumentiert ist. |
+| Subagent Result Marker | `subagent_timeout`, `subagent_no_result`, `subagent_blocked`. Marker fuer Subagent-Ausfaelle; kein Ersatz fuer die Harness Failure Classification. |
+| Attempt Budget | Obergrenze fuer wiederholte Fix-/Review-/Loop-Arbeit. Default: Builder self-fix vor PR max 1; automatisierte `needs-fix`-Zyklen am selben PR max 2, ausser der Operator verlaengert explizit. Normale Umsetzung, erste Validation, Closeout-Edits und Green-Path-Hygiene zaehlen nicht. |
+| Escalation | Evidence plus Empfehlung nach erschoepftem Budget. Nie automatischer Claude-Code-Fallback. |
+
+## Review und Merge
+
+| Begriff | Definition |
+|---|---|
+| Review of Record | Die massgebliche Pruefung eines PR gegen sein verlinktes Issue, dokumentiert in GitHub: Review-Kommentar/-Submission plus Labels. UI-Isolation (separater Chat/Thread) aendert daran nichts. |
+| Ampel | Das eine Review-Ergebnis: Gruen (`review:pass` + `auto-merge:ok`), Gelb (`review:pass` + `needs-human`), Rot (`needs-fix` oder `blocked`). |
+| Human Gate | Entscheidung, die beim Menschen bleibt: Merge, Produkt-/Architektur-/Risikoentscheidung, Veroeffentlichung, Aenderung an Betriebsregeln, Claude-Code-Freigabe. |
+| Auto-Merge | Mechanischer Merge eines Gruen-Falls. Nur erlaubt mit `review:pass`, `auto-merge:ok`, ohne gelbe/rote Labels und mit `Human decision required: no`. |
+| Green Path | Der stoerungsfreie Weg eines Tickets: Build → Evidence → Review PASS → Merge. |
+| Green Path Completion | Pflichtabschluss nach gruenem Merge: `git checkout main`, `git pull --ff-only origin main`, `git status`, dann naechster Queue-Eintrag oder dokumentierter Stop. |
+| Batch Green Path Execution | Mehrere reife Tickets in einem Lauf, nur bei ausdruecklichem Nutzerauftrag. Nach jedem gruenen PR erst vollstaendige Green Path Completion. |
+| Resume State | Kommentar bei Abbruch durch Limit/Rechte: erledigt, offen, naechster Schritt, Blockade. `agent:running` bleibt gesetzt. |
+
+## Diagnose und Steuerung
+
+| Begriff | Definition |
+|---|---|
+| Harness Failure Classification | Warum ein Lauf scheiterte, als Harness-Signal: `none`, `missing_context`, `stale_context`, `missing_tool`, `missing_verifier`, `weak_guardrail`, `unclear_spec`, `model_limitation`. |
+| PM Signal | Verdichteter Projektstand aus GitHub-Artefakten fuer den Leiterblick. Darf verdichten, aber keine Projektwahrheit verschieben. |
+| Loop Readiness | Optionale Preflight-Rubrik fuer wiederholte oder koordinierende Laeufe: Purpose, Trigger, Action, Maker/Checker, Proof, Memory, Stop, Cost/Attempts. Maximal `L2 Assisted` im MVP. |
+| Root Agent Index | `AGENTS.md` als duenne Startdatei im Projekt-Repo, die per Loading Map auf Details verweist. |
+| Loading Map | `read when ...`-Hinweise, die Detaildokumente nur bei Bedarf laden. |
+| AI Vault | Strategie- und Produktgedaechtnis fuer Menschen. Kein operativer Kontext fuer Agentenlaeufe. |
+
+## Rollen
+
+| Begriff | Definition |
+|---|---|
+| Planner | ChatGPT / Opus: Epics schneiden, reife Tickets formulieren, `agent:ready` setzen. |
+| Builder / Builder-Orchestrator | Codex: Ticket bauen, validieren, Evidence liefern; bei `Subagents: REQUIRED` interne Subagents koordinieren. |
+| Reviewer | Codex Review / `@codex review`: Standard-Review of Record. |
+| Escalation Reviewer / Escalation Builder | Claude Code: Premium-Ressource fuer Review oder Umsetzung, nur nach dokumentierter menschlicher Freigabe (`prompts/builder-claude-code.md`). |
+| Operator | Der Mensch: Tagesfokus, Ampel-Entscheidungen, Merge, Human Gates. Siehe `docs/operator-runbook.md`. |
