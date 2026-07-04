@@ -48,6 +48,9 @@ Execution-Mode-Hinweis:
 - Allowed changes:
 - Do not touch:
 - Public/external actions require approval: yes/no
+- Protected path / Denylist handling:
+  - Does this touch `.env`, credentials, auth, payments, billing, deployment, migration, signing, release, app-store or publication surfaces? yes/no
+  - If yes: explicit permission, Risk lane, validation and Human Gate required per `contracts/protected-path-denylist.md`.
 
 ## Skills
 
