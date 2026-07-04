@@ -33,9 +33,83 @@ else
   printf 'Using existing local setup file: setup.local.env\n\n'
 fi
 
-set -a
-. ./setup.local.env
-set +a
+is_allowed_config_key() {
+  case "$1" in
+    PROJECT_NAME|GITHUB_OWNER|GITHUB_REPO|PROJECT_REPO_URL|AI_VAULT_PATH|LOCAL_CHECKOUT_PATH|IMPORT_LABELS|CREATE_TICKET_0|CREATE_VAULT_STRUCTURE)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+trim_spaces() {
+  local value="$1"
+  value="${value#"${value%%[![:space:]]*}"}"
+  value="${value%"${value##*[![:space:]]}"}"
+  printf '%s' "$value"
+}
+
+strip_optional_quotes() {
+  local value="$1"
+  local first="${value:0:1}"
+  local last="${value: -1}"
+
+  if [ ${#value} -ge 2 ] && { [ "$first" = "'" ] || [ "$first" = '"' ]; } && [ "$first" = "$last" ]; then
+    value="${value:1:${#value}-2}"
+  fi
+
+  printf '%s' "$value"
+}
+
+load_local_config() {
+  local config_file="$1"
+  local line key value
+
+  while IFS= read -r line || [ -n "$line" ]; do
+    line="$(trim_spaces "$line")"
+    [ -z "$line" ] && continue
+    case "$line" in \#*) continue ;; esac
+
+    if [ "${line#export }" != "$line" ]; then
+      line="${line#export }"
+      line="$(trim_spaces "$line")"
+    fi
+
+    if [ "${line#*=}" = "$line" ]; then
+      printf 'Ignoring invalid config line: %s\n' "$line" >&2
+      continue
+    fi
+
+    key="$(trim_spaces "${line%%=*}")"
+    value="${line#*=}"
+    value="$(strip_optional_quotes "$value")"
+
+    if is_allowed_config_key "$key"; then
+      printf -v "$key" '%s' "$value"
+    else
+      printf 'Ignoring unsupported config key: %s\n' "$key" >&2
+    fi
+  done < "$config_file"
+}
+
+PROJECT_NAME="${PROJECT_NAME:-}"
+GITHUB_OWNER="${GITHUB_OWNER:-}"
+GITHUB_REPO="${GITHUB_REPO:-}"
+PROJECT_REPO_URL="${PROJECT_REPO_URL:-}"
+AI_VAULT_PATH="${AI_VAULT_PATH:-}"
+LOCAL_CHECKOUT_PATH="${LOCAL_CHECKOUT_PATH:-}"
+IMPORT_LABELS="${IMPORT_LABELS:-}"
+CREATE_TICKET_0="${CREATE_TICKET_0:-}"
+CREATE_VAULT_STRUCTURE="${CREATE_VAULT_STRUCTURE:-}"
+
+load_local_config "setup.local.env"
+
+LOCAL_CHECKOUT_PATH="${LOCAL_CHECKOUT_PATH:-$ROOT}"
+IMPORT_LABELS="${IMPORT_LABELS:-yes}"
+CREATE_TICKET_0="${CREATE_TICKET_0:-yes}"
+CREATE_VAULT_STRUCTURE="${CREATE_VAULT_STRUCTURE:-yes}"
 
 bash scripts/public-readiness-check.sh
 
