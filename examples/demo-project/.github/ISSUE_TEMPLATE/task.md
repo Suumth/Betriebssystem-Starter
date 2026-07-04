@@ -4,7 +4,7 @@
 
 - Mode: EXECUTING
 - Autonomy: standard
-- Risk lane: risk:standard
+- Risk lane: standard
 - Subagents: NOT_REQUIRED unless this task says otherwise
 - Human Gate: required for protected areas, release risk, external accounts or irreversible actions
 
