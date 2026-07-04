@@ -4,6 +4,10 @@ A GitHub-centered starter kit for AI-assisted project work.
 
 Use it when you want AI agents to work on real tickets, produce reviewable pull requests, and stay under human control.
 
+Most AI coding workflows fail for the same reason: context gets lost, work happens in chat, reviews become vague and nobody knows what is safe to merge.
+
+This starter turns AI-assisted work into a visible GitHub workflow: tickets, roles, pull requests, evidence, review signals and a human gate.
+
 The operating model is simple:
 
 - GitHub is the operational source of truth.
@@ -36,19 +40,32 @@ After setup you have:
 
 Continue with [`START_HERE.md`](START_HERE.md).
 
-## What Happens After Setup
+## How the Workflow Works
 
-1. Review `setup.local.env`.
-2. Open `START_HERE.md`.
-3. Open the AI Vault in Obsidian or any Markdown editor.
-4. Create Ticket 0.
-5. Let an AI agent work from `PROJECT.md`, `AGENTS.md` and the ticket.
-6. Deliver the result as a pull request with evidence.
-7. Keep merge, release and protected decisions behind the Human Gate.
+The starter does not run hidden background agents. It gives you a clear operating model for invoking agent roles through Codex, Claude Code, Cursor, Copilot Workspace or another AI tool.
+
+1. A human creates or chooses a GitHub Issue.
+2. The human starts an AI tool and gives it a role: Builder, Reviewer, Researcher, Tester or PM Signal.
+3. The role works from `PROJECT.md`, `AGENTS.md`, the issue, contracts and prompts.
+4. The agent produces a pull request, review comment, research note or PM signal.
+5. Evidence is attached to the work, not left in a private chat.
+6. The Review of Record creates the decision signal.
+7. The human keeps the final Human Gate for merge, release and protected decisions.
+
+## Why It Helps
+
+- less context lost between AI sessions
+- clearer tickets, scope and stop conditions
+- reviewable pull requests instead of invisible chat output
+- evidence before merge decisions
+- safer handoff between builder, reviewer and PM roles
+- GitHub remains the operational source of truth
+- the AI Vault remains memory and strategy, not the task system
 
 ## What This Repo Is Not
 
 - not an autonomous runner
+- not a background subagent orchestrator
 - not a replacement for GitHub Issues or pull requests
 - not a replacement for human product decisions
 - not a place for private strategies, customer data or credentials
@@ -59,6 +76,8 @@ Continue with [`START_HERE.md`](START_HERE.md).
 Ein GitHub-zentrierter Starter für KI-gestützte Projektarbeit.
 
 Für Teams und Solo-Builder, die mit KI-Agenten arbeiten wollen, ohne die Kontrolle über Tickets, Pull Requests, Evidence und menschliche Entscheidungen zu verlieren.
+
+Der Starter startet keine versteckten Subagents. Er liefert Rollen, Prompts, Contracts und Routing, damit du Codex, Claude Code, Cursor oder ein anderes AI-Tool gezielt als Builder, Reviewer, Researcher, Tester oder PM-Signal-Geber beauftragen kannst.
 
 Du nutzt dieses Repo als Template, führst einmal `scripts/setup.sh` aus und startest danach Ticket 0 in deinem eigenen Projekt.
 
