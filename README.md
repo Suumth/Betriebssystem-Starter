@@ -52,6 +52,18 @@ The starter does not run hidden background agents. It gives you a clear operatin
 6. The Review of Record creates the decision signal.
 7. The human keeps the final Human Gate for merge, release and protected decisions.
 
+## Core Loop Diagram
+
+```mermaid
+flowchart LR
+    A[Issue with agent:ready] --> B[Builder Role]
+    B --> C[Pull Request with Evidence]
+    C --> D[PR Contract Check]
+    D --> E[Review of Record]
+    E --> F[Human Gate]
+    F --> G[Merge]
+```
+
 ## Why It Helps
 
 - less context lost between AI sessions
