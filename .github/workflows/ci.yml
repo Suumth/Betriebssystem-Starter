@@ -64,7 +64,7 @@ jobs:
           PROJECT_REPO_URL=https://github.com/ExampleOrg/ci-scope-check
           AI_VAULT_PATH=$PWD/ai-vault
           LOCAL_CHECKOUT_PATH=$PWD
-          AI_OS_METHOD_REPO_URL=https://github.com/Suumth/AI-Betriebssystem
+          AI_OS_METHOD_REPO_URL=https://github.com/example-org/ai-betriebssystem-method
           IMPORT_LABELS=no
           CREATE_TICKET_0=no
           CREATE_VAULT_STRUCTURE=yes
