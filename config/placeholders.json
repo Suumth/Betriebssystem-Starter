@@ -1,0 +1,56 @@
+{
+  "exampleConfig": "config/starter.config.example",
+  "localConfig": "setup.local.env",
+  "requiredFields": [
+    "PROJECT_NAME",
+    "GITHUB_OWNER",
+    "GITHUB_REPO",
+    "PROJECT_REPO_URL",
+    "AI_VAULT_PATH",
+    "LOCAL_CHECKOUT_PATH"
+  ],
+  "placeholders": [
+    {
+      "placeholder": "<OWNER>/<REPO>",
+      "fields": ["GITHUB_OWNER", "GITHUB_REPO"],
+      "required": true,
+      "meaning": "GitHub owner and repository name"
+    },
+    {
+      "placeholder": "<PROJECT_REPO_URL>",
+      "fields": ["PROJECT_REPO_URL"],
+      "required": true,
+      "meaning": "Canonical GitHub repository URL"
+    },
+    {
+      "placeholder": "<LOCAL_CHECKOUT_PATH>",
+      "fields": ["LOCAL_CHECKOUT_PATH"],
+      "required": true,
+      "meaning": "Local checkout path for the project repository"
+    },
+    {
+      "placeholder": "<AI_VAULT_PATH>",
+      "fields": ["AI_VAULT_PATH"],
+      "required": true,
+      "meaning": "Local AI Vault path"
+    }
+  ],
+  "setupMayUpdate": [
+    "PROJECT.md",
+    "AGENTS.md",
+    ".github/labels.yml",
+    ".github/ISSUE_TEMPLATE/task.md",
+    ".github/pull_request_template.md",
+    "docs/project-brief.md",
+    "ai-vault/02_Projects/"
+  ],
+  "setupMustNotOverwrite": [
+    "README.md",
+    "START_HERE.md",
+    "ai-betriebssystem/",
+    "docs/",
+    "public-readiness/",
+    "scripts/",
+    "config/"
+  ]
+}

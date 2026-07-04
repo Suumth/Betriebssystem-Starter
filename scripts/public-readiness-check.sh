@@ -24,6 +24,7 @@ release_paths=(
   "START_HERE.md"
   "RELEASE_READINESS.md"
   ".gitignore"
+  "config"
   "ai-betriebssystem"
   "ai-vault"
   "docs"
@@ -39,6 +40,7 @@ sensitive_pattern="$(
   printf '%s' 'g''hp_|git''hub_pat_|s''k-[A-Za-z0-9_-]{20,}|Bearer [A-Za-z0-9._-]{20,}|OPENAI_API''_KEY|ANTHROPIC_API''_KEY|pass''word|sec''ret|tok''en|api''_key'
 )"
 canonical_template_url="https://github.com/Su""umth/Betriebssystem-Starter/generate"
+entrypoint_placeholder_pattern="<OWNER>|<REPO>|<AI_VAULT_PATH>|TODO_PRIVATE"
 
 scan_args=()
 for path in "${release_paths[@]}"; do
@@ -66,11 +68,21 @@ else
   pass "no possible credential pattern hits"
 fi
 
+if grep -RInE "$entrypoint_placeholder_pattern" README.md START_HERE.md >/tmp/ai_os_entrypoint_placeholder_hits.txt; then
+  cat /tmp/ai_os_entrypoint_placeholder_hits.txt
+  fail "entrypoint placeholder hits found"
+else
+  pass "no entrypoint placeholder hits"
+fi
+
 required_files=(
   "README.md"
   "START_HERE.md"
   "RELEASE_READINESS.md"
   ".gitignore"
+  "config/README.md"
+  "config/placeholders.json"
+  "config/starter.config.example"
   "ai-betriebssystem/README.md"
   "ai-betriebssystem/START_HERE.md"
   "ai-betriebssystem/contracts/ticket-contract.md"

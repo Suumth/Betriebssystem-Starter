@@ -8,6 +8,8 @@ __pycache__/
 .obsidian/workspace*
 .obsidian/cache/
 .trash/
+setup.local.env
+starter.config.local
 # Generated context
 .ai-os/context/
 repomix-output.*
