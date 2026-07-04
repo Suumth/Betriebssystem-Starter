@@ -12,7 +12,7 @@
 - `docs/harness-model.md` — Agent Work Harness, Agent Substrate, Agent Contract, Agent Modes, Loading Map, Skill-Muster, Harness-Failure-Klassifikation und diagnostische Loop-Failure-Mapping-Tabelle.
 - `docs/loop-readiness.md` — optionale Preflight-Rubrik für koordinierende oder wiederholte Agent-Loops, inklusive Attempt Budget und optionaler `loop-audit`-Diagnosenotiz ohne neue Gates.
 - `docs/model-resource-policy.md` — Codex als Hauptarbeitskraft, Attempt-Budget-Disziplin und Claude Code nur nach Vorschlag und menschlicher Freigabe.
-- `docs/operator-merge-policy.md` — Operator-Rolle, Merge-Ampel, Review-Beauftragung, Vault-Impact-Human-Gate und Batch Green Path Execution.
+- `docs/operator-merge-policy.md` — Operator-Rolle, Merge-Ampel, Review-Beauftragung, Vault-Impact-Human-Gate, Batch Green Path Execution und Local Direct-Main Mode mit Waiver-Regeln.
 - `docs/green-path-completion.md` — Pflichtablauf nach grünem Merge: lokales `main` synchronisieren, Status prüfen, nächstes Ticket, Batch Green Path Execution oder Stop.
 - `docs/overnight-operations-mode.md` — operator-armierter Overnight Operations Mode mit L2-Einordnung, Limits, Heartbeats, Resume-Regeln und Nacht-Merge-Verbot.
 - `docs/overnight-pilot.md` — kontrollierte erste Pilotnacht für Overnight Operations Mode mit 2 `risk:low`-Slots, Operator-Checkliste, Metriken und Lessons Learned.

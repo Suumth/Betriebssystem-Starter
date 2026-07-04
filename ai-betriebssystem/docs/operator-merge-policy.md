@@ -241,6 +241,78 @@ Stop gilt bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, 
 
 Details: `docs/green-path-completion.md`.
 
+## Local Direct-Main Mode
+
+Der Standardmodus bleibt PR-basiert: Branch, PR Evidence, Review of Record und
+Merge-Freigabe. Local Direct-Main Mode ist eine ausdrückliche Ausnahme für
+lokale Codex-Läufe auf einem eng begrenzten Ticket oder einer eng begrenzten
+Wave.
+
+Local Direct-Main Mode ist nur erlaubt, wenn der Operator ihn für den konkreten
+Scope ausdrücklich autorisiert. Dann gelten diese Mindestregeln:
+
+- von aktuellem lokalem `main` starten
+- `git checkout main` vor dem Ticket ausführen
+- `git pull --ff-only origin main` vor dem Ticket ausführen
+- normale Commits und normalen `git push` verwenden
+- kein Force-Push
+- kein Umgehen von Repository Protection
+- keine Veröffentlichung, wenn Validation oder Scope unklar ist
+- nur die freigegebenen Dateien ändern
+
+Wenn PRs in diesem Modus übersprungen werden, ersetzt Issue-Closeout-Evidence
+die PR Evidence nur für diesen ausdrücklich autorisierten Lauf. Jedes
+abgeschlossene Issue braucht dann einen Closeout-Kommentar mit:
+
+- geänderten Dateien
+- Implementierungszusammenfassung
+- ausgeführten Verification Commands
+- lokaler Output-Zusammenfassung
+- Review-Ergebnis oder Waiver
+- Commit SHA
+- Limitations / Non-Claims
+
+### Known-Failing Gate
+
+Ein bekannter fehlschlagender Check darf nur dann als nicht blockierend behandelt
+werden, wenn alle Bedingungen erfüllt sind:
+
+- der Fehler ist verstanden und dokumentiert
+- ein konkretes Follow-up-Ticket besitzt den Fix
+- das aktuelle Ticket hat den Fehler nicht erzeugt oder verschlechtert
+- der Issue-Closeout nennt den bekannten Fehler explizit als nicht blockierend
+
+Shell-/Runtime-Fehler, neue Failure durch das aktuelle Ticket oder unklare
+Validation bleiben blockierend.
+
+### Review Waiver
+
+Ein erforderlicher Review darf nur durch ausdrückliche Operator-Anweisung
+erlassen werden, zum Beispiel bei einem lokalen Tooling-Ausfall oder einem
+gleichwertigen nicht-codebezogenen Blocker. Ein Waiver ersetzt nicht die
+Validation.
+
+Der Closeout muss dann enthalten:
+
+- `Review of Record: WAIVED by operator`
+- Grund des Waivers
+- exakter Tool- oder Prozessfehler, falls vorhanden
+- Aussage, dass die geforderte Validation trotzdem bestanden hat
+
+### Lokale Toolchain-Kompatibilität
+
+Public-Readiness-Checks und lokale Starter-Checks sollen auf macOS-Default-
+Werkzeugen laufen, soweit das ohne neue Abhängigkeiten vernünftig möglich
+ist. Besonders wichtig:
+
+- `/bin/bash` 3.2 kompatibel bleiben, ausser das Repository dokumentiert
+  ausdrücklich eine neuere Bash-Anforderung
+- `python3` nicht stillschweigend als `python` voraussetzen, weil macOS nicht
+  immer ein `python`-Binary bereitstellt
+
+Das ist keine vollständige Plattform-Support-Matrix. Es ist eine
+Public-Readiness-Regel für lokale Operator-Läufe.
+
 ## PR-Closeout Pflichtfelder
 
 Jeder PR soll für den Operator lesbar sein:
