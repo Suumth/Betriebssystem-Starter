@@ -80,6 +80,7 @@ Der Reviewer prüft:
 - Bei Stagnation: Ist erkennbar, ob die nächste Aktion continue, needs-fix, blocked, human decision, review ticket oder learning candidate ist?
 - Wenn der PR einen Harness Learning Candidate erstellt oder empfiehlt: Enthält er Claim / Lesson, Evidence Source, Confidence: 1-5, Scope, Applies To, Proposed Target, Proposed Update, Human Gate required: yes und den Non-goal, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde?
 - Bei Failure-Mode-Mapping: Sind alle geforderten Symptome enthalten, nur bestehende Harness Failure Classification Werte genutzt und konkrete Standardreaktionen genannt?
+- Bei Denylist/protected path: Sind expliziter Issue-Scope, passende Risk lane, geschützte Validierung und Human Gate nach `contracts/protected-path-denylist.md` dokumentiert?
 - Gibt es unnötige Änderungen?
 - Gibt es Sicherheits-, Architektur-, Produkt- oder UX-Risiken?
 - Ist der PR klein genug, um entschieden zu werden?
@@ -229,6 +230,7 @@ Kommentarformat:
 - Kein PASS bei Stagnation ohne klare Entscheidung: targeted fix with evidence, review ticket, Harness Learning Candidate, `needs-human` oder `blocked`.
 - Kein PASS für einen Harness Learning Candidate, wenn Source Evidence, Confidence: 1-5, Scope, Proposed Target, Human Gate oder der Hinweis fehlt, dass der Candidate nicht aktiv ist, bis er per PR und Review of Record gemerged wurde.
 - Kein PASS bei Failure-Mode-Mapping, wenn ein geforderter Failure Mode fehlt, neue Classification-/Label-/State-Werte eingeführt werden, eine Standardreaktion fehlt oder die Mapping-Sprache eine verpflichtende Workflow-State-Machine statt diagnostischer Guidance erzeugt.
+- Kein PASS und kein Auto-Merge, wenn ein PR Denylist- oder protected-path-Oberflächen ohne expliziten Issue-Scope, passende Validierung und Human Gate berührt.
 - Kein Review ohne Ticketbezug.
 - Keine vagen Fix-Hinweise.
 - Kein Schönreden.

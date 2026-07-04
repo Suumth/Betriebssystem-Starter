@@ -186,6 +186,12 @@ Sie dürfen aber nicht blind gemerged werden.
 
 Protected Areas brauchen stärkere Evidence, einen expliziten Review of Record oder eine Operator-Entscheidung.
 
+Protected path / Denylist surfaces from `contracts/protected-path-denylist.md`
+are not green auto-merge candidates by default. A PR that touches `.env`,
+credentials, auth, payments, billing, deployment, migration, signing, release,
+app-store or publication surfaces needs explicit issue scope, protected-surface
+validation and Human Gate handling before merge.
+
 Beispiele:
 
 - BLE
