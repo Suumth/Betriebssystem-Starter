@@ -35,7 +35,7 @@ fi
 
 is_allowed_config_key() {
   case "$1" in
-    PROJECT_NAME|GITHUB_OWNER|GITHUB_REPO|PROJECT_REPO_URL|AI_VAULT_PATH|LOCAL_CHECKOUT_PATH|AI_OS_METHOD_REPO_URL|IMPORT_LABELS|CREATE_TICKET_0|CREATE_VAULT_STRUCTURE)
+    PROJECT_NAME|GITHUB_OWNER|GITHUB_REPO|PROJECT_REPO_URL|PROJECT_MD_GITHUB_URL|AI_VAULT_PATH|LOCAL_CHECKOUT_PATH|AI_OS_METHOD_REPO_URL|IMPORT_LABELS|CREATE_TICKET_0|CREATE_VAULT_STRUCTURE)
       return 0
       ;;
     *)
@@ -110,6 +110,7 @@ PROJECT_NAME="${PROJECT_NAME:-}"
 GITHUB_OWNER="${GITHUB_OWNER:-}"
 GITHUB_REPO="${GITHUB_REPO:-}"
 PROJECT_REPO_URL="${PROJECT_REPO_URL:-}"
+PROJECT_MD_GITHUB_URL="${PROJECT_MD_GITHUB_URL:-}"
 AI_VAULT_PATH="${AI_VAULT_PATH:-}"
 LOCAL_CHECKOUT_PATH="${LOCAL_CHECKOUT_PATH:-}"
 AI_OS_METHOD_REPO_URL="${AI_OS_METHOD_REPO_URL:-}"
@@ -199,7 +200,29 @@ if [ -z "$PROJECT_REPO_URL" ] && [ -n "$GITHUB_OWNER" ] && [ -n "$GITHUB_REPO" ]
   PROJECT_REPO_URL="https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}"
 fi
 
+derive_project_md_github_url() {
+  python3 - "$1" <<'PY'
+import sys
+
+url = sys.argv[1].strip()
+if not url:
+    print("")
+    raise SystemExit
+
+url = url.rstrip("/")
+if url.endswith(".git"):
+    url = url[:-4]
+
+print(f"{url}/blob/main/PROJECT.md")
+PY
+}
+
+if [ -z "$PROJECT_MD_GITHUB_URL" ] && [ -n "$PROJECT_REPO_URL" ]; then
+  PROJECT_MD_GITHUB_URL="$(derive_project_md_github_url "$PROJECT_REPO_URL")"
+fi
+
 prompt_value PROJECT_REPO_URL "Project repository URL" "$PROJECT_REPO_URL"
+prompt_value PROJECT_MD_GITHUB_URL "PROJECT.md GitHub URL" "$PROJECT_MD_GITHUB_URL"
 prompt_value AI_VAULT_PATH "Local AI Vault path" "$AI_VAULT_PATH"
 prompt_value LOCAL_CHECKOUT_PATH "Local checkout path" "$LOCAL_CHECKOUT_PATH"
 prompt_value AI_OS_METHOD_REPO_URL "AI-Betriebssystem method repository URL (optional, leave empty if not applicable)" "$AI_OS_METHOD_REPO_URL"
@@ -211,7 +234,7 @@ prompt_yes_no CREATE_VAULT_STRUCTURE "Create Vault project structure" "$CREATE_V
 
 AI_VAULT_PATH="$(expand_user_path "$AI_VAULT_PATH")"
 
-export PROJECT_NAME GITHUB_OWNER GITHUB_REPO PROJECT_REPO_URL
+export PROJECT_NAME GITHUB_OWNER GITHUB_REPO PROJECT_REPO_URL PROJECT_MD_GITHUB_URL
 export AI_VAULT_PATH LOCAL_CHECKOUT_PATH AI_OS_METHOD_REPO_URL IMPORT_LABELS CREATE_TICKET_0 CREATE_VAULT_STRUCTURE
 
 python3 - <<'PY'
@@ -222,6 +245,7 @@ keys = [
     "GITHUB_OWNER",
     "GITHUB_REPO",
     "PROJECT_REPO_URL",
+    "PROJECT_MD_GITHUB_URL",
     "AI_VAULT_PATH",
     "LOCAL_CHECKOUT_PATH",
     "AI_OS_METHOD_REPO_URL",
@@ -272,6 +296,7 @@ repo_full_name = f"{owner}/{repo}" if owner and repo else ""
 replacements = {
     "<OWNER>/<REPO>": repo_full_name,
     "<PROJECT_REPO_URL>": os.environ.get("PROJECT_REPO_URL", ""),
+    "<PROJECT_MD_GITHUB_URL>": os.environ.get("PROJECT_MD_GITHUB_URL", ""),
     "<LOCAL_CHECKOUT_PATH>": os.environ.get("LOCAL_CHECKOUT_PATH", ""),
     "<AI_VAULT_PATH>": os.environ.get("AI_VAULT_PATH", ""),
     "<AI_OS_METHOD_REPO_URL>": os.environ.get("AI_OS_METHOD_REPO_URL", ""),

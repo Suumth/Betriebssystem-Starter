@@ -29,6 +29,12 @@
       "meaning": "Canonical GitHub repository URL"
     },
     {
+      "placeholder": "<PROJECT_MD_GITHUB_URL>",
+      "fields": ["PROJECT_MD_GITHUB_URL", "PROJECT_REPO_URL"],
+      "required": true,
+      "meaning": "GitHub URL for the project's PROJECT.md file; derived from PROJECT_REPO_URL when not set explicitly"
+    },
+    {
       "placeholder": "<LOCAL_CHECKOUT_PATH>",
       "fields": ["LOCAL_CHECKOUT_PATH"],
       "required": true,

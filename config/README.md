@@ -15,6 +15,7 @@ Diese Konfiguration beschreibt die Werte, die ein frisch aus dem Template erzeug
 - `GITHUB_OWNER`: GitHub User oder Organisation.
 - `GITHUB_REPO`: Repository-Name.
 - `PROJECT_REPO_URL`: kanonische GitHub-URL des Projekt-Repos.
+- `PROJECT_MD_GITHUB_URL`: GitHub-URL zur `PROJECT.md`; wird aus `PROJECT_REPO_URL` als `/blob/main/PROJECT.md` abgeleitet, wenn leer.
 - `AI_VAULT_PATH`: lokaler Pfad zum AI Vault.
 - `LOCAL_CHECKOUT_PATH`: lokaler Pfad zum Projekt-Checkout.
 
