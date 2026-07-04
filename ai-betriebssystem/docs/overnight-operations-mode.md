@@ -3,7 +3,7 @@
 ## Executive Summary
 
 Overnight Operations Mode ist eine operator-armierte Batch Green Path Execution.
-Der Operator startet abends einen ausdRücklichen Lauf. Codex bearbeitet nachts
+Der Operator startet abends einen ausdrücklichen Lauf. Codex bearbeitet nachts
 nur reife, freigegebene Issues, erstellt PRs mit Evidence und stoppt bei
 unklaren Entscheidungen. Nachts wird nicht gemerged. Morgens entscheidet der
 Operator anhand der Nightly Summary, der PR Bodies und der GitHub-Ampel.
@@ -14,7 +14,7 @@ Abend-Prompt ist der Trigger, das Morning Merge Gate bleibt menschlich.
 
 ## Die 10 harten Gesetze des Overnight Mode
 
-1. Ein Overnight Run startet nur durch einen ausdRücklichen Abend-Prompt des
+1. Ein Overnight Run startet nur durch einen ausdrücklichen Abend-Prompt des
    Operators.
 2. Bearbeitet werden nur offene Issues mit `agent:ready` und
    `overnight:approved`.
@@ -49,12 +49,12 @@ Auto-Merge, eigene Bot-Zyklen, neue State-Dateien oder eine zweite Wahrheit.
 
 | Kategorie | Sicher autonom | Bedingt autonom | Niemals autonom |
 |---|---|---|---|
-| Ticket-Auswahl | Offene `agent:ready` + `overnight:approved` Issues aus dem Abend-Prompt | Eingeschraenkte Issue-Nummern aus dem Prompt | Beliebige Queue-Erweiterung |
-| Code/Doku-Aenderung | Kleine Docs, Templates, Tests, klar begrenzte Repo-Dateien | Standard-Risiko-Code mit starker lokaler Validation | Protected-/Release-Code nachts schreiben |
+| Ticket-Auswahl | Offene `agent:ready` + `overnight:approved` Issues aus dem Abend-Prompt | Eingeschränkte Issue-Nummern aus dem Prompt | Beliebige Queue-Erweiterung |
+| Code/Doku-Änderung | Kleine Docs, Templates, Tests, klar begrenzte Repo-Dateien | Standard-Risiko-Code mit starker lokaler Validation | Protected-/Release-Code nachts schreiben |
 | Validation | Im Ticket genannte lokale Checks | Plausible Ersatzchecks mit dokumentiertem Gap | Erfolg ohne Evidence behaupten |
 | Labels | `agent:ready` entfernen, `agent:running` setzen, `overnight:approved` nach PR/Skip/Blockade entfernen | `blocked` nur mit Entscheidungsvorlage | Eigene PRs mit `review:pass` oder `auto-merge:ok` grünschalten |
 | PRs | Draft/ready PR mit Evidence und `Closes #...` | PR mit offenem Restrisiko und Review Recommendation | Nacht-Merge oder Selbstreview als Review of Record |
-| Entscheidungen | Scope-Treue, mechanische Repo-Hygiene, Stop bei roten Kriterien | Gelb-Faelle für Morning Review vorbereiten | Produkt-, Safety-, Legal-, Privacy-, Release- oder Waiver-Entscheidungen treffen |
+| Entscheidungen | Scope-Treue, mechanische Repo-Hygiene, Stop bei roten Kriterien | Gelb-Fälle für Morning Review vorbereiten | Produkt-, Safety-, Legal-, Privacy-, Release- oder Waiver-Entscheidungen treffen |
 
 ## Ticket-Reifegrad für `overnight:approved`
 
@@ -70,11 +70,11 @@ Ein Ticket ist overnight-reif, wenn alle Punkte gelten:
 - Keine Protected- oder Release-Codearbeit ist erforderlich.
 - Erwarteter Diff bleibt im Limit: ca. 400 Zeilen und max. 15 Dateien.
 - Es ist kein menschlicher Waiver, keine Produktentscheidung und kein externer
-  Zugang noetig.
+  Zugang nötig.
 - Execution Mode ist gesetzt; Subagents sind entweder `NOT_REQUIRED` oder
   konkret beschrieben.
 
-Der Operator oder eine ausdRückliche Operator-Anweisung setzt
+Der Operator oder eine ausdrückliche Operator-Anweisung setzt
 `overnight:approved`. Codex entfernt es nach PR-Erstellung, Skip oder Blockade.
 
 ## Worktree-Modell
@@ -127,8 +127,8 @@ Pflichtzeitpunkte:
 - Blockade oder Stop.
 - Nightly Summary am Ende des Laufs.
 
-Zusaetzlich zu diesen Pflichtzeitpunkten gilt: Bei aktiver Arbeit muss
-spaetestens alle 45 Minuten ein Heartbeat gepostet werden. Ein Morning Review
+Zusätzlich zu diesen Pflichtzeitpunkten gilt: Bei aktiver Arbeit muss
+spätestens alle 45 Minuten ein Heartbeat gepostet werden. Ein Morning Review
 wertet `agent:running` plus letzter Heartbeat > 2h als stale-Kandidat.
 
 Die Nightly Summary wird bevorzugt im Batch-Issue gepostet. Falls kein
@@ -141,16 +141,16 @@ oder PR. Wenn praktikabel, verlinkt die Summary die betroffenen Issues und PRs.
 1. Gibt es einen offenen PR zum Issue?
    - ja: PR lesen, Branch fortsetzen, keine Parallel-PR erstellen.
    - nein: weiter mit 2.
-2. Traegt das Issue `agent:running`?
+2. Trägt das Issue `agent:running`?
    - ja: Branch/Kommentar/Evidence suchen; wenn unklar, Heartbeat mit Resume Gap.
    - nein: weiter mit 3.
-3. Traegt das Issue `agent:ready` + `overnight:approved`?
+3. Trägt das Issue `agent:ready` + `overnight:approved`?
    - ja: neu starten, Labelstatus aktualisieren.
    - nein: skippen, nicht improvisieren.
 4. Ist der Scope nachts entscheidungsfrei?
    - ja: umsetzen.
    - nein: blockieren oder für Morning Review markieren.
-5. Ist Validation ausfuehrbar?
+5. Ist Validation ausführbar?
    - ja: laufen lassen und Evidence in PR Body.
    - nein: stoppen, fehlenden Verifier konkret benennen.
 ```
@@ -159,44 +159,44 @@ oder PR. Wenn praktikabel, verlinkt die Summary die betroffenen Issues und PRs.
 
 Codex stoppt oder skippt, wenn eines gilt:
 
-- mehr als 4 Tickets im Run noetig waeren.
-- mehr als 2 Worktrees parallel noetig waeren.
-- mehr als 1 Fixloop je PR noetig waere.
+- mehr als 4 Tickets im Run nötig wären.
+- mehr als 2 Worktrees parallel nötig wären.
+- mehr als 1 Fixloop je PR nötig wäre.
 - der erwartete Diff ca. 400 Zeilen oder 15 Dateien überschreitet.
 - bereits 6 offene Agent-PRs im Repo existieren.
-- Protected-/Release-Code geschrieben werden muesste.
-- Required Verification fehlt oder nachts nicht lauffaehig ist.
+- Protected-/Release-Code geschrieben werden müsste.
+- Required Verification fehlt oder nachts nicht lauffähig ist.
 - Scope, Akzeptanzkriterien oder Nicht-Ziele fehlen.
 - ein Produkt-, Safety-, Legal-, Privacy-, Release- oder Waiver-Entscheid
-  noetig ist.
+  nötig ist.
 - GitHub-Zugriff, Push, Branch oder Worktree nicht sauber funktionieren.
 - ein bestehender PR oder Branch uneindeutig ist.
 
 Anti-Spam:
 
-- Keine Kommentarflut. Heartbeats an Pflichtzeitpunkten und spaetestens alle
+- Keine Kommentarflut. Heartbeats an Pflichtzeitpunkten und spätestens alle
   45 Minuten aktiver Arbeit.
-- Kein Issue mehrfach kommentieren, wenn derselbe Stop-Grund unveraendert ist.
-- Keine neuen Follow-up-Issues nachts, ausser der Abend-Prompt erlaubt es
-  ausdRücklich.
+- Kein Issue mehrfach kommentieren, wenn derselbe Stop-Grund unverändert ist.
+- Keine neuen Follow-up-Issues nachts, außer der Abend-Prompt erlaubt es
+  ausdrücklich.
 - Keine Label-Explosion. `overnight:approved` ist das einzige
   Overnight-Auswahllabel.
 
 ## Subagent-Regeln für Overnight
 
-Subagents sind interne Codex-Ausfuehrungshelfer, keine neue operative Rolle.
+Subagents sind interne Codex-Ausführungshelfer, keine neue operative Rolle.
 
 - `Subagents: NOT_REQUIRED`: keine Subagents starten.
 - `Subagents: REQUIRED`: nur die im Issue beschriebenen Subagents starten.
 - Bevorzugt read-only Subagents für Exploration, Validation und Risiko.
-- Ein haengender oder unbrauchbarer Subagent bekommt maximal einen Recovery-
+- Ein hängender oder unbrauchbarer Subagent bekommt maximal einen Recovery-
   Versuch.
 - Degraded mode ist nur erlaubt, wenn die fehlende Analyse read-only war, sicher
   rekonstruierbar ist und keine kritische Risiko- oder Verifier-Prüfung fehlt.
 - Subagent-Ergebnisse, Recovery, degraded-mode-Entscheidung und Restrisiko
   stehen im PR Body.
 
-## Verhaeltnis zu Batch Green Path und Loop Readiness L2
+## Verhältnis zu Batch Green Path und Loop Readiness L2
 
 Overnight Operations Mode ist eine spezielle, zeitversetzte Form von Batch
 Green Path Execution:
@@ -214,7 +214,7 @@ Loop Readiness bleibt `L2 Assisted`, weil:
 - PRs Review of Record und Morning Merge Gate brauchen.
 - kein Cron, Scheduler, Bot-Zyklus, Auto-Merge oder hidden state existiert.
 
-## Was ausdRücklich nicht gebaut wird
+## Was ausdrücklich nicht gebaut wird
 
 - Kein Dashboard.
 - Kein Runner.
@@ -222,7 +222,7 @@ Loop Readiness bleibt `L2 Assisted`, weil:
 - Keine GitHub Action.
 - Kein Auto-Merge.
 - Kein eigener Run-State wie `NIGHT.md`, `STATE.md` oder `LOOP.md`.
-- Keine operative Wahrheit ausserhalb von GitHub.
+- Keine operative Wahrheit außerhalb von GitHub.
 - Keine Labels für `stale`, `abandoned`, `night`, `heartbeat`, `batch`,
   `worktree` oder `run:*`.
 - Keine automatische Ticket-Erzeugung nachts.

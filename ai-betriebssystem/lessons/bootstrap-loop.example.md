@@ -10,5 +10,5 @@ Der erste Loop sollte keine Produktfunktion liefern. Er beweist, dass operative 
 
 ## Regel
 
-Ticket 0 ist erfolgreich, wenn ein fremder Agent das Projekt anhand von `PROJECT.md` und `AGENTS.md` starten kann, die Pflichtlabels existieren, ein PR Evidence enthält und ein getrennter Review of Record moeglich ist.
+Ticket 0 ist erfolgreich, wenn ein fremder Agent das Projekt anhand von `PROJECT.md` und `AGENTS.md` starten kann, die Pflichtlabels existieren, ein PR Evidence enthält und ein getrennter Review of Record möglich ist.
 

@@ -5,7 +5,7 @@
 Mode: EXECUTING | GRILLING | COORDINATING
 Autonomy: prototype | standard | production
 Risk lane: low | standard | protected | release
-Overnight-fähig: yes/no — Begründung: verifier nachts lauffaehig? entscheidungsfrei? klein genug? risk <= standard? keine Protected-/Release-Codearbeit?
+Overnight-fähig: yes/no — Begründung: verifier nachts lauffähig? entscheidungsfrei? klein genug? risk <= standard? keine Protected-/Release-Codearbeit?
 
 ## Execution Mode
 
@@ -33,14 +33,14 @@ Beschreibe das gewünschte Ergebnis in einem klaren Satz.
 Mode-Hinweis:
 
 - `EXECUTING`: Entscheidung ist getroffen, Agent darf bauen.
-- `GRILLING`: Entscheidung/Begriff/Scope ist unklar, Agent darf nicht bauen; erst klaeren.
-- `COORDINATING`: groessere Arbeit braucht Synthese/Subagent-/Teilpruefungsbedarf.
+- `GRILLING`: Entscheidung/Begriff/Scope ist unklar, Agent darf nicht bauen; erst klären.
+- `COORDINATING`: größere Arbeit braucht Synthese/Subagent-/Teilprüfungsbedarf.
 
 Execution-Mode-Hinweis:
 
 - `Subagents: NOT_REQUIRED`: Das Ticket verlangt keinen Subagent-Lauf.
 - `Subagents: REQUIRED`: Codex muss vor der Umsetzung die konkret genannten Subagents starten. Eine reine Erlaubnis wie "Codex darf Subagents nutzen" reicht nicht.
-- `Subagents: REQUIRED` heisst nicht endlos warten: Codex muss bei einem haengenden oder unbrauchbaren Subagent einmal Recovery versuchen und danach entweder mit Evidence in degraded mode fortfahren oder mit `BLOCKED` stoppen.
+- `Subagents: REQUIRED` heisst nicht endlos warten: Codex muss bei einem hängenden oder unbrauchbaren Subagent einmal Recovery versuchen und danach entweder mit Evidence in degraded mode fortfahren oder mit `BLOCKED` stoppen.
 - Subagents sind interne Codex-Ausführungshelfer, keine sichtbaren PM-, Operator- oder Review-of-Record-Rollen.
 
 ## Boundary
@@ -137,7 +137,7 @@ Welche Nachweise müssen in PR oder Issue?
 
 ## Closeout Requirements
 
-Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. Review of Record muss dort primaer finden können:
+Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. Review of Record muss dort primär finden können:
 
 - Summary
 - Changed Files
@@ -145,14 +145,14 @@ Codex muss vor Abschluss den PR Body als Primary Closeout Source aktualisieren. 
 - Evidence
 - Subagent Summary, wenn `Subagents: REQUIRED`
 - Subagent Failure Policy Evidence, wenn Recovery, degraded mode oder `BLOCKED` genutzt wurde
-- Attempt Budget & Escalation, wenn wiederholte Fix-/Review-/Loop-Arbeit erwartet wurde oder ein Budget erschoepft ist
+- Attempt Budget & Escalation, wenn wiederholte Fix-/Review-/Loop-Arbeit erwartet wurde oder ein Budget erschöpft ist
 - Vault Impact nach `contracts/ticket-contract.md#vault-impact-contract`
 - Closeout
 - Operator Summary
 - Review Recommendation
 - Harness Failure Classification
 
-Fallback/Ergaenzung: Ein PR-Kommentar ist nur erlaubt, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusaetzliche Evidence/Notes ergänzt werden müssen. Wenn ein PR-Kommentar wichtige Closeout-Information enthält, muss der PR Body kurz darauf verweisen.
+Fallback/Ergänzung: Ein PR-Kommentar ist nur erlaubt, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusätzliche Evidence/Notes ergänzt werden müssen. Wenn ein PR-Kommentar wichtige Closeout-Information enthält, muss der PR Body kurz darauf verweisen.
 
 Wenn dieses Ticket besondere Closeout-Pflichten hat, müssen sie hier explizit stehen. Globale Contracts, Skills oder `AGENTS.md` liefern Struktur und Erinnerung, ersetzen aber keine task lokalen Spezialanforderungen.
 

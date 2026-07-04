@@ -20,14 +20,14 @@ Review-Kommentare und PR Bodies.
 ## Reihenfolge der Morning Review
 
 1. Nightly Summary scannen.
-2. Blockierte oder menschliche Entscheidungen zuerst klaeren.
+2. Blockierte oder menschliche Entscheidungen zuerst klären.
 3. Nacht-PRs nach Ampel sortieren.
 4. `needs-fix` an Codex zurückgeben.
 5. Stale/abandoned Kandidaten entscheiden.
 6. Nur Grün-Kandidaten mergen oder für Review of Record freigeben.
 
 30-Minuten-Regel: Wenn nach 30 Minuten mehr als ein roter oder unklarer Fall
-offen ist, stoppe die Review und erstelle gezielte Follow-up-Auftraege. Kein
+offen ist, stoppe die Review und erstelle gezielte Follow-up-Aufträge. Kein
 Bulk-Merge unter Zeitdruck.
 
 ## GitHub-Abfragen
@@ -41,7 +41,7 @@ gh pr list --repo "$REPO" --state open --label blocked --limit 50
 gh pr list --repo "$REPO" --state open --label needs-human --limit 50
 ```
 
-Naechtliche Agent-PRs:
+Nächtliche Agent-PRs:
 
 ```bash
 gh pr list --repo "$REPO" --state open --author "@me" --search "created:>=$SINCE" --limit 50
@@ -56,7 +56,7 @@ gh issue list --repo "$REPO" --state open --search "label:agent:running updated:
 ```
 
 Stale-Auswertung: Ein Issue mit `agent:running` ist ein stale-Kandidat, wenn
-der letzte Overnight Heartbeat aelter als 2h ist oder Branch-/PR-Aktivitaet
+der letzte Overnight Heartbeat älter als 2h ist oder Branch-/PR-Aktivität
 nicht zum letzten Heartbeat passt. Dann zuerst Resume-Kontext prüfen, nicht
 blind mergen oder neu starten.
 
@@ -75,7 +75,7 @@ gh pr list --repo "$REPO" --state open --label auto-merge:ok --limit 50
 gh pr list --repo "$REPO" --state open --label needs-fix --limit 50
 ```
 
-Wenn `date -v` lokal nicht verfuegbar ist, ersetze den Datumswert manuell im
+Wenn `date -v` lokal nicht verfügbar ist, ersetze den Datumswert manuell im
 Format `YYYY-MM-DD`.
 
 ## Ampellogik
@@ -90,10 +90,10 @@ Grün / merge-ready candidate:
 - `review:pass` und `auto-merge:ok` sind gesetzt, keine roten/gelben Labels.
 - `Human decision required: no`.
 
-Gelb / needs-fix oder Review noetig:
+Gelb / needs-fix oder Review nötig:
 
 - Validation ist teilweise, Evidence ist unklar oder Review fehlt.
-- Risk lane ist `standard` mit Grundsatznaehe oder `protected`.
+- Risk lane ist `standard` mit Grundsatznähe oder `protected`.
 - `needs-fix` ist gesetzt oder der PR Body empfiehlt weiteren Review.
 - Aktion: direkt an Codex zurückgeben oder Review durch Codex/Fable/Claude
   beauftragen.
@@ -110,15 +110,15 @@ Rot / blocked oder fehlende Evidence:
 
 Stale / Resume-Entscheidung:
 
-- Issue traegt `agent:running`, aber es gibt keinen aktuellen PR, keinen
-  aktuellen Heartbeat oder der letzte Heartbeat ist aelter als 2h.
+- Issue trägt `agent:running`, aber es gibt keinen aktuellen PR, keinen
+  aktuellen Heartbeat oder der letzte Heartbeat ist älter als 2h.
 - PR ist seit mehreren Tagen offen und nicht in Review.
 - Aktion: Resume an Codex, schließen, blockieren oder neu schneiden.
 
 Abandoned Kandidat:
 
 - Alter Agent-PR ohne aktuelle Evidence, Review oder klares Issue.
-- Aktion: nicht mergen; Codex mit Resume/Closeout beauftragen oder PR schliessen.
+- Aktion: nicht mergen; Codex mit Resume/Closeout beauftragen oder PR schließen.
 
 ## Delegationsregeln
 
@@ -132,8 +132,8 @@ Direkt zurück an Codex:
 Review durch Codex/Fable/Claude:
 
 - Evidence ist vorhanden, aber die Bewertung braucht eine zweite Sicht.
-- Grundsatzdoku, Contract oder Template-Regel wurde geaendert.
-- Risiko ist `standard` mit groesserer Reichweite.
+- Grundsatzdoku, Contract oder Template-Regel wurde geändert.
+- Risiko ist `standard` mit größerer Reichweite.
 - Protected Area wurde tagsüber vorbereitet und braucht Review of Record.
 
 Operator-Entscheidung:
@@ -146,6 +146,6 @@ Operator-Entscheidung:
 ## Merge-Regel
 
 Nachts keine Merges. Morgens entscheidet der Operator. Der Operator kann
-mechanisch mergen, wenn die Grün-Kriterien der Operator Merge Policy erfuellt
+mechanisch mergen, wenn die Grün-Kriterien der Operator Merge Policy erfüllt
 sind. Bei Gelb oder Rot wird nicht gemerged, sondern delegiert, gefixt oder
 blockiert.

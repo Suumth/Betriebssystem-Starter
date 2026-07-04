@@ -6,9 +6,9 @@ Builder und Reviewer dürfen im selben Arbeitsfluss vorkommen, aber nicht diesel
 
 ## Beobachtung
 
-Ein Review of Record ist nur belastbar, wenn er Scope, Evidence, Risiko, Label-Semantik und Human Gate unabhaengig prüft.
+Ein Review of Record ist nur belastbar, wenn er Scope, Evidence, Risiko, Label-Semantik und Human Gate unabhängig prüft.
 
 ## Regel
 
-`review:pass` darf erst nach einem echten Review of Record gesetzt werden. `auto-merge:ok` setzt zusaetzlich voraus, dass keine `needs-fix`, `needs-human` oder `blocked` Signale offen sind.
+`review:pass` darf erst nach einem echten Review of Record gesetzt werden. `auto-merge:ok` setzt zusätzlich voraus, dass keine `needs-fix`, `needs-human` oder `blocked` Signale offen sind.
 

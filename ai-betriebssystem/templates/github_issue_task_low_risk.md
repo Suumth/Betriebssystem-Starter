@@ -8,11 +8,11 @@ Nur verwenden, wenn ALLE Kriterien gelten:
 - Mode: `EXECUTING`
 - `Subagents: NOT_REQUIRED`
 - keine wiederholte Fix-, Review- oder Loop-Arbeit erwartet
-- eine Oberflaeche (z. B. nur Docs, nur ein Modul)
+- eine Oberfläche (z. B. nur Docs, nur ein Modul)
 - keine Protected Area, kein Release, keine externe Aktion
 
-Wenn eines nicht gilt oder waehrend der Arbeit eintritt: auf das volle Template
-`templates/github_issue_task.md` wechseln bzw. stoppen und das Ticket nachschaerfen.
+Wenn eines nicht gilt oder während der Arbeit eintritt: auf das volle Template
+`templates/github_issue_task.md` wechseln bzw. stoppen und das Ticket nachschärfen.
 
 ---
 
@@ -39,7 +39,7 @@ Ein klarer Satz.
 
 ## Acceptance Criteria
 
-- [ ] Kriterium 1 ist konkret pruefbar.
+- [ ] Kriterium 1 ist konkret prüfbar.
 - [ ] Kriterium 2 nennt erwartetes Ergebnis.
 
 ## Verification
@@ -67,11 +67,11 @@ PR Body als Primary Closeout Source mit:
   - Human decision required: yes | no
 - Harness failure classification: none | missing_context | stale_context | missing_tool | missing_verifier | weak_guardrail | unclear_spec | model_limitation
 
-Light Tickets umgehen keine Evidence, kein Vault Impact und keinen Review of Record. Builder-Regeln unveraendert: kein `needs-human`, `review:pass` oder `auto-merge:ok` durch den Builder; bei NEEDS-FIX am selben Branch/PR weiterarbeiten.
+Light Tickets umgehen keine Evidence, kein Vault Impact und keinen Review of Record. Builder-Regeln unverändert: kein `needs-human`, `review:pass` oder `auto-merge:ok` durch den Builder; bei NEEDS-FIX am selben Branch/PR weiterarbeiten.
 
 ## Stop condition
 
-Stop, wenn Kontext, Boundary, Tool, Verifier oder eine Produktentscheidung fehlt — oder wenn ein Light-Kriterium kippt (Risiko, Scope-Wachstum, zweite Oberflaeche, Fix-Schleife).
+Stop, wenn Kontext, Boundary, Tool, Verifier oder eine Produktentscheidung fehlt — oder wenn ein Light-Kriterium kippt (Risiko, Scope-Wachstum, zweite Oberfläche, Fix-Schleife).
 
 ## Label vor Start
 

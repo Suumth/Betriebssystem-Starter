@@ -2,7 +2,7 @@
 
 Eine Seite für den Solo-Operator. Alles andere ist Referenz.
 
-Der Operator hat pro Tag drei Beruehrungspunkte mit dem System: abends planen, morgens starten, danach Ampeln entscheiden. Dieses Runbook beschreibt nur diese Beruehrungspunkte. Es fuehrt keinen Runner, kein Dashboard und keine neue Wahrheit ein.
+Der Operator hat pro Tag drei Berührungspunkte mit dem System: abends planen, morgens starten, danach Ampeln entscheiden. Dieses Runbook beschreibt nur diese Berührungspunkte. Es führt keinen Runner, kein Dashboard und keine neue Wahrheit ein.
 
 ## Abend: Tickets schneiden (10-20 Minuten)
 
@@ -13,17 +13,17 @@ Der Operator hat pro Tag drei Beruehrungspunkte mit dem System: abends planen, m
    - Evidence-Bedingung
    - Stop-Bedingung
 2. Ticket-Tier wählen:
-   - **Low Risk** (`templates/github_issue_task_low_risk.md`): Risk lane low, keine Subagents, keine wiederholte Loop-Arbeit, eine Oberflaeche.
+   - **Low Risk** (`templates/github_issue_task_low_risk.md`): Risk lane low, keine Subagents, keine wiederholte Loop-Arbeit, eine Oberfläche.
    - **Full** (`templates/github_issue_task.md`): alles andere, insbesondere protected/release, `Subagents: REQUIRED` oder erwartete Fix-Zyklen.
 3. Erst wenn das Ticket sich selbst prüfen kann: `agent:ready` setzen.
 
-Faustregel: Wenn du beim Schreiben des Verification-Blocks zoegern musst, ist das Ticket nicht reif.
+Faustregel: Wenn du beim Schreiben des Verification-Blocks zögern musst, ist das Ticket nicht reif.
 
 ## Morgen: Builder starten (2 Minuten)
 
 1. Ein fokussiertes Repo wählen. Nur eines pro Lauf.
-2. Builder-Prompt aus `prompts/builder-codex.md` in die Codex-App einfuegen, `OWNER/REPO` ersetzen.
-3. Nicht zusaetzlich Kontext einfuegen. Wenn Codex nach Kontext fragt, war das Ticket nicht reif — abends nachschaerfen, nicht im Chat nachliefern.
+2. Builder-Prompt aus `prompts/builder-codex.md` in die Codex-App einfügen, `OWNER/REPO` ersetzen.
+3. Nicht zusätzlich Kontext einfügen. Wenn Codex nach Kontext fragt, war das Ticket nicht reif — abends nachschärfen, nicht im Chat nachliefern.
 
 Codex arbeitet in der Reihenfolge: `needs-fix` → `agent:running` → genau ein `agent:ready`.
 
@@ -52,7 +52,7 @@ gh issue list --repo OWNER/REPO --label agent:ready
 gh issue list --repo OWNER/REPO --label needs-fix
 gh pr list --repo OWNER/REPO --label needs-human
 
-# Haengt ein Lauf? agent:running ohne Branch/PR = stale Label
+# Hängt ein Lauf? agent:running ohne Branch/PR = stale Label
 gh issue list --repo OWNER/REPO --label agent:running
 
 # Grüner Merge
@@ -70,4 +70,4 @@ gh pr merge <PR> --squash --delete-branch
 - Inhalte zwischen Tools kopieren. Nur Pointer und GitHub-URLs.
 - `auto-merge:ok` setzen, wenn ein gelbes oder rotes Label steht.
 - Claude Code als Standard-Station nutzen. Claude Code ist Eskalation nach expliziter Freigabe (`docs/model-resource-policy.md`, `prompts/builder-claude-code.md`).
-- Projektwahrheit in Tool-Anweisungen oder Chat-Verlaeufe verschieben.
+- Projektwahrheit in Tool-Anweisungen oder Chat-Verläufe verschieben.

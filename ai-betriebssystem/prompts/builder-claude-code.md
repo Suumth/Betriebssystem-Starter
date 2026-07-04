@@ -2,13 +2,13 @@
 
 Claude Code ist keine Standardstation im Loop. Dieser Prompt darf nur verwendet werden, wenn ein Mensch die Claude-Code-Umsetzung explizit freigegeben hat (siehe `docs/model-resource-policy.md`). Die Freigabe muss im Issue oder PR dokumentiert sein.
 
-Typische Ausloeser: komplexer UI-/UX-Flow, groessere Architektur-/Domain-Modellierung, schwer reproduzierbarer Bug, breiter Refactor, wiederholtes Codex-Scheitern mit dokumentierter Attempt-Budget-Evidence.
+Typische Auslöser: komplexer UI-/UX-Flow, größere Architektur-/Domain-Modellierung, schwer reproduzierbarer Bug, breiter Refactor, wiederholtes Codex-Scheitern mit dokumentierter Attempt-Budget-Evidence.
 
 ## Vorbedingungen (Operator prüft vor dem Start)
 
 - [ ] Freigabe-Kommentar im Issue oder PR: wer, wann, warum Claude Code.
 - [ ] Bei vorherigem Codex-Scheitern: Attempt-Budget-Evidence mit Failure Classification liegt im PR Body.
-- [ ] Das Ticket ist weiterhin reif (Ticket Contract erfuellt); Eskalation ersetzt keine Reife.
+- [ ] Das Ticket ist weiterhin reif (Ticket Contract erfüllt); Eskalation ersetzt keine Reife.
 
 ## Prompt
 
@@ -21,15 +21,15 @@ Einstieg:
 3. Wenn Codex bereits gescheitert ist: Lies zuerst die Attempt-Budget-Evidence und den letzten fehlgeschlagenen Check/Review-Punkt. Wiederhole nicht denselben Ansatz ohne neue Diagnose.
 
 Regeln:
-- Agent Mode beachten: EXECUTING darf bauen; GRILLING klaert erst; COORDINATING koordiniert vor der Umsetzung.
+- Agent Mode beachten: EXECUTING darf bauen; GRILLING klärt erst; COORDINATING koordiniert vor der Umsetzung.
 - Strikt innerhalb der Boundary bleiben. Keine opportunistischen Refactors, keine erfundenen Produktentscheidungen.
 - Die im Ticket geforderte Validierung ausführen. Keine Erfolgsbehauptung ohne Roh-Evidence.
 - Branch-Konvention: agent/<issue-number>-<short-title> erstellen oder wiederverwenden.
-- PR mit Closes #ISSUE verknuepfen.
+- PR mit Closes #ISSUE verknüpfen.
 - Beim Start: agent:ready entfernen, agent:running setzen.
 - Vor Abschluss den PR Body als Primary Closeout Source aktualisieren: Summary, Changed Files, Validation, Evidence, Vault Impact, Closeout, Operator Summary, Review Recommendation, Harness Failure Classification.
-- Jeden PR-Closeout mit `Vault Impact` nach `contracts/ticket-contract.md#vault-impact-contract` versehen. Bei `YES` nur einen Human-Gate Vault Update Candidate vorschlagen; den AI Vault nicht direkt ändern, ausser das Issue erlaubt es ausdRücklich.
-- Im Closeout dokumentieren: "Escalation Builder: Claude Code, freigegeben von <wer> in <Issue-/PR-Link>" und, falls relevant, was gegenüber dem Codex-Ansatz geaendert wurde und warum.
+- Jeden PR-Closeout mit `Vault Impact` nach `contracts/ticket-contract.md#vault-impact-contract` versehen. Bei `YES` nur einen Human-Gate Vault Update Candidate vorschlagen; den AI Vault nicht direkt ändern, außer das Issue erlaubt es ausdrücklich.
+- Im Closeout dokumentieren: "Escalation Builder: Claude Code, freigegeben von <wer> in <Issue-/PR-Link>" und, falls relevant, was gegenüber dem Codex-Ansatz geändert wurde und warum.
 - Keine Review-/Merge-Labels setzen: kein needs-human, kein review:pass, kein auto-merge:ok. Der Review of Record bleibt der Standard-Review-Pfad; du reviewst deine eigene Arbeit nicht als Review of Record.
 - Attempt Budget gilt weiter: self-fix vor PR max 1. Wenn du selbst scheiterst, klassifiziere (Harness Failure Classification), dokumentiere die Evidence und stoppe mit blocked und Entscheidungsvorlage — kein weiterer Eskalationsversuch ohne Human Gate.
 - Bei Limit oder fehlenden Rechten: Resume State schreiben und agent:running gesetzt lassen.
@@ -39,7 +39,7 @@ Arbeite strikt gegen Ziel, Scope, Nicht-Ziele, Akzeptanzkriterien, Validierung u
 
 ## Nach dem Lauf
 
-Der PR geht in den normalen Review-Pfad: `@codex review` oder ein separater Review-Kontext als Review of Record. Ein Claude-Code-Build erzeugt keine Sonderampel und kein implizites PASS. Human Merge Gate bleibt unveraendert.
+Der PR geht in den normalen Review-Pfad: `@codex review` oder ein separater Review-Kontext als Review of Record. Ein Claude-Code-Build erzeugt keine Sonderampel und kein implizites PASS. Human Merge Gate bleibt unverändert.
 
 ## Abgrenzung
 

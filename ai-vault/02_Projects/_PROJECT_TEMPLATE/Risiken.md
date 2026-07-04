@@ -2,5 +2,5 @@
 
 | Risiko | Signalquelle | Mitigation | Status |
 | --- | --- | --- | --- |
-| Beispielrisiko | Review, Issue oder Check | Naechster klarer Schritt | offen |
+| Beispielrisiko | Review, Issue oder Check | Nächster klarer Schritt | offen |
 

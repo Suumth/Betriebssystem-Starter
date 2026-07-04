@@ -11,7 +11,7 @@ Reihenfolge:
 3. Dann genau EIN neues Ticket mit label:agent:ready.
 
 Regeln:
-- Agent Mode lesen: EXECUTING darf bauen; GRILLING klaert erst; COORDINATING koordiniert Teilpruefungen/Planung vor Umsetzung.
+- Agent Mode lesen: EXECUTING darf bauen; GRILLING klärt erst; COORDINATING koordiniert Teilprüfungen/Planung vor Umsetzung.
 - Execution Mode Rules lesen und den im Ticket definierten Execution Mode befolgen: `Subagents: NOT_REQUIRED` oder `Subagents: REQUIRED`.
 - If the issue says `Subagents: REQUIRED`, use parallel subagents before implementation.
 - Spawn the subagents named in the issue, prefer read-only analysis unless write areas are explicitly separated, Wait for all required subagents, consolidate their findings, then implement in the main Builder thread.
@@ -29,25 +29,25 @@ Regeln:
 - PR erstellen oder aktualisieren.
 - PR mit Closes #ISSUE verknüpfen.
 - Die im Ticket genannte Validierung ausführen.
-- Keine endlosen Fix-, Review- oder Validation-Retry-Loops: Builder self-fix before PR max 1; automatisierte NEEDS-FIX-Zyklen auf demselben PR max 2, ausser der Operator verlaengert explizit.
+- Keine endlosen Fix-, Review- oder Validation-Retry-Loops: Builder self-fix before PR max 1; automatisierte NEEDS-FIX-Zyklen auf demselben PR max 2, außer der Operator verlängert explizit.
 - Vor einem weiteren Fix nach wiederholtem Fehler klassifizieren: last failed check/review point, Harness Failure Classification, suspected root cause, attempts used und recommended next reviewer oder human decision.
-- Erschoepftes Attempt Budget bedeutet Evidence und Empfehlung, nicht automatische Claude-Code-Nutzung.
+- Erschöpftes Attempt Budget bedeutet Evidence und Empfehlung, nicht automatische Claude-Code-Nutzung.
 - Evidence an PR/Issue anhängen.
 - Vor Abschluss immer den PR Body als Primary Closeout Source aktualisieren.
 - Closeout Requirements aus dem Ticket abarbeiten.
 - Wenn Closeout Requirements fehlen, Standard-Closeout verwenden: Summary, Changed Files, Validation, Evidence, Subagent Summary falls erforderlich, Attempt Budget & Escalation falls relevant, Closeout, Operator Summary, Review Recommendation, Harness Failure Classification.
 - Jeden PR-Closeout mit `Vault Impact` nach `contracts/ticket-contract.md#vault-impact-contract` versehen.
 - `Vault update required: YES`, wenn Strategie, Produktwahrheit, Architektur-Richtung, Nicht-Ziele, Risiken, Roadmap, UX/Brand, Lessons Learned oder Methode betroffen sind.
-- Bei `YES` nur einen Human-Gate Vault Update Candidate mit exaktem Markdown und Source Evidence vorschlagen; den AI Vault nicht direkt ändern, ausser das Issue erlaubt es ausdRücklich.
-- PR-Kommentar nur als Fallback/Ergaenzung nutzen, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusaetzliche Evidence/Notes ergänzt werden müssen.
-- Wenn ein PR-Kommentar genutzt wird, im PR Body auf diesen Kommentar oder die ergaenzende Evidence verweisen.
+- Bei `YES` nur einen Human-Gate Vault Update Candidate mit exaktem Markdown und Source Evidence vorschlagen; den AI Vault nicht direkt ändern, außer das Issue erlaubt es ausdrücklich.
+- PR-Kommentar nur als Fallback/Ergänzung nutzen, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder wenn zusätzliche Evidence/Notes ergänzt werden müssen.
+- Wenn ein PR-Kommentar genutzt wird, im PR Body auf diesen Kommentar oder die ergänzende Evidence verweisen.
 - Keine Review-/Merge-Labels setzen, solange Codex Builder ist: kein `needs-human`, kein `review:pass`, kein `auto-merge:ok`.
-- Nach erfolgreichem grünem Merge die lokale Green-Path-Hygiene ohne Rueckfrage ausführen: `git checkout main`, `git pull --ff-only origin main`, `git status`.
+- Nach erfolgreichem grünem Merge die lokale Green-Path-Hygiene ohne Rückfrage ausführen: `git checkout main`, `git pull --ff-only origin main`, `git status`.
 - Wenn `main` danach sauber ist, nächsten Queue-Eintrag suchen: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 - Wenn kein nächstes Ticket existiert, Idle-/Complete-Zustand dokumentieren.
-- Batch Green Path Execution nur nutzen, wenn der Nutzer ausdRücklich mehrere reife Tickets beauftragt.
-- Batch-Groesse ergibt sich aus dem Nutzerauftrag, nicht aus einer festen Zahl.
-- Nach jedem grünen PR im Batch: PR Review of Record prüfen, Merge gemaess Green-Path-Regel durchfuehren, `main` auschecken, `origin/main` fast-forward ziehen, clean status prüfen, dann nur das nächste beauftragte ready Ticket übernehmen.
+- Batch Green Path Execution nur nutzen, wenn der Nutzer ausdrücklich mehrere reife Tickets beauftragt.
+- Batch-Größe ergibt sich aus dem Nutzerauftrag, nicht aus einer festen Zahl.
+- Nach jedem grünen PR im Batch: PR Review of Record prüfen, Merge gemäß Green-Path-Regel durchführen, `main` auschecken, `origin/main` fast-forward ziehen, clean status prüfen, dann nur das nächste beauftragte ready Ticket übernehmen.
 - Batch stoppen bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder keinem weiteren beauftragten Ticket.
 - Bei Limit oder fehlenden Rechten: Resume State schreiben und agent:running gesetzt lassen.
 - Bei Sackgasse: blocked setzen und konkrete Entscheidungsvorlage schreiben.
@@ -96,7 +96,7 @@ Nur erforderlich, wenn `Subagents: REQUIRED`.
 - Replacement Evidence / Builder reconstruction:
 
 ### Attempt Budget & Escalation
-Nur erforderlich, wenn wiederholte Fix-, Review- oder Loop-Arbeit erwartet wurde oder ein Budget erschoepft ist.
+Nur erforderlich, wenn wiederholte Fix-, Review- oder Loop-Arbeit erwartet wurde oder ein Budget erschöpft ist.
 
 - Attempt budget:
 - Attempts used:

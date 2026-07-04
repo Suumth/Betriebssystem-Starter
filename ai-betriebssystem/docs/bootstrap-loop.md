@@ -1,16 +1,16 @@
 # Bootstrap Loop
 
 Der Bootstrap Loop beschreibt, wie aus einer neuen Projektidee ein
-arbeitsfaehiges, KI-kompatibles Projekt-Setup im AI-Betriebssystem 2.0 wird.
+arbeitsfähiges, KI-kompatibles Projekt-Setup im AI-Betriebssystem 2.0 wird.
 Er steht vor dem Delivery Loop: Erst wenn ein Projekt bootstrap-fertig ist,
-können Issues, PRs, Reviews und Green Path Completion verlaesslich laufen.
+können Issues, PRs, Reviews und Green Path Completion verlässlich laufen.
 
 ## 1. Nordstern
 
 Jede KI bekommt denselben Einstiegspunkt:
 
 ```text
-ChatGPT / Claude / Codex / Gemini / zukuenftige Modelle
+ChatGPT / Claude / Codex / Gemini / zukünftige Modelle
         |
         v
 PROJECT.md im Repo-Root
@@ -48,7 +48,7 @@ erste Lesepunkt für alle KI-Tools und muss über GitHub erreichbar sein.
 
 Mindestinhalt:
 
-- Projektidentitaet und Repo-URL
+- Projektidentität und Repo-URL
 - GitHub-URL zu `PROJECT.md`
 - lokale Fallback-Pfade nur für lokale Agenten
 - Link auf das AI-Betriebssystem als Methodenquelle
@@ -102,7 +102,7 @@ Ein Projekt ist bootstrap-fertig, wenn mindestens diese Artefakte vorhanden und
 - klare Green-Path-Regel nach Merge
 
 Bootstrap-fertig bedeutet nicht, dass das Produkt fertig ist. Es bedeutet, dass
-ein Agent ohne Rueckfrage ein reifes Ticket lesen, einen Branch erstellen,
+ein Agent ohne Rückfrage ein reifes Ticket lesen, einen Branch erstellen,
 validieren, Evidence liefern und einen PR reviewbar machen kann.
 
 ## 5. Standard-AI-Vault-Struktur
@@ -150,7 +150,7 @@ Pflichtlabels für den MVP:
 - `review:pass`
 - `auto-merge:ok`
 
-Optionale Risikohinweise dürfen ergaenzen, aber keine zweite Statuslogik
+Optionale Risikohinweise dürfen ergänzen, aber keine zweite Statuslogik
 erzeugen:
 
 - `risk:low`
@@ -201,7 +201,7 @@ Mindestinhalt von Ticket 0:
 - Boundary: nur Bootstrap-/Repo-Regeldateien
 - Nicht-Ziele: keine Produktfeatures, keine breite Architekturarbeit
 - Verification: `git diff --check` plus vorhandene Repo-Checks
-- Evidence: PR-Body mit geaenderten Dateien und Validation Output
+- Evidence: PR-Body mit geänderten Dateien und Validation Output
 - Stop condition: fehlender Repo-Zugriff, fehlende Labels oder unklare
   kanonische Quellen
 
@@ -214,7 +214,7 @@ Bestehende Projekte werden nicht auf einmal umgebaut. Migration bedeutet:
 
 1. Aktuelle operative Wahrheit im Repo lesen.
 2. Vault- und Strategiequellen inventarisieren.
-3. `PROJECT.md` als kanonischen KI-Einstieg ergaenzen.
+3. `PROJECT.md` als kanonischen KI-Einstieg ergänzen.
 4. Tool-spezifische Projektanweisungen auf Bootstrap-Pointer reduzieren.
 5. `AGENTS.md`, Templates und Labels gegen die AI-Betriebssystem-Contracts
    abgleichen.
@@ -224,7 +224,7 @@ Bei Konflikten gilt:
 
 - Projekt-Repo gewinnt für aktuellen operativen Zustand.
 - AI Vault gewinnt für Strategie und Produktgedächtnis.
-- AI-Betriebssystem gewinnt für Methode und Loop-Vertraege.
+- AI-Betriebssystem gewinnt für Methode und Loop-Verträge.
 - Abweichungen werden als Issue, Decision oder Vault-Update sichtbar gemacht.
 
 ## 11. Bewusst nicht Teil des Bootstrap-Loops

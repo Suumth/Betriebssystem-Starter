@@ -1,6 +1,6 @@
 # Project Brief Template
 
-Diese Datei gehoert in das jeweilige Projekt-Repo, zum Beispiel als `docs/project-brief.md`. Sie ist die versionierte Projektbeschreibung für ChatGPT, Codex, Reviewer und Menschen.
+Diese Datei gehört in das jeweilige Projekt-Repo, zum Beispiel als `docs/project-brief.md`. Sie ist die versionierte Projektbeschreibung für ChatGPT, Codex, Reviewer und Menschen.
 
 ## Product Identity
 
@@ -32,12 +32,12 @@ Der Project Brief ist eine kompakte Projektkarte. Er ersetzt nicht die repo-basi
 - Cloud-KIs wie ChatGPT, Claude und Gemini können keine lokalen Pfade lesen.
 - Tool-spezifische Projektanweisungen dürfen deshalb nur GitHub-URLs der repo-basierten Projektanweisung referenzieren.
 - Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschließlich Fallbacks für lokale Agenten wie Codex.
-- AI-Vault-Inhalte, die Cloud-KIs benoetigen, müssen als GitHub-Dateien, GitHub-Referenzen oder geeignete Projekt-Repo-Spiegelung erreichbar sein.
+- AI-Vault-Inhalte, die Cloud-KIs benötigen, müssen als GitHub-Dateien, GitHub-Referenzen oder geeignete Projekt-Repo-Spiegelung erreichbar sein.
 - Die kanonische strategische Wahrheit bleibt im AI Vault; Online-Spiegelungen sind Einstiege für KI-Tools.
 
 ## Zielbild / Produktversprechen
 
-Ein bis drei Saetze. Beschreibe, welchen Nutzen das Produkt liefern soll. Keine Marketing-Roadmap, keine lange Featureliste.
+Ein bis drei Sätze. Beschreibe, welchen Nutzen das Produkt liefern soll. Keine Marketing-Roadmap, keine lange Featureliste.
 
 ## Zielnutzer
 
@@ -69,12 +69,12 @@ Bereiche, die besondere Vorsicht, Review-Tiefe oder menschliche Entscheidung bra
 | Docs | Markdown-/Link-/Scope-Check | Diff- und Check-Ergebnis |
 | Release | Release-spezifische Gate-Checks | Signierte Evidence / Review |
 
-## Design- / Qualitaetsbar
+## Design- / Qualitätsbar
 
-- Was muss sich für Nutzer gut anfuehlen?
+- Was muss sich für Nutzer gut anfühlen?
 - Welche bestehenden Designregeln oder Referenzen gelten?
-- Welche Sprache, Tonalitaet oder Claim-Grenzen gelten?
-- Welche Barrierefreiheits-, Performance- oder Zuverlaessigkeitsgrenzen gelten?
+- Welche Sprache, Tonalität oder Claim-Grenzen gelten?
+- Welche Barrierefreiheits-, Performance- oder Zuverlässigkeitsgrenzen gelten?
 
 ## Wichtige Labels
 
@@ -111,22 +111,22 @@ Projekt-spezifische optionale Labels:
 - Aktueller Produktstatus:
 - Aktueller technischer Status:
 - Letzter belastbarer Loop / PR / Release:
-- Bekannte nicht vertrauenswuerdige oder veraltete Informationen:
+- Bekannte nicht vertrauenswürdige oder veraltete Informationen:
 
 ## Offene Risiken
 
-| Risiko | Quelle | Auswirkung | Naechster Schritt |
+| Risiko | Quelle | Auswirkung | Nächster Schritt |
 |---|---|---|---|
 |  |  |  |  |
 
-## Naechste sinnvolle Tickets
+## Nächste sinnvolle Tickets
 
-Diese Liste ist kein zweites Kanban. Sie ist ein Startvorschlag und muss in GitHub Issues überfuehrt oder dort bestaetigt werden.
+Diese Liste ist kein zweites Kanban. Sie ist ein Startvorschlag und muss in GitHub Issues überführt oder dort bestätigt werden.
 
 1. Ticket Null:
-2. Naechstes kleines EXECUTING-Ticket:
-3. Naechstes GRILLING-Ticket:
-4. Naechster Review-/PM-Signal-Lauf:
+2. Nächstes kleines EXECUTING-Ticket:
+3. Nächstes GRILLING-Ticket:
+4. Nächster Review-/PM-Signal-Lauf:
 
 ## Source-of-Truth Notes
 

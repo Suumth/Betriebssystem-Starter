@@ -18,7 +18,7 @@ Dies ist der Methodenbereich des Starters. Er bleibt vollständig und neutral.
 - Builder setzt ein Issue um.
 - Reviewer liefert den getrennten Review of Record.
 - PM Signal verdichtet operative Signale.
-- Operator entscheidet über Merge, Human Gate, Fix-Schleife und Vault-Rueckfluss.
+- Operator entscheidet über Merge, Human Gate, Fix-Schleife und Vault-Rückfluss.
 
 ## Platzhalter
 

@@ -2,7 +2,7 @@
 
 Diese Sicht verdichtet bis zu neun Teilprojekte aus GitHub-Artefakten. Sie ist keine komplexe Roadmap und keine zweite Wahrheit.
 
-| Teilprojekt | Ziel | Status | Wichtigste Issues / PRs | Letzte Lieferung | Naechster Meilenstein | Risiko | Entscheidung noetig |
+| Teilprojekt | Ziel | Status | Wichtigste Issues / PRs | Letzte Lieferung | Nächster Meilenstein | Risiko | Entscheidung nötig |
 |---|---|---|---|---|---|---|---|
 | 1 |  |  |  |  |  |  |  |
 | 2 |  |  |  |  |  |  |  |
@@ -14,4 +14,4 @@ Diese Sicht verdichtet bis zu neun Teilprojekte aus GitHub-Artefakten. Sie ist k
 | 8 |  |  |  |  |  |  |  |
 | 9 |  |  |  |  |  |  |  |
 
-Alle Eintraege müssen auf GitHub Issues, PRs, Commits, Closeouts, `docs/pm/*.md` oder `docs/adr/*.md` zurückfuehrbar sein.
+Alle Einträge müssen auf GitHub Issues, PRs, Commits, Closeouts, `docs/pm/*.md` oder `docs/adr/*.md` zurückführbar sein.

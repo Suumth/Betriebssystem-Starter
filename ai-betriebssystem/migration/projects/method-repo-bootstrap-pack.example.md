@@ -17,5 +17,5 @@ Das Methodenrepo bewahrt Contracts, Templates, Prompts, Skills, PM Signal Loop, 
 - Contracts bleiben vollständig.
 - Pflichtlabels bleiben erhalten.
 - Demo-Projekt und Demo-Vault bleiben neutral.
-- Public Readiness Check laeuft grün.
+- Public Readiness Check läuft grün.
 

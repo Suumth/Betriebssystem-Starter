@@ -4,11 +4,11 @@ Datum: `<YYYY-MM-DD>`
 
 Repo: `<owner>/<repo>`
 
-Optional eingeschraenkte Issues: `<#12, #34>` oder `alle passenden`
+Optional eingeschränkte Issues: `<#12, #34>` oder `alle passenden`
 
 ## Auftrag
 
-Fuehre genau einen operator-armierten Overnight Run aus. Dieser Lauf ist Loop
+Führe genau einen operator-armierten Overnight Run aus. Dieser Lauf ist Loop
 Readiness `L2 Assisted`, keine unbeaufsichtigte Automation.
 
 Lies zuerst:
@@ -22,7 +22,7 @@ Lies zuerst:
 
 ## Auswahl
 
-Bearbeite nur offene Issues, die alle Bedingungen erfuellen:
+Bearbeite nur offene Issues, die alle Bedingungen erfüllen:
 
 - `agent:ready`
 - `overnight:approved`
@@ -30,12 +30,12 @@ Bearbeite nur offene Issues, die alle Bedingungen erfuellen:
 - nicht `needs-fix`
 - nicht `blocked`
 - im Prompt nicht ausgeschlossen
-- falls Issue-Nummern eingeschraenkt wurden: nur diese Issues
+- falls Issue-Nummern eingeschränkt wurden: nur diese Issues
 
 Sortierung:
 
 1. zuerst explizit genannte Issue-Nummern in Prompt-Reihenfolge.
-2. sonst aelteste passende offene Issues zuerst.
+2. sonst älteste passende offene Issues zuerst.
 3. kein beliebiges Nachladen weiterer Tickets.
 
 ## Harte Limits
@@ -46,8 +46,8 @@ Sortierung:
 - Ziel-Diff je Ticket: ca. 400 Zeilen / max. 15 Dateien.
 - Max. 6 offene Agent-PRs im Repo.
 - Protected- und Release-Code-Lanes sind nachts code-read-only.
-- Keine neue operative Wahrheit ausserhalb von GitHub.
-- Keine neuen Labels ausser den im Repo-Contract definierten.
+- Keine neue operative Wahrheit außerhalb von GitHub.
+- Keine neuen Labels außer den im Repo-Contract definierten.
 
 ## Worktree- und Branch-Regeln
 
@@ -56,7 +56,7 @@ Sortierung:
   `codex/issue-<nummer>-<kurztitel>`.
 - Wenn ein passender Issue-PR existiert, setze denselben Branch fort.
 - Erstelle keinen Parallel-PR zum selben Issue.
-- Unrelated dirty state nicht übernehmen, nicht loeschen und nicht stagen.
+- Unrelated dirty state nicht übernehmen, nicht löschen und nicht stagen.
 
 ## Execution Mode
 
@@ -71,7 +71,7 @@ Sortierung:
 Poste Heartbeats an den Pflichtzeitpunkten aus
 `docs/overnight-operations-mode.md` mit diesem Format:
 
-Zusaetzlich zu diesen Pflichtzeitpunkten: Bei aktiver Arbeit spaetestens alle
+Zusätzlich zu diesen Pflichtzeitpunkten: Bei aktiver Arbeit spätestens alle
 45 Minuten einen Heartbeat posten.
 
 ```markdown
@@ -89,12 +89,12 @@ Zusaetzlich zu diesen Pflichtzeitpunkten: Bei aktiver Arbeit spaetestens alle
 
 ## Umsetzung
 
-Für jedes ausgewaehlte Issue:
+Für jedes ausgewählte Issue:
 
 1. Issue, Kommentare, Labels und bestehende PRs lesen.
 2. `agent:ready` entfernen und `agent:running` setzen.
 3. Worktree/Branch vorbereiten oder bestehenden Issue-Branch fortsetzen.
-4. Kleinste sichere Aenderung umsetzen.
+4. Kleinste sichere Änderung umsetzen.
 5. Required Verification aus dem Issue ausführen.
 6. PR erstellen oder aktualisieren.
 7. PR Body als Primary Closeout Source aktualisieren.
@@ -126,13 +126,13 @@ Operator-Handlungen im Morning Review.
 
 Stoppe oder skippe, wenn:
 
-- ein hartes Limit überschritten wuerde.
+- ein hartes Limit überschritten würde.
 - Scope, Verification, Evidence oder Toolzugang fehlt.
-- Protected-/Release-Code geschrieben werden muesste.
+- Protected-/Release-Code geschrieben werden müsste.
 - eine menschliche Produkt-, Safety-, Legal-, Privacy-, Release- oder
-  Waiver-Entscheidung noetig ist.
+  Waiver-Entscheidung nötig ist.
 - ein bestehender Branch/PR uneindeutig ist.
-- ein Check wiederholt fehlschlaegt und der eine Fixloop verbraucht ist.
+- ein Check wiederholt fehlschlägt und der eine Fixloop verbraucht ist.
 
 Dokumentiere den Stop-Grund als Heartbeat und im PR/Issue.
 

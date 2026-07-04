@@ -78,8 +78,8 @@ If sources disagree:
 ## Teilprojekte & Produktversprechen
 
 Teilprojekte sind GitHub Milestones im Projekt-Repo. Produktversprechen sind
-keine Ticket-Zaehlstaende; sie werden nur mit Evidence-Link und Human-/
-Operator-Entscheidung bestaetigt.
+keine Ticket-Zählstände; sie werden nur mit Evidence-Link und Human-/
+Operator-Entscheidung bestätigt.
 
 Leitplanken:
 

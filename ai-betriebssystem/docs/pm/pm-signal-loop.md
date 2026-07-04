@@ -14,7 +14,7 @@ Ziel ist Leiterblick und Projektsteuerung:
 - Was wurde seit dem letzten Signal geliefert?
 - Was ist blockiert?
 - Welche Risiken wachsen?
-- Welche Entscheidungen sind als Naechstes noetig?
+- Welche Entscheidungen sind als Nächstes nötig?
 - Welche Issues, Risk Log-Updates oder Contract Updates sollten entstehen?
 
 ## Quellen
@@ -38,11 +38,11 @@ Nicht als operative Projektwahrheit verwenden:
 - zweite Roadmap neben GitHub
 - separates Kanban
 
-Der AI Vault kann Denk- oder Entwurfsarbeit enthalten. Operativ zaehlt nur, was in GitHub oder bewusst freigegebenen Repo-Dokumenten sichtbar ist.
+Der AI Vault kann Denk- oder Entwurfsarbeit enthalten. Operativ zählt nur, was in GitHub oder bewusst freigegebenen Repo-Dokumenten sichtbar ist.
 
 ## PM-Lagebild
 
-Das PM-Lagebild ist eine read-only Ergaenzung zur Projektleiter-Sicht. Es wird
+Das PM-Lagebild ist eine read-only Ergänzung zur Projektleiter-Sicht. Es wird
 aus GitHub und dem Produktversprechen-Register in `PROJECT.md` abgeleitet.
 
 Regeln:
@@ -51,8 +51,8 @@ Regeln:
 - Das Lagebild setzt keine Stati, Labels, Milestones oder Produktversprechen.
 - Es ersetzt nicht GitHub, Issues, PRs, Review of Record oder Human Gate.
 - Teilprojekte werden als GitHub Milestones modelliert.
-- Produktversprechen werden im `PROJECT.md` gefuehrt und nur per Human-/
-  Operator-Entscheidung mit Evidence-Link bestaetigt.
+- Produktversprechen werden im `PROJECT.md` geführt und nur per Human-/
+  Operator-Entscheidung mit Evidence-Link bestätigt.
 - Details stehen in `contracts/teilprojekt-contract.md`.
 
 ## Ablauf
@@ -80,17 +80,17 @@ Ein PM-Signal sollte enthalten:
 
 - Keine zweite Projektwahrheit erzeugen.
 - Keine erledigte Arbeit ohne Issue, PR, Commit oder Closeout behaupten.
-- Neue Arbeit als Issue vorschlagen oder anlegen, wenn das ausdRücklich erlaubt ist.
+- Neue Arbeit als Issue vorschlagen oder anlegen, wenn das ausdrücklich erlaubt ist.
 - Harte Entscheidungen als Decision Log oder ADR sichtbar machen.
 - Risiken im Risk Log oder als Issue sichtbar machen.
-- PM Signal darf verdichten, aber nicht still neue Roadmap-Realitaet schaffen.
+- PM Signal darf verdichten, aber nicht still neue Roadmap-Realität schaffen.
 
 ## Frequenz
 
 PM-Signal-Läufe passen:
 
 - on demand
-- vor groesseren Planungsbloecken
+- vor größeren Planungsblöcken
 - nach mehreren gemergten PRs
 - vor Wochenstart oder Wochenabschluss
 

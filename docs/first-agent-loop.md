@@ -2,7 +2,7 @@
 
 ## Ablauf
 
-1. Mensch waehlt ein Issue aus.
+1. Mensch wählt ein Issue aus.
 2. Builder liest `PROJECT.md`, `AGENTS.md`, Ticket Contract und task lokalen Scope.
 3. Builder arbeitet lokal, sammelt Evidence und erstellt einen PR oder PR-Entwurf.
 4. Reviewer prüft getrennt als Review of Record.

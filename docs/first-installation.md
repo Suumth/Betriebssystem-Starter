@@ -9,7 +9,7 @@ Am Ende hast du ein Projekt-Repo mit `PROJECT.md`, `AGENTS.md`, Labels, Ticket 0
 - Ein GitHub-Repo für operative Arbeit.
 - Einen lokalen Markdown-Editor oder Obsidian für den Vault.
 - Ein lokales AI-Tool wie Codex, Claude Code oder ein anderes Tool, das Repo-Dateien lesen kann.
-- Optional: `gh`, wenn du Labels und Issues per CLI verwalten willst. Dieser Starter selbst fuehrt keine Remote-Operationen aus.
+- Optional: `gh`, wenn du Labels und Issues per CLI verwalten willst. Dieser Starter selbst führt keine Remote-Operationen aus.
 
 ## Installation
 

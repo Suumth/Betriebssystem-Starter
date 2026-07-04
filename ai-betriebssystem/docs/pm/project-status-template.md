@@ -6,7 +6,7 @@ Green | Yellow | Red
 
 ## Teilprojekte
 
-| Teilprojekt | Status | Fortschritt | Blocker | Risiko | Naechste Entscheidung |
+| Teilprojekt | Status | Fortschritt | Blocker | Risiko | Nächste Entscheidung |
 |---|---|---:|---|---|---|
 
 ## Delivered Since Last Signal

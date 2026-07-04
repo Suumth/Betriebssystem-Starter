@@ -17,9 +17,9 @@ Attempt budgets begrenzen wiederholte Fix- und Review-Schleifen. Sie sind keine 
 | ChatGPT Pro | Ticket-Schnitt, Harness-Design, Priorisierung, Entscheidungsvorlagen | Planungsressource |
 | Claude Opus | Sparring, Architektur, Ticket-Reife, Risikoanalyse | Planungs-/Denkressource |
 | Codex | Builder, Standard-Umsetzung, Standard-Fix, Evidence, PR | Hauptarbeitsressource |
-| Codex Subagents | interne read-only Prüfung im Codex-Lauf | Standard-Qualitaetsschicht, sofern verfuegbar |
+| Codex Subagents | interne read-only Prüfung im Codex-Lauf | Standard-Qualitätsschicht, sofern verfügbar |
 | @codex review | GitHub Review of Record | Standard-Review-Spur |
-| Claude Code | externer Review oder Umsetzung bei Risiko/Komplexitaet | knappe Premium-Ressource, nur nach menschlicher Freigabe |
+| Claude Code | externer Review oder Umsetzung bei Risiko/Komplexität | knappe Premium-Ressource, nur nach menschlicher Freigabe |
 | Mensch | Merge, Claude-Code-Freigabe, Produkt-/Risikoentscheidung | Human Gate |
 
 ## Grundregel
@@ -41,11 +41,11 @@ Ohne menschliche Freigabe bleibt der Standardpfad Codex.
 ```text
 ChatGPT Pro / Claude Opus formulieren agent:ready Ticket
 → Codex baut
-→ Codex Subagent Board prüft intern, falls verfuegbar
+→ Codex Subagent Board prüft intern, falls verfügbar
 → Codex fixt vor PR maximal einmal selbst
-→ automatisierte `needs-fix`-Zyklen auf demselben PR laufen maximal zweimal, ausser der Operator verlaengert explizit
+→ automatisierte `needs-fix`-Zyklen auf demselben PR laufen maximal zweimal, außer der Operator verlängert explizit
 → @codex review schreibt Review of Record in GitHub
-→ Mensch merged PASS-Faelle
+→ Mensch merged PASS-Fälle
 ```
 
 ## Claude-Code-Review nur als Vorschlag
@@ -59,10 +59,10 @@ Claude Code Review kann vorgeschlagen werden bei:
 - Release / TestFlight / App Store
 - grosse Architekturentscheidung
 - grosse Refactors
-- fehlende oder widerspruechliche Evidence
+- fehlende oder widersprüchliche Evidence
 - Codex Subagent Board uneinig
 - @codex review unsicher
-- menschliches Bauchgefuehl
+- menschliches Bauchgefühl
 
 Formulierung im Closeout:
 
@@ -78,7 +78,7 @@ Formulierung im Closeout:
 Claude Code Production/Implementation kann vorgeschlagen werden bei:
 
 - komplexem UI-/UX-Flow
-- groesserer Architektur-/Domain-Modellierung
+- größerer Architektur-/Domain-Modellierung
 - schwer reproduzierbarem Bug
 - breitem Refactor über mehrere Module
 - Aufgabe, bei der Codex mehrfach am Harness scheitert
@@ -87,7 +87,7 @@ Aber:
 
 - Keine automatische Umstellung auf Claude Code.
 - Kein Claude-Code-Lauf ohne menschliche Freigabe.
-- Nach Freigabe laeuft die Umsetzung mit `prompts/builder-claude-code.md`; Review of Record und Human Merge Gate bleiben unveraendert.
+- Nach Freigabe läuft die Umsetzung mit `prompts/builder-claude-code.md`; Review of Record und Human Merge Gate bleiben unverändert.
 - Wenn Limits knapp sind, bleibt Codex Default.
 - Wiederholtes Scheitern erzeugt zuerst Evidence: Failure Classification, letzter fehlgeschlagener Check oder Review-Punkt, vermutete Ursache, Attempts used und Empfehlung.
 
@@ -113,7 +113,7 @@ ChatGPT Pro und Claude Opus erstellen keine Arbeit aus dem Bauch heraus. Sie bez
 - Lessons
 - repo-spezifische AGENTS.md
 
-Jedes Ticket muss Codex-faehig sein, bevor es `agent:ready` bekommt.
+Jedes Ticket muss Codex-fähig sein, bevor es `agent:ready` bekommt.
 
 ## Review-Policy
 
@@ -144,12 +144,12 @@ Dafür:
 - Risiko
 - Architektur
 - Produktentscheidung
-- schwer pruefbare Aenderungen
+- schwer prüfbare Änderungen
 - mehrdeutige Evidence
 - Release-nahe Arbeit
 
 ## Produktdefinition
 
-Das AI-Betriebssystem 2.0 optimiert nicht darauf, moeglichst viele Agenten einzusetzen.
+Das AI-Betriebssystem 2.0 optimiert nicht darauf, möglichst viele Agenten einzusetzen.
 
 Es optimiert darauf, Codex als Hauptarbeitskraft in einem starken Harness arbeiten zu lassen und knappe Premium-Reviewer nur dort einzusetzen, wo ihr Grenznutzen hoch ist.

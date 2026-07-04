@@ -26,16 +26,16 @@ Wenn ein Ticket morgens nicht selbst beweisen kann, dass es fertig ist, ist es z
 
 ## Ticket-Tiers
 
-Der Contract kennt zwei Umfangsklassen. Beide erfuellen die Maturity Rule; sie unterscheiden sich nur darin, welche Bloecke ausgeschrieben werden müssen.
+Der Contract kennt zwei Umfangsklassen. Beide erfüllen die Maturity Rule; sie unterscheiden sich nur darin, welche Blöcke ausgeschrieben werden müssen.
 
 | Tier | Wann | Template |
 |---|---|---|
-| Light | Risk lane `low`, Mode `EXECUTING`, `Subagents: NOT_REQUIRED`, keine wiederholte Fix-/Review-/Loop-Arbeit erwartet, eine Oberflaeche, keine Protected Area/Release/externe Aktion | `templates/github_issue_task_low_risk.md` |
+| Light | Risk lane `low`, Mode `EXECUTING`, `Subagents: NOT_REQUIRED`, keine wiederholte Fix-/Review-/Loop-Arbeit erwartet, eine Oberfläche, keine Protected Area/Release/externe Aktion | `templates/github_issue_task_low_risk.md` |
 | Full | alles andere | `templates/github_issue_task.md` |
 
-Low Risk Tickets lassen Execution-Mode-Details, Codex Subagent Instruction, Subagent Failure Policy und Attempt Budget & Escalation weg, weil deren Ausloeser per Definition nicht vorliegen. Goal, Context, Boundary, Acceptance Criteria, Verification, Evidence, Vault Impact, Closeout mit Operator Summary und Stop-Bedingung bleiben Pflicht.
+Low Risk Tickets lassen Execution-Mode-Details, Codex Subagent Instruction, Subagent Failure Policy und Attempt Budget & Escalation weg, weil deren Auslöser per Definition nicht vorliegen. Goal, Context, Boundary, Acceptance Criteria, Verification, Evidence, Vault Impact, Closeout mit Operator Summary und Stop-Bedingung bleiben Pflicht.
 
-Kippt waehrend der Arbeit ein Light-Kriterium (Risiko steigt, Scope waechst, Fix-Schleife beginnt, zweite Oberflaeche noetig), stoppt der Builder und das Ticket wird auf Full nachgeschaerft. Ein Light Ticket ist keine Abkuerzung an Evidence, Vault Impact oder Review of Record vorbei.
+Kippt während der Arbeit ein Light-Kriterium (Risiko steigt, Scope wächst, Fix-Schleife beginnt, zweite Oberfläche nötig), stoppt der Builder und das Ticket wird auf Full nachgeschärft. Ein Light Ticket ist keine Abkürzung an Evidence, Vault Impact oder Review of Record vorbei.
 
 ## Pflichtstruktur für agent:ready-Tickets
 
@@ -181,7 +181,7 @@ Wenn `Subagents: REQUIRED`, muss das Ticket eine konkrete `Codex Subagent Instru
 - welche Subagents Codex starten muss
 - ob sie read-only sind oder getrennte Edits vorbereiten dürfen
 - ob Codex auf alle Ergebnisse warten muss
-- welche Subagent Failure Policy bei haengenden oder nicht liefernden Subagents gilt
+- welche Subagent Failure Policy bei hängenden oder nicht liefernden Subagents gilt
 - wo die Ergebnisse dokumentiert werden müssen
 
 Subagents sind interne Codex-Ausführungshelfer. Sie sind keine sichtbaren PM-, Operator- oder Review-of-Record-Rollen, setzen keine Workflow-Labels und ersetzen keine menschliche Entscheidung.
@@ -197,7 +197,7 @@ Default-Regeln:
 - Subagent failure recovery stays governed by the Subagent Failure Policy: one targeted recovery, then degraded-with-Evidence or `BLOCKED`.
 - Normal implementation steps, a first validation run, PR closeout edits, post-merge hygiene and Green Path next-ticket selection are not counted as attempts.
 
-Wenn ein Attempt Budget erschoepft ist oder derselbe Fehler wiederkehrt, muss Codex vor einem weiteren Fix klassifizieren und dokumentieren:
+Wenn ein Attempt Budget erschöpft ist oder derselbe Fehler wiederkehrt, muss Codex vor einem weiteren Fix klassifizieren und dokumentieren:
 
 - failure classification;
 - last failed check or review point;
@@ -245,10 +245,10 @@ The PR closeout must document:
 | Mode | Bedeutung | Bauregel |
 |---|---|---|
 | `EXECUTING` | Entscheidung ist getroffen; Ziel, Scope, Verifier und Evidence sind klar | Agent darf bauen |
-| `GRILLING` | Entscheidung, Begriff, Scope oder Ziel ist unklar | Agent darf nicht bauen; erst klaeren oder Entscheidungsvorlage schreiben |
-| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert, schneidet und prüft; Umsetzung erst in klarer EXECUTING-Box |
+| `GRILLING` | Entscheidung, Begriff, Scope oder Ziel ist unklar | Agent darf nicht bauen; erst klären oder Entscheidungsvorlage schreiben |
+| `COORDINATING` | größere Arbeit braucht Synthese, Subagent-/Teilprüfung oder mehrere Quellen | Agent koordiniert, schneidet und prüft; Umsetzung erst in klarer EXECUTING-Box |
 
-`Autonomy` beschreibt, wie eigenstaendig der Agent innerhalb der Boundary handeln darf. `Risk lane` bestimmt Review-Schaerfe und Evidence-Tiefe. `Execution Mode` ist davon getrennt: Auch ein `EXECUTING`-Ticket kann `Subagents: REQUIRED` setzen, wenn die Umsetzung vorab interne Codex-Teilpruefungen braucht.
+`Autonomy` beschreibt, wie eigenständig der Agent innerhalb der Boundary handeln darf. `Risk lane` bestimmt Review-Schärfe und Evidence-Tiefe. `Execution Mode` ist davon getrennt: Auch ein `EXECUTING`-Ticket kann `Subagents: REQUIRED` setzen, wenn die Umsetzung vorab interne Codex-Teilprüfungen braucht.
 
 ## Qualitätsgrenzen
 
@@ -287,7 +287,7 @@ Agentenfähig:
 Produktwirksame `agent:ready`-Tickets brauchen einen GitHub Milestone. Der
 Milestone modelliert das Teilprojekt im Projekt-Repo.
 
-Ein Ticket ohne Milestone ist nur reif, wenn es ausdRücklich als nicht
+Ein Ticket ohne Milestone ist nur reif, wenn es ausdrücklich als nicht
 teilprojektbezogen begründet ist:
 
 - `meta`;
@@ -298,7 +298,7 @@ teilprojektbezogen begründet ist:
 
 Ein fehlender Milestone bei produktwirksamen Tickets ist ein Reifeproblem im
 Ticket Contract, kein Generatorproblem. Codex soll das als `unclear_spec` oder
-`missing_context` klassifizieren, statt das Ticket in einem Lagebild kuenstlich
+`missing_context` klassifizieren, statt das Ticket in einem Lagebild künstlich
 zuzuordnen.
 
 ## Scope-Regel
@@ -332,11 +332,11 @@ Closeout is task local.
 
 Was im Closeout zwingend passieren soll, muss im Ticket oder im konkreten Codex-Prompt stehen. Globale Contracts liefern Standardstruktur, aber keine impliziten Spezialpflichten.
 
-Standard-Closeout-Ziel für PR-basierte Arbeit ist der PR Body. PR-Kommentare sind Ergaenzung oder Fallback, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder zusaetzliche Evidence/Notes noetig sind.
+Standard-Closeout-Ziel für PR-basierte Arbeit ist der PR Body. PR-Kommentare sind Ergänzung oder Fallback, wenn der PR Body technisch nicht sinnvoll aktualisierbar ist oder zusätzliche Evidence/Notes nötig sind.
 
 Ein Review darf NEEDS-FIX setzen, wenn relevante Closeout-Pflichten nur verstreut in Kommentaren stehen und nicht im PR Body auffindbar oder verlinkt sind.
 
-Keine Spezialanforderung darf nur unausgesprochen aus `AGENTS.md`, Skills oder allgemeinen Methoden-Dokumenten erwartet werden. Wenn ein Review später eine Closeout-Luecke findet, ist das ein Signal, die Ticket- oder Prompt-Anforderung expliziter zu machen.
+Keine Spezialanforderung darf nur unausgesprochen aus `AGENTS.md`, Skills oder allgemeinen Methoden-Dokumenten erwartet werden. Wenn ein Review später eine Closeout-Lücke findet, ist das ein Signal, die Ticket- oder Prompt-Anforderung expliziter zu machen.
 
 Wenn `Subagents: REQUIRED`, muss der PR-Closeout die Subagent Summary als Primary Closeout Source enthalten: welche Subagents liefen, was sie fanden und welche Findings die Umsetzung beeinflusst haben.
 
@@ -360,12 +360,12 @@ Jeder PR-Closeout muss eine `Vault Impact`-Sektion enthalten. Diese Sektion ist 
 
 Regeln:
 
-- `Vault update required: NO` gilt für rein lokale Implementierungs-, Test-, Format-, Refactor- oder Hygiene-Aenderungen ohne strategische, produktbezogene, architektonische oder methodische Aussage.
-- `Vault update required: YES` gilt, wenn ein PR Strategie, Produktwahrheit, Architektur-Richtung, Nicht-Ziele, Risiken, Roadmap, UX-/Brand-Regeln, Lessons Learned oder AI-Betriebssystem-Methode veraendert oder klaert.
+- `Vault update required: NO` gilt für rein lokale Implementierungs-, Test-, Format-, Refactor- oder Hygiene-Änderungen ohne strategische, produktbezogene, architektonische oder methodische Aussage.
+- `Vault update required: YES` gilt, wenn ein PR Strategie, Produktwahrheit, Architektur-Richtung, Nicht-Ziele, Risiken, Roadmap, UX-/Brand-Regeln, Lessons Learned oder AI-Betriebssystem-Methode verändert oder klärt.
 - Bei `YES` erstellt der PR-Closeout einen Vault Update Candidate: Area, Grund, vorgeschlagene Ziel-Datei, exakter Markdown-Vorschlag und Source Evidence mit Issue-/PR-/Review-/Commit-Link.
-- Agenten dürfen den AI Vault nicht direkt verändern, ausser das Issue erlaubt es ausdRücklich. Ohne diese ausdRückliche Erlaubnis bleibt der Candidate Human Gate.
+- Agenten dürfen den AI Vault nicht direkt verändern, außer das Issue erlaubt es ausdrücklich. Ohne diese ausdrückliche Erlaubnis bleibt der Candidate Human Gate.
 - GitHub bleibt operative Wahrheit für Arbeit, Status, Evidence und Review. Der AI Vault bleibt strategisches und produktbezogenes Gedächtnis; er ist kein operatives Taskboard.
-- Wenn die passende Vault-Datei unbekannt ist, bleibt `Suggested target file` konkret soweit moeglich und markiert die Unsicherheit im `Reason`; der Candidate darf nicht erfunden oder als bereits eingetragen behauptet werden.
+- Wenn die passende Vault-Datei unbekannt ist, bleibt `Suggested target file` konkret soweit möglich und markiert die Unsicherheit im `Reason`; der Candidate darf nicht erfunden oder als bereits eingetragen behauptet werden.
 
 ## Harness Failure Classification
 
@@ -420,7 +420,7 @@ Nur erforderlich, wenn `Subagents: REQUIRED`.
 - Replacement Evidence / Builder reconstruction:
 
 ### Attempt Budget & Escalation
-Nur erforderlich, wenn das Ticket wiederholte Fix-, Review- oder Loop-Arbeit erwartet oder ein Budget erschoepft wurde.
+Nur erforderlich, wenn das Ticket wiederholte Fix-, Review- oder Loop-Arbeit erwartet oder ein Budget erschöpft wurde.
 
 - Attempt budget:
 - Attempts used:

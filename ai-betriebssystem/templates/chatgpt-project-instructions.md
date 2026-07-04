@@ -18,7 +18,7 @@ Kein KI-Tool bekommt eigene Sonderwahrheit.
 - `PROJECT_INSTRUCTION_GITHUB_URL` auf die kanonische Projektanweisung im Projekt-Repo setzen, bevorzugt die GitHub-URL zu `PROJECT.md`.
 - Falls das Projekt bewusst einen anderen Pfad nutzt, z. B. `docs/project-instructions.md`, muss die GitHub-URL auf genau diesen Pfad zeigen.
 - Tool-spezifische Projektanweisungen dürfen keine lokalen Pfade wie `<LOCAL_CHECKOUT_PATH>` referenzieren.
-- Lokale Pfade sind ausschließlich Fallbacks für lokale Agenten wie Codex und gehoeren nicht in Cloud-KI-Projektanweisungen.
+- Lokale Pfade sind ausschließlich Fallbacks für lokale Agenten wie Codex und gehören nicht in Cloud-KI-Projektanweisungen.
 - Keine Produktdetails, Roadmap, Ticketliste, Strategie, Build-Logs oder Tool-Sonderregeln in diese Tool-Anweisung kopieren.
 - Die repo-basierte Projektanweisung enthält den Drei-Quellen-Router: AI-Betriebssystem, Projekt-Repo und AI Vault mit online erreichbaren Einstiegspunkten für Cloud-KIs.
 
@@ -35,4 +35,4 @@ Nicht in Tool-Projektanweisungen aufnehmen:
 - AI-Vault-Inhalte als Kopie
 - tool-spezifische Sonderwahrheit für ChatGPT, Claude, Codex oder spätere KI-Tools
 
-Stattdessen gehoeren diese Inhalte in die repo-basierte Projektanweisung oder in die dort verlinkten Quellen.
+Stattdessen gehören diese Inhalte in die repo-basierte Projektanweisung oder in die dort verlinkten Quellen.

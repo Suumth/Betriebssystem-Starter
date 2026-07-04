@@ -14,7 +14,7 @@ Verdichte den Projektstand so, dass der Operator erkennt:
 - Was wurde seit dem letzten Signal geliefert?
 - Was ist blockiert?
 - Welche Risiken wachsen?
-- Welche Entscheidungen sind als Naechstes noetig?
+- Welche Entscheidungen sind als Nächstes nötig?
 - Welche Tickets oder Contract Updates sollten angelegt werden?
 
 Arbeite nach Trigger -> Action -> Proof -> Memory -> Stop.
@@ -34,6 +34,6 @@ Regeln:
 - Unklare Punkte als Fragen oder suggested issues ausgeben.
 - Keine erledigte Arbeit behaupten ohne Issue, PR, Commit oder Closeout.
 - Keine neuen Regeln automatisch setzen; Contract-/Template-Updates nur vorschlagen.
-- Neue Arbeit als GitHub Issue vorschlagen oder, wenn ausdRücklich erlaubt, anlegen.
+- Neue Arbeit als GitHub Issue vorschlagen oder, wenn ausdrücklich erlaubt, anlegen.
 - Harte Entscheidungen als Decision Log oder ADR vorschlagen.
 ```

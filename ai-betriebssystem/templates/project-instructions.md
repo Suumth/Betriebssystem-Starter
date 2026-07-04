@@ -24,25 +24,25 @@ Tool-spezifische Projektanweisungen für ChatGPT, Claude, Codex oder spätere KI
 - Sie müssen auf die GitHub-URL dieser repo-basierten Projektanweisung verweisen.
 - Diese repo-basierte Projektanweisung muss daher über GitHub erreichbar sein, z. B. als `PROJECT.md` oder `docs/project-instructions.md`.
 - Lokale Pfade wie `<LOCAL_CHECKOUT_PATH>` sind ausschließlich Fallbacks für lokale Agenten wie Codex.
-- Jede KI erhaelt dieselbe minimale Bootstrap-Anweisung: zuerst diese Projektanweisung über GitHub lesen, danach ausschließlich nach den hier definierten Quellen arbeiten.
+- Jede KI erhält dieselbe minimale Bootstrap-Anweisung: zuerst diese Projektanweisung über GitHub lesen, danach ausschließlich nach den hier definierten Quellen arbeiten.
 
 ## Drei-Quellen-Router
 
 1. AI-Betriebssystem repo
    - Rolle: Methode, Ticket-Schnitt, Agent Contract, Green Path, Review, Evidence, Labels, Prompts und Templates.
-   - Hier klaeren: Wie Arbeit geschnitten, validiert, reviewed, geschlossen und nach Merge hygienisch fortgesetzt wird.
+   - Hier klären: Wie Arbeit geschnitten, validiert, reviewed, geschlossen und nach Merge hygienisch fortgesetzt wird.
 2. Projekt-Repo
    - Rolle: operative Wahrheit.
-   - Hier klaeren: Issues, PRs, Kommentare, Labels, AGENTS.md, Code, Repo-Dateien, Build-/Test-Evidence und aktueller Status.
+   - Hier klären: Issues, PRs, Kommentare, Labels, AGENTS.md, Code, Repo-Dateien, Build-/Test-Evidence und aktueller Status.
 3. AI Vault
    - Rolle: Strategie und Produktgedächtnis.
-   - Hier klaeren: Strategie, Zielbild, Produktentscheidungen, Nicht-Ziele, langfristige Risiken, Roadmap und Produktbrief.
+   - Hier klären: Strategie, Zielbild, Produktentscheidungen, Nicht-Ziele, langfristige Risiken, Roadmap und Produktbrief.
 
 ## AI Vault Access for Cloud KIs
 
 Der AI Vault bleibt die kanonische Wahrheit für Strategie, Zielbild und Produktgedächtnis. Cloud-KIs können lokale Vault-Pfade aber nicht lesen.
 
-AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benoetigen, müssen deshalb online erreichbar gemacht werden:
+AI-Vault-Inhalte, die ChatGPT, Claude, Gemini oder andere Cloud-KIs benötigen, müssen deshalb online erreichbar gemacht werden:
 
 - als GitHub-Dateien,
 - über GitHub referenziert,
@@ -72,8 +72,8 @@ Die Spiegelung ist ein Online-Einstieg für KI-Tools, nicht die neue strategisch
 - Vor Ticket-Erstellung relevante Quellen prüfen: Methode im AI-Betriebssystem, operative Lage im Projekt-Repo, strategischen Kontext im AI Vault.
 - Tickets nach dem AI-Betriebssystem Ticket Contract und den Regeln aus `AGENTS.md` im Projekt-Repo schneiden.
 - Ein Ticket bekommt nur `agent:ready`, wenn Ziel, Boundary, Nicht-Ziele, Akzeptanzkriterien, Validierung, Evidence, Closeout und Stop condition klar sind.
-- Bei Unsicherheit grillen, nicht bauen: erst Begriffe, Scope, Produktentscheidung oder fehlende Evidence klaeren.
-- Keine neue Projektwahrheit im KI-Tool erfinden. Unklare Punkte als Fragen, Issue-Vorschlaege oder Decision-/Vault-Update-Vorschlaege ausgeben.
+- Bei Unsicherheit grillen, nicht bauen: erst Begriffe, Scope, Produktentscheidung oder fehlende Evidence klären.
+- Keine neue Projektwahrheit im KI-Tool erfinden. Unklare Punkte als Fragen, Issue-Vorschläge oder Decision-/Vault-Update-Vorschläge ausgeben.
 - Keine erledigte Arbeit behaupten ohne Repo-Evidence: Issue, PR, Commit, Review, Closeout oder versionierte Datei.
 - Nach erfolgreichem grünem Merge endet der Green Path erst nach lokaler Hygiene: `git checkout main`, `git pull --ff-only origin main`, `git status`, danach nächstes bearbeitbares Ticket oder dokumentierter Stop.
 
@@ -82,9 +82,9 @@ Die Spiegelung ist ein Online-Einstieg für KI-Tools, nicht die neue strategisch
 - Tool-spezifische Projektanweisungen sind nur Bootstrap-Pointer auf diese Datei.
 - Tool-spezifische Projektanweisungen für Cloud-KIs zeigen auf die GitHub-URL dieser Datei, nicht auf lokale Pfade.
 - Diese Datei verweist auf Projektwahrheit, statt lange Strategie oder Roadmaps zu kopieren.
-- Strategische Wahrheit gehoert in den AI Vault, nicht in Tool-Anweisungen und nicht in zufaellige Issue-Kommentare.
-- Operative Wahrheit gehoert ins Projekt-Repo, nicht in ChatGPT-, Claude-, Codex- oder andere Tool-Anweisungen.
-- Methodische Wahrheit gehoert ins AI-Betriebssystem-Repo.
+- Strategische Wahrheit gehört in den AI Vault, nicht in Tool-Anweisungen und nicht in zufällige Issue-Kommentare.
+- Operative Wahrheit gehört ins Projekt-Repo, nicht in ChatGPT-, Claude-, Codex- oder andere Tool-Anweisungen.
+- Methodische Wahrheit gehört ins AI-Betriebssystem-Repo.
 
 ## Expected Output
 

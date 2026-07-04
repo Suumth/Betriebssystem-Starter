@@ -72,7 +72,7 @@ Der Reviewer prüft:
 - Ist jedes Akzeptanzkriterium einzeln belegt?
 - Wurde die im Ticket geforderte Validierung ausgeführt?
 - Ist die Evidence ausreichend?
-- Ist `Vault Impact` im PR Body sichtbar und nach `contracts/ticket-contract.md#vault-impact-contract` ausgefuellt?
+- Ist `Vault Impact` im PR Body sichtbar und nach `contracts/ticket-contract.md#vault-impact-contract` ausgefüllt?
 - Bei `Subagents: REQUIRED`: Sind Subagent-Closeout und Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence sichtbar?
 - Bei degraded mode: Sind `subagent_timeout`, `subagent_no_result` oder `subagent_blocked`, Recovery, Ersatzanalyse und Restrisiko reviewbar dokumentiert?
 - Bei wiederholter Fix-, Review- oder Loop-Arbeit: Dokumentiert der PR Attempt Budget, Attempts used, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache, nächste Aktion und warum ein weiterer Codex-Fix sinnvoll ist oder nicht?
@@ -219,11 +219,11 @@ Kommentarformat:
 - Kein PASS ohne Evidence.
 - Kein PASS ohne `Vault Impact` im PR Body oder klar verlinkter PR-Evidence.
 - Kein PASS, wenn `Vault update required: YES` gesetzt ist und Area, Reason, Suggested target file, Proposed Markdown update oder Source evidence fehlen.
-- Kein PASS, wenn der PR direkte AI-Vault-Aenderungen durch Agenten behauptet oder impliziert, ohne dass das Issue diese Vault-Aenderung ausdRücklich erlaubt.
+- Kein PASS, wenn der PR direkte AI-Vault-Änderungen durch Agenten behauptet oder impliziert, ohne dass das Issue diese Vault-Änderung ausdrücklich erlaubt.
 - Kein PASS, wenn `Subagents: REQUIRED` gilt und die erforderliche Subagent-Evidence im PR Body oder klar verlinkter PR-Evidence fehlt.
 - Kein PASS, wenn `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode genutzt wurde und Recovery, Ersatzanalyse, Safety-Begründung oder Restrisiko fehlen.
 - Kein PASS bei wiederholter Fix-, Review- oder Loop-Arbeit ohne Attempt-Budget-Evidence, letzten fehlgeschlagenen Check/Review-Punkt, Harness Failure Classification, vermutete Ursache und nächste Aktion.
-- Kein PASS bei Failure-Mode-Mapping, wenn ein geforderter Failure Mode fehlt, neue Classification-/Label-/State-Werte eingefuehrt werden, eine Standardreaktion fehlt oder die Mapping-Sprache eine verpflichtende Workflow-State-Machine statt diagnostischer Guidance erzeugt.
+- Kein PASS bei Failure-Mode-Mapping, wenn ein geforderter Failure Mode fehlt, neue Classification-/Label-/State-Werte eingeführt werden, eine Standardreaktion fehlt oder die Mapping-Sprache eine verpflichtende Workflow-State-Machine statt diagnostischer Guidance erzeugt.
 - Kein Review ohne Ticketbezug.
 - Keine vagen Fix-Hinweise.
 - Kein Schönreden.

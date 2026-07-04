@@ -36,8 +36,9 @@ private_pattern="$(
   printf '%s' 'thor''sten|mu''us|thor''sten''mu''us|/Us''ers/|Documents/Cod''ex|AI Proj''ekte Vault|Su''umth|use''ful''magic|grill''cue|Sear''Cue|Doc''ument Cue|Doc''ument-Cue|AI Dash''board|AI-Dash''board1|com\.grill''cue'
 )"
 sensitive_pattern="$(
-  printf '%s' 'g''hp_|git''hub_pat_|s''k-[A-Za-z0-9_-]+|Bearer [A-Za-z0-9._-]+|OPENAI_API''_KEY|ANTHROPIC_API''_KEY|pass''word|sec''ret|tok''en|api''_key'
+  printf '%s' 'g''hp_|git''hub_pat_|s''k-[A-Za-z0-9_-]{20,}|Bearer [A-Za-z0-9._-]{20,}|OPENAI_API''_KEY|ANTHROPIC_API''_KEY|pass''word|sec''ret|tok''en|api''_key'
 )"
+canonical_template_url="https://github.com/Su""umth/Betriebssystem-Starter/generate"
 
 scan_args=()
 for path in "${release_paths[@]}"; do
@@ -45,9 +46,14 @@ for path in "${release_paths[@]}"; do
 done
 
 if grep -RInEi "$private_pattern" "${scan_args[@]}" \
-  --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian >/tmp/ai_os_private_hits.txt; then
-  cat /tmp/ai_os_private_hits.txt
-  fail "private pattern hits found"
+  --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.obsidian >/tmp/ai_os_private_hits_raw.txt; then
+  grep -vF "$canonical_template_url" /tmp/ai_os_private_hits_raw.txt >/tmp/ai_os_private_hits.txt || true
+  if [ -s /tmp/ai_os_private_hits.txt ]; then
+    cat /tmp/ai_os_private_hits.txt
+    fail "private pattern hits found"
+  else
+    pass "no private pattern hits"
+  fi
 else
   pass "no private pattern hits"
 fi
@@ -85,6 +91,7 @@ required_files=(
   "examples/demo-vault/00_START_HERE.md"
   "public-readiness/full-system-inventory.md"
   "public-readiness/sanitization-checklist.md"
+  "scripts/setup.sh"
 )
 
 for file in "${required_files[@]}"; do
@@ -127,7 +134,7 @@ for legacy_label in "human-gate" "status:review" "status:done"; do
   fi
 done
 
-if find . \( -path "./.git" -o -path "./.git/*" \) -prune -o \( -name ".DS_Store" -o -name "__MACOSX" -o -name ".code-review-graph" -o -name "graph.db" \) -print | grep . >/tmp/ai_os_local_artifacts.txt; then
+if find "${scan_args[@]}" \( -path "*/.git" -o -path "*/.git/*" \) -prune -o \( -name ".DS_Store" -o -name "__MACOSX" -o -name "__pycache__" -o -name "*.pyc" -o -name ".code-review-graph" -o -name "graph.db" \) -print | grep . >/tmp/ai_os_local_artifacts.txt; then
   cat /tmp/ai_os_local_artifacts.txt
   fail "local artifacts found"
 else

@@ -34,8 +34,8 @@ Codex bleibt der sichtbare Builder-Lauf. Interne Subagents sind ein expliziter E
 | Mode | Wann verwenden | Folge |
 |---|---|---|
 | `EXECUTING` | Entscheidung, Scope, Verifier und Evidence sind klar | Agent darf bauen |
-| `GRILLING` | Entscheidung, Begriff oder Scope ist unklar | Agent klaert zuerst; keine Umsetzung |
-| `COORDINATING` | groessere Arbeit braucht Synthese, Subagent-/Teilpruefung oder mehrere Quellen | Agent koordiniert und schneidet umsetzbare Teilboxen; Subagent-Findings müssen im PR-Closeout verdichtet werden |
+| `GRILLING` | Entscheidung, Begriff oder Scope ist unklar | Agent klärt zuerst; keine Umsetzung |
+| `COORDINATING` | größere Arbeit braucht Synthese, Subagent-/Teilprüfung oder mehrere Quellen | Agent koordiniert und schneidet umsetzbare Teilboxen; Subagent-Findings müssen im PR-Closeout verdichtet werden |
 
 Codex may be instructed to use internal Subagents as an explicit Execution Mode, for example when an issue says `Subagents: REQUIRED`.
 
@@ -51,7 +51,7 @@ Degraded mode is safe only when the missing subagent was read-only, the Builder 
 4. Methoden-Repo AI-Betriebssystem 2.0
 5. AI Vault nur als strategische Referenz für Menschen, nicht für operative Agentenläufe
 
-`AGENTS.md` soll duenn bleiben. Laengere Details werden als Loading Map per `read when ...` auf Repo-Dateien wie `docs/agents/glossary.md`, `docs/agents/verification.md`, `docs/agents/protected-areas.md` oder `docs/adr/*.md` verwiesen. Diese Dateien sind optional und werden nur angelegt, wenn ein Repo sie wirklich braucht.
+`AGENTS.md` soll dünn bleiben. Längere Details werden als Loading Map per `read when ...` auf Repo-Dateien wie `docs/agents/glossary.md`, `docs/agents/verification.md`, `docs/agents/protected-areas.md` oder `docs/adr/*.md` verwiesen. Diese Dateien sind optional und werden nur angelegt, wenn ein Repo sie wirklich braucht.
 
 ## Projektanweisungs-Hierarchie
 
@@ -69,9 +69,9 @@ Die repo-basierte Projektanweisung enthält den Drei-Quellen-Router:
 2. Projekt-Repo = operative Wahrheit, Issues, PRs, `AGENTS.md`, Code, Labels, Status und Evidence.
 3. AI Vault = Strategie, Zielbild, Produktgedächtnis, Entscheidungen und Nicht-Ziele.
 
-Projektwahrheit wird nicht in Tool-Projektanweisungen dupliziert. Strategische Wahrheit wird nicht in zufaellige Issue-Kommentare verschoben.
+Projektwahrheit wird nicht in Tool-Projektanweisungen dupliziert. Strategische Wahrheit wird nicht in zufällige Issue-Kommentare verschoben.
 
-Der AI Vault bleibt die kanonische Quelle für Strategie und Produktgedächtnis. Inhalte, die Cloud-KIs benoetigen, müssen als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt werden. Die Spiegelung ist ein Online-Einstieg, keine neue strategische Wahrheit.
+Der AI Vault bleibt die kanonische Quelle für Strategie und Produktgedächtnis. Inhalte, die Cloud-KIs benötigen, müssen als GitHub-Dateien, über GitHub referenziert oder in geeigneter Form ins Projekt-Repo gespiegelt werden. Die Spiegelung ist ein Online-Einstieg, keine neue strategische Wahrheit.
 
 ## Standard-Loop
 
@@ -100,27 +100,27 @@ Codex liest das Ticket, arbeitet auf bestehendem oder neuem Branch, erstellt/akt
 Der Review of Record prüft offene PRs gegen ihre verlinkten Issues. Das Ergebnis ist genau eine Ampel:
 
 - Grün = `review:pass` + `auto-merge:ok`, wenn alle Grün-Kriterien gelten
-- Gelb = `needs-human`, Auto-Merge verboten, Operator-Entscheidung noetig
+- Gelb = `needs-human`, Auto-Merge verboten, Operator-Entscheidung nötig
 - Rot = `needs-fix` oder `blocked`, kein Merge
 
 ## Review Isolation
 
-Ein Review darf in einem separaten Chat, Thread oder App-Review-Kontext laufen, wenn das Tool es unterstuetzt. Das ist UI-/Execution-Isolation, kein neuer Wahrheitsort.
+Ein Review darf in einem separaten Chat, Thread oder App-Review-Kontext laufen, wenn das Tool es unterstützt. Das ist UI-/Execution-Isolation, kein neuer Wahrheitsort.
 
 GitHub remains the Review of Record: linked Issue, PR diff, PR body / Closeout, validation and Evidence, review comment or review submission and labels.
 
 Der Review of Record prüft vor PASS auch `Vault Impact` nach
 `contracts/ticket-contract.md#vault-impact-contract`. Vault Update Candidates
-bleiben Human Gate; Agenten verändern den AI Vault nicht direkt, ausser das
-Issue erlaubt es ausdRücklich.
+bleiben Human Gate; Agenten verändern den AI Vault nicht direkt, außer das
+Issue erlaubt es ausdrücklich.
 
-Bei Tickets mit `Subagents: REQUIRED` prüft der Review of Record zusaetzlich, ob die Subagents im PR-Closeout genannt sind, was sie gefunden haben, welche Findings die Umsetzung beeinflusst haben und ob relevante Findings umgesetzt, out of scope oder blockiert begründet wurden.
+Bei Tickets mit `Subagents: REQUIRED` prüft der Review of Record zusätzlich, ob die Subagents im PR-Closeout genannt sind, was sie gefunden haben, welche Findings die Umsetzung beeinflusst haben und ob relevante Findings umgesetzt, out of scope oder blockiert begründet wurden.
 
-Wenn die Subagent Failure Policy greift, prüft der Review of Record zusaetzlich, ob `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode mit Recovery, Ersatzanalyse, Safety-Begründung und Restrisiko im PR Body oder klar verlinkter PR-Evidence dokumentiert sind.
+Wenn die Subagent Failure Policy greift, prüft der Review of Record zusätzlich, ob `subagent_timeout`, `subagent_no_result`, `subagent_blocked` oder degraded mode mit Recovery, Ersatzanalyse, Safety-Begründung und Restrisiko im PR Body oder klar verlinkter PR-Evidence dokumentiert sind.
 
 ## Nach grünem Merge
 
-Ein Green Path endet nicht beim Merge. Nach erfolgreichem grünem Merge fuehrt Codex ohne Rueckfrage `git checkout main`, `git pull --ff-only origin main` und `git status` aus. Ist `main` sauber, nimmt Codex den nächsten Queue-Eintrag nach Standardreihenfolge auf: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
+Ein Green Path endet nicht beim Merge. Nach erfolgreichem grünem Merge führt Codex ohne Rückfrage `git checkout main`, `git pull --ff-only origin main` und `git status` aus. Ist `main` sauber, nimmt Codex den nächsten Queue-Eintrag nach Standardreihenfolge auf: zuerst `needs-fix`, dann `agent:running`, dann genau ein neues `agent:ready`.
 
 Stop statt Fortsetzung gilt bei fehlgeschlagenem Merge, fehlgeschlagenem Checkout/Pull, dirty Working Tree, fehlenden Berechtigungen, `needs-human`, `needs-fix`, `blocked`, Protected-/Release-/Waiver-Entscheidung, unklarem Scope oder fehlender Evidence.
 
@@ -128,11 +128,11 @@ Details stehen in `docs/green-path-completion.md`.
 
 ## Batch Green Path Execution
 
-Batch Green Path Execution gilt nur bei ausdRücklichem Nutzerauftrag für mehrere reife Tickets. Die Batch-Groesse ergibt sich aus diesem Auftrag, nicht aus einer festen Zahl.
+Batch Green Path Execution gilt nur bei ausdrücklichem Nutzerauftrag für mehrere reife Tickets. Die Batch-Größe ergibt sich aus diesem Auftrag, nicht aus einer festen Zahl.
 
-Nach jedem grünen PR prüft Codex den PR Review of Record, merged gemaess Green-Path-Regel, checkt `main` aus, zieht `origin/main` fast-forward, prüft den clean status und übernimmt erst dann das nächste beauftragte ready Ticket.
+Nach jedem grünen PR prüft Codex den PR Review of Record, merged gemäß Green-Path-Regel, checkt `main` aus, zieht `origin/main` fast-forward, prüft den clean status und übernimmt erst dann das nächste beauftragte ready Ticket.
 
-Codex stoppt den Batch bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder wenn kein weiteres beauftragtes Ticket uebrig ist.
+Codex stoppt den Batch bei unklarem Scope, fehlender Evidence, failed Checks, `needs-human`, `needs-fix`, `blocked`, Protected Area, Merge-/Pull-/Permission-Fehlern oder wenn kein weiteres beauftragtes Ticket übrig ist.
 
 ## Human Gates
 

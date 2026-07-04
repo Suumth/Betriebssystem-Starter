@@ -16,7 +16,7 @@ Ein neutraler, konkreter Projektbrief ohne private Details.
 
 ## Nicht-Ziele
 
-- Keine operative Statusfuehrung im Vault.
+- Keine operative Statusführung im Vault.
 - Keine geheimen Zugangsdaten.
 - Keine privaten Personen- oder Accountdaten.
 

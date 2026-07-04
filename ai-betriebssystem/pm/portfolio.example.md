@@ -4,7 +4,7 @@ Generated: YYYY-MM-DDTHH:MM:SSZ
 
 ## Übersicht
 
-| Projekt | Status | Naechstes Signal | Offene Human Gates |
+| Projekt | Status | Nächstes Signal | Offene Human Gates |
 | --- | --- | --- | --- |
 | Example Project | Grün: Review of Record sichtbar | Ticket 0 abgeschlossen | 0 |
 
@@ -20,8 +20,8 @@ Generated: YYYY-MM-DDTHH:MM:SSZ
 - Review of Record ist PASS.
 - Kein `needs-human`, `needs-fix` oder `blocked`.
 
-### Vorschlaege
+### Vorschläge
 
-- Naechstes kleines Feature-Issue vorbereiten.
+- Nächstes kleines Feature-Issue vorbereiten.
 - Vault Lessons nach dem ersten echten Produkt-PR aktualisieren.
 
