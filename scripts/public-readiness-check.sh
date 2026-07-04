@@ -81,6 +81,7 @@ required_files=(
   "RELEASE_READINESS.md"
   ".gitignore"
   "config/README.md"
+  "config/github-labels.json"
   "config/placeholders.json"
   "config/starter.config.example"
   "ai-betriebssystem/README.md"
@@ -130,7 +131,7 @@ required_labels=(
 )
 
 for label in "${required_labels[@]}"; do
-  if grep -R -- "$label" ai-betriebssystem/templates/labels.yml examples/demo-project/.github/labels.yml ai-betriebssystem/contracts/labels.md >/dev/null; then
+  if grep -R -- "$label" config/github-labels.json ai-betriebssystem/templates/labels.yml examples/demo-project/.github/labels.yml ai-betriebssystem/contracts/labels.md >/dev/null; then
     pass "required label present: $label"
   else
     fail "missing required label: $label"

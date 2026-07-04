@@ -1,37 +1,36 @@
 - name: agent:ready
-  color: "0e8a16"
-  description: Ready for an agent to pick up.
-- name: agent:running
-  color: "1d76db"
-  description: Agent work is currently in progress.
-- name: needs-fix
-  color: "d93f0b"
-  description: Review or validation found required fixes.
-- name: needs-human
-  color: "fbca04"
-  description: Human decision is required; this is not approval.
-- name: blocked
-  color: "b60205"
-  description: Work cannot proceed without an external decision or state change.
-- name: review:pass
-  color: "0e8a16"
-  description: Review of Record passed.
-- name: auto-merge:ok
-  color: "5319e7"
-  description: Auto-merge allowed only after Review of Record PASS.
+  color: ededed
+  description: Ticket is mature enough for an agent to start without another prompt.
 - name: overnight:approved
-  color: "0052cc"
-  description: Approved for bounded overnight execution.
+  color: 5319e7
+  description: Mature agent:ready ticket may be selected by an operator-armed overnight run.
+- name: agent:running
+  color: ededed
+  description: Agent work has started or must continue on an existing branch or PR.
+- name: needs-fix
+  color: d73a4a
+  description: Review of Record requires concrete follow-up before merge.
+- name: needs-human
+  color: fbca04
+  description: Operator decision required; auto-merge is forbidden.
+- name: blocked
+  color: b60205
+  description: Work cannot proceed without an external decision, access or verifier.
+- name: review:pass
+  color: 0e8a16
+  description: Review of Record passed the PR against the linked issue.
+- name: auto-merge:ok
+  color: 0e8a16
+  description: Green merge signal when validation, evidence and review are complete.
 - name: risk:low
-  color: "c2e0c6"
-  description: Low-risk task.
+  color: c2e0c6
+  description: Low-risk docs, template or narrow proof work.
 - name: risk:standard
-  color: "bfdadc"
-  description: Standard-risk task.
+  color: d4c5f9
+  description: Standard implementation risk.
 - name: risk:protected
-  color: "fef2c0"
-  description: Protected area; Human Gate required.
+  color: fbca04
+  description: Protected area requiring stronger evidence or review.
 - name: risk:release
-  color: "d4c5f9"
-  description: Release-impacting work; Human Gate required.
-
+  color: b60205
+  description: Release, legal, safety, signing, billing or other high-risk gate.

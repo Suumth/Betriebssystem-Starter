@@ -6,6 +6,7 @@ Diese Konfiguration beschreibt die Werte, die ein frisch aus dem Template erzeug
 
 - `starter.config.example` ist die neutrale Beispiel-Konfiguration.
 - `placeholders.json` ist der maschinenlesbare Contract für Setup und Readiness Checks.
+- `github-labels.json` ist die maschinenlesbare GitHub-Label-Liste für Setup.
 - `setup.local.env` ist die lokale Arbeitskopie und wird nicht committed.
 
 ## Personalisierbare Werte
