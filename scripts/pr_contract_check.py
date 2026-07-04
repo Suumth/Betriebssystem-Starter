@@ -1,8 +1,23 @@
 #!/usr/bin/env python3
 import json, os, re, sys
-REQ=['Validation Evidence','Review of Record','Human Gate','Operator Summary','Review Recommendation']
-EMPTY={'-','- status: pending','- reviewer:','- link:','- required: yes/no','- reason:','required: yes/no'}
+REQ=['Validation Evidence','Review of Record','Human Gate','Operator Summary','Review Recommendation','Vault Impact']
+EMPTY={
+    '-',
+    '- status: pending',
+    '- reviewer:',
+    '- link:',
+    '- required: yes/no',
+    '- reason:',
+    'required: yes/no',
+    '- vault update required: yes | no',
+    'vault update required: yes | no',
+    '- area:',
+    '- suggested target file:',
+    '- proposed markdown update:',
+    '- source evidence:',
+}
 BAD_AUTO=['needs-human','needs-fix','blocked','risk:protected','risk:release']
+VAULT_FIELDS=['Area','Reason','Suggested target file','Proposed Markdown update','Source evidence']
 
 def sections(body):
     body=body or ''
@@ -23,6 +38,23 @@ def filled(text):
 def human_gate(text, value):
     return re.search(r'Required:\s*'+value+r'\b', sections(text).get('Human Gate',''), re.I) is not None
 
+def field_value(text, field):
+    match=re.search(r'^[ \t]*-?[ \t]*'+re.escape(field)+r':[ \t]*([^\n]*)$', text, re.I|re.M)
+    if not match: return ''
+    return match.group(1).strip()
+
+def vault_impact(text):
+    out=[]
+    match=re.search(r'^\s*-?\s*Vault update required:\s*(YES|NO)\s*$', text, re.I|re.M)
+    if not match:
+        out.append('Vault Impact must say Vault update required: YES or NO')
+        return out
+    if match.group(1).upper()=='YES':
+        for field in VAULT_FIELDS:
+            if not field_value(text, field):
+                out.append('Vault Impact requires '+field+' when update is YES')
+    return out
+
 def check(body, labels):
     labels=set(labels)
     out=[]
@@ -32,6 +64,8 @@ def check(body, labels):
         elif not filled(sec[name]): out.append('empty section: ## '+name)
     if 'Human Gate' in sec and not (human_gate(body,'yes') or human_gate(body,'no')):
         out.append('Human Gate must say Required: yes or Required: no')
+    if 'Vault Impact' in sec:
+        out.extend(vault_impact(sec['Vault Impact']))
     if 'auto-merge:ok' in labels and 'review:pass' not in labels:
         out.append('auto-merge:ok requires review:pass')
     if 'auto-merge:ok' in labels:

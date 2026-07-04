@@ -1,4 +1,8 @@
+import os
+import sys
 import unittest
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 from pr_contract_check import check
 
@@ -24,6 +28,15 @@ GOOD_BODY = """# Summary
 ## Review Recommendation
 
 - none
+
+## Vault Impact
+
+- Vault update required: NO
+- Area:
+- Reason:
+- Suggested target file:
+- Proposed Markdown update:
+- Source evidence:
 """
 
 RAW_BODY = """# Summary
@@ -46,7 +59,31 @@ RAW_BODY = """# Summary
 ## Operator Summary
 
 ## Review Recommendation
+
+## Vault Impact
+
+- Vault update required: YES | NO
+- Area:
+- Reason:
+- Suggested target file:
+- Proposed Markdown update:
+- Source evidence:
 """
+
+VAULT_IMPACT_YES_BODY = GOOD_BODY.replace(
+    """- Vault update required: NO
+- Area:
+- Reason:
+- Suggested target file:
+- Proposed Markdown update:
+- Source evidence:""",
+    """- Vault update required: YES
+- Area: Decision
+- Reason: captured a durable decision
+- Suggested target file: ai-vault/02_Projects/Demo/Entscheidungen.md
+- Proposed Markdown update: Add decision note.
+- Source evidence: test evidence""",
+)
 
 
 class PrContractCheckTests(unittest.TestCase):
@@ -89,6 +126,32 @@ class PrContractCheckTests(unittest.TestCase):
 
     def test_unknown_labels_are_ignored(self):
         self.assertEqual(check(GOOD_BODY, ["review:pass", "custom:label"]), [])
+
+    def test_vault_impact_yes_with_required_fields_passes(self):
+        self.assertEqual(check(VAULT_IMPACT_YES_BODY, ["review:pass"]), [])
+
+    def test_vault_impact_yes_requires_reason(self):
+        body = VAULT_IMPACT_YES_BODY.replace(
+            "- Reason: captured a durable decision",
+            "- Reason:",
+        )
+        failures = check(body, ["review:pass"])
+        self.assertIn("Vault Impact requires Reason when update is YES", failures)
+
+    def test_vault_impact_no_allows_empty_detail_fields(self):
+        self.assertEqual(check(GOOD_BODY, ["review:pass"]), [])
+
+    def test_vault_impact_raw_template_fails(self):
+        failures = check(RAW_BODY, [])
+        self.assertIn(
+            "Vault Impact must say Vault update required: YES or NO",
+            failures,
+        )
+
+    def test_missing_vault_impact_section_fails(self):
+        body = GOOD_BODY.split("## Vault Impact")[0]
+        failures = check(body, ["review:pass"])
+        self.assertIn("missing section: ## Vault Impact", failures)
 
 
 if __name__ == "__main__":
