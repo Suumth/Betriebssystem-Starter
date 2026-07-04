@@ -423,9 +423,33 @@ printf '%s\n' '- Local config written to setup.local.env.'
 printf '%s\n' '- Project starter files were created only when missing.'
 printf '%s\n' '- Existing project and Vault files were kept.'
 printf '%s\n' '- Public readiness check passed before optional GitHub steps.'
+
+first_loop_doc="FIRST_LOOP.md"
+if [ ! -f "$first_loop_doc" ]; then
+  first_loop_doc="README.md"
+fi
+
 printf '\nNext steps:\n'
 printf '1. Review setup.local.env.\n'
 printf '2. Review git diff for personalized files.\n'
-printf '3. Open START_HERE.md and create Ticket 0.\n'
-printf '4. Commit the project bootstrap when the diff matches your repo.\n'
-printf '5. Keep GitHub as operative truth; use the AI Vault for strategy and project memory.\n'
+printf '3. Open %s.\n' "$first_loop_doc"
+printf '4. Open Ticket 0.\n'
+printf '5. Copy this Builder prompt into your AI tool:\n'
+printf '\n'
+printf '%s\n' '--- COPY BUILDER PROMPT ---'
+printf '%s\n' 'You are the Builder for this repository.'
+printf '%s\n' ''
+printf '%s\n' 'Read:'
+printf '%s\n' '- PROJECT.md'
+printf '%s\n' '- AGENTS.md'
+printf '%s\n' '- Ticket 0'
+printf '%s\n' ''
+printf '%s\n' 'Goal:'
+printf '%s\n' 'Complete only the smallest safe onboarding change.'
+printf '%s\n' 'Add validation evidence to the PR body.'
+printf '%s\n' 'Open a PR or explain why no PR is needed.'
+printf '%s\n' 'Stop before merge. Human Gate remains with the operator.'
+printf '%s\n' '--- END BUILDER PROMPT ---'
+printf '\n'
+printf '6. Review the PR and stop at Human Gate before merge.\n'
+printf '7. Use the AI Vault after the first PR for strategy and project memory.\n'

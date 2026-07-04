@@ -8,6 +8,7 @@ This project follows the spirit of Keep a Changelog and uses semantic versioning
 
 ### Added
 
+- First Loop onboarding path with `FIRST_LOOP.md`, simpler Ticket 0, setup Builder prompt and English-first START_HERE follow-up.
 - Stagnation Escalation rule for repeated fix, review and validation loops.
 - Skill Registry contract for PR-gated Markdown-only method skills.
 - Loop Readiness Checklist with report-only, assisted and PR-producing readiness levels.

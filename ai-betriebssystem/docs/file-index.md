@@ -3,6 +3,7 @@
 ## Root
 
 - `README.md` — Einstieg, Kernsatz, KI-einheitlicher Einstieg, Ebenen, MVP-Umfang, Builder-Orchestrator-Abgrenzung und Startreihenfolge.
+- `FIRST_LOOP.md` — englischer First-Loop-Einstieg mit einem sicheren Ticket-0-Pfad, Builder-Prompt, PR-Review und Human Gate vor tieferer Methodenlektüre.
 
 ## Operating Model
 

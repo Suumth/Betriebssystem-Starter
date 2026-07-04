@@ -28,5 +28,6 @@
 
 ## Ticket 0
 
-Ticket 0 installiert keine Produktfunktion. Es beweist, dass das Projekt AI-bereit ist: Labels, Templates, PROJECT.md, AGENTS.md, Projektbrief, Validierung und Review-Pfad funktionieren.
+Ticket 0 installiert keine Produktfunktion. Es beweist zuerst nur den kleinsten sicheren Loop: eine harmlose Doku-Änderung, Validation Evidence, PR und Human Gate.
 
+Nutze `FIRST_LOOP.md` fuer den ersten Durchlauf. Danach kannst du die tieferen Contracts, Labels und Vault-Routinen ausbauen.

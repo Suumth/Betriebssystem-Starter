@@ -1,29 +1,50 @@
-# Ticket 0 Example
+# Ticket 0: Prove the First Loop
 
 ## Goal
 
-Install and prove the PROJECT.md-first bootstrap layer for Demo Project without adding product functionality.
+Make one harmless documentation change that proves the AI workflow works.
 
-## Scope
+## Allowed
 
-- Add `PROJECT.md`.
-- Add `AGENTS.md`.
-- Add labels.
-- Add task issue template.
-- Add PR template.
-- Add project brief.
-- Run public readiness checks.
+- Update `docs/project-brief.md`.
+- Add one sentence describing this project.
+
+## Do not touch
+
+- scripts
+- workflows
+- labels
+- release files
+- credentials
+- branch protection
+- protected paths
+- product code
+
+## Not This Ticket
+
+- Not a product feature.
+- Not a full method migration.
+- Not an autonomous runner test.
+- Not an auto-merge request.
 
 ## Validation Evidence
 
-- `bash scripts/public-readiness-check.sh`
-- Confirm required labels exist.
-- Confirm no private patterns or sensitive credentials exist.
+Run:
 
-## Done
+```bash
+bash scripts/post-setup-check.sh
+```
 
-- PR includes evidence.
-- Review of Record is PASS.
-- `auto-merge:ok` is applied only after PASS.
-- Human Gate is clear.
-- Vault Impact is recorded.
+If available, also run:
+
+```bash
+bash scripts/public-readiness-check.sh
+```
+
+Paste the command output into the PR body.
+
+## Stop
+
+Open a PR.
+Do not merge.
+Human Gate decides.
