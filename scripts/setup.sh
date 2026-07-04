@@ -408,8 +408,15 @@ else
   printf 'Skipping Ticket 0 creation.\n'
 fi
 
+printf '\nSetup complete.\n'
+printf '\nWhat happened:\n'
+printf '%s\n' '- Local config written to setup.local.env.'
+printf '%s\n' '- Project starter files were created only when missing.'
+printf '%s\n' '- Existing project and Vault files were kept.'
+printf '%s\n' '- Public readiness check passed before optional GitHub steps.'
 printf '\nNext steps:\n'
 printf '1. Review setup.local.env.\n'
 printf '2. Review git diff for personalized files.\n'
-printf '3. Commit the project bootstrap when the diff matches your repo.\n'
-printf '4. Keep GitHub as operative truth; use the AI Vault for strategy and project memory.\n'
+printf '3. Open START_HERE.md and create Ticket 0.\n'
+printf '4. Commit the project bootstrap when the diff matches your repo.\n'
+printf '5. Keep GitHub as operative truth; use the AI Vault for strategy and project memory.\n'

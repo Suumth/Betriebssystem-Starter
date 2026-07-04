@@ -77,6 +77,31 @@ Der Public Readiness Check prüft private Treffer, credential-ähnliche Treffer,
 
 Ready for new private GitHub repo: yes.
 
+## Public Packaging
+
+Status: ready for first reviewed starter release.
+
+Repository settings checked on 2026-07-04:
+
+- Template repository: enabled.
+- Description: `A GitHub-centered starter kit for AI-assisted project work with tickets, PR evidence, human gates, agent prompts, and an AI Vault.`
+- Topics: `ai-agents`, `ai-operating-system`, `github-workflow`, `obsidian`, `project-management`, `agentic-workflows`, `codex`, `claude-code`, `ai-vault`
+
+Recommended first release:
+
+- Tag: `v0.1.0`
+- Release title: `AI-Betriebssystem Starter v0.1.0`
+- Release type: GitHub draft release first, publish only after Review of Record and Human Gate.
+- Release notes should mention: template usage, `bash scripts/setup.sh`, Ticket 0, GitHub as operative truth, AI Vault as project memory, and public readiness validation.
+
+Operator checklist before publishing:
+
+- [ ] Review of Record for the release PR is PASS.
+- [ ] `bash scripts/public-readiness-check.sh` passes on the release commit.
+- [ ] `git diff --check` has no output.
+- [ ] No private paths, product names, account data or sensitive values are present.
+- [ ] GitHub template flag, description and topics still match the list above.
+- [ ] Draft release notes were reviewed by a human.
 
 ## Clean Export Note
 

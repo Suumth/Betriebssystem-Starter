@@ -1,23 +1,35 @@
 # AI-Betriebssystem Starter
 
-Ein neutraler Starter für Teams, die AI-Agentenarbeit über GitHub, klare Tickets, Evidence und verbindliche Human Gates steuern wollen.
+Ein GitHub-zentrierter Starter für KI-gestützte Projektarbeit.
 
-## Schnellstart
+Für Teams und Solo-Builder, die mit KI-Agenten arbeiten wollen, ohne die Kontrolle über Tickets, Pull Requests, Evidence und menschliche Entscheidungen zu verlieren.
+
+Du nutzt dieses Repo als Template, führst einmal `scripts/setup.sh` aus und startest danach Ticket 0 in deinem eigenen Projekt.
+
+## 2-Minuten-Start
 
 1. Klicke [Use this template](https://github.com/Suumth/Betriebssystem-Starter/generate).
-2. Erzeuge daraus dein neues GitHub-Repo.
-3. Klone das neue Repo lokal und wechsle in den Repo-Ordner.
-4. Führe genau diesen Setup-Befehl aus:
+2. Erzeuge daraus ein neues Repo für dein Projekt.
+3. Klone dein neues Repo lokal.
+4. Führe im Repo aus:
 
 ```bash
 bash scripts/setup.sh
 ```
 
-Danach führt dich `START_HERE.md` durch das erste Projekt und Ticket 0.
+Danach hast du:
+
+- `PROJECT.md` als Router für KI-Tools
+- `AGENTS.md` mit Arbeitsregeln
+- GitHub-Labels und Templates
+- einen AI-Vault-Startbereich
+- ein erstes Ticket-0-Muster
+
+Weiter geht es mit [`START_HERE.md`](START_HERE.md).
 
 ## Was ist das?
 
-Der Starter ist eine öffentliche Erstinstallation für ein AI-Betriebssystem mit AI Vault. Er bringt Methode, Contracts, Templates, Prompts, Demo-Projekt, Demo-Vault und Readiness-Checks mit.
+Der Starter ist eine öffentliche Erstinstallation für ein AI-Betriebssystem mit AI Vault. Er verbindet GitHub, klare Agentenregeln, Review-Evidence und strategisches Projektgedächtnis.
 
 Die operative Logik bleibt einfach:
 
@@ -30,11 +42,29 @@ Die operative Logik bleibt einfach:
 - Evidence entscheidet.
 - Der Mensch bleibt das Human Gate.
 
-## Für wen ist es?
+## Für wen?
 
 - Für Produkt- und Engineering-Teams, die Agentenarbeit reproduzierbar machen wollen.
 - Für Einzelpersonen, die Projekte mit klaren Tickets, Reviews und Evidence führen wollen.
 - Für Organisationen, die AI-Tooling nutzen wollen, ohne operative Wahrheit aus GitHub herauszuziehen.
+
+## Was nach dem Setup passiert
+
+1. Du prüfst `setup.local.env`.
+2. Du liest `START_HERE.md`.
+3. Du öffnest den AI Vault in Obsidian oder einem Markdown-Editor.
+4. Du startest Ticket 0.
+5. Ein Agent arbeitet auf Basis von `PROJECT.md`, `AGENTS.md` und dem Ticket.
+6. Ein Pull Request liefert Evidence.
+7. Der Mensch entscheidet über Review, Merge und nächste Schritte.
+
+## Was dieses Repo nicht ist
+
+- kein autonomer Runner
+- kein Ersatz für GitHub Issues oder Pull Requests
+- kein Ersatz für menschliche Produktentscheidungen
+- kein Speicher für private Strategien oder echte Kundendaten
+- kein fertiges Dashboard oder SaaS-Produkt
 
 ## English Summary
 
