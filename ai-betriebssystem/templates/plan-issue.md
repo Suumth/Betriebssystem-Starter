@@ -73,6 +73,11 @@ Jedes Ticket erfuellt den Ticket Contract vollstaendig. Je Ticket:
 - Risk lane: low | standard | protected | release
 - Milestone: <Milestone oder begruendete Ausnahme>
 - Warum jetzt / was schaltet es frei:
+- Worker-Order-Vorgabe:
+  - Reasoning-Stufe: low | medium | high | highest available
+  - Begruendung der Stufe: <1 Satz nach
+    contracts/epic-lead-contract.md#reasoning-matrix>
+  - Hinweis: Plan-/Lead-Uebergabe, keine Worker-Freigabe.
 - Vollstaendiger Ticket-Body: <eingebettet oder als klar markierter
   Entwurfsblock nach `templates/github-issue-task.md` bzw.
   `templates/github-issue-task-light.md`>
