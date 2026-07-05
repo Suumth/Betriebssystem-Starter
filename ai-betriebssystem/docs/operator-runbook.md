@@ -64,7 +64,10 @@ gh pr merge <PR> --squash --delete-branch
 
 1. PM Signal Lauf mit `templates/pm-signal-prompt.md` für den Leiterblick.
 2. Stale Labels prüfen: `agent:running` ohne aktiven Branch/PR zurücksetzen.
-3. Wenn ein Lauf schlecht war: Harness Failure Classification prüfen und bei wiederkehrendem Muster eine Lesson nach `templates/lesson.md` schreiben. Jede Lesson endet mit einer expliziten Regelanpassungs-Entscheidung.
+3. Nach einer Planner-/Epic-Lead-Wave kurz die Signale lesen: PR- und Review-Zyklen, Blocker, Harness Failure Classifications wie `unclear_spec`, `missing_context` oder `model_limitation`, und vorhandene Lessons.
+4. Wenn ein Lauf schlecht war oder sich ein Muster zeigt: eine Lesson nach `templates/lesson.md` schreiben. Lessons können Regeln präzisieren; jede Regeländerung bleibt aber ein Human Gate und braucht eine explizite Regelanpassungs-Entscheidung.
+
+Das ist Lernhygiene, keine neue Metrik: kein Score, keine Velocity, kein Forecast und keine automatische Self-Improvement-Mechanik.
 
 ## Was der Operator nie tut
 
