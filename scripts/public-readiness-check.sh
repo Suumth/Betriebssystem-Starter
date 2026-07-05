@@ -162,8 +162,12 @@ for label in "${required_labels[@]}"; do
   fi
 done
 
+legacy_label_pattern_prefix='(^|[^[:alnum:]_-])'
+legacy_label_pattern_suffix='([^[:alnum:]_-]|$)'
+
 for legacy_label in "human-gate" "status:review" "status:done"; do
-  if grep -RIn -- "$legacy_label" ai-betriebssystem examples/demo-project >/tmp/ai_os_legacy_label_hits.txt; then
+  legacy_label_pattern="${legacy_label_pattern_prefix}${legacy_label}${legacy_label_pattern_suffix}"
+  if grep -RInE -- "$legacy_label_pattern" ai-betriebssystem examples/demo-project >/tmp/ai_os_legacy_label_hits.txt; then
     cat /tmp/ai_os_legacy_label_hits.txt
     fail "non-operative legacy label found: $legacy_label"
   else
