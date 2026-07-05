@@ -37,6 +37,49 @@ Gate verschiebt. Repository Planner und Epic Lead sind solche sichtbaren,
 contract-gebundenen Koordinationsrollen. Sie fuehren keine versteckte
 Subagent-PM-Rolle und kein neues Subagenten-Organigramm ein.
 
+## Planungs- und Koordinationsmodell
+
+Das volle Modell fuer groessere Ziele ist:
+
+```text
+Idee -> Repository Planner -> Plan Issue -> Human Gate -> Epic Lead
+-> Worker Orders -> Worker-PRs -> Review of Record -> Human Gate
+-> Merge -> Learning
+```
+
+Der Repository Planner macht aus einer groben Idee oder einem Goal Issue ein
+Plan Issue. Er liest Repo-Zustand, offene Arbeit, Regeln, Contracts, Docs und
+relevante Dateien. Daraus schneidet er eine erste Wave in pruefbare Tickets.
+Er baut nicht, reviewt nicht, merged nicht und setzt nicht selbst
+`agent:ready`. Der Mensch gibt den Plan frei.
+
+Der Epic Lead koordiniert nur eine freigegebene Wave. Er prueft, ob Tickets
+parallel laufen duerfen, schreibt Worker Orders, startet oder koordiniert
+Worker, liest PR-/CI-/Review-Status und schreibt Heartbeats. Er implementiert
+nicht, reviewt nicht als Review of Record und merged nicht. Bei Blockern
+stoppt oder eskaliert er sichtbar in GitHub.
+
+Eine Worker Order ist der klare Auftrag an einen Worker. Sie nennt Ziel,
+Scope, Kontext, erwartetes Ergebnis, Reasoning-Stufe und Stop Conditions. Sie
+wiederholt das Ticket, veraendert es aber nicht. Bei Abweichung gilt das
+Ticket; die Abweichung ist ein Lead-Fehler und wird im naechsten Heartbeat
+dokumentiert.
+
+## Model Resource Routing
+
+Das System setzt nicht automatisch die hoechste Modell- oder Reasoning-Stufe
+auf jede Aufgabe. Die Stufe folgt Aufgabe, Risiko und Fehlerursache:
+
+- einfache Dokumentation, QA und Memory-Arbeit: niedrig;
+- normale Umsetzung: mittel;
+- Architektur, Protected Areas, Release oder riskante Entscheidungen: hoeher;
+- `model_limitation`: kann eine begruendete Hochstufung ausloesen;
+- `unclear_spec` oder `missing_context`: keine Hochstufung, sondern Rueckgabe
+  an Planner oder Operator.
+
+Mehr Intelligenz ersetzt keine klare Aufgabe. Der Grundsatz ist: erst sauber
+planen, dann koordiniert bauen, passend pruefen und daraus lernen.
+
 ## Agent Modes
 
 | Mode | Wann verwenden | Folge |

@@ -50,6 +50,47 @@ For larger goals, the visible role chain starts with a [`Goal Issue`](ai-betrieb
 
 These README links are navigation. The contracts remain the source of truth for role boundaries, gates and allowed actions.
 
+### Planning and Coordination Flow
+
+For larger work, the starter separates planning, coordination, building,
+review and learning:
+
+```text
+Idea -> Repository Planner -> Plan Issue -> Human Gate -> Epic Lead
+-> Worker Orders -> Worker PRs -> Review of Record -> Human Gate
+-> Merge -> Learning
+```
+
+The Repository Planner turns a rough idea or Goal Issue into a Plan Issue. It
+reads the repo, open work, rules and relevant files, then cuts the first wave
+into reviewable tickets. It does not build, review, merge or set
+`agent:ready`; the human approves the plan.
+
+The Epic Lead runs an approved wave. It checks which tickets can run in
+parallel, writes Worker Orders, starts or coordinates Workers, reads PR, CI and
+review status, and posts Heartbeats. It does not implement, act as Review of
+Record or merge. If a blocker appears, it stops or escalates visibly in
+GitHub.
+
+A Worker Order is the clear assignment for one Worker: goal, scope, context,
+expected result, reasoning level and stop conditions. It repeats the ticket but
+does not change it. If the order and ticket disagree, the ticket wins and the
+Lead must report the mismatch.
+
+Model effort is routed to the job. Simple documentation and QA work can run at
+a low reasoning level; normal implementation usually runs in the middle; risky
+architecture, protected areas, release work or hard decisions need more
+thinking. A `model_limitation` finding can justify stepping up. `unclear_spec`
+or `missing_context` does not: more intelligence cannot repair an unclear
+task, so the work goes back to the Planner or Operator.
+
+After a wave, the team records what was learned. Lessons can clarify the
+method, but rule changes remain human-gated.
+
+In short: this is not "maximum AI for everything." It is "plan cleanly,
+coordinate visibly, build in scoped tickets, review with evidence and learn
+deliberately."
+
 1. A human creates or chooses a GitHub Issue.
 2. The human starts an AI tool and gives it a role: Builder, Reviewer, Researcher, Tester or PM Signal.
 3. The role works from `PROJECT.md`, `AGENTS.md`, the issue, contracts and prompts.

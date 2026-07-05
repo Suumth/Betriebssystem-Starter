@@ -9,6 +9,9 @@ Andere Dokumente dürfen Begriffe für Prompt-Tauglichkeit wiederholen, aber nic
 | Begriff | Definition |
 |---|---|
 | Ticket | Ein GitHub Issue, das seinen Erfolg selbst prüfbar macht: Ziel, Boundary, Verification, Evidence, Closeout, Stop-Bedingung. |
+| Goal Issue | Ein menschlich formuliertes Ziel fuer den Repository Planner. Es ist noch kein Arbeitsticket und ersetzt kein Human Gate. |
+| Plan Issue | Das Ergebnis eines Repository-Planner-Laufs: Architecture Read, offene Arbeit, Risiken, Dependency Table und eine freigebbare erste Ticket-Wave. |
+| Worker Order | Auftrag des Epic Leads an genau einen Worker. Sie wiederholt Ziel, Scope, Kontext, erwartetes Ergebnis, Reasoning-Stufe und Stop Conditions aus dem freigegebenen Ticket, ersetzt oder veraendert das Ticket aber nicht. |
 | Agent Contract | Der Pflichtblock eines `agent:ready`-Tickets: Mode, Autonomy, Risk lane, Goal, Context, Boundary, Verification, Closeout, Stop condition. |
 | Boundary | Die explizite Grenze eines Laufs: erlaubte Änderungen, Do-not-touch, Freigabepflicht für externe Aktionen. Außerhalb der Boundary wird nicht improvisiert, sondern gestoppt. |
 | Verification | Der konkrete Befehl, Ablauf oder Proof, der Erfolg maschinell oder manuell prüfbar macht. |
@@ -57,6 +60,7 @@ Andere Dokumente dürfen Begriffe für Prompt-Tauglichkeit wiederholen, aber nic
 | Begriff | Definition |
 |---|---|
 | Harness Failure Classification | Warum ein Lauf scheiterte, als Harness-Signal: `none`, `missing_context`, `stale_context`, `missing_tool`, `missing_verifier`, `weak_guardrail`, `unclear_spec`, `model_limitation`. |
+| Model Resource Routing | Passende Wahl von Modell-/Reasoning-Stufe nach Aufgabe, Risiko und Fehlerursache. Einfache Doku-/QA-Arbeit kann niedrig laufen, normale Umsetzung mittel, Architektur/Protected/Release hoeher. `model_limitation` kann Hochstufung begruenden; `unclear_spec` und `missing_context` gehen zurueck an Planner oder Operator. |
 | PM Signal | Verdichteter Projektstand aus GitHub-Artefakten für den Leiterblick. Darf verdichten, aber keine Projektwahrheit verschieben. |
 | Loop Readiness | Optionale Preflight-Rubrik für wiederholte oder koordinierende Läufe: Purpose, Trigger, Action, Maker/Checker, Proof, Memory, Stop, Cost/Attempts. Maximal `L2 Assisted` im MVP. |
 | Root Agent Index | `AGENTS.md` als dünne Startdatei im Projekt-Repo, die per Loading Map auf Details verweist. |
