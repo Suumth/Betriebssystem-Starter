@@ -55,10 +55,18 @@ These README links are navigation. The contracts remain the source of truth for 
 For larger work, the starter separates planning, coordination, building,
 review and learning:
 
-```text
-Idea -> Repository Planner -> Plan Issue -> Human Gate -> Epic Lead
--> Worker Orders -> Worker PRs -> Review of Record -> Human Gate
--> Merge -> Learning
+```mermaid
+flowchart LR
+    A[Idea] --> B[Repository Planner]
+    B --> C[Plan Issue]
+    C --> D[Human Gate]
+    D --> E[Epic Lead]
+    E --> F[Worker Orders]
+    F --> G[Worker PRs]
+    G --> H[Review of Record]
+    H --> I[Human Gate]
+    I --> J[Merge]
+    J --> K[Learning]
 ```
 
 The Repository Planner turns a rough idea or Goal Issue into a Plan Issue. It
