@@ -18,6 +18,21 @@ Use this file after the first loop to understand how the starter connects three 
 
 The AI Vault is useful after the first loop. It is not required before the first PR.
 
+## Which Prompt When
+
+| Role | When to use | Prompt / contract |
+|---|---|---|
+| Repository Planner | Use when a human goal is too broad for one ticket and needs a GitHub-reconstructable Plan Issue with a releasable first wave. | `ai-betriebssystem/prompts/repository-planner.md`; `ai-betriebssystem/contracts/planner-contract.md` |
+| Epic Lead | Use after a Plan Issue and wave have been approved, when multiple ready tickets need Worker Orders, coordination and status routing. | `ai-betriebssystem/prompts/epic-lead-codex.md`; `ai-betriebssystem/contracts/epic-lead-contract.md` |
+| Builder | Use for one clear `agent:ready` ticket with explicit scope, verification and evidence expectations. The Builder changes files, runs checks and prepares the PR closeout. | `ai-betriebssystem/prompts/builder-codex.md`; `ai-betriebssystem/contracts/ticket-contract.md` |
+| Reviewer | Use after the Builder PR exists, to run the Review of Record against the linked issue, PR diff, validation evidence and closeout. | `ai-betriebssystem/prompts/reviewer-claude.md`; `ai-betriebssystem/contracts/review-contract.md` |
+
+Keep the three sources separate while choosing a prompt: the project repo holds
+operational truth in GitHub issues, PRs, code, labels, reviews and evidence;
+the AI operating system supplies method, contracts, templates, prompts and
+readiness rules; the AI Vault keeps strategy, decisions, risks, lessons and
+research for humans.
+
 ## Reference
 
 - `PROJECT.md` routes each project.
