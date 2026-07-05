@@ -43,6 +43,12 @@ Regeln:
 - Jedes Wave-Ticket enthaelt die Traceability-Zeilen
   "Planned-by: Repository Planner (Plan Issue #N)" und "Wave: n".
 - Jedes Wave-Ticket begruendet "Warum jetzt / was schaltet es frei".
+- Jedes Wave-Ticket enthaelt eine Worker-Order-Vorgabe mit
+  Reasoning-Stufe und einem Begruendungssatz nach
+  `contracts/epic-lead-contract.md#reasoning-matrix`.
+- `model_limitation` kann eine Hochstufung begruenden.
+- `unclear_spec` und `missing_context` begruenden keine Hochstufung,
+  sondern Rueckgabe an Planner/Operator.
 - Foundation-Arbeit zuerst sequenzieren. Integrationsarbeit bekommt ein
   eigenes Ticket mit eigener Boundary.
 - Produktwirksame Tickets brauchen einen Milestone oder eine begruendete
