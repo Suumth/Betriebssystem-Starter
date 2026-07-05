@@ -94,6 +94,7 @@
 
 - `lessons/bootstrap-loop.example.md` — neutrale Erkenntnisse aus einem ersten erfolgreichen Bootstrap-Loop.
 - `lessons/review-isolation.example.md` — neutrales Beispiel für Review-Isolation, Evidence-Nacharbeit und Review of Record.
+- `lessons/visible-coordination-roles.md` — Regelpräzisierung: sichtbare, GitHub-rekonstruierbare Koordinationsrollen sind erlaubt, interne Subagent-PM-Rollen und versteckte Orchestrierung bleiben verboten.
 
 ## Legacy
 
