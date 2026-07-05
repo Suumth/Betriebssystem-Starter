@@ -37,6 +37,32 @@ Low Risk Tickets lassen Execution-Mode-Details, Codex Subagent Instruction, Suba
 
 Kippt während der Arbeit ein Light-Kriterium (Risiko steigt, Scope wächst, Fix-Schleife beginnt, zweite Oberfläche nötig), stoppt der Builder und das Ticket wird auf Full nachgeschärft. Ein Light Ticket ist keine Abkürzung an Evidence, Vault Impact oder Review of Record vorbei.
 
+## Optionale Traceability-Felder
+
+Planner- oder Epic-Lead-Wellen dürfen Ticket-Bodies mit zwei optionalen
+Traceability-Feldern ergänzen:
+
+```markdown
+Planned-by: <Plan Issue, Goal Issue oder Epic>
+Wave: <freigegebene Wave oder Plan-Abschnitt>
+```
+
+`Planned-by:` verweist auf das Plan Issue, Goal Issue oder Epic, aus dem das
+Ticket geschnitten wurde. `Wave:` benennt die freigegebene Wave oder den
+Plan-Abschnitt, in dem das Ticket ausgeführt wird.
+
+Diese Felder dienen nur der Rückverfolgbarkeit. Sie sind keine zweite Wahrheit
+neben GitHub-Issue, Branch und PR, erzeugen keine neuen Labels und starten,
+releasen oder genehmigen keine Arbeit automatisch. Sie ersetzen insbesondere
+kein `agent:ready`, keine Operator-Freigabe, keinen Review of Record und keine
+Merge-Freigabe.
+
+Bestehende Tickets bleiben rückwärtskompatibel: Fehlen `Planned-by:` oder
+`Wave:`, ist das allein kein Contract-Verstoß. Die Ticket Maturity Rule bleibt
+unverändert vollständig maßgeblich; ein Ticket ohne klares Ziel, Boundary,
+Verification, Evidence, Closeout, Operator Summary, Review Recommendation oder
+Stop-Bedingung wird durch Traceability-Felder nicht reif.
+
 ## Pflichtstruktur für agent:ready-Tickets
 
 ```markdown
