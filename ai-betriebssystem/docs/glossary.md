@@ -67,8 +67,14 @@ Andere Dokumente dürfen Begriffe für Prompt-Tauglichkeit wiederholen, aber nic
 
 | Begriff | Definition |
 |---|---|
-| Planner | ChatGPT / Opus: Epics schneiden, reife Tickets formulieren, `agent:ready` setzen. |
+| Repository Planner | Sichtbare Koordinationsrolle: macht aus einem menschlich vorgegebenen Ziel ein GitHub-rekonstruierbares Plan Issue und eine freigebbare Ticket-Wave nach `contracts/planner-contract.md`. Der Repository Planner schlaegt Arbeit vor, setzt kein `agent:ready`, baut nicht, reviewt nicht und merged nicht. |
+| Epic Lead | Sichtbare Koordinationsrolle: fuehrt eine freigegebene Wave nach `contracts/epic-lead-contract.md` ueber Worker Orders, Heartbeats, Statuslesen und Routing. Der Epic Lead implementiert nicht, reviewt nicht als Review of Record, merged nicht und verschiebt kein Human Gate. |
 | Builder / Builder-Orchestrator | Codex: Ticket bauen, validieren, Evidence liefern; bei `Subagents: REQUIRED` interne Subagents koordinieren. |
 | Reviewer | Codex Review / `@codex review`: Standard-Review of Record. |
 | Escalation Reviewer / Escalation Builder | Claude Code: Premium-Ressource für Review oder Umsetzung, nur nach dokumentierter menschlicher Freigabe (`prompts/builder-claude-code.md`). |
 | Operator | Der Mensch: Tagesfokus, Ampel-Entscheidungen, Merge, Human Gates. Siehe `docs/operator-runbook.md`. |
+
+Eine sichtbare Koordinationsrolle darf GitHub-Artefakte koordinieren, wenn sie
+GitHub-rekonstruierbar, contract-gebunden, nicht implementierend, nicht
+reviewend, nicht mergend und ohne Human-Gate-Verschiebung arbeitet. Das ist
+keine versteckte Subagent-PM-Rolle und kein neues Subagenten-Organigramm.

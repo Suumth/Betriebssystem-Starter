@@ -25,9 +25,17 @@ Es ist zugleich Agent Substrate: Root Agent Index, gemeinsame Begriffe, Agent Mo
 | Reviewer | Codex Review / @codex review | Standard-Review of Record: PR gegen Issue prüfen, Evidence bewerten, Ampel setzen |
 | Escalation Reviewer | Claude Code | Optionale Premium-/Eskalationsressource bei Risiko, Protected Areas, Release, Safety, Privacy, komplexer Architektur oder Operator-Entscheidung |
 | Operator | Mensch | Tagesfokus setzen, Merge entscheiden, unklare Produkt-/Architekturfragen klären |
-| Planner | ChatGPT / Opus | Epics schneiden, reife Tickets formulieren, agent:ready setzen |
+| Repository Planner | ChatGPT / Opus | Menschliches Ziel in GitHub-rekonstruierbare Plan Issues und Ticket-Waves nach `contracts/planner-contract.md` schneiden; setzt kein `agent:ready`, baut nicht, reviewt nicht, merged nicht |
+| Epic Lead | Codex / koordinierender Agent | Freigegebene Wave nach `contracts/epic-lead-contract.md` über Worker Orders, Heartbeats und Routing führen; implementiert nicht, reviewt nicht als Review of Record, merged nicht |
 
 Codex bleibt der sichtbare Builder-Lauf. Interne Subagents sind ein expliziter Execution Mode, keine sichtbaren PM-Rollen und keine zweite operative Wahrheit.
+
+Eine sichtbare Koordinationsrolle ist erlaubt, wenn ihr Lauf aus GitHub
+rekonstruierbar ist, sie an einen eigenen Contract gebunden ist, nicht
+implementiert, nicht als Review of Record reviewt, nicht merged und kein Human
+Gate verschiebt. Repository Planner und Epic Lead sind solche sichtbaren,
+contract-gebundenen Koordinationsrollen. Sie fuehren keine versteckte
+Subagent-PM-Rolle und kein neues Subagenten-Organigramm ein.
 
 ## Agent Modes
 
