@@ -46,6 +46,10 @@ Use [`START_HERE.md`](START_HERE.md) after the first loop for the deeper method.
 
 The starter does not run hidden background agents. It gives you a clear operating model for invoking agent roles through Codex, Claude Code, Cursor, Copilot Workspace or another AI tool.
 
+For larger goals, the visible role chain starts with a [`Goal Issue`](ai-betriebssystem/templates/goal-issue.md), continues through the [`Repository Planner`](ai-betriebssystem/contracts/planner-contract.md) and a [`Plan Issue`](ai-betriebssystem/templates/plan-issue.md), then moves through Human Gate, [`Epic Lead`](ai-betriebssystem/contracts/epic-lead-contract.md), Worker, Review of Record, Human Gate and Learning. Use [`prompts/repository-planner.md`](ai-betriebssystem/prompts/repository-planner.md) for planning runs; after plan approval, use [`prompts/epic-lead-codex.md`](ai-betriebssystem/prompts/epic-lead-codex.md) and [`templates/worker-order.md`](ai-betriebssystem/templates/worker-order.md) for wave coordination.
+
+These README links are navigation. The contracts remain the source of truth for role boundaries, gates and allowed actions.
+
 1. A human creates or chooses a GitHub Issue.
 2. The human starts an AI tool and gives it a role: Builder, Reviewer, Researcher, Tester or PM Signal.
 3. The role works from `PROJECT.md`, `AGENTS.md`, the issue, contracts and prompts.

@@ -31,8 +31,10 @@
 
 ## Contracts
 
+- `contracts/planner-contract.md` — Repository-Planner-Rolle vom Goal Issue zum pruefbaren Plan Issue, inklusive Rolling-Wave-Regel, Ticket-Schnitt, Traceability und Human Gate.
 - `contracts/ticket-contract.md` — Reife-Regel, Ticket-Tiers (Light/Full), Agent Contract mit Mode/Autonomy/Risk lane, Execution Mode, Attempt Budget & Escalation, Stagnation Escalation, Subagent Failure Policy, Subagent Evidence Capsule, Evidence, Closeout, Vault Impact und Harness-Failure-Klassifikation.
 - `contracts/review-contract.md` — Review-Prüfung, Review Isolation, Ampeln, Vault-Impact-, Attempt-Budget-, Stagnation-, Failure-Mode-, Subagent-Evidence-Capsule- und degraded-mode-Checks sowie Kommentarformate.
+- `contracts/epic-lead-contract.md` — sichtbare Koordinationsrolle fuer freigegebene Waves, Worker Orders, Heartbeats, Routing-Entscheidungen und klare Grenzen: nicht implementieren, nicht Review of Record, nicht mergen.
 - `contracts/protected-path-denylist.md` — Protected Path Denylist und Human Gate Contract für `.env`, credentials, auth, payments, billing, deployment, migration, signing, release und publication surfaces.
 - `contracts/run-budget-kill-switch.md` — Run Budget and Kill Switch Guardrail mit max issues per run, max fix attempts, stop conditions, operator kill actions und ohne neue Labels.
 - `contracts/skill-contract.md` — Skill Registry Contract für Markdown-only Skills, Pflicht-Metadaten, PR + Review of Record + Merge und Human Gate.
@@ -44,6 +46,8 @@
 - `prompts/builder-codex.md` — morgendlicher Builder-Prompt für Codex mit Agent Mode, Execution Mode Rules, Attempt Budget, Subagent Failure Policy, Batch Green Path Execution, Vault Impact und Closeout-Pflichtfeldern.
 - `prompts/builder-claude-code.md` — Escalation-Builder-Prompt für Claude Code, nur nach dokumentierter menschlicher Freigabe gemäß Model Resource Policy.
 - `prompts/builder-review-handoff.md` — Regel, dass Review-/Merge-Signale erst nach dem Builder-Handoff kommen.
+- `prompts/repository-planner.md` — Startprompt fuer Repository-Planner-Laeufe auf Basis eines Goal Issues, mit GitHub-/Repo-only Kontext, Open-Work-Check, Dependency Table und Plan-Issue-Output.
+- `prompts/epic-lead-codex.md` — Codex-Prompt fuer Epic-Lead-Laeufe auf freigegebenen Waves, inklusive Worker-Start, Kontrollzyklus, Heartbeats, Routing und Stop-Bedingungen.
 - `prompts/reviewer-claude.md` — kompakter Reviewer-Prompt mit Review Isolation, Vault-Impact-, Attempt-Budget-, Failure-Mode-, Subagent-Evidence-/degraded-mode-Checks und Grün/Gelb/Rot-Semantik; Details stehen im Review Contract.
 
 ## Templates
@@ -51,8 +55,11 @@
 - `templates/AGENTS.md` — Root-Agent-Index-Vorlage für Projekt-Repos mit Loading Map, Agent Modes, Execution Mode Rules, Subagent Failure Policy, Vault Impact und Critic/Builder/Verifier/Recorder-Loop.
 - `templates/PROJECT.md` — direkt kopierbare Root-Vorlage für die kanonische Projektanweisung inklusive Teilprojekt-/Produktversprechen-Register.
 - `templates/project-operating-rules.md` — ausführliche Projekt-Regelvorlage mit Agent Substrate, Execution Mode Rules, Subagent Failure Policy, Vault Impact und Skill-Mustern.
+- `templates/goal-issue.md` — Einstiegsvorlage fuer menschliche Ziele, die ein Repository Planner in ein Plan Issue zerlegt; kein Arbeitsticket und nie selbst `agent:ready`.
+- `templates/plan-issue.md` — Ergebnisvorlage fuer Planner-Laeufe mit Architecture Read, Affected Areas, Open Work Check, Risks, Dependency Table, Ticket-Stack, Non-Goals und Freigabe-Human-Gate.
 - `templates/github_issue_task.md` — GitHub-Issue-Task Template mit Agent Contract, Mode, Autonomy, Risk lane, Execution Mode, Protected Path Denylist, Attempt Budget & Escalation, Run Budget and Kill Switch, Subagent Failure Policy, Subagent Evidence Capsule, Vault Impact und Codex Subagent Instruction.
 - `templates/github_issue_task_low_risk.md` — Light Ticket Template für risikoarme EXECUTING-Tickets ohne Subagents und ohne erwartete Loop-Arbeit.
+- `templates/worker-order.md` — Auftragskommentar-Vorlage des Epic Leads fuer einzelne Worker, mit Goal, Scope-Erinnerung, Kontext-Paket, Reasoning, Stop Conditions, Verification und PR-Closeout-Pflicht.
 - `templates/lesson.md` — Lesson-Template mit Pflichtblock Regelanpassung, damit Loop-Erkenntnisse in Contracts, Prompts und Templates zurückfliessen.
 - `templates/harness-learning-candidate.md` — PR-gated Template für wiederholte Harness-Learnings; Candidate ist nicht aktive Policy bis Review of Record und Merge.
 - `templates/codex-overnight-loop-prompt.md` — abends nutzbarer Codex-Prompt für einen operator-armierten Overnight Run.
