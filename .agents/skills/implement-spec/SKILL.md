@@ -42,7 +42,7 @@ Fresh Codex Sol XHigh reviews final workstream heads and combined state, coordin
 
 Approval binds the exact reviewed integration/head SHA **and exact reviewed target/base SHA**. Any approved-head or target/base movement before landing, generated-file change, conflict resolution, rebase or content change invalidates it.
 
-Immediately before merge, re-read both head and target/base and require the approved tuple. Use an expected-head guard where supported. Mechanical squash/merge/rebase of exact approved content against the unchanged reviewed base is closeout; verify target HEAD/tree and merged PR state. If landing requires conflict/content changes, base moved, or repository policy requires an atomic base guard the platform cannot supply, obtain fresh review/gate.
+Immediately before merge, re-read head and target/base and require both to equal the approved tuple. An expected-head guard protects only the PR head and is **not sufficient by itself**. Landing is permitted only when the target/base is also protected against concurrent movement for the merge transaction by an atomic or equivalent repository-approved mechanism, such as expected-base compare-and-swap, a protected serialized merge queue, an explicitly frozen/locked target, or equivalent serialization. If both tuple members cannot be guarded, return `BLOCKED: MERGE_BASE_GUARD_REQUIRED`; do not merge. Mechanical landing of exact approved content against the unchanged guarded base is closeout; verify target HEAD/tree and merged PR state. Conflict/content changes require fresh review.
 
 ## Gate truth and control-plane Human Gates
 
